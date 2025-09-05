@@ -27,7 +27,7 @@ export default function Pricing() {
             <div className="container mx-auto px-4">
                 <div className="text-center max-w-3xl mx-auto mb-16">
                     <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl md:text-5xl font-headline">
-                        Tarifs simples pour passer à l'action
+                        Tarifs simples <br /> pour passer à l'action
                     </h2>
                     <p className="mt-4 text-lg text-muted-foreground">
                         Des prix qui matchent ton budget, pour que tu puisses enfin glow up tes skills tech ✨
