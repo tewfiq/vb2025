@@ -12,7 +12,7 @@ import {
 import React from 'react';
 
 const images = [
-  { src: 'https://storage.googleapis.com/maker-studio-5a503.appspot.com/user_managed/6b85d4f3-a26a-4993-a442-d699e15f839a/cap-no-2-1200x900.jpg', alt: 'Atelier Vibe Coding 1', hint: 'coding workshop' },
+  { src: 'https://storage.googleapis.com/maker-studio-5a503.appspot.com/user_managed/6b85d4f3-a26a-4993-a442-d699e15f839a/cap-no-2.jpg', alt: 'Atelier Vibe Coding 1', hint: 'coding workshop' },
   { src: 'https://picsum.photos/800/450?random=2', alt: 'Atelier Vibe Coding 2', hint: 'team collaboration' },
   { src: 'https://picsum.photos/800/450?random=3', alt: 'Atelier Vibe Coding 3', hint: 'people learning' },
   { src: 'https://picsum.photos/800/450?random=4', alt: 'Atelier Vibe Coding 4', hint: 'presenting code' },
