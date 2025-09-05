@@ -1,0 +1,65 @@
+"use client";
+import { Card, CardContent } from '@/components/ui/card';
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+
+const testimonials = [
+  { name: 'Alex M.', role: 'Étudiant UX/UI — ECV Paris', quote: "En 2h, j'ai créé et mis en ligne mon projet grâce à l'atelier IA.", initials: 'AM' },
+  { name: 'Dr. Mathieu D.', role: 'Directeur Pédagogique — Digital College', quote: 'Nos étudiants produisent des projets IA concrets et partagent fièrement leur code sur GitHub.', initials: 'MD' },
+  { name: 'Clara M.', role: 'Designer Freelance — École Conte (alumni)', quote: 'L\'intégration IA a élevé mes offres clients — +40% de revenus.', initials: 'CM' },
+  { name: 'Karim N.', role: 'Étudiant Dev Web — Ascencia', quote: 'Atelier clair, concret, orienté résultat. On repart avec une URL en ligne.', initials: 'KN' },
+  { name: 'Léa R.', role: 'Étudiante Communication — ISCOM', quote: "J'ai créé mon portfolio en direct pendant l'atelier. Mes profs n'en revenaient pas !", initials: 'LR' },
+  { name: 'Hugo T.', role: 'Étudiant Marketing — ESCP', quote: 'Zero stress, max fun. L\'IA fait le travail pendant que tu apprends la logique.', initials: 'HT' },
+  { name: 'Sarah B.', role: 'Freelance Graphiste', quote: "Formation géniale ! En 2h j'ai compris comment booster mes projets perso avec l'IA.", initials: 'SB' },
+  { name: 'Prof. Antoine L.', role: 'Enseignant Tech — Epitech', quote: "Mes étudiants ressortent motivés et avec des compétences concrètes. C'est exactement ce dont ils avaient besoin.", initials: 'AL' },
+  { name: 'Marie C.', role: 'Reconversion Dev — OpenClassrooms', quote: "L'ambiance était top, le formateur passionné. J'ai enfin compris le potentiel de l'IA !", initials: 'MC' },
+  { name: 'Julien V.', role: 'Ingénieur Junior — Thales', quote: "J'ai lancé mon side project grâce aux techniques apprises. Maintenant je code sans limite !", initials: 'JV' },
+];
+
+export default function Testimonials() {
+  return (
+    <section className="py-20 md:py-32 bg-background">
+      <div className="container mx-auto px-4">
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl md:text-5xl font-headline">
+            Ils ont testé Vibe Coding
+          </h2>
+          <p className="mt-4 text-lg text-muted-foreground">
+            Découvre les témoignages de ceux qui ont participé à nos ateliers et qui créent maintenant avec l'IA comme super pouvoir.
+          </p>
+        </div>
+
+        <Carousel
+          opts={{ align: "start", loop: true }}
+          className="w-full"
+        >
+          <CarouselContent className="-ml-4">
+            {testimonials.map((testimonial, index) => (
+              <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3 pl-4">
+                <div className="p-1 h-full">
+                  <Card className="h-full flex flex-col">
+                    <CardContent className="p-6 flex-grow flex flex-col">
+                      <p className="text-foreground flex-grow">"{testimonial.quote}"</p>
+                      <div className="flex items-center gap-4 mt-6">
+                        <Avatar>
+                           <AvatarImage src={`https://picsum.photos/40/40?random=test${index}`} alt={testimonial.name} data-ai-hint="person portrait"/>
+                           <AvatarFallback>{testimonial.initials}</AvatarFallback>
+                        </Avatar>
+                        <div>
+                          <p className="font-semibold">{testimonial.name}</p>
+                          <p className="text-sm text-muted-foreground">{testimonial.role}</p>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <CarouselPrevious className="ml-14 hidden md:inline-flex" />
+          <CarouselNext className="mr-14 hidden md:inline-flex" />
+        </Carousel>
+      </div>
+    </section>
+  );
+}
