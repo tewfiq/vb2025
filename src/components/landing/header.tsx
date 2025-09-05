@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { Menu } from 'lucide-react';
+import { ThemeSwitcher } from '@/components/theme-switcher';
 
 const navLinks = [
   { href: '#programme', label: 'Programme' },
@@ -58,10 +59,11 @@ export default function Header() {
             </SheetContent>
           </Sheet>
         </div>
-        <div className="flex flex-1 items-center justify-end space-x-4">
+        <div className="flex flex-1 items-center justify-end space-x-2">
            <Button asChild className='hidden sm:inline-flex'>
             <Link href="#pricing">Réserver – 149 € (-26 ans)</Link>
           </Button>
+          <ThemeSwitcher />
         </div>
       </div>
     </header>

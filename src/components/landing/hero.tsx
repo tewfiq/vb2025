@@ -12,7 +12,7 @@ export default function Hero() {
           </span>
         </div>
         <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl md:text-6xl lg:text-7xl font-headline">
-          Code l'avenir, <br className="hidden md:block" /> libère ta créativité avec l'IA
+          Code l'avenir, <br /> libère ta créativité avec l'IA
         </h1>
         <p className="mt-6 max-w-2xl mx-auto text-lg text-muted-foreground md:text-xl">
           En 2h, deviens celui qui <span className="font-bold text-accent">slay</span> le digital.
