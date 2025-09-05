@@ -18,7 +18,7 @@ export default function Header() {
       <div className="container flex h-14 items-center">
         <div className="mr-4 hidden md:flex">
           <Link href="/" className="mr-6 flex items-center space-x-2">
-            <span className="font-bold font-headline">Vibe Coding 🚀</span>
+            <span className="font-bold font-headline">Vibe Coding Paris 🚀</span>
           </Link>
           <nav className="flex items-center space-x-6 text-sm font-medium">
             {navLinks.map((link) => (
@@ -43,7 +43,7 @@ export default function Header() {
             </SheetTrigger>
             <SheetContent side="left">
               <Link href="/" className="mr-6 flex items-center space-x-2 mb-6">
-                 <span className="font-bold font-headline">Vibe Coding 🚀</span>
+                 <span className="font-bold font-headline">Vibe Coding Paris 🚀</span>
               </Link>
               <div className="flex flex-col space-y-4">
                 {navLinks.map((link) => (

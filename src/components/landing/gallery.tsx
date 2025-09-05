@@ -28,6 +28,12 @@ export default function Gallery() {
   const [api, setApi] = React.useState<CarouselApi>();
   const [current, setCurrent] = React.useState(0);
   const [count, setCount] = React.useState(0);
+  const [isClient, setIsClient] = React.useState(false);
+
+  // Marquer que le composant est rendu côté client
+  React.useEffect(() => {
+    setIsClient(true);
+  }, []);
 
   React.useEffect(() => {
     if (!api) {
@@ -40,7 +46,33 @@ export default function Gallery() {
     api.on("select", () => {
       setCurrent(api.selectedScrollSnap() + 1);
     });
+
+    // Activer l'autoplay
+    const interval = setInterval(() => {
+      if (api.canScrollNext()) {
+        api.scrollNext();
+      } else {
+        api.scrollTo(0);
+      }
+    }, 5000); // Changer d'image toutes les 5 secondes
+
+    return () => clearInterval(interval);
   }, [api]);
+
+  // Ne pas rendre le carousel côté serveur pour éviter l'erreur d'hydratation
+  if (!isClient) {
+    return (
+      <section id="programme" className="py-20 md:py-32">
+        <div className="container mx-auto px-4">
+          <div className="w-full max-w-4xl mx-auto">
+            <div className="flex aspect-video items-center justify-center p-0 overflow-hidden rounded-lg bg-muted">
+              <span className="text-muted-foreground">Chargement du slideshow...</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section id="programme" className="py-20 md:py-32">

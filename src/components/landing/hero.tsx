@@ -28,6 +28,19 @@ export default function Hero() {
             </Link>
           </Button>
         </div>
+        <div className="mt-6">
+          <p className="text-sm text-muted-foreground">
+            Places limitées (10) -{' '}
+            <Link 
+              href="https://www.meetup.com/paris-social-vibe-coding-meetup-group/events/310890615/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-primary hover:underline font-medium"
+            >
+              Inscrivez-vous sur Meetup
+            </Link>
+          </p>
+        </div>
       </div>
     </section>
   );
