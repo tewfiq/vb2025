@@ -1,14 +1,7 @@
 import Image from 'next/image';
 
 const partnerLogos = [
-  { src: "https://picsum.photos/150/50?grayscale&random=1", alt: "Partner 1", hint: "university logo" },
-  { src: "https://picsum.photos/150/50?grayscale&random=2", alt: "Partner 2", hint: "design school" },
-  { src: "https://picsum.photos/150/50?grayscale&random=3", alt: "Partner 3", hint: "art school" },
-  { src: "https://picsum.photos/150/50?grayscale&random=4", alt: "Partner 4", hint: "business school" },
-  { src: "https://picsum.photos/150/50?grayscale&random=5", alt: "Partner 5", hint: "communication school" },
-  { src: "https://picsum.photos/150/50?grayscale&random=6", alt: "Partner 6", hint: "business school" },
-  { src: "https://picsum.photos/150/50?grayscale&random=7", alt: "Partner 7", hint: "tech school" },
-  { src: "https://picsum.photos/150/50?grayscale&random=8", alt: "Partner 8", hint: "online courses" },
+  { src: "https://storage.googleapis.com/maker-studio-5a503.appspot.com/user_managed/6b85d4f3-a26a-4993-a442-d699e15f839a/logo-ecoles-partenaires-light-V2.png", alt: "Partner logos", hint: "school logos" },
 ];
 
 export default function Partners() {
@@ -20,17 +13,14 @@ export default function Partners() {
           <p className="text-sm text-muted-foreground">Logos des écoles partenaires - Bachelor, Master & MBA 2024-2025</p>
         </div>
         <div className="flex flex-wrap items-center justify-center gap-x-12 gap-y-8">
-          {partnerLogos.map((logo, index) => (
             <Image 
-              key={index} 
-              src={logo.src} 
-              alt={logo.alt} 
-              data-ai-hint={logo.hint}
-              width={120} 
-              height={40} 
-              className="h-8 w-auto object-contain" 
+              src="https://storage.googleapis.com/maker-studio-5a503.appspot.com/user_managed/6b85d4f3-a26a-4993-a442-d699e15f839a/logo-ecoles-partenaires-light-V2.png" 
+              alt="Partner logos" 
+              data-ai-hint="school logos"
+              width={1000} 
+              height={60} 
+              className="h-auto w-full max-w-4xl object-contain" 
             />
-          ))}
         </div>
       </div>
     </section>
