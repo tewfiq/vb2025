@@ -34,14 +34,6 @@ export default function Faq() {
                             </AccordionItem>
                         ))}
                     </Accordion>
-
-                    <div className="mt-12 text-center">
-                        <h3 className="text-xl font-semibold font-headline">Encore une question ?</h3>
-                        <p className="mt-2 text-muted-foreground">Écris-nous ou… slay le code et réserve ta place directe.</p>
-                        <Button size="lg" className="mt-6" asChild>
-                            <Link href="#pricing">Réserver – 149 €</Link>
-                        </Button>
-                    </div>
                 </div>
             </div>
         </section>
