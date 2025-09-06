@@ -3,6 +3,21 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 
+// Liste des avatars assignés à chaque témoignage (un avatar par témoignage)
+const avatarAssignments = {
+  'Alex M.': 'Pierre.jpg', // Masculin
+  'Dr. Mathieu D.': 'Marwan.jpg', // Masculin
+  'Clara M.': 'Vanessa.jpg', // Féminin
+  'Karim N.': 'Simon.jpg', // Masculin
+  'Léa R.': 'Aminata.jpg', // Féminin
+  'Hugo T.': 'Simon.jpg', // Masculin
+};
+
+// Fonction pour obtenir l'avatar en fonction du nom
+function getAvatarSrc(name: string) {
+  return `/avatars/${avatarAssignments[name] || '107.jpg'}`;
+}
+
 const testimonials = [
   { name: 'Alex M.', role: 'Étudiant UX/UI — ECV Paris', quote: "En 2h, j'ai créé et mis en ligne mon projet grâce à l'atelier IA.", initials: 'AM' },
   { name: 'Dr. Mathieu D.', role: 'Directeur Pédagogique — Digital College', quote: 'Nos étudiants produisent des projets IA concrets et partagent fièrement leur code sur GitHub.', initials: 'MD' },
@@ -10,10 +25,6 @@ const testimonials = [
   { name: 'Karim N.', role: 'Étudiant Dev Web — Ascencia', quote: 'Atelier clair, concret, orienté résultat. On repart avec une URL en ligne.', initials: 'KN' },
   { name: 'Léa R.', role: 'Étudiante Communication — ISCOM', quote: "J'ai créé mon portfolio en direct pendant l'atelier. Mes profs n'en revenaient pas !", initials: 'LR' },
   { name: 'Hugo T.', role: 'Étudiant Marketing — ESCP', quote: 'Zero stress, max fun. L\'IA fait le travail pendant que tu apprends la logique.', initials: 'HT' },
-  { name: 'Sarah B.', role: 'Freelance Graphiste', quote: "Formation géniale ! En 2h j'ai compris comment booster mes projets perso avec l'IA.", initials: 'SB' },
-  { name: 'Prof. Antoine L.', role: 'Enseignant Tech — Epitech', quote: "Mes étudiants ressortent motivés et avec des compétences concrètes. C'est exactement ce dont ils avaient besoin.", initials: 'AL' },
-  { name: 'Marie C.', role: 'Reconversion Dev — OpenClassrooms', quote: "L'ambiance était top, le formateur passionné. J'ai enfin compris le potentiel de l'IA !", initials: 'MC' },
-  { name: 'Julien V.', role: 'Ingénieur Junior — Thales', quote: "J'ai lancé mon side project grâce aux techniques apprises. Maintenant je code sans limite !", initials: 'JV' },
 ];
 
 export default function Testimonials() {
@@ -30,7 +41,7 @@ export default function Testimonials() {
         </div>
 
         <Carousel
-          opts={{ align: "start", loop: true }}
+          opts={{ align: "start", loop: false }}
           className="w-full"
         >
           <CarouselContent className="-ml-4">
@@ -42,7 +53,7 @@ export default function Testimonials() {
                       <p className="text-foreground flex-grow">"{testimonial.quote}"</p>
                       <div className="flex items-center gap-4 mt-6">
                         <Avatar>
-                           <AvatarImage src={`https://picsum.photos/40/40?random=test${index}`} alt={testimonial.name} data-ai-hint="person portrait"/>
+                           <AvatarImage src={getAvatarSrc(testimonial.name)} alt={testimonial.name} data-ai-hint="person portrait"/>
                            <AvatarFallback>{testimonial.initials}</AvatarFallback>
                         </Avatar>
                         <div>
