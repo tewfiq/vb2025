@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardHeader, CardTitle, CardContent, CardFooter } from '@/components/ui/card';
 import { Check } from 'lucide-react';
@@ -55,7 +56,9 @@ export default function Pricing() {
                             </ul>
                         </CardContent>
                         <CardFooter>
-                            <Button className="w-full" variant="outline">Réserver – 299 €</Button>
+                            <Button className="w-full" variant="outline" asChild>
+                                <Link href="https://buy.stripe.com/bJe5kEdSrgkcfhQaBn7EQ0c">Réserver – 299 €</Link>
+                            </Button>
                         </CardFooter>
                     </Card>
 
@@ -85,7 +88,9 @@ export default function Pricing() {
                             </ul>
                         </CardContent>
                         <CardFooter>
-                            <Button className="w-full bg-accent hover:bg-accent/90">Je m'inscris à -50%</Button>
+                            <Button className="w-full bg-accent hover:bg-accent/90" asChild>
+                                <Link href="https://buy.stripe.com/bJe8wQ3dN7NGc5EcJv7EQ0b">Je m'inscris à -50%</Link>
+                            </Button>
                         </CardFooter>
                     </Card>
 
@@ -109,7 +114,9 @@ export default function Pricing() {
                             </ul>
                         </CardContent>
                         <CardFooter>
-                            <Button className="w-full" variant="outline">Demander un devis</Button>
+                            <Button className="w-full" variant="outline" asChild>
+                                <Link href="https://cal.com/tewfiqferahi/15min" target="_blank" rel="noopener noreferrer">Demander un devis</Link>
+                            </Button>
                         </CardFooter>
                     </Card>
                 </div>

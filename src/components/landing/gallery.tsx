@@ -12,24 +12,28 @@ import {
 import React from 'react';
 
 const images = [
-  { src: 'https://storage.googleapis.com/maker-studio-5a503.appspot.com/user_managed/6b85d4f3-a26a-4993-a442-d699e15f839a/cap-no-2.jpg', alt: 'Atelier Vibe Coding 1', hint: 'coding workshop' },
-  { src: 'https://picsum.photos/800/450?random=2', alt: 'Atelier Vibe Coding 2', hint: 'team collaboration' },
-  { src: 'https://picsum.photos/800/450?random=3', alt: 'Atelier Vibe Coding 3', hint: 'people learning' },
-  { src: 'https://picsum.photos/800/450?random=4', alt: 'Atelier Vibe Coding 4', hint: 'presenting code' },
-  { src: 'https://picsum.photos/800/450?random=5', alt: 'Atelier Vibe Coding 5', hint: 'UI design' },
-  { src: 'https://picsum.photos/800/450?random=6', alt: 'Atelier Vibe Coding 6', hint: 'developer smiling' },
-  { src: 'https://picsum.photos/800/450?random=7', alt: 'Atelier Vibe Coding 7', hint: 'group discussion' },
-  { src: 'https://picsum.photos/800/450?random=8', alt: 'Atelier Vibe Coding 8', hint: 'laptop screen' },
-  { src: 'https://picsum.photos/800/450?random=9', alt: 'Atelier Vibe Coding 9', hint: 'pair programming' },
-  { src: 'https://picsum.photos/800/450?random=10', alt: 'Atelier Vibe Coding 10', hint: 'creative workspace' },
-  { src: 'https://picsum.photos/800/450?random=11', alt: 'Atelier Vibe Coding 11', hint: 'coding students' },
-  { src: 'https://picsum.photos/800/450?random=12', alt: 'Atelier Vibe Coding 12', hint: 'project success' },
+  { src: '/slideshow/IMG_1290-min.jpeg', alt: 'Atelier Vibe Coding 1', hint: 'people learning' },
+  { src: '/slideshow/IMG_1297-min.jpeg', alt: 'Atelier Vibe Coding 2', hint: 'presenting code' },
+  { src: '/slideshow/IMG_1319-min.jpeg', alt: 'Atelier Vibe Coding 3', hint: 'UI design' },
+  { src: '/slideshow/IMG_1320-min.jpeg', alt: 'Atelier Vibe Coding 4', hint: 'developer smiling' },
+  { src: '/slideshow/IMG_1321-min.jpeg', alt: 'Atelier Vibe Coding 5', hint: 'group discussion' },
+  { src: '/slideshow/IMG_1347-min.jpeg', alt: 'Atelier Vibe Coding 6', hint: 'laptop screen' },
+  { src: '/slideshow/IMG_1349-min.jpeg', alt: 'Atelier Vibe Coding 7', hint: 'pair programming' },
+  { src: '/slideshow/IMG_1436-min.jpeg', alt: 'Atelier Vibe Coding 8', hint: 'creative workspace' },
+  { src: '/slideshow/IMG_1437-min.jpeg', alt: 'Atelier Vibe Coding 9', hint: 'coding students' },
+  { src: '/slideshow/IMG_1438-min.jpeg', alt: 'Atelier Vibe Coding 10', hint: 'project success' },
 ];
 
 export default function Gallery() {
   const [api, setApi] = React.useState<CarouselApi>();
   const [current, setCurrent] = React.useState(0);
   const [count, setCount] = React.useState(0);
+  const [isClient, setIsClient] = React.useState(false);
+
+  // Marquer que le composant est rendu côté client
+  React.useEffect(() => {
+    setIsClient(true);
+  }, []);
 
   React.useEffect(() => {
     if (!api) {
@@ -42,7 +46,33 @@ export default function Gallery() {
     api.on("select", () => {
       setCurrent(api.selectedScrollSnap() + 1);
     });
+
+    // Activer l'autoplay
+    const interval = setInterval(() => {
+      if (api.canScrollNext()) {
+        api.scrollNext();
+      } else {
+        api.scrollTo(0);
+      }
+    }, 5000); // Changer d'image toutes les 5 secondes
+
+    return () => clearInterval(interval);
   }, [api]);
+
+  // Ne pas rendre le carousel côté serveur pour éviter l'erreur d'hydratation
+  if (!isClient) {
+    return (
+      <section id="programme" className="py-20 md:py-32">
+        <div className="container mx-auto px-4">
+          <div className="w-full max-w-4xl mx-auto">
+            <div className="flex aspect-video items-center justify-center p-0 overflow-hidden rounded-lg bg-muted">
+              <span className="text-muted-foreground">Chargement du slideshow...</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section id="programme" className="py-20 md:py-32">

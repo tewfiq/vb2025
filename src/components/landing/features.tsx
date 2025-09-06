@@ -5,7 +5,7 @@ export default function Features() {
     { text: '10 places / session', icon: <Users className="h-5 w-5 text-primary" /> },
     { text: 'Paris — salle équipée', icon: <MapPin className="h-5 w-5 text-primary" /> },
     { text: 'Tous niveaux', icon: <Layers className="h-5 w-5 text-primary" /> },
-    { text: 'Septembre 2025', icon: <Calendar className="h-5 w-5 text-primary" /> },
+    { text: 'Samedi 4 Octobre 2025', icon: <Calendar className="h-5 w-5 text-primary" /> },
   ];
 
   return (
