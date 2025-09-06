@@ -1,45 +1,48 @@
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import { ArrowDown } from 'lucide-react';
 
 export default function Hero() {
   return (
-    <section id="hero" className="relative w-full py-16 md:py-24 lg:py-32 bg-background">
+    <section id="hero" className="relative w-full py-16 md:py-24 lg:py-32 bg-background hero-provoc">
       <div className="container mx-auto px-4 text-center">
-        <div className="mb-3">
-          <span className="inline-block rounded-full bg-primary/10 px-3 py-1 text-sm font-semibold text-primary font-headline">
-            🚀 Formation Vibe Coding | Samedi 4 Octobre 2025
-          </span>
-        </div>
         <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl md:text-6xl lg:text-7xl font-headline">
-          Code l'avenir, <br /> libère ta créativité avec l'IA
+          Pendant qu'ils scrollent, toi t'apprends à Vibe coder.
         </h1>
         <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground md:text-xl">
-          En 2h, deviens celui qui <span className="font-bold text-accent">slay</span> le digital.
+          2h. Business, rien de perso. Juste toi et ton projet en ligne.
         </p>
         <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-          <Button size="lg" asChild className="bg-accent hover:bg-accent/90 text-accent-foreground">
-            <Link href="#pricing">Je m'inscris à -50%</Link>
+          <Button size="lg" asChild className="bg-accent hover:bg-accent/90 text-accent-foreground relative">
+            <Link href="#pricing">
+              Je m'inscris à -50% — 149 €
+              <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs px-2 py-1 rounded-full">
+                ✨
+              </span>
+            </Link>
           </Button>
           <Button size="lg" variant="outline" asChild>
-            <Link href="#programme">
-              Voir le programme
-              <ArrowDown className="ml-2 h-4 w-4" />
+            <Link href="#pricing">
+              Réserver au tarif normal — 299 €
             </Link>
           </Button>
         </div>
-        <div className="mt-6">
-          <p className="text-sm text-muted-foreground">
-            Places limitées (10) -{' '}
-            <Link 
-              href="https://www.meetup.com/paris-social-vibe-coding-meetup-group/events/310890615/" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="text-primary hover:underline font-medium"
-            >
-              Inscrivez-vous sur Meetup
-            </Link>
-          </p>
+        <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-3xl mx-auto text-sm text-muted-foreground">
+          <div className="flex items-center justify-center gap-2">
+            <span>📍</span>
+            <span>Paris — salle équipée</span>
+          </div>
+          <div className="flex items-center justify-center gap-2">
+            <span>🎟️</span>
+            <span>10 places / session</span>
+          </div>
+          <div className="flex items-center justify-center gap-2">
+            <span>✨</span>
+            <span>Tous niveaux</span>
+          </div>
+          <div className="flex items-center justify-center gap-2">
+            <span>📅</span>
+            <span>Samedi 4 Octobre 2025</span>
+          </div>
         </div>
       </div>
     </section>
