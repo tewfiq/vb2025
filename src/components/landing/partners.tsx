@@ -15,7 +15,7 @@ export default function Partners() {
   // Rendu conditionnel pour éviter les erreurs de hydration
   if (!mounted) {
     return (
-      <section className="py-12 bg-background">
+      <section className="pt-4 pb-12 bg-background">
         <div className="container mx-auto px-4">
           <div className="text-center mb-8">
             <h3 className="text-lg font-semibold text-muted-foreground font-headline">Un grand merci à tous mes Étudiants en Bachelor, Master & MBA en 2024-2025 👏</h3>
@@ -35,7 +35,7 @@ export default function Partners() {
     : '/Schools/schools-logos_black.png';
 
   return (
-    <section className="py-12 bg-background">
+    <section className="pt-4 pb-12 bg-background">
       <div className="container mx-auto px-4">
         <div className="text-center mb-8">
           <h3 className="text-lg font-semibold text-muted-foreground font-headline">Un grand merci à tous mes Étudiants en Bachelor, Master & MBA en 2024-2025 👏</h3>
