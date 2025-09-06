@@ -108,8 +108,8 @@ export default function FloatingAppleMusicPlayer() {
                 title="Vibe Coding Paris – Apple Music"
                 allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write"
                 sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation-by-user-activation"
-                src="https://embed.music.apple.com/fr/playlist/vibe-coding-paris/pl.u-b3b8aYNIylP0pZ"
-                className="w-full h-[400px] md:w-[380px] border-0"
+                src="https://embed.music.apple.com/fr/playlist/vibe-coding-paris/pl.u-b3b8aYNIylP0pZ?autoplay=1"
+                className="w-full h-[175px] md:w-[350px] border-0"
                 style={{ background: 'transparent' }}
               />
             </div>
