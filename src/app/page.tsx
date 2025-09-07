@@ -1,6 +1,7 @@
 import Header from '@/components/landing/header';
 import Hero from '@/components/landing/hero';
 import WhyCards from '@/components/landing/why-cards';
+import MethodSteps from '@/components/landing/method-steps';
 import Testimonials from '@/components/landing/testimonials';
 import Pricing from '@/components/landing/pricing';
 import Faq from '@/components/landing/faq';
@@ -13,6 +14,7 @@ export default function Home() {
       <main className="flex-1">
         <Hero />
         <WhyCards />
+        <MethodSteps />
         <Testimonials />
         <Pricing />
         <Faq />
