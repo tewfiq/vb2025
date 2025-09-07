@@ -1,6 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { CodeSnippet, MockAppList, CommitList, DeploymentLog } from "./mock-components";
-import { MessageCircle, Laptop, Rocket } from "lucide-react";
 
 const features = [
     { title: "Apprends à coder… en écrivant !", description: "Prends en main les outils qui buzzent : ChatGPT, Copilot, Bolt, Cursor.", content: <CodeSnippet /> },
@@ -9,24 +8,6 @@ const features = [
     { title: "Créa instantanée", description: "Ton flow créatif, boosté par l'IA → résultat immédiat.", content: <CommitList /> },
     { title: "Team Spirit", description: "Évolue dans une vibe collaborative, partage tes skills et ton énergie.", content: <CommitList /> },
     { title: "Unfair Advantage", description: "Pendant que d'autres scrollent, toi tu crées. Ne passe pas à côté de cette compétence rare.", content: <DeploymentLog /> }
-];
-
-const practicalCards = [
-    {
-      icon: <MessageCircle className="h-5 w-5 text-accent" />,
-      title: "Méthode",
-      description: "Processus simple : tu discutes, tu structures, tu crées."
-    },
-    {
-      icon: <Laptop className="h-5 w-5 text-accent" />,
-      title: "BYOD",
-      description: "Apporte ton laptop, on fait le reste ensemble."
-    },
-    {
-      icon: <Rocket className="h-5 w-5 text-accent" />,
-      title: "Publication",
-      description: "GitHub + déploiement → URL publique en 2h."
-    }
 ];
 
 export default function WhyCards() {
@@ -43,7 +24,7 @@ export default function WhyCards() {
                 </div>
 
                 {/* Cartes principales */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {features.map((feature, index) => (
                         <Card key={index} className="flex flex-col overflow-hidden bg-card/80 backdrop-blur-sm transition-all hover:scale-[1.02] hover:shadow-lg">
                             <CardHeader>
@@ -52,21 +33,6 @@ export default function WhyCards() {
                             </CardHeader>
                             <CardContent className="flex-grow">
                                 {feature.content}
-                            </CardContent>
-                        </Card>
-                    ))}
-                </div>
-                
-                {/* Petites cartes pratiques */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-4xl mx-auto">
-                    {practicalCards.map((card, index) => (
-                        <Card key={index} className="bg-background/60 backdrop-blur-sm border-accent/20 hover:border-accent/40 transition-colors">
-                            <CardContent className="p-4 text-center">
-                                <div className="flex flex-col items-center gap-2">
-                                    {card.icon}
-                                    <h3 className="font-semibold text-sm">{card.title}</h3>
-                                    <p className="text-xs text-muted-foreground">{card.description}</p>
-                                </div>
                             </CardContent>
                         </Card>
                     ))}
