@@ -3,7 +3,7 @@ import { CodeSnippet, MockAppList, CommitList, DeploymentLog } from "./mock-comp
 import { MessageCircle, Laptop, Rocket } from "lucide-react";
 
 const features = [
-    { title: "Apprends à coder… en parlant !", description: "Prends en main les outils qui buzzent : ChatGPT, Copilot, Bolt, Cursor.", content: <CodeSnippet /> },
+    { title: "Apprends à coder… en écrivant !", description: "Prends en main les outils qui buzzent : ChatGPT, Copilot, Bolt, Cursor.", content: <CodeSnippet /> },
     { title: "Lance tes projets sans barrière", description: "Sites, apps, scripts, IA – ton idée, on la prototype ensemble.", content: <DeploymentLog /> },
     { title: "Ateliers interactifs ✨", description: "Coaching par des formateurs passionnés, ambiance bienveillante et collaborative.", content: <MockAppList /> },
     { title: "Créa instantanée", description: "Ton flow créatif, boosté par l'IA → résultat immédiat.", content: <CommitList /> },
