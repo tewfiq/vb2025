@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import './globals.css';
 import { Toaster } from '@/components/ui/toaster';
 import { ThemeProvider } from '@/components/theme-provider';
-import FloatingAppleMusicPlayer from '@/components/floating-apple-music-player';
 
 export const metadata: Metadata = {
   title: 'VibeCoder',
@@ -37,7 +36,6 @@ export default function RootLayout({
         >
           {children}
           <Toaster />
-          <FloatingAppleMusicPlayer />
         </ThemeProvider>
       </body>
     </html>
