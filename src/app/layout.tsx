@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 import { Toaster } from '@/components/ui/toaster';
 import { ThemeProvider } from '@/components/theme-provider';
+import GoogleAnalytics from '@/components/analytics';
 
 export const metadata: Metadata = {
   title: 'VibeCoder',
@@ -28,6 +29,9 @@ export default function RootLayout({
         />
       </head>
       <body className="font-body antialiased">
+        {process.env.NEXT_PUBLIC_GA_TRACKING_ID && (
+          <GoogleAnalytics GA_TRACKING_ID={process.env.NEXT_PUBLIC_GA_TRACKING_ID} />
+        )}
         <ThemeProvider
           attribute="class"
           defaultTheme="system"

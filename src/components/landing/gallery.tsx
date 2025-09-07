@@ -12,16 +12,16 @@ import {
 import React from 'react';
 
 const images = [
-  { src: '/slideshow/IMG_1290-min.jpeg', alt: 'Atelier Vibe Coding 1', hint: 'people learning' },
-  { src: '/slideshow/IMG_1297-min.jpeg', alt: 'Atelier Vibe Coding 2', hint: 'presenting code' },
-  { src: '/slideshow/IMG_1319-min.jpeg', alt: 'Atelier Vibe Coding 3', hint: 'UI design' },
-  { src: '/slideshow/IMG_1320-min.jpeg', alt: 'Atelier Vibe Coding 4', hint: 'developer smiling' },
-  { src: '/slideshow/IMG_1321-min.jpeg', alt: 'Atelier Vibe Coding 5', hint: 'group discussion' },
-  { src: '/slideshow/IMG_1347-min.jpeg', alt: 'Atelier Vibe Coding 6', hint: 'laptop screen' },
-  { src: '/slideshow/IMG_1349-min.jpeg', alt: 'Atelier Vibe Coding 7', hint: 'pair programming' },
-  { src: '/slideshow/IMG_1436-min.jpeg', alt: 'Atelier Vibe Coding 8', hint: 'creative workspace' },
-  { src: '/slideshow/IMG_1437-min.jpeg', alt: 'Atelier Vibe Coding 9', hint: 'coding students' },
-  { src: '/slideshow/IMG_1438-min.jpeg', alt: 'Atelier Vibe Coding 10', hint: 'project success' },
+  { src: '/slideshow/IMG_1290-min.jpeg', alt: 'Atelier Vibe Coding Paris 1', hint: 'people learning' },
+  { src: '/slideshow/IMG_1297-min.jpeg', alt: 'Atelier Vibe Coding Paris 2', hint: 'presenting code' },
+  { src: '/slideshow/IMG_1319-min.jpeg', alt: 'Atelier Vibe Coding Paris 3', hint: 'UI design' },
+  { src: '/slideshow/IMG_1320-min.jpeg', alt: 'Atelier Vibe Coding Paris 4', hint: 'developer smiling' },
+  { src: '/slideshow/IMG_1321-min.jpeg', alt: 'Atelier Vibe Coding Paris 5', hint: 'group discussion' },
+  { src: '/slideshow/IMG_1347-min.jpeg', alt: 'Atelier Vibe Coding Paris 6', hint: 'laptop screen' },
+  { src: '/slideshow/IMG_1349-min.jpeg', alt: 'Atelier Vibe Coding Paris 7', hint: 'pair programming' },
+  { src: '/slideshow/IMG_1436-min.jpeg', alt: 'Atelier Vibe Coding Paris 8', hint: 'creative workspace' },
+  { src: '/slideshow/IMG_1437-min.jpeg', alt: 'Atelier Vibe Coding Paris 9', hint: 'coding students' },
+  { src: '/slideshow/IMG_1438-min.jpeg', alt: 'Atelier Vibe Coding Paris 10', hint: 'project success' },
 ];
 
 export default function Gallery() {

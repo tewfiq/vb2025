@@ -2,8 +2,8 @@ import { Metadata } from 'next/types';
 import { BackButton } from '@/components/ui/back-button';
 
 export const metadata: Metadata = {
-  title: "Conditions Générales de Vente | Vibe Coding",
-  description: "Conditions Générales de Vente de Vibe Coding",
+  title: "Conditions Générales de Vente | Vibe Coding Paris",
+  description: "Conditions Générales de Vente de Vibe Coding Paris",
 };
 
 export default function TermsOfServicePage() {
@@ -16,7 +16,7 @@ export default function TermsOfServicePage() {
         </h1>
         <div className="prose prose-lg max-w-none">
           <p>
-            Contenu à venir... Cette page contiendra les Conditions Générales de Vente de Vibe Coding.
+            Contenu à venir... Cette page contiendra les Conditions Générales de Vente de Vibe Coding Paris.
           </p>
           <p>
             Placeholder pour le contenu détaillé à venir.

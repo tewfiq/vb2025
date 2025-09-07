@@ -2,8 +2,8 @@ import { Metadata } from 'next/types';
 import { BackButton } from '@/components/ui/back-button';
 
 export const metadata: Metadata = {
-  title: "Mentions légales | Vibe Coding",
-  description: "Mentions légales de Vibe Coding",
+  title: "Mentions légales | Vibe Coding Paris",
+  description: "Mentions légales de Vibe Coding Paris",
 };
 
 export default function LegalNoticePage() {
@@ -16,7 +16,7 @@ export default function LegalNoticePage() {
         </h1>
         <div className="prose prose-lg max-w-none">
           <p>
-            Contenu à venir... Cette page contiendra les mentions légales de Vibe Coding.
+            Contenu à venir... Cette page contiendra les mentions légales de Vibe Coding Paris.
           </p>
           <p>
             Placeholder pour le contenu détaillé à venir.

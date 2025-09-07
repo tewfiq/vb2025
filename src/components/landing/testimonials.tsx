@@ -33,7 +33,7 @@ export default function Testimonials() {
       <div className="container mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl md:text-5xl font-headline">
-            Ils ont testé Vibe Coding
+            Ils ont testé Vibe Coding Paris
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">
             Découvre les témoignages de ceux qui ont participé à nos ateliers et qui créent maintenant avec l'IA comme super pouvoir.
