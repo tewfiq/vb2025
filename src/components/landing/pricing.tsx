@@ -4,14 +4,14 @@ import { Card, CardHeader, CardTitle, CardContent, CardFooter } from '@/componen
 import { Check } from 'lucide-react';
 
 const includedFeatures = [
-    'Workshop 2h en présentiel',
+    'Atelier 2h en présentiel',
     'Dépôt GitHub personnel',
     'Déploiement + URL publique',
-    'Kit documentaire (brandbook, pitch, Value Prop)',
+    'Kit documentaire',
 ];
 
 const includedFeaturesBanger = [
-    'Workshop 2h complet',
+    'Atelier 2h complet',
     'Accès aux mêmes livrables',
     'Coaching et accompagnement',
 ];
@@ -28,10 +28,10 @@ export default function Pricing() {
             <div className="container mx-auto px-4">
                 <div className="text-center max-w-3xl mx-auto mb-16">
                     <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl md:text-5xl font-headline">
-                        Tarifs simples <br /> pour passer à l'action
+                        Tarifs
                     </h2>
                     <p className="mt-4 text-lg text-muted-foreground">
-                        Des prix qui matchent ton budget, pour que tu puisses enfin glow up tes skills tech ✨
+                        Des formules simples et claires, pour tous les profils.
                     </p>
                 </div>
                 
@@ -70,8 +70,8 @@ export default function Pricing() {
                             </div>
                         </div>
                         <CardHeader className="pb-4 pt-10">
-                            <CardTitle className="font-headline text-2xl">C'est Carré</CardTitle>
-                            <p className="text-sm text-muted-foreground">(-26 ans / Demandeurs d'emploi)</p>
+                            <CardTitle className="font-headline text-2xl">Réduit</CardTitle>
+                            <p className="text-sm text-muted-foreground">Tarif réservé aux -26 ans et demandeurs d'emploi</p>
                             <div className="flex items-baseline gap-2 pt-2">
                                 <span className="text-5xl font-bold tracking-tight text-accent">149 €</span>
                                 <span className="text-muted-foreground">TTC / personne</span>
@@ -87,9 +87,9 @@ export default function Pricing() {
                                 ))}
                             </ul>
                         </CardContent>
-                        <CardFooter>
+                        <CardFooter className="flex-col gap-3">
                             <Button className="w-full bg-accent hover:bg-accent/90" asChild>
-                                <Link href="https://buy.stripe.com/bJe8wQ3dN7NGc5EcJv7EQ0b">Je m'inscris à -50%</Link>
+                                <Link href="https://buy.stripe.com/bJe8wQ3dN7NGc5EcJv7EQ0b">Je m'inscris — 149 €</Link>
                             </Button>
                         </CardFooter>
                     </Card>
@@ -97,10 +97,9 @@ export default function Pricing() {
                     {/* Team Card */}
                     <Card className="flex flex-col h-full">
                         <CardHeader className="pb-4">
-                            <CardTitle className="font-headline text-2xl">La Team</CardTitle>
+                            <CardTitle className="font-headline text-2xl">Équipe</CardTitle>
                              <div className="flex items-baseline gap-2">
                                 <span className="text-5xl font-bold tracking-tight">Sur devis</span>
-                                <span className="text-muted-foreground">Jusqu'à 10 personnes</span>
                             </div>
                         </CardHeader>
                         <CardContent className="flex-1">
@@ -120,7 +119,6 @@ export default function Pricing() {
                         </CardFooter>
                     </Card>
                 </div>
-                 <p className="text-center mt-8 text-sm text-muted-foreground">🔥 Offre -50% pour les -26 ans et demandeurs d'emploi. Places limitées.</p>
             </div>
         </section>
     );

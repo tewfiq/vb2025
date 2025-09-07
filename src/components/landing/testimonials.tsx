@@ -19,12 +19,10 @@ function getAvatarSrc(name: string) {
 }
 
 const testimonials = [
-  { name: 'Alex M.', role: 'Étudiant UX/UI — ECV Paris', quote: "En 2h, j'ai créé et mis en ligne mon projet grâce à l'atelier IA.", initials: 'AM' },
-  { name: 'Dr. Mathieu D.', role: 'Directeur Pédagogique — Digital College', quote: 'Nos étudiants produisent des projets IA concrets et partagent fièrement leur code sur GitHub.', initials: 'MD' },
+  { name: 'Alex M.', role: 'Étudiant UX/UI — ECV Paris', quote: "En 2h, j'ai créé et mis en ligne mon projet.", initials: 'AM' },
+  { name: 'Dr. Mathieu D.', role: 'Directeur Pédagogique — Digital College', quote: 'Nos étudiants produisent des projets concrets et partagent leur code sur GitHub.', initials: 'MD' },
   { name: 'Clara M.', role: 'Designer Freelance — École Conte (alumni)', quote: 'L\'intégration IA a élevé mes offres clients — +40% de revenus.', initials: 'CM' },
   { name: 'Karim N.', role: 'Étudiant Dev Web — Ascencia', quote: 'Atelier clair, concret, orienté résultat. On repart avec une URL en ligne.', initials: 'KN' },
-  { name: 'Léa R.', role: 'Étudiante Communication — ISCOM', quote: "J'ai créé mon portfolio en direct pendant l'atelier. Mes profs n'en revenaient pas !", initials: 'LR' },
-  { name: 'Hugo T.', role: 'Étudiant Marketing — ESCP', quote: 'Zero stress, max fun. L\'IA fait le travail pendant que tu apprends la logique.', initials: 'HT' },
 ];
 
 export default function Testimonials() {
@@ -33,11 +31,8 @@ export default function Testimonials() {
       <div className="container mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl md:text-5xl font-headline">
-            Ils ont testé Vibe Coding Paris
+            Ils ont testé Vibe Coding
           </h2>
-          <p className="mt-4 text-lg text-muted-foreground">
-            Découvre les témoignages de ceux qui ont participé à nos ateliers et qui créent maintenant avec l'IA comme super pouvoir.
-          </p>
         </div>
 
         <Carousel
