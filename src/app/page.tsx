@@ -1,9 +1,6 @@
 import Header from '@/components/landing/header';
 import Hero from '@/components/landing/hero';
-import WhyVibe from '@/components/landing/why-vibe';
-import Method from '@/components/landing/method';
-import BYOD from '@/components/landing/byod';
-import Newcomers from '@/components/landing/newcomers';
+import WhyCards from '@/components/landing/why-cards';
 import Testimonials from '@/components/landing/testimonials';
 import Pricing from '@/components/landing/pricing';
 import Faq from '@/components/landing/faq';
@@ -15,10 +12,7 @@ export default function Home() {
       <Header />
       <main className="flex-1">
         <Hero />
-        <WhyVibe />
-        <Method />
-        <BYOD />
-        <Newcomers />
+        <WhyCards />
         <Testimonials />
         <Pricing />
         <Faq />
