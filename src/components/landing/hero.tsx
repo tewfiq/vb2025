@@ -9,7 +9,7 @@ export default function Hero() {
           Pendant qu'ils scrollent, <br /> toi t'apprends à Vibe coder.
         </h1>
         <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground md:text-xl">
-          2h. Business, rien de personnel. <br /> Juste toi et ton projet en ligne.
+          2h. Business, rien de personnel.
         </p>
         <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
           <Button size="lg" asChild className="bg-accent hover:bg-accent/90 text-accent-foreground relative">
