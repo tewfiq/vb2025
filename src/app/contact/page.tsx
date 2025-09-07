@@ -2,8 +2,8 @@ import { Metadata } from 'next/types';
 import { BackButton } from '@/components/ui/back-button';
 
 export const metadata: Metadata = {
-  title: "Contact | Vibe Coding",
-  description: "Contactez l'équipe de Vibe Coding pour toute question ou demande",
+  title: "Contact | Vibe Coding Paris",
+  description: "Contactez l'équipe de Vibe Coding Paris pour toute question ou demande",
 };
 
 export default function ContactPage() {
@@ -16,7 +16,7 @@ export default function ContactPage() {
         </h1>
         <div className="prose prose-lg max-w-none">
           <p>
-            Contenu à venir... Cette page contiendra les informations de contact et un formulaire pour joindre l'équipe de Vibe Coding.
+            Contenu à venir... Cette page contiendra les informations de contact et un formulaire pour joindre l'équipe de Vibe Coding Paris.
           </p>
           <p>
             Placeholder pour le contenu détaillé à venir.
