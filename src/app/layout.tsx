@@ -5,7 +5,7 @@ import { ThemeProvider } from '@/components/theme-provider';
 import GoogleAnalytics from '@/components/analytics';
 
 export const metadata: Metadata = {
-  title: 'Vibe Coding Paris — Une compétence en 2h. Rien de personnel.',
+  title: 'Vibe Coding Paris — Débloque ton super pouvoir digital en 2h. De l\'idée au site en ligne, avec l\'IA comme copilote.',
   description: 'Un atelier intensif et accessible. Tu explores, tu structures, tu repars avec un projet en ligne. Une compétence exploitable, en seulement 2h.',
 };
 
