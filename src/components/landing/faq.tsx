@@ -3,11 +3,11 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
 const faqs = [
-    { question: 'Faut-il savoir coder ?', answer: "Absolument pas ! L'atelier est conçu pour tous les niveaux, des débutants complets aux curieux de la tech. On vous guide de A à Z." },
-    { question: 'Je repars vraiment avec un projet en ligne ?', answer: "Oui ! Chaque participant repart avec son projet hébergé sur une URL publique, prêt à être partagé. C'est du concret." },
-    { question: 'Le code est à qui ?', answer: "À vous ! Vous repartez avec l'accès complet au dépôt GitHub de votre projet. Vous en êtes le propriétaire et pouvez le modifier comme vous le souhaitez." },
-    { question: 'Et si j\'ai zéro idée ?', answer: "Pas de panique. On a une banque d'idées de projets funs et réalisables en 2h. On peut aussi utiliser notre outil IA pour générer une idée qui vous correspond." },
-    { question: 'C\'est pour qui ?', answer: "Pour les étudiants, les freelances, les entrepreneurs, les créatifs, les pros en reconversion... Bref, pour tous ceux qui veulent comprendre et utiliser la puissance de l'IA pour créer, sans se prendre la tête." },
+    { question: 'Faut-il savoir coder ?', answer: "Non. Tout est guidé, aucun prérequis." },
+    { question: 'Je repars vraiment avec un projet en ligne ?', answer: "Oui. Tu obtiens ton repo GitHub et une URL publique." },
+    { question: 'Le code est à qui ?', answer: "À toi. Le repo est personnel et réutilisable." },
+    { question: 'Et si je n\'ai pas d\'idée ?', answer: "On en trouve une ensemble, pendant la session." },
+    { question: 'C\'est pour qui ?', answer: "Pour toute personne curieuse d'apprendre et d'expérimenter." },
 ];
 
 export default function Faq() {
@@ -19,9 +19,6 @@ export default function Faq() {
                         <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl md:text-5xl font-headline">
                             FAQ
                         </h2>
-                        <p className="mt-4 text-lg text-muted-foreground">
-                            Questions que tout le monde se pose (mais que toi tu oses demander)
-                        </p>
                     </div>
 
                     <Accordion type="single" collapsible className="w-full">

@@ -5,8 +5,8 @@ import { ThemeProvider } from '@/components/theme-provider';
 import GoogleAnalytics from '@/components/analytics';
 
 export const metadata: Metadata = {
-  title: 'VibeCoder',
-  description: "Code l'avenir, libère ta créativité avec l'IA",
+  title: 'Vibe Coding Paris — Une compétence en 2h. Rien de personnel.',
+  description: 'Un atelier intensif et accessible. Tu explores, tu structures, tu repars avec un projet en ligne. Une compétence exploitable, en seulement 2h.',
 };
 
 export default function RootLayout({

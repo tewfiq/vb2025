@@ -7,7 +7,7 @@ import { ThemeSwitcher } from '@/components/theme-switcher';
 
 const navLinks = [
   { href: '#programme', label: 'Programme' },
-  { href: '#pourquoi', label: 'Pourquoi' },
+  { href: '#why', label: 'Pourquoi' },
   { href: '#infos', label: 'Infos' },
   { href: '#faq', label: 'FAQ' },
 ];
