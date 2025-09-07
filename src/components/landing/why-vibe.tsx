@@ -16,7 +16,7 @@ export default function WhyVibe() {
             <div className="container mx-auto px-4">
                 <div className="text-center max-w-3xl mx-auto mb-16">
                     <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl md:text-5xl font-headline">
-                        Pourquoi rejoindre Vibe Coding ?
+                        Pourquoi rejoindre Vibe Coding Paris ?
                     </h2>
                     <p className="mt-4 text-lg text-muted-foreground">
                         Ton unfair advantage dans la révolution Gen AI.

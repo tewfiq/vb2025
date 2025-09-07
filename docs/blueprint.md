@@ -2,10 +2,10 @@
 
 ## Core Features:
 
-- Landing Page Display: Display the Vibe Coding workshop information, including the program details, pricing, and testimonials, as presented at https://vibecoding.fr/
+- Landing Page Display: Display the Vibe Coding Paris workshop information, including the program details, pricing, and testimonials, as presented at https://vibecoding.fr/
 - Workshop Date Selection: Allow users to view available workshop dates (September 2025) and select a date for booking.
 - AI-Powered Project Idea Generation: Generate project ideas based on user input or interests, suitable for a 2-hour coding workshop, acting as a "tool" to suggest suitable project topics
-- Registration Form: Implement a registration form for users to sign up for the Vibe Coding workshop, capturing necessary details.
+- Registration Form: Implement a registration form for users to sign up for the Vibe Coding Paris workshop, capturing necessary details.
 - Testimonial Carousel: Showcase testimonials from past workshop participants to build credibility.
 - FAQ Section: Provide answers to frequently asked questions about the workshop.
 
