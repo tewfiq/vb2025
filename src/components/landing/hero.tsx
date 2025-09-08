@@ -1,10 +1,12 @@
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
+import { RetroGrid } from '@/components/ui/retro-grid';
 
 export default function Hero() {
   return (
     <section id="hero" className="relative w-full min-h-screen flex items-center justify-center bg-background hero-provoc">
-      <div className="container mx-auto px-4 text-center">
+      <RetroGrid />
+      <div className="container mx-auto px-4 text-center relative z-10">
         <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl md:text-6xl lg:text-7xl font-headline">
           Une compétence en 2h.<br />Rien de personnel.
         </h1>
