@@ -28,7 +28,7 @@ const testimonials = [
 export default function Testimonials() {
   return (
     <section className="py-20 md:py-32 bg-background">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 max-w-6xl">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl md:text-5xl font-headline">
             Ils ont testé<br />Vibe Coding Paris
