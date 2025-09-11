@@ -41,7 +41,7 @@ export default function Pricing() {
                     </p>
                 </div>
                 
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-5xl mx-auto items-start">
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto items-start">
                     {/* Standard Card */}
                     <Card className="flex flex-col h-full transition-all hover:scale-[1.02] hover:shadow-lg">
                         <CardHeader className="pb-4">
