@@ -5,8 +5,8 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 
 // Liste des avatars assignés à chaque témoignage (un avatar par témoignage)
 const avatarAssignments = {
-  'Alex M.': 'Pierre.jpg', // Masculin
-  'Dr. Mathieu D.': 'Marwan.jpg', // Masculin
+  'Alex M.': 'Marwan.jpg', // Masculin
+  'Dr. Mathieu D.': 'Pierre.jpg', // Masculin
   'Clara M.': 'Vanessa.jpg', // Féminin
   'Karim N.': 'Simon.jpg', // Masculin
   'Léa R.': 'Aminata.jpg', // Féminin
