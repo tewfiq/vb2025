@@ -22,9 +22,6 @@ export default function Partners() {
               Un grand merci à tous mes Étudiants en Bachelor, Master & MBA en
               2024-2025 👏
             </h3>
-            <p className="text-sm text-muted-foreground">
-              Logos des écoles partenaires - Bachelor, Master & MBA 2024-2025
-            </p>
           </div>
           <div className="flex flex-wrap items-center justify-center gap-x-12 gap-y-8">
             <div className="h-[60px] w-full max-w-4xl" />
@@ -48,9 +45,6 @@ export default function Partners() {
             Un grand merci à tous mes Étudiants en Bachelor, Master & MBA en
             2024-2025 👏
           </h3>
-          <p className="text-sm text-muted-foreground">
-            Logos des écoles partenaires - Bachelor, Master & MBA 2024-2025
-          </p>
         </div>
         <div className="flex flex-wrap items-center justify-center gap-x-12 gap-y-8">
           <Image
