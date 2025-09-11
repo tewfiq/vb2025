@@ -1,10 +1,10 @@
 "use client";
 import Link from 'next/link';
-import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
 import { Menu } from 'lucide-react';
 import { ThemeSwitcher } from '@/components/theme-switcher';
+import Logo from '@/components/logo';
 
 const navLinks = [
   { href: '#programme', label: 'Programme' },
@@ -20,13 +20,7 @@ export default function Header() {
       <div className="container hidden md:flex h-14 items-center">
         <div className="mr-4 flex items-center">
           <Link href="/" className="mr-6 flex items-center space-x-2">
-            <Image 
-              src="/logos/vibe-coding-logo.svg" 
-              alt="Vibe Coding Paris" 
-              width={180} 
-              height={40} 
-              priority 
-            />
+            <Logo width={180} height={40} />
           </Link>
         </div>
         <div className="flex">
@@ -65,13 +59,7 @@ export default function Header() {
                 <SheetTitle className="sr-only">Menu de navigation</SheetTitle>
               </SheetHeader>
               <Link href="/" className="mr-6 flex items-center space-x-2 mb-6">
-                <Image 
-                  src="/logos/vibe-coding-logo-mobile.svg" 
-                  alt="Vibe Coding Paris" 
-                  width={180} 
-                  height={40} 
-                  priority 
-                />
+                <Logo width={180} height={40} variant="mobile" />
               </Link>
               <div className="flex flex-col space-y-4">
                 {navLinks.map((link) => (
@@ -89,13 +77,7 @@ export default function Header() {
         </div>
         <div className="flex-1 flex justify-center">
           <Link href="/" className="flex items-center">
-            <Image 
-              src="/logos/vibe-coding-logo-mobile.svg" 
-              alt="Vibe Coding Paris" 
-              width={120} 
-              height={30} 
-              priority 
-            />
+            <Logo width={120} height={30} variant="mobile" />
           </Link>
         </div>
         <div className="flex items-center">

@@ -1,6 +1,7 @@
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { RetroGrid } from '@/components/ui/retro-grid';
+import Logo from '@/components/logo';
 
 export default function Hero() {
   return (
