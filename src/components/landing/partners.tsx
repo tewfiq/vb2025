@@ -5,7 +5,7 @@ import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 
 export default function Partners() {
-  const { theme } = useTheme();
+  const { theme, resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -31,11 +31,11 @@ export default function Partners() {
     );
   }
 
-  // Déterminer quelle image utiliser selon le thème
-  const logoSrc =
-    theme === "dark"
-      ? "/Schools/schools-logos_white.png"
-      : "/Schools/schools-logos_black.png";
+  // Utiliser resolvedTheme qui donne le thème réel (même si theme est "system")
+  const isDark = resolvedTheme === "dark";
+  const logoSrc = isDark
+    ? "/Schools/schools-logos_white.png"
+    : "/Schools/schools-logos_black.png";
 
   return (
     <section className="bg-background">
