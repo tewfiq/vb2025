@@ -27,12 +27,12 @@ const requirements = [
 
 const benefits = [
   {
-    icon: <Settings className="h-8 w-8 text-primary" />,
-    title: "Configuration simple",
-    description: "Matériel requis minimal"
+    icon: <Laptop className="h-8 w-8 text-primary" />,
+    title: "Apportez votre laptop",
+    description: "PC, Mac voire un Smartphone (limité)"
   },
   {
-    icon: <Laptop className="h-8 w-8 text-primary" />,
+    icon: <Settings className="h-8 w-8 text-primary" />,
     title: "Accessible",
     description: "Aucune expérience de code requise"
   },
@@ -69,7 +69,7 @@ export default function BYOD() {
             <h3 className="text-2xl font-bold text-foreground mb-8 font-headline">
               Liste de vérification
             </h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-3xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl mx-auto">
               {requirements.map((requirement, index) => (
                 <div key={index} className="flex items-center gap-3 p-4 rounded-lg bg-muted/30 transition-all hover:bg-muted/50">
                   {requirement.icon}
