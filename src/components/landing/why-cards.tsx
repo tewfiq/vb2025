@@ -2,7 +2,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { CodeSnippet, MockAppList, CommitList, DeploymentLog } from "./mock-components";
 
 const features = [
-    { title: "Apprends à coder… en écrivant !", description: "Prends en main les outils qui buzzent : ChatGPT, Copilot, Bolt, Cursor.", content: <CodeSnippet /> },
+    { title: "Apprends à coder…<br />en écrivant !", description: "Prends en main les outils qui buzzent : ChatGPT, Copilot, Bolt, Cursor.", content: <CodeSnippet /> },
     { title: "Lance tes projets sans barrière", description: "Sites, apps, scripts, IA – ton idée, on la prototype ensemble.", content: <DeploymentLog /> },
     { title: "Ateliers interactifs ✨", description: "Coaching par des formateurs passionnés, ambiance bienveillante et collaborative.", content: <MockAppList /> },
     { title: "Créa instantanée", description: "Ton flow créatif, boosté par l'IA → résultat immédiat.", content: <CommitList /> },
@@ -28,7 +28,7 @@ export default function WhyCards() {
                     {features.map((feature, index) => (
                         <Card key={index} className="flex flex-col overflow-hidden bg-card/80 backdrop-blur-sm transition-all hover:scale-[1.02] hover:shadow-lg">
                             <CardHeader>
-                                <CardTitle className="font-headline text-xl">{feature.title}</CardTitle>
+                                <CardTitle className="font-headline text-xl" dangerouslySetInnerHTML={{ __html: feature.title }}></CardTitle>
                                 <p className="text-sm font-normal text-muted-foreground pt-1">{feature.description}</p>
                             </CardHeader>
                             <CardContent className="flex-grow">

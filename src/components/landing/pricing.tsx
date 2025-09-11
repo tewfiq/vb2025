@@ -41,9 +41,9 @@ export default function Pricing() {
                     </p>
                 </div>
                 
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto items-start">
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto items-start justify-items-center">
                     {/* Standard Card */}
-                    <Card className="flex flex-col h-full transition-all hover:scale-[1.02] hover:shadow-lg">
+                    <Card className="flex flex-col h-full w-full max-w-sm transition-all hover:scale-[1.02] hover:shadow-lg">
                         <CardHeader className="pb-4">
                             <CardTitle className="font-headline text-2xl">Standard</CardTitle>
                             <div className="flex items-baseline gap-2">
@@ -69,7 +69,7 @@ export default function Pricing() {
                     </Card>
 
                     {/* Banger Card */}
-                    <Card className="flex flex-col h-full border-2 border-accent shadow-2xl shadow-accent/20 relative transition-all hover:scale-[1.02] hover:shadow-2xl">
+                    <Card className="flex flex-col h-full w-full max-w-sm border-2 border-accent shadow-2xl shadow-accent/20 relative transition-all hover:scale-[1.02] hover:shadow-2xl">
                          <div className="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2">
                             <div className="bg-accent text-accent-foreground px-4 py-1 rounded-full text-sm font-semibold">
                                 🔥 BANGER !
@@ -101,7 +101,7 @@ export default function Pricing() {
                     </Card>
 
                     {/* Team Card */}
-                    <Card className="flex flex-col h-full transition-all hover:scale-[1.02] hover:shadow-lg">
+                    <Card className="flex flex-col h-full w-full max-w-sm transition-all hover:scale-[1.02] hover:shadow-lg">
                         <CardHeader className="pb-4">
                             <CardTitle className="font-headline text-2xl">Équipe</CardTitle>
                              <div className="flex items-baseline gap-2">
