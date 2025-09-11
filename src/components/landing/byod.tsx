@@ -52,55 +52,52 @@ export default function BYOD() {
   return (
     <section id="byod" className="py-20 md:py-32">
       <div className="container mx-auto px-4">
-        <div className="text-center max-w-4xl mx-auto mb-16">
+        {/* Header centré et compact */}
+        <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl md:text-5xl font-headline">
             Bring Your Own Device
           </h2>
-          <p className="mt-4 text-xl text-muted-foreground">
+          <p className="mt-4 text-lg text-muted-foreground">
             Pas besoin d'être développeur ! Voici tout ce qu'il vous faut
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Liste de vérification */}
-          <div>
+        {/* Contenu principal centré avec largeur limitée */}
+        <div className="max-w-5xl mx-auto">
+          {/* Liste de vérification centrée */}
+          <div className="text-center mb-12">
             <h3 className="text-2xl font-bold text-foreground mb-8 font-headline">
               Liste de vérification
             </h3>
-            <div className="space-y-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-3xl mx-auto">
               {requirements.map((requirement, index) => (
-                <div key={index} className="flex items-center gap-4 p-4 rounded-lg bg-muted/30 transition-all hover:bg-muted/50">
+                <div key={index} className="flex items-center gap-3 p-4 rounded-lg bg-muted/30 transition-all hover:bg-muted/50">
                   {requirement.icon}
-                  <span className="text-lg font-medium text-foreground">{requirement.text}</span>
+                  <span className="font-medium text-foreground">{requirement.text}</span>
                 </div>
               ))}
             </div>
           </div>
 
-          {/* Cartes d'avantages */}
-          <div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              {benefits.map((benefit, index) => (
-                <Card key={index} className="text-center bg-card/80 backdrop-blur-sm transition-all hover:scale-[1.02] hover:shadow-lg">
-                  <CardHeader className="pb-4">
-                    <div className="mx-auto mb-4 p-3 rounded-full bg-primary/10">
-                      {benefit.icon}
-                    </div>
-                    <CardTitle className="text-lg font-headline">{benefit.title}</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-sm text-muted-foreground">{benefit.description}</p>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
+          {/* Cartes d'avantages plus compactes */}
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 max-w-4xl mx-auto mb-12">
+            {benefits.map((benefit, index) => (
+              <Card key={index} className="text-center bg-card/80 backdrop-blur-sm transition-all hover:scale-[1.02] hover:shadow-lg p-6">
+                <div className="mx-auto mb-3 p-3 rounded-full bg-primary/10 w-fit">
+                  {benefit.icon}
+                </div>
+                <h4 className="font-bold text-foreground mb-2 font-headline">{benefit.title}</h4>
+                <p className="text-sm text-muted-foreground leading-tight">{benefit.description}</p>
+              </Card>
+            ))}
           </div>
-        </div>
 
-        <div className="text-center mt-16">
-          <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-primary/10 border border-primary/20">
-            <Sparkles className="h-5 w-5 text-primary" />
-            <span className="font-medium text-foreground">Configuration en moins de 5 minutes</span>
+          {/* CTA final */}
+          <div className="text-center">
+            <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-primary/10 border border-primary/20">
+              <Sparkles className="h-5 w-5 text-primary" />
+              <span className="font-medium text-foreground">Configuration en moins de 5 minutes</span>
+            </div>
           </div>
         </div>
       </div>
