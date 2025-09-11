@@ -5,7 +5,6 @@ import Gallery from "@/components/landing/gallery";
 import Partners from "@/components/landing/partners";
 import WhyCards from "@/components/landing/why-cards";
 import MethodSteps from "@/components/landing/method-steps";
-import BYOD from "@/components/landing/byod";
 import Testimonials from "@/components/landing/testimonials";
 import Pricing from "@/components/landing/pricing";
 import Faq from "@/components/landing/faq";
@@ -32,7 +31,6 @@ export default function Home() {
         </section>
         <WhyCards />
         <MethodSteps />
-        <BYOD />
         <Testimonials />
         <Pricing />
         <Faq />
