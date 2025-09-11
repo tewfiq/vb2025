@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardHeader, CardTitle, CardContent, CardFooter } from '@/components/ui/card';
 import { Check } from 'lucide-react';
+import SocialProofBadge from '@/components/landing/social-proof-badge';
 
 const includedFeatures = [
     'Atelier 2h en présentiel',
@@ -26,6 +27,11 @@ export default function Pricing() {
     return (
         <section id="pricing" className="py-20 md:py-32 bg-muted/30">
             <div className="container mx-auto px-4">
+                {/* Badge de social proof ajouté au-dessus du titre */}
+                <div className="mb-8 flex justify-center">
+                    <SocialProofBadge />
+                </div>
+                
                 <div className="text-center max-w-3xl mx-auto mb-16">
                     <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl md:text-5xl font-headline">
                         Tarifs
