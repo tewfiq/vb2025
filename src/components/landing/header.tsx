@@ -9,7 +9,7 @@ import Logo from '@/components/logo';
 const navLinks = [
   { href: '#programme', label: 'Programme' },
   { href: '#why', label: 'Pourquoi' },
-  { href: '#infos', label: 'Infos' },
+  { href: '#comment-ca-marche', label: 'Infos' },
   { href: '#faq', label: 'FAQ' },
 ];
 
