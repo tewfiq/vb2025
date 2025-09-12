@@ -63,7 +63,7 @@ export default function Pricing() {
                         </CardContent>
                         <CardFooter>
                             <Button className="w-full" variant="outline" asChild>
-                                <Link href="https://buy.stripe.com/bJe5kEdSrgkcfhQaBn7EQ0c">Réserver – 299 €</Link>
+                                <Link href="https://buy.stripe.com/bJe5kEdSrgkcfhQaBn7EQ0c">Réserver — 299 €</Link>
                             </Button>
                         </CardFooter>
                     </Card>

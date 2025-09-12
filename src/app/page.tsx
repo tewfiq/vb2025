@@ -1,5 +1,6 @@
 import Header from "@/components/landing/header";
 import Hero from "@/components/landing/hero";
+import Programme from "@/components/landing/programme";
 
 import Gallery from "@/components/landing/gallery";
 import Partners from "@/components/landing/partners";
@@ -16,6 +17,7 @@ export default function Home() {
       <Header />
       <main className="flex-1">
         <Hero />
+        <Programme />
 
         <section id="ateliers" className="py-12 md:py-20 lg:py-24">
           <div className="text-center mb-8 md:mb-12">
@@ -30,7 +32,9 @@ export default function Home() {
           <Partners />
         </section>
         <WhyCards />
-        <MethodSteps />
+        <section id="comment-ca-marche">
+          <MethodSteps />
+        </section>
         <Testimonials />
         <Pricing />
         <Faq />
