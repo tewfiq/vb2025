@@ -25,6 +25,11 @@ const stackCards = [
     name: "GitHub",
     description: "Versionning, collaboration et historique : garder trace de chaque itération.",
     icon: "🐙"
+  },
+  {
+    name: "Itération continue",
+    description: "Au-delà de l'atelier de 2h : poursuivre avec des outils de coding asynchrone (Claude Code, Gemini CLI, Qwen, Codex…). Chaque session ouvre sur une trajectoire durable.",
+    icon: "🔄"
   }
 ];
 
@@ -66,7 +71,7 @@ export default function Stack() {
         {/* Footer text */}
         <div className="text-center mt-8 md:mt-12">
           <p className="text-sm text-muted-foreground italic">
-            La stack peut varier. L'important, c'est le processus : une idée → un prototype → en ligne.
+            La stack peut varier. L'important, c'est le processus : une idée → un prototype → en ligne → une itération continue.
           </p>
         </div>
       </div>
