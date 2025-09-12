@@ -10,7 +10,7 @@
     --card-foreground: 240 10% 3.9%;
     --popover: 0 0% 100%;
     --popover-foreground: 240 10% 3.9%;
-    --primary: 197 78% 52%;
+    --primary: 289 78% 52%;
     --primary-foreground: 0 0% 100%;
     --secondary: 220 13% 91%;
     --secondary-foreground: 240 10% 3.9%;
@@ -21,8 +21,8 @@
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
     --border: 0 0% 89.8%;
-    --input: 0 0% 89.8%;
-    --ring: 197 78% 52%;
+    --input: 289 78% 52%;
+    --ring: 289 78% 52%;
     --radius: 0.8rem;
     --chart-1: 12 76% 61%;
     --chart-2: 173 58% 39%;
@@ -46,7 +46,7 @@
     --card-foreground: 0 0% 98%;
     --popover: 240 5% 12%;
     --popover-foreground: 0 0% 98%;
-    --primary: 197 78% 52%;
+    --primary: 289 78% 52%;
     --primary-foreground: 0 0% 100%;
     --secondary: 240 4% 18%;
     --secondary-foreground: 0 0% 98%;
@@ -57,8 +57,8 @@
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
     --border: 240 4% 18%;
-    --input: 240 4% 18%;
-    --ring: 197 78% 52%;
+    --input: 289 78% 52%;
+    --ring: 289 78% 52%;
     --chart-1: 220 70% 50%;
     --chart-2: 160 60% 45%;
     --chart-3: 30 80% 55%;
@@ -66,12 +66,12 @@
     --chart-5: 340 75% 55%;
     --sidebar-background: 240 6% 10%;
     --sidebar-foreground: 0 0% 98%;
-    --sidebar-primary: 197 78% 52%;
+    --sidebar-primary: 289 78% 52%;
     --sidebar-primary-foreground: 0 0% 100%;
     --sidebar-accent: 240 4% 18%;
     --sidebar-accent-foreground: 0 0% 98%;
     --sidebar-border: 240 4% 18%;
-    --sidebar-ring: 197 78% 52%;
+    --sidebar-ring: 289 78% 52%;
   }
 }
 
@@ -81,5 +81,43 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+  
+  /* Styles pour les logos SVG */
+  .logo-text {
+    fill: #000000; /* Couleur pour le mode clair */
+  }
+  
+  .dark .logo-text {
+    fill: #ffffff; /* Couleur pour le mode sombre */
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  /* Optimisations mobile pour éviter le scroll */
+  @media (max-width: 768px) {
+    .hero-provoc {
+      min-height: calc(100dvh - 2rem);
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+    }
+    
+    /* Réduction des espacements sur mobile */
+    section[class*="py-"] {
+      padding-top: clamp(2rem, 5vw, 3rem);
+      padding-bottom: clamp(2rem, 5vw, 3rem);
+    }
+  }
+  
+  /* Amélioration de la lisibilité mobile */
+  @media (max-width: 640px) {
+    .container {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
   }
 }

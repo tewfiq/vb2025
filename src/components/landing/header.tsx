@@ -1,25 +1,29 @@
 "use client";
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
 import { Menu } from 'lucide-react';
 import { ThemeSwitcher } from '@/components/theme-switcher';
+import Logo from '@/components/logo';
 
 const navLinks = [
   { href: '#programme', label: 'Programme' },
   { href: '#why', label: 'Pourquoi' },
-  { href: '#infos', label: 'Infos' },
+  { href: '#comment-ca-marche', label: 'Infos' },
   { href: '#faq', label: 'FAQ' },
 ];
 
 export default function Header() {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-14 items-center">
-        <div className="mr-4 hidden md:flex">
+      {/* Desktop version */}
+      <div className="container hidden md:flex h-14 items-center">
+        <div className="mr-4 flex items-center">
           <Link href="/" className="mr-6 flex items-center space-x-2">
-            <span className="font-bold font-headline">Vibe Coding Paris 🚀</span>
+            <Logo width={180} height={40} />
           </Link>
+        </div>
+        <div className="flex">
           <nav className="flex items-center space-x-6 text-sm font-medium">
             {navLinks.map((link) => (
               <Link
@@ -32,18 +36,30 @@ export default function Header() {
             ))}
           </nav>
         </div>
+        <div className="flex flex-1 items-center justify-end space-x-2">
+          <Button asChild className='hidden sm:inline-flex'>
+            <Link href="#pricing">Réserver – 149 € (-26 ans)</Link>
+          </Button>
+          <ThemeSwitcher />
+        </div>
+      </div>
 
-        <div className="md:hidden flex-1">
+      {/* Mobile version */}
+      <div className="container flex md:hidden h-14 items-center">
+        <div className="flex items-center">
           <Sheet>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="icon">
+              <Button variant="ghost" size="icon" className="p-1">
                 <Menu className="h-5 w-5" />
                 <span className="sr-only">Toggle Menu</span>
               </Button>
             </SheetTrigger>
             <SheetContent side="left">
+              <SheetHeader>
+                <SheetTitle className="sr-only">Menu de navigation</SheetTitle>
+              </SheetHeader>
               <Link href="/" className="mr-6 flex items-center space-x-2 mb-6">
-                 <span className="font-bold font-headline">Vibe Coding Paris 🚀</span>
+                <Logo width={180} height={40} variant="mobile" />
               </Link>
               <div className="flex flex-col space-y-4">
                 {navLinks.map((link) => (
@@ -59,10 +75,12 @@ export default function Header() {
             </SheetContent>
           </Sheet>
         </div>
-        <div className="flex flex-1 items-center justify-end space-x-2">
-           <Button asChild className='hidden sm:inline-flex'>
-            <Link href="#pricing">Réserver – 149 € (-26 ans)</Link>
-          </Button>
+        <div className="flex-1 flex justify-center">
+          <Link href="/" className="flex items-center">
+            <Logo width={120} height={30} variant="mobile" />
+          </Link>
+        </div>
+        <div className="flex items-center">
           <ThemeSwitcher />
         </div>
       </div>

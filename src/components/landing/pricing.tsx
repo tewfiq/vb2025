@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardHeader, CardTitle, CardContent, CardFooter } from '@/components/ui/card';
 import { Check } from 'lucide-react';
+import SocialProofBadge from '@/components/landing/social-proof-badge';
 
 const includedFeatures = [
     'Atelier 2h en présentiel',
@@ -24,20 +25,25 @@ const includedFeaturesTeam = [
 
 export default function Pricing() {
     return (
-        <section id="pricing" className="py-20 md:py-32 bg-muted/30">
+        <section id="pricing" className="py-12 md:py-20 lg:py-32 bg-muted/30">
             <div className="container mx-auto px-4">
-                <div className="text-center max-w-3xl mx-auto mb-16">
-                    <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl md:text-5xl font-headline">
+                {/* Badge de social proof ajouté au-dessus du titre */}
+                <div className="mb-4 md:mb-8 flex justify-center">
+                    <SocialProofBadge />
+                </div>
+                
+                <div className="text-center max-w-3xl mx-auto mb-8 md:mb-16">
+                    <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl md:text-4xl lg:text-5xl font-headline">
                         Tarifs
                     </h2>
-                    <p className="mt-4 text-lg text-muted-foreground">
+                    <p className="mt-2 md:mt-4 text-base md:text-lg text-muted-foreground">
                         Des formules simples et claires, pour tous les profils.
                     </p>
                 </div>
                 
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-5xl mx-auto items-start">
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto items-start justify-items-center">
                     {/* Standard Card */}
-                    <Card className="flex flex-col h-full">
+                    <Card className="flex flex-col h-full w-full max-w-sm transition-all hover:scale-[1.02] hover:shadow-lg">
                         <CardHeader className="pb-4">
                             <CardTitle className="font-headline text-2xl">Standard</CardTitle>
                             <div className="flex items-baseline gap-2">
@@ -57,13 +63,13 @@ export default function Pricing() {
                         </CardContent>
                         <CardFooter>
                             <Button className="w-full" variant="outline" asChild>
-                                <Link href="https://buy.stripe.com/bJe5kEdSrgkcfhQaBn7EQ0c">Réserver – 299 €</Link>
+                                <Link href="https://buy.stripe.com/bJe5kEdSrgkcfhQaBn7EQ0c">Réserver — 299 €</Link>
                             </Button>
                         </CardFooter>
                     </Card>
 
                     {/* Banger Card */}
-                    <Card className="flex flex-col h-full border-2 border-accent shadow-2xl shadow-accent/20 relative">
+                    <Card className="flex flex-col h-full w-full max-w-sm border-2 border-accent shadow-2xl shadow-accent/20 relative transition-all hover:scale-[1.02] hover:shadow-2xl">
                          <div className="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2">
                             <div className="bg-accent text-accent-foreground px-4 py-1 rounded-full text-sm font-semibold">
                                 🔥 BANGER !
@@ -95,7 +101,7 @@ export default function Pricing() {
                     </Card>
 
                     {/* Team Card */}
-                    <Card className="flex flex-col h-full">
+                    <Card className="flex flex-col h-full w-full max-w-sm transition-all hover:scale-[1.02] hover:shadow-lg">
                         <CardHeader className="pb-4">
                             <CardTitle className="font-headline text-2xl">Équipe</CardTitle>
                              <div className="flex items-baseline gap-2">

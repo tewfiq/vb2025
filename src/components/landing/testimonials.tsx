@@ -5,8 +5,8 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 
 // Liste des avatars assignés à chaque témoignage (un avatar par témoignage)
 const avatarAssignments = {
-  'Alex M.': 'Pierre.jpg', // Masculin
-  'Dr. Mathieu D.': 'Marwan.jpg', // Masculin
+  'Alex M.': 'Marwan.jpg', // Masculin
+  'Dr. Mathieu D.': 'Pierre.jpg', // Masculin
   'Clara M.': 'Vanessa.jpg', // Féminin
   'Karim N.': 'Simon.jpg', // Masculin
   'Léa R.': 'Aminata.jpg', // Féminin
@@ -27,10 +27,10 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <section className="py-20 md:py-32 bg-background">
-      <div className="container mx-auto px-4">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl md:text-5xl font-headline">
+    <section className="py-12 md:py-20 lg:py-32 bg-background">
+      <div className="container mx-auto px-4 max-w-6xl">
+        <div className="text-center max-w-3xl mx-auto mb-8 md:mb-16">
+          <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl md:text-4xl lg:text-5xl font-headline">
             Ils ont testé<br />Vibe Coding Paris
           </h2>
         </div>

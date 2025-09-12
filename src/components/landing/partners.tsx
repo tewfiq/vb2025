@@ -1,11 +1,11 @@
 "use client";
 
-import Image from 'next/image';
-import { useTheme } from 'next-themes';
-import { useEffect, useState } from 'react';
+import Image from "next/image";
+import { useTheme } from "next-themes";
+import { useEffect, useState } from "react";
 
 export default function Partners() {
-  const { theme } = useTheme();
+  const { theme, resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -15,11 +15,13 @@ export default function Partners() {
   // Rendu conditionnel pour éviter les erreurs de hydration
   if (!mounted) {
     return (
-      <section className="pt-4 pb-12 bg-background">
+      <section className="bg-background">
         <div className="container mx-auto px-4">
           <div className="text-center mb-8">
-            <h3 className="text-lg font-semibold text-muted-foreground font-headline">Un grand merci à tous mes Étudiants en Bachelor, Master & MBA en 2024-2025 👏</h3>
-            <p className="text-sm text-muted-foreground">Logos des écoles partenaires - Bachelor, Master & MBA 2024-2025</p>
+            <h3 className="text-lg font-semibold text-muted-foreground font-headline">
+              Un grand merci à tous mes Étudiants en Bachelor, Master & MBA<br />en
+              2024-2025 👏
+            </h3>
           </div>
           <div className="flex flex-wrap items-center justify-center gap-x-12 gap-y-8">
             <div className="h-[60px] w-full max-w-4xl" />
@@ -29,27 +31,30 @@ export default function Partners() {
     );
   }
 
-  // Déterminer quelle image utiliser selon le thème
-  const logoSrc = theme === 'dark' 
-    ? '/Schools/schools-logos_white.png' 
-    : '/Schools/schools-logos_black.png';
+  // Utiliser resolvedTheme qui donne le thème réel (même si theme est "system")
+  const isDark = resolvedTheme === "dark";
+  const logoSrc = isDark
+    ? "/Schools/schools-logos_white.png"
+    : "/Schools/schools-logos_black.png";
 
   return (
-    <section className="pt-4 pb-12 bg-background">
+    <section className="bg-background">
       <div className="container mx-auto px-4">
         <div className="text-center mb-8">
-          <h3 className="text-lg font-semibold text-muted-foreground font-headline">Un grand merci à tous mes Étudiants en Bachelor, Master & MBA en 2024-2025 👏</h3>
-          <p className="text-sm text-muted-foreground">Logos des écoles partenaires - Bachelor, Master & MBA 2024-2025</p>
+          <h3 className="text-lg font-semibold text-muted-foreground font-headline">
+            Un grand merci à tous mes Étudiants en Bachelor, Master & MBA<br />en
+            2024-2025 👏
+          </h3>
         </div>
         <div className="flex flex-wrap items-center justify-center gap-x-12 gap-y-8">
-            <Image 
-              src={logoSrc} 
-              alt="Partner logos" 
-              data-ai-hint="school logos"
-              width={1000} 
-              height={60} 
-              className="h-auto w-full max-w-4xl object-contain" 
-            />
+          <Image
+            src={logoSrc}
+            alt="Partner logos"
+            data-ai-hint="school logos"
+            width={1000}
+            height={60}
+            className="h-auto w-full max-w-4xl object-contain"
+          />
         </div>
       </div>
     </section>

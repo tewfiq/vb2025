@@ -2,7 +2,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { CodeSnippet, MockAppList, CommitList, DeploymentLog } from "./mock-components";
 
 const features = [
-    { title: "Apprends à coder… en écrivant !", description: "Prends en main les outils qui buzzent : ChatGPT, Copilot, Bolt, Cursor.", content: <CodeSnippet /> },
+    { title: "Apprends à coder…<br />en écrivant !", description: "Prends en main les outils qui buzzent : ChatGPT, Copilot, Bolt, Cursor.", content: <CodeSnippet /> },
     { title: "Lance tes projets sans barrière", description: "Sites, apps, scripts, IA – ton idée, on la prototype ensemble.", content: <DeploymentLog /> },
     { title: "Ateliers interactifs ✨", description: "Coaching par des formateurs passionnés, ambiance bienveillante et collaborative.", content: <MockAppList /> },
     { title: "Créa instantanée", description: "Ton flow créatif, boosté par l'IA → résultat immédiat.", content: <CommitList /> },
@@ -12,10 +12,10 @@ const features = [
 
 export default function WhyCards() {
     return (
-        <section id="why" className="py-20 md:py-32 bg-muted/30">
-            <div className="container mx-auto px-4">
-                <div className="text-center max-w-3xl mx-auto mb-16">
-                    <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl md:text-5xl font-headline">
+        <section id="why" className="py-12 md:py-20 lg:py-32 bg-muted/30">
+            <div className="container mx-auto px-4 max-w-6xl">
+                <div className="text-center max-w-3xl mx-auto mb-8 md:mb-16">
+                    <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl md:text-4xl lg:text-5xl font-headline">
                         Pourquoi rejoindre<br />Vibe Coding Paris ?
                     </h2>
                     <p className="mt-4 text-lg text-muted-foreground">
@@ -28,7 +28,7 @@ export default function WhyCards() {
                     {features.map((feature, index) => (
                         <Card key={index} className="flex flex-col overflow-hidden bg-card/80 backdrop-blur-sm transition-all hover:scale-[1.02] hover:shadow-lg">
                             <CardHeader>
-                                <CardTitle className="font-headline text-xl">{feature.title}</CardTitle>
+                                <CardTitle className="font-headline text-xl" dangerouslySetInnerHTML={{ __html: feature.title }}></CardTitle>
                                 <p className="text-sm font-normal text-muted-foreground pt-1">{feature.description}</p>
                             </CardHeader>
                             <CardContent className="flex-grow">
