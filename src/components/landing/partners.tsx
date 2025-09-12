@@ -5,7 +5,7 @@ import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 
 export default function Partners() {
-  const { theme } = useTheme();
+  const { theme, resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -19,7 +19,7 @@ export default function Partners() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-8">
             <h3 className="text-lg font-semibold text-muted-foreground font-headline">
-              Un grand merci à tous mes Étudiants en Bachelor, Master & MBA en
+              Un grand merci à tous mes Étudiants en Bachelor, Master & MBA<br />en
               2024-2025 👏
             </h3>
           </div>
@@ -31,18 +31,18 @@ export default function Partners() {
     );
   }
 
-  // Déterminer quelle image utiliser selon le thème
-  const logoSrc =
-    theme === "dark"
-      ? "/Schools/schools-logos_white.png"
-      : "/Schools/schools-logos_black.png";
+  // Utiliser resolvedTheme qui donne le thème réel (même si theme est "system")
+  const isDark = resolvedTheme === "dark";
+  const logoSrc = isDark
+    ? "/Schools/schools-logos_white.png"
+    : "/Schools/schools-logos_black.png";
 
   return (
     <section className="bg-background">
       <div className="container mx-auto px-4">
         <div className="text-center mb-8">
           <h3 className="text-lg font-semibold text-muted-foreground font-headline">
-            Un grand merci à tous mes Étudiants en Bachelor, Master & MBA en
+            Un grand merci à tous mes Étudiants en Bachelor, Master & MBA<br />en
             2024-2025 👏
           </h3>
         </div>

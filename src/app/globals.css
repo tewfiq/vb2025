@@ -97,4 +97,27 @@
   .text-balance {
     text-wrap: balance;
   }
+  
+  /* Optimisations mobile pour éviter le scroll */
+  @media (max-width: 768px) {
+    .hero-provoc {
+      min-height: calc(100dvh - 2rem);
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+    }
+    
+    /* Réduction des espacements sur mobile */
+    section[class*="py-"] {
+      padding-top: clamp(2rem, 5vw, 3rem);
+      padding-bottom: clamp(2rem, 5vw, 3rem);
+    }
+  }
+  
+  /* Amélioration de la lisibilité mobile */
+  @media (max-width: 640px) {
+    .container {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+  }
 }

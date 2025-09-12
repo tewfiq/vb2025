@@ -19,12 +19,12 @@ export default function Home() {
         <Hero />
         <Programme />
 
-        <section id="ateliers" className="py-20 md:py-24">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl md:text-5xl font-headline">
-              Nos Ateliers en Solutions Gen AI
+        <section id="ateliers" className="py-12 md:py-20 lg:py-24">
+          <div className="text-center mb-8 md:mb-12">
+            <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl md:text-4xl lg:text-5xl font-headline">
+              Nos Ateliers<br />en Solutions Gen AI
             </h2>
-            <p className="text-muted-foreground mt-2">
+            <p className="text-muted-foreground mt-1 md:mt-2 text-sm md:text-base">
               pendant l'année académique 2024 - 2025
             </p>
           </div>
