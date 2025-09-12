@@ -54,6 +54,11 @@ export default function Footer() {
             réservés.
           </p>
         </div>
+        <div className="mt-8 text-center">
+          <p className="text-sm text-muted-foreground italic">
+            Une compétence en 2h. Rien de personnel.
+          </p>
+        </div>
       </div>
     </footer>
   );
