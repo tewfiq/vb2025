@@ -10,6 +10,7 @@ import Testimonials from "@/components/landing/testimonials";
 import Pricing from "@/components/landing/pricing";
 import Faq from "@/components/landing/faq";
 import Footer from "@/components/landing/footer";
+import Stack from "@/components/landing/stack";
 
 export default function Home() {
   return (
@@ -35,6 +36,7 @@ export default function Home() {
         <section id="comment-ca-marche">
           <MethodSteps />
         </section>
+        <Stack />
         <Testimonials />
         <Pricing />
         <Faq />
