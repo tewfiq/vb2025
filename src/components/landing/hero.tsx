@@ -16,10 +16,10 @@ export default function Hero() {
           <SocialProofBadge />
         </div>
         
-        <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl md:text-6xl lg:text-7xl font-headline">
-          Une compétence en 2h.<br />Rien de personnel.
+        <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-headline">
+          Une compétence<br />en 2h.<br />Rien de personnel.
         </h1>
-        <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground md:text-xl">
+        <p className="mt-2 md:mt-4 max-w-2xl mx-auto text-base text-muted-foreground md:text-lg lg:text-xl">
           Apprends à coder sans coder.<br />Tu écris en français, l'IA génère le code, tu déploies ton site.
         </p>
         <div className="mt-4 md:mt-8 flex flex-col sm:flex-row items-center justify-center gap-3 md:gap-4">
