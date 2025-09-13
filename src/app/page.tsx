@@ -11,7 +11,7 @@ import Pricing from "@/components/landing/pricing";
 import Faq from "@/components/landing/faq";
 import Footer from "@/components/landing/footer";
 import Stack from "@/components/landing/stack";
-import ProofAndWhatsNewAnimated from "@/components/ProofAndWhatsNewAnimated";
+import ChangelogGithub from "@/components/ChangelogGithub";
 
 export default function Home() {
   return (
@@ -38,7 +38,8 @@ export default function Home() {
           <MethodSteps />
         </section>
         <Stack />
-        <ProofAndWhatsNewAnimated />
+        {/* @ts-expect-error Server Component */}
+        <ChangelogGithub />
         <Testimonials />
         <Pricing />
         <Faq />
