@@ -31,6 +31,12 @@ export default function ProofAndWhatsNewAnimated() {
     () => [
       {
         date: "récemment",
+        title: "Changelog compatible light/dark",
+        text:
+          "Refactorisation de la section 'Quoi de neuf ?' pour respecter le design system et fonctionner en light/dark mode.",
+      },
+      {
+        date: "récemment",
         title: "Itération continue",
         text:
           "Ajout d'une carte 'Itération continue' et ajustement du footer pour refléter le cycle d'amélioration.",
