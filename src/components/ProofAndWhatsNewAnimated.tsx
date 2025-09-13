@@ -1,6 +1,6 @@
-// /components/ProofAndWhatsNewAnimated.tsx
 "use client";
 import { useMemo, useEffect, useRef, useState } from "react";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 function useInView<T extends HTMLElement>(opts?: IntersectionObserverInit) {
   const ref = useRef<T | null>(null);
@@ -70,72 +70,70 @@ export default function ProofAndWhatsNewAnimated() {
   );
 
   const bar = useInView<HTMLDivElement>();
-  const list = useInView<HTMLUListElement>();
+  const list = useInView<HTMLDivElement>();
 
   return (
-    <section
-      id="proof"
-      aria-labelledby="proof-title"
-      className="mx-auto w-full max-w-6xl px-4 py-12 sm:px-6 lg:px-8"
-    >
-      {/* ProofBar */}
-      <div
-        ref={bar.ref}
-        className={`mx-auto mb-8 flex w-full flex-wrap items-center justify-center gap-3 rounded-2xl border border-neutral-800/60 bg-neutral-900/50 px-4 py-3 text-sm text-neutral-300 backdrop-blur transition-all duration-700 ease-out
-        ${bar.inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"}`}
-        role="status"
-        aria-live="polite"
-      >
-        {metrics.map((m, i) => (
-          <div
-            key={m.label}
-            className="flex items-center gap-2"
-            style={{ transitionDelay: `${i * 60}ms` }}
-          >
-            <span className="text-neutral-400">{m.label}</span>
-            <span className="h-1 w-1 rounded-full bg-neutral-600" aria-hidden />
-            <span className="font-medium text-white">{m.value}</span>
-          </div>
-        ))}
-      </div>
+    <section id="proof" className="py-12 md:py-20 lg:py-32 bg-muted/30">
+      <div className="container mx-auto px-4 max-w-6xl">
+        <div className="text-center max-w-3xl mx-auto mb-8 md:mb-16">
+          <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl md:text-4xl lg:text-5xl font-headline">
+            Quoi de neuf ?
+          </h2>
+          <p className="mt-4 text-lg text-muted-foreground">
+            Ce site est un proof of concept vivant : cycles courts, résultats visibles.
+          </p>
+          <p className="mt-2 text-sm text-muted-foreground">
+            C'est ce qu'on appelle un Changelog (le suivi des modifications).
+          </p>
+        </div>
 
-      {/* What's new */}
-      <header className="mb-6 text-center">
-        <h2
-          id="proof-title"
-          className="text-2xl font-semibold tracking-tight text-neutral-50 sm:text-3xl"
+        {/* ProofBar */}
+        <div
+          ref={bar.ref}
+          className={`mx-auto mb-8 md:mb-12 flex w-full flex-wrap items-center justify-center gap-3 rounded-2xl border bg-card/80 backdrop-blur-sm px-4 py-3 text-sm transition-all duration-700 ease-out
+          ${bar.inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"}`}
+          role="status"
+          aria-live="polite"
         >
-          Quoi de neuf ?
-        </h2>
-        <p className="mt-2 text-sm text-neutral-400">
-          Ce site est un proof of concept vivant : cycles courts, résultats visibles.
-        </p>
-      </header>
-
-      <ul
-        ref={list.ref}
-        className="grid grid-cols-1 gap-4 md:grid-cols-2"
-      >
-        {changes.map((c, i) => (
-          <li
-            key={`${c.title}-${i}`}
-            className={`group rounded-2xl border border-neutral-800/60 bg-neutral-900/40 p-5 shadow-sm transition-all duration-500 hover:bg-neutral-900
-            ${list.inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3"}`}
-            style={{ transitionDelay: `${i * 70}ms` }}
-          >
-            <div className="flex items-center gap-2 text-xs text-neutral-400">
-              <span className="inline-block h-2 w-2 rounded-full bg-violet-500" aria-hidden />
-              <time>{c.date}</time>
+          {metrics.map((m, i) => (
+            <div
+              key={m.label}
+              className="flex items-center gap-2"
+              style={{ transitionDelay: `${i * 60}ms` }}
+            >
+              <span className="text-muted-foreground">{m.label}</span>
+              <span className="h-1 w-1 rounded-full bg-muted-foreground/60" aria-hidden />
+              <span className="font-medium text-foreground">{m.value}</span>
             </div>
-            <h3 className="mt-2 text-base font-medium text-neutral-100">
-              {c.title}
-            </h3>
-            <p className="mt-1 text-sm leading-relaxed text-neutral-300">
-              {c.text}
-            </p>
-          </li>
-        ))}
-      </ul>
+          ))}
+        </div>
+
+        {/* Changelog cards */}
+        <div
+          ref={list.ref}
+          className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8"
+        >
+          {changes.map((change, index) => (
+            <Card
+              key={`${change.title}-${index}`}
+              className={`flex flex-col overflow-hidden bg-card/80 backdrop-blur-sm transition-all duration-500 hover:scale-[1.02] hover:shadow-lg
+              ${list.inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3"}`}
+              style={{ transitionDelay: `${index * 70}ms` }}
+            >
+              <CardHeader>
+                <div className="flex items-center gap-2 text-xs text-muted-foreground mb-2">
+                  <span className="inline-block h-2 w-2 rounded-full bg-violet-500" aria-hidden />
+                  <time>{change.date}</time>
+                </div>
+                <CardTitle className="font-headline text-xl">{change.title}</CardTitle>
+              </CardHeader>
+              <CardContent className="flex-grow">
+                <p className="text-sm text-muted-foreground leading-relaxed">{change.text}</p>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </div>
     </section>
   );
 }
