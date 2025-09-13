@@ -121,13 +121,20 @@ export default async function ChangelogGithub() {
       </header>
 
       {items.length === 0 ? (
-        <div className="text-center space-y-2">
-          <p className="text-sm text-neutral-500 dark:text-neutral-400">
-            Aucune entrée disponible pour le moment.
-          </p>
-          <p className="text-xs text-neutral-400 dark:text-neutral-500">
-            Vérifiez la configuration GitHub dans .env.local ou les logs du serveur.
-          </p>
+        <div className="text-center space-y-4">
+          <div className="mx-auto w-16 h-16 bg-neutral-100 dark:bg-neutral-800 rounded-full flex items-center justify-center">
+            <svg className="w-8 h-8 text-neutral-400 dark:text-neutral-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+            </svg>
+          </div>
+          <div>
+            <p className="text-sm text-neutral-500 dark:text-neutral-400 font-medium">
+              Aucune entrée disponible pour le moment
+            </p>
+            <p className="text-xs text-neutral-400 dark:text-neutral-500 mt-1">
+              Vérifiez la configuration GitHub dans .env.local ou les logs du serveur
+            </p>
+          </div>
         </div>
       ) : (
         <ul className="grid grid-cols-1 gap-4 md:grid-cols-2">
@@ -145,16 +152,20 @@ export default async function ChangelogGithub() {
             return (
               <li
                 key={c.number}
-                className="group rounded-2xl border border-neutral-200 bg-white/75 p-5 shadow-sm backdrop-blur transition-colors hover:bg-white
+                className="group rounded-2xl border border-neutral-200 bg-white/75 p-5 shadow-sm backdrop-blur transition-all duration-200 hover:bg-white hover:shadow-md hover:scale-[1.02]
                            dark:border-neutral-800 dark:bg-neutral-900/40 dark:hover:bg-neutral-900"
               >
                 <div className="flex items-center gap-2 text-xs text-neutral-500 dark:text-neutral-400">
-                  <span className="inline-block h-2 w-2 rounded-full bg-violet-500" aria-hidden />
+                  <span className="inline-flex items-center gap-1">
+                    <span className="inline-block h-2 w-2 rounded-full bg-emerald-500 animate-pulse" aria-hidden />
+                    <span className="text-emerald-600 dark:text-emerald-400 font-medium">Merged</span>
+                  </span>
+                  <span className="h-1 w-1 rounded-full bg-neutral-300 dark:bg-neutral-600" aria-hidden />
                   <time dateTime={c.merged_at ?? undefined} title={c.merged_at ?? undefined}>
                     {human}
                   </time>
                   <span className="h-1 w-1 rounded-full bg-neutral-300 dark:bg-neutral-600" aria-hidden />
-                  <span>PR #{c.number}</span>
+                  <span className="font-mono">#{c.number}</span>
                 </div>
                 <h3 className="mt-2 text-base font-medium text-neutral-900 dark:text-neutral-100">
                   {c.title}
