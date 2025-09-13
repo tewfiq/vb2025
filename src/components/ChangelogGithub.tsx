@@ -25,7 +25,10 @@ type Pull = {
 };
 
 async function fetchMergedPRs(): Promise<Pull[]> {
-  if (!GH_OWNER || !GH_REPO) return [];
+  if (!GH_OWNER || !GH_REPO) {
+    console.log("ChangelogGithub: GITHUB_OWNER ou GITHUB_REPO manquant dans .env.local");
+    return [];
+  }
 
   const url = new URL(`https://api.github.com/repos/${GH_OWNER}/${GH_REPO}/pulls`);
   url.searchParams.set("state", "closed");
@@ -40,19 +43,30 @@ async function fetchMergedPRs(): Promise<Pull[]> {
   };
   if (GH_TOKEN) headers.Authorization = `Bearer ${GH_TOKEN}`;
 
-  const res = await fetch(url, {
-    headers,
-    // Revalidation côté serveur (évite de taper l'API à chaque vue)
-    next: { revalidate: REVALIDATE_SECONDS },
-  });
+  try {
+    const res = await fetch(url, {
+      headers,
+      // Revalidation côté serveur (évite de taper l'API à chaque vue)
+      next: { revalidate: REVALIDATE_SECONDS },
+    });
 
-  if (!res.ok) {
-    // On échoue en silence : la section ne casse pas la page
+    if (!res.ok) {
+      console.log(`ChangelogGithub: Erreur API GitHub ${res.status} pour ${GH_OWNER}/${GH_REPO}`);
+      console.log(`URL: ${url.toString()}`);
+      if (res.status === 404) {
+        console.log("Repo probablement privé ou inexistant. Ajoutez GITHUB_TOKEN dans .env.local si privé.");
+      }
+      return [];
+    }
+
+    const pulls = (await res.json()) as Pull[];
+    const mergedPulls = pulls.filter((p) => p.merged_at);
+    console.log(`ChangelogGithub: ${mergedPulls.length} PR mergées trouvées`);
+    return mergedPulls;
+  } catch (error) {
+    console.error("ChangelogGithub: Erreur lors de la récupération des PRs:", error);
     return [];
   }
-
-  const pulls = (await res.json()) as Pull[];
-  return pulls.filter((p) => p.merged_at); // ne garder que les PR réellement mergées
 }
 
 export default async function ChangelogGithub() {
@@ -107,9 +121,14 @@ export default async function ChangelogGithub() {
       </header>
 
       {items.length === 0 ? (
-        <p className="text-sm text-neutral-500 dark:text-neutral-400 text-center">
-          Aucune entrée disponible pour le moment.
-        </p>
+        <div className="text-center space-y-2">
+          <p className="text-sm text-neutral-500 dark:text-neutral-400">
+            Aucune entrée disponible pour le moment.
+          </p>
+          <p className="text-xs text-neutral-400 dark:text-neutral-500">
+            Vérifiez la configuration GitHub dans .env.local ou les logs du serveur.
+          </p>
+        </div>
       ) : (
         <ul className="grid grid-cols-1 gap-4 md:grid-cols-2">
           {items.map((c) => {
