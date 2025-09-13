@@ -70,7 +70,9 @@ async function fetchMergedPRs(): Promise<Pull[]> {
 }
 
 export default async function ChangelogGithub() {
+  console.log("ChangelogGithub: Composant rendu côté serveur");
   const items = await fetchMergedPRs();
+  console.log("ChangelogGithub: Items récupérés:", items.length, "entrées");
 
   // métriques simples
   const total = items.length;
@@ -191,7 +193,7 @@ export default async function ChangelogGithub() {
       {/* Lien global vers la liste complète sur GitHub */}
       <div className="mt-6 text-center">
         <a
-          href={`https://github.com/${GH_OWNER ?? "owner"}/${GH_REPO ?? "repo"}/pulls?q=is%3Apr+is%3Aclosed+is%3Amerged`}
+          href="https://github.com/tewfiq/vb2025/pulls?q=is%3Apr+is%3Aclosed+is%3Amerged"
           target="_blank"
           rel="noreferrer"
           className="inline-flex items-center gap-2 rounded-xl border border-neutral-300 px-4 py-2 text-sm font-medium text-neutral-800 hover:bg-neutral-50
