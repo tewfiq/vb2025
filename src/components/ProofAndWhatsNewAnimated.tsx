@@ -1,6 +1,5 @@
 "use client";
 import { useMemo, useEffect, useRef, useState } from "react";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 function useInView<T extends HTMLElement>(opts?: IntersectionObserverInit) {
   const ref = useRef<T | null>(null);
@@ -30,57 +29,75 @@ export default function ProofAndWhatsNewAnimated() {
   const changes = useMemo(
     () => [
       {
-        date: "récemment",
+        day: "13",
+        month: "Sep",
+        title: "Design changelog timeline",
+        text: "Refonte de la section en véritable changelog avec timeline et badges de type de changement.",
+        type: "updated" as const,
+      },
+      {
+        day: "12",
+        month: "Sep", 
         title: "Changelog compatible light/dark",
-        text:
-          "Refactorisation de la section 'Quoi de neuf ?' pour respecter le design system et fonctionner en light/dark mode.",
+        text: "Refactorisation de la section 'Quoi de neuf ?' pour respecter le design system et fonctionner en light/dark mode.",
+        type: "updated" as const,
       },
       {
-        date: "récemment",
+        day: "11",
+        month: "Sep",
         title: "Itération continue",
-        text:
-          "Ajout d'une carte 'Itération continue' et ajustement du footer pour refléter le cycle d'amélioration.",
+        text: "Ajout d'une carte 'Itération continue' et ajustement du footer pour refléter le cycle d'amélioration.",
+        type: "added" as const,
       },
       {
-        date: "récemment",
+        day: "10",
+        month: "Sep",
         title: "Stack & Méthode",
-        text:
-          "Section 'proof of concept' pour expliquer que ce site applique la méthode Vibe Coding.",
+        text: "Section 'proof of concept' pour expliquer que ce site applique la méthode Vibe Coding.",
+        type: "added" as const,
       },
       {
-        date: "récemment",
+        day: "09",
+        month: "Sep",
         title: "Lisibilité du Hero",
-        text:
-          "Titrages et sauts de ligne optimisés pour une lecture plus rapide sur mobile et desktop.",
+        text: "Titrages et sauts de ligne optimisés pour une lecture plus rapide sur mobile et desktop.",
+        type: "updated" as const,
       },
       {
-        date: "récemment",
+        day: "08",
+        month: "Sep",
         title: "Mobile & performances",
-        text:
-          "Optimisations responsive et rationalisation des espacements pour une navigation plus fluide.",
+        text: "Optimisations responsive et rationalisation des espacements pour une navigation plus fluide.",
+        type: "updated" as const,
       },
       {
-        date: "récemment",
+        day: "07",
+        month: "Sep",
         title: "Dark mode",
-        text:
-          "Amélioration du rendu des logos partenaires en mode sombre.",
-      },
-      {
-        date: "récemment",
-        title: "Sections pédagogiques",
-        text:
-          "Refonte des sections Méthode / BYOD en cartes plus claires et animées.",
+        text: "Amélioration du rendu des logos partenaires en mode sombre.",
+        type: "updated" as const,
       },
     ],
     []
   );
+
+  const getTypeColor = (type: "added" | "updated" | "removed") => {
+    switch (type) {
+      case "added":
+        return "bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400";
+      case "updated":
+        return "bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-400";
+      case "removed":
+        return "bg-red-100 text-red-800 dark:bg-red-900/30 dark:text-red-400";
+    }
+  };
 
   const bar = useInView<HTMLDivElement>();
   const list = useInView<HTMLDivElement>();
 
   return (
     <section id="proof" className="py-12 md:py-20 lg:py-32 bg-muted/30">
-      <div className="container mx-auto px-4 max-w-6xl">
+      <div className="container mx-auto px-4 max-w-4xl">
         <div className="text-center max-w-3xl mx-auto mb-8 md:mb-16">
           <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl md:text-4xl lg:text-5xl font-headline">
             Quoi de neuf ?
@@ -114,29 +131,41 @@ export default function ProofAndWhatsNewAnimated() {
           ))}
         </div>
 
-        {/* Changelog cards */}
+        {/* Changelog timeline */}
         <div
           ref={list.ref}
-          className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8"
+          className="space-y-4"
         >
           {changes.map((change, index) => (
-            <Card
+            <div
               key={`${change.title}-${index}`}
-              className={`flex flex-col overflow-hidden bg-card/80 backdrop-blur-sm transition-all duration-500 hover:scale-[1.02] hover:shadow-lg
+              className={`flex items-center gap-6 p-4 rounded-xl border bg-card/80 backdrop-blur-sm transition-all duration-500 hover:bg-card/90 hover:shadow-sm
               ${list.inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3"}`}
               style={{ transitionDelay: `${index * 70}ms` }}
             >
-              <CardHeader>
-                <div className="flex items-center gap-2 text-xs text-muted-foreground mb-2">
-                  <span className="inline-block h-2 w-2 rounded-full bg-violet-500" aria-hidden />
-                  <time>{change.date}</time>
-                </div>
-                <CardTitle className="font-headline text-xl">{change.title}</CardTitle>
-              </CardHeader>
-              <CardContent className="flex-grow">
-                <p className="text-sm text-muted-foreground leading-relaxed">{change.text}</p>
-              </CardContent>
-            </Card>
+              {/* Date */}
+              <div className="flex flex-col items-center min-w-[60px] text-center">
+                <span className="text-lg font-bold text-foreground leading-none">{change.day}</span>
+                <span className="text-xs text-muted-foreground uppercase tracking-wide">{change.month}</span>
+              </div>
+              
+              {/* Content */}
+              <div className="flex-1 min-w-0">
+                <h3 className="font-semibold text-foreground text-base leading-tight">
+                  {change.title}
+                </h3>
+                <p className="text-sm text-muted-foreground mt-1 leading-relaxed">
+                  {change.text}
+                </p>
+              </div>
+              
+              {/* Badge */}
+              <div className="flex-shrink-0">
+                <span className={`inline-flex px-2 py-1 text-xs font-medium rounded-full ${getTypeColor(change.type)}`}>
+                  {change.type}
+                </span>
+              </div>
+            </div>
           ))}
         </div>
       </div>
