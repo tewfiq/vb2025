@@ -1,6 +1,6 @@
 import Header from "@/components/landing/header";
 import Hero from "@/components/landing/hero";
-import MethodProof from "@/components/landing/method-proof";
+import LeanMethodSection from "@/components/LeanMethodSection";
 import Testimonials from "@/components/landing/testimonials";
 import Pricing from "@/components/landing/pricing";
 import Faq from "@/components/landing/faq";
@@ -12,7 +12,9 @@ export default function Home() {
       <Header />
       <main className="flex-1">
         <Hero />
-        <MethodProof />
+        <div className="py-12 md:py-20 lg:py-24">
+          <LeanMethodSection />
+        </div>
         <Testimonials />
         <Pricing />
         <Faq />
