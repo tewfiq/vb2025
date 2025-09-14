@@ -1,7 +1,6 @@
 import Header from "@/components/landing/header";
 import Hero from "@/components/landing/hero";
-import MethodSteps from "@/components/landing/method-steps";
-import ProofOfConcept from "@/components/landing/proof-of-concept";
+import MethodProof from "@/components/landing/method-proof";
 import Testimonials from "@/components/landing/testimonials";
 import Pricing from "@/components/landing/pricing";
 import Faq from "@/components/landing/faq";
@@ -13,10 +12,7 @@ export default function Home() {
       <Header />
       <main className="flex-1">
         <Hero />
-        <section id="comment-ca-marche">
-          <MethodSteps />
-        </section>
-        <ProofOfConcept />
+        <MethodProof />
         <Testimonials />
         <Pricing />
         <Faq />
