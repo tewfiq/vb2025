@@ -43,12 +43,12 @@ export default function Pricing() {
                 
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto items-start justify-items-center">
                     {/* Standard Card */}
-                    <Card className="flex flex-col h-full w-full max-w-sm transition-all hover:scale-[1.02] hover:shadow-lg">
+                    <Card className="neo-brutalist-card flex flex-col h-full w-full max-w-sm transition-all hover:scale-[1.02]">
                         <CardHeader className="pb-4">
                             <CardTitle className="font-headline text-2xl">Standard</CardTitle>
                             <div className="flex items-baseline gap-2">
                                 <span className="text-5xl font-bold tracking-tight">299 €</span>
-                                <span className="text-muted-foreground">TTC / personne</span>
+                                <span className="text-muted-foreground">TTC</span>
                             </div>
                         </CardHeader>
                         <CardContent className="flex-1">
@@ -62,16 +62,16 @@ export default function Pricing() {
                             </ul>
                         </CardContent>
                         <CardFooter>
-                            <Button className="w-full" variant="outline" asChild>
+                            <Button className="neo-brutalist-button w-full bg-secondary hover:bg-secondary/90 text-secondary-foreground" asChild>
                                 <Link href="https://buy.stripe.com/bJe5kEdSrgkcfhQaBn7EQ0c">Réserver — 299 €</Link>
                             </Button>
                         </CardFooter>
                     </Card>
 
                     {/* Banger Card */}
-                    <Card className="flex flex-col h-full w-full max-w-sm border-2 border-accent shadow-2xl shadow-accent/20 relative transition-all hover:scale-[1.02] hover:shadow-2xl">
+                    <Card className="neo-brutalist-card flex flex-col h-full w-full max-w-sm relative transition-all hover:scale-[1.02] border-accent shadow-[8px_8px_0px_theme(colors.accent)]">
                          <div className="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2">
-                            <div className="bg-accent text-accent-foreground px-4 py-1 rounded-full text-sm font-semibold">
+                            <div className="bg-accent text-accent-foreground px-4 py-1 rounded-full text-sm font-semibold border-2 border-foreground">
                                 🔥 BANGER !
                             </div>
                         </div>
@@ -80,7 +80,7 @@ export default function Pricing() {
                             <p className="text-sm text-muted-foreground">Tarif réservé aux -26 ans et demandeurs d'emploi</p>
                             <div className="flex items-baseline gap-2 pt-2">
                                 <span className="text-5xl font-bold tracking-tight text-accent">149 €</span>
-                                <span className="text-muted-foreground">TTC / personne</span>
+                                <span className="text-muted-foreground">TTC</span>
                             </div>
                         </CardHeader>
                         <CardContent className="flex-1">
@@ -94,14 +94,14 @@ export default function Pricing() {
                             </ul>
                         </CardContent>
                         <CardFooter className="flex-col gap-3">
-                            <Button className="w-full bg-accent hover:bg-accent/90" asChild>
+                            <Button className="neo-brutalist-button w-full bg-accent hover:bg-accent/90" asChild>
                                 <Link href="https://buy.stripe.com/bJe8wQ3dN7NGc5EcJv7EQ0b">Je m'inscris — 149 €</Link>
                             </Button>
                         </CardFooter>
                     </Card>
 
                     {/* Team Card */}
-                    <Card className="flex flex-col h-full w-full max-w-sm transition-all hover:scale-[1.02] hover:shadow-lg">
+                    <Card className="neo-brutalist-card flex flex-col h-full w-full max-w-sm transition-all hover:scale-[1.02]">
                         <CardHeader className="pb-4">
                             <CardTitle className="font-headline text-2xl">Équipe</CardTitle>
                              <div className="flex items-baseline gap-2">
@@ -119,7 +119,7 @@ export default function Pricing() {
                             </ul>
                         </CardContent>
                         <CardFooter>
-                            <Button className="w-full" variant="outline" asChild>
+                            <Button className="neo-brutalist-button w-full bg-secondary hover:bg-secondary/90 text-secondary-foreground" asChild>
                                 <Link href="https://cal.com/tewfiqferahi/15min" target="_blank" rel="noopener noreferrer">Demander un devis</Link>
                             </Button>
                         </CardFooter>
