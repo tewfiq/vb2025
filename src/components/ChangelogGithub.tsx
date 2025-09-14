@@ -9,8 +9,18 @@ import React from "react";
 // GITHUB_REPO=vb2025
 
 const GH_TOKEN = process.env.GITHUB_TOKEN;
-const GH_OWNER = process.env.GITHUB_OWNER;
-const GH_REPO  = process.env.GITHUB_REPO;
+// TEMPORARY FIX: Hardcode values since process.env is undefined in Server Component
+const GH_OWNER = process.env.GITHUB_OWNER || "tewfiq";
+const GH_REPO = process.env.GITHUB_REPO || "vb2025";
+
+// DEBUG: Log environment variables
+console.log("🔍 ChangelogGithub Environment Check:", {
+  GITHUB_OWNER: process.env.GITHUB_OWNER || "UNDEFINED - using fallback",
+  GITHUB_REPO: process.env.GITHUB_REPO || "UNDEFINED - using fallback",
+  GH_OWNER_final: GH_OWNER,
+  GH_REPO_final: GH_REPO,
+  NODE_ENV: process.env.NODE_ENV
+});
 
 // Nombre d'entrées à afficher & durée de cache (en secondes)
 const PER_PAGE = 10;
@@ -43,28 +53,68 @@ async function fetchMergedPRs(): Promise<Pull[]> {
   };
   if (GH_TOKEN) headers.Authorization = `Bearer ${GH_TOKEN}`;
 
+  console.log("🌐 Fetching GitHub API:", {
+    url: url.toString(),
+    headers_count: Object.keys(headers).length,
+    has_auth: !!headers.Authorization
+  });
+
   try {
     const res = await fetch(url, {
       headers,
-      // Revalidation côté serveur (évite de taper l'API à chaque vue)
-      next: { revalidate: REVALIDATE_SECONDS },
+      // TEMPORARY: Disable cache to force fresh API calls
+      cache: 'no-store'
+    });
+
+    console.log("📡 GitHub API Response:", {
+      status: res.status,
+      statusText: res.statusText,
+      ok: res.ok,
+      headers: Object.fromEntries(res.headers.entries())
     });
 
     if (!res.ok) {
-      console.log(`ChangelogGithub: Erreur API GitHub ${res.status} pour ${GH_OWNER}/${GH_REPO}`);
-      console.log(`URL: ${url.toString()}`);
-      if (res.status === 404) {
-        console.log("Repo probablement privé ou inexistant. Ajoutez GITHUB_TOKEN dans .env.local si privé.");
-      }
+      const errorText = await res.text();
+      console.log(`❌ GitHub API Error ${res.status}:`, {
+        url: url.toString(),
+        status: res.status,
+        statusText: res.statusText,
+        errorBody: errorText.substring(0, 500)
+      });
       return [];
     }
 
-    const pulls = (await res.json()) as Pull[];
+    const responseText = await res.text();
+    console.log("📄 Raw API Response:", {
+      bodyLength: responseText.length,
+      firstChars: responseText.substring(0, 200) + "..."
+    });
+
+    const pulls = JSON.parse(responseText) as Pull[];
+    console.log("🔄 Processing PRs:", {
+      totalReceived: pulls.length,
+      samplePR: pulls[0] ? {
+        number: pulls[0].number,
+        title: pulls[0].title.substring(0, 50) + "...",
+        state: pulls[0].state,
+        merged_at: pulls[0].merged_at
+      } : "No PRs received"
+    });
+
     const mergedPulls = pulls.filter((p) => p.merged_at);
-    console.log(`ChangelogGithub: ${mergedPulls.length} PR mergées trouvées`);
+    console.log(`✅ Final Result: ${mergedPulls.length} PR mergées trouvées sur ${pulls.length} total`);
+    
+    if (mergedPulls.length > 0) {
+      console.log("📋 Sample merged PRs:", mergedPulls.slice(0, 3).map(pr => ({
+        number: pr.number,
+        title: pr.title.substring(0, 40) + "...",
+        merged_at: pr.merged_at
+      })));
+    }
+
     return mergedPulls;
   } catch (error) {
-    console.error("ChangelogGithub: Erreur lors de la récupération des PRs:", error);
+    console.error("💥 ChangelogGithub: Erreur lors de la récupération des PRs:", error);
     return [];
   }
 }
