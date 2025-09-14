@@ -20,10 +20,9 @@ export default function Hero() {
         <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-headline">
           <TypeWriter 
             texts={[
-              "Une compétence en 2h.",
-              "Rien de personnel.",
-              "Rien de magique. Juste une compétence.",
-              "Pas de promesses. Juste du concret."
+              "Une compétence en 2h.\nRien de personnel.",
+              "Rien de magique.\nJuste une compétence.",
+              "Pas de promesses.\nJuste du concret."
             ]}
             delayBetween={3000}
             typingSpeed={100}
