@@ -3,11 +3,11 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
 const faqs = [
-    { question: 'Faut-il savoir coder ?', answer: "Non. Tout est guidé, aucun prérequis." },
-    { question: 'Je repars vraiment avec un projet en ligne ?', answer: "Oui. Tu obtiens ton repo GitHub et une URL publique." },
-    { question: 'Le code est à qui ?', answer: "À toi. Le repo est personnel et réutilisable." },
-    { question: 'Et si je n\'ai pas d\'idée ?', answer: "On en trouve une ensemble, pendant la session." },
-    { question: 'C\'est pour qui ?', answer: "Pour toute personne curieuse d'apprendre et d'expérimenter." },
+    { question: 'Faut-il savoir coder ?', answer: "Non. Tu écris en français, l'IA génère le code." },
+    { question: 'Je repars vraiment avec un projet en ligne ?', answer: "Oui, publié et accessible via une URL publique." },
+    { question: 'Le code est à qui ?', answer: "À toi. Dépôt GitHub personnel inclus." },
+    { question: 'Et si je n\'ai pas d\'idée ?', answer: "On t'aide à en formuler une simple et efficace." },
+    { question: 'C\'est pour qui ?', answer: "Étudiants, freelances, curieux, équipes : tous niveaux." },
 ];
 
 export default function Faq() {
