@@ -138,39 +138,42 @@ export default async function ChangelogGithub() {
     : "—";
 
   return (
-    <section className="mx-auto w-full max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
-      {/* Proof bar compacte */}
-      <div
-        className="mx-auto mb-8 flex w-full flex-wrap items-center justify-center gap-3 rounded-2xl border border-neutral-200 bg-white/70 px-4 py-3 text-sm text-neutral-700 backdrop-blur
-                   dark:border-neutral-800 dark:bg-neutral-900/50 dark:text-neutral-300"
-        role="status"
-        aria-live="polite"
-      >
-        <span className="text-neutral-500 dark:text-neutral-400">Dév actif</span>
-        <span className="h-1 w-1 rounded-full bg-neutral-300 dark:bg-neutral-600" aria-hidden />
-        <span className="font-medium text-neutral-900 dark:text-white">{total} merges</span>
+    <section className="py-12 md:py-20 lg:py-32 bg-muted/30">
+      <div className="container mx-auto px-4 max-w-4xl">
+        {/* Proof bar compacte */}
+        <div
+          className="mx-auto mb-8 md:mb-12 flex w-full flex-wrap items-center justify-center gap-3 rounded-2xl border bg-card/80 backdrop-blur-sm px-4 py-3 text-sm"
+          role="status"
+          aria-live="polite"
+        >
+          <span className="text-muted-foreground">Dév actif</span>
+          <span className="h-1 w-1 rounded-full bg-muted-foreground/60" aria-hidden />
+          <span className="font-medium text-foreground">{total} merges</span>
 
-        <span className="h-1 w-1 rounded-full bg-neutral-300 dark:bg-neutral-600" aria-hidden />
-        <span className="text-neutral-500 dark:text-neutral-400">Dernière mise à jour</span>
-        <span className="h-1 w-1 rounded-full bg-neutral-300 dark:bg-neutral-600" aria-hidden />
-        <span className="font-medium text-neutral-900 dark:text-white">{latestHuman}</span>
+          <span className="h-1 w-1 rounded-full bg-muted-foreground/60" aria-hidden />
+          <span className="text-muted-foreground">Dernière mise à jour</span>
+          <span className="h-1 w-1 rounded-full bg-muted-foreground/60" aria-hidden />
+          <span className="font-medium text-foreground">{latestHuman}</span>
 
-        <span className="h-1 w-1 rounded-full bg-neutral-300 dark:bg-neutral-600" aria-hidden />
-        <span className="text-neutral-500 dark:text-neutral-400">Cycle</span>
-        <span className="h-1 w-1 rounded-full bg-neutral-300 dark:bg-neutral-600" aria-hidden />
-        <span className="font-medium text-neutral-900 dark:text-white">
-          rapid prototyping → production continue
-        </span>
-      </div>
+          <span className="h-1 w-1 rounded-full bg-muted-foreground/60" aria-hidden />
+          <span className="text-muted-foreground">Cycle</span>
+          <span className="h-1 w-1 rounded-full bg-muted-foreground/60" aria-hidden />
+          <span className="font-medium text-foreground">
+            rapid prototyping → production continue
+          </span>
+        </div>
 
-      <header className="mb-6 text-center">
-        <h2 className="text-2xl font-semibold tracking-tight text-neutral-900 dark:text-neutral-50 sm:text-3xl">
-          Quoi de neuf ?
-        </h2>
-        <p className="mt-2 text-sm text-neutral-500 dark:text-neutral-400">
-          Entrées auto-générées depuis les PR mergées du dépôt.
-        </p>
-      </header>
+        <div className="text-center max-w-3xl mx-auto mb-8 md:mb-16">
+          <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl md:text-4xl lg:text-5xl font-headline">
+            Quoi de neuf ?
+          </h2>
+          <p className="mt-4 text-lg text-muted-foreground">
+            Ce site est un proof of concept vivant : cycles courts, résultats visibles.
+          </p>
+          <p className="mt-2 text-sm text-muted-foreground">
+            Entrées auto-générées depuis les PR mergées du dépôt.
+          </p>
+        </div>
 
       {items.length === 0 ? (
         <div className="text-center space-y-4">
@@ -189,7 +192,7 @@ export default async function ChangelogGithub() {
           </div>
         </div>
       ) : (
-        <ul className="grid grid-cols-1 gap-4 md:grid-cols-2">
+        <div className="space-y-4">
           {items.map((c) => {
             const dt = c.merged_at ? new Date(c.merged_at) : null;
             const human = dt
@@ -202,58 +205,54 @@ export default async function ChangelogGithub() {
                 })
               : "—";
             return (
-              <li
+              <div
                 key={c.number}
-                className="group rounded-2xl border border-neutral-200 bg-white/75 p-5 shadow-sm backdrop-blur transition-all duration-200 hover:bg-white hover:shadow-md hover:scale-[1.02]
-                           dark:border-neutral-800 dark:bg-neutral-900/40 dark:hover:bg-neutral-900"
+                className="flex items-center gap-6 p-4 rounded-xl border bg-card/80 backdrop-blur-sm transition-all duration-500 hover:bg-card/90 hover:shadow-sm"
               >
-                <div className="flex items-center gap-2 text-xs text-neutral-500 dark:text-neutral-400">
-                  <span className="inline-flex items-center gap-1">
-                    <span className="inline-block h-2 w-2 rounded-full bg-emerald-500 animate-pulse" aria-hidden />
-                    <span className="text-emerald-600 dark:text-emerald-400 font-medium">Merged</span>
+                {/* Date */}
+                <div className="flex flex-col items-center min-w-[60px] text-center">
+                  <span className="text-lg font-bold text-foreground leading-none">
+                    {dt ? dt.getDate().toString().padStart(2, '0') : '—'}
                   </span>
-                  <span className="h-1 w-1 rounded-full bg-neutral-300 dark:bg-neutral-600" aria-hidden />
-                  <time dateTime={c.merged_at ?? undefined} title={c.merged_at ?? undefined}>
-                    {human}
-                  </time>
-                  <span className="h-1 w-1 rounded-full bg-neutral-300 dark:bg-neutral-600" aria-hidden />
-                  <span className="font-mono">#{c.number}</span>
+                  <span className="text-xs text-muted-foreground uppercase tracking-wide">
+                    {dt ? dt.toLocaleDateString('fr-FR', { month: 'short' }) : '—'}
+                  </span>
                 </div>
-                <h3 className="mt-2 text-base font-medium text-neutral-900 dark:text-neutral-100">
-                  {c.title}
-                </h3>
-                <p className="mt-1 text-sm text-neutral-500 dark:text-neutral-400">
-                  Auteur : <span className="text-neutral-800 dark:text-neutral-200">{c.user?.login ?? "—"}</span>
-                  {" · "}
-                  <a
-                    className="underline decoration-neutral-300 underline-offset-4 hover:text-neutral-900 dark:decoration-neutral-700 dark:hover:text-neutral-100"
-                    href={c.html_url}
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    Voir sur GitHub
-                  </a>
-                </p>
-              </li>
+                
+                {/* Content */}
+                <div className="flex-1 min-w-0">
+                  <h3 className="font-semibold text-foreground text-base leading-tight">
+                    {c.title}
+                  </h3>
+                  <p className="text-sm text-muted-foreground mt-1 leading-relaxed">
+                    Auteur : <span className="text-foreground">{c.user?.login ?? "—"}</span>
+                    {" · "}
+                    <time dateTime={c.merged_at ?? undefined} title={c.merged_at ?? undefined}>
+                      {human}
+                    </time>
+                    {" · "}
+                    <a
+                      className="underline decoration-muted-foreground underline-offset-4 hover:text-foreground"
+                      href={c.html_url}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      Voir sur GitHub
+                    </a>
+                  </p>
+                </div>
+                
+                {/* Badge */}
+                <div className="flex-shrink-0">
+                  <span className="inline-flex px-2 py-1 text-xs font-medium rounded-full bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400">
+                    merged
+                  </span>
+                </div>
+              </div>
             );
           })}
-        </ul>
+        </div>
       )}
-
-      {/* Lien global vers la liste complète sur GitHub */}
-      <div className="mt-6 text-center">
-        <a
-          href="https://github.com/tewfiq/vb2025/pulls?q=is%3Apr+is%3Aclosed+is%3Amerged"
-          target="_blank"
-          rel="noreferrer"
-          className="inline-flex items-center gap-2 rounded-xl border border-neutral-300 px-4 py-2 text-sm font-medium text-neutral-800 hover:bg-neutral-50
-                     dark:border-neutral-700 dark:text-neutral-200 dark:hover:bg-neutral-800"
-        >
-          Voir toutes les merges
-          <svg className="h-4 w-4" viewBox="0 0 20 20" fill="none" aria-hidden>
-            <path d="M5 10h10M10 5l5 5-5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-          </svg>
-        </a>
       </div>
     </section>
   );
