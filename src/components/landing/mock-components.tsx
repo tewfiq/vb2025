@@ -56,13 +56,95 @@ export const CommitList = () => (
     </div>
 );
 
-export const DeploymentLog = () => (
-    <div className="p-3 bg-black rounded-lg text-xs font-code overflow-hidden relative h-40">
-        <pre className="relative z-10 whitespace-pre-wrap"><code className="text-green-400">{`[16:37:25.637] Running build in Washington, D.C., USA (East)`}</code><code className="text-gray-400">{`
-[16:37:30.914] bun install v1.2.19 (aad3abea)
-[16:37:34.436] Resolved, downloaded and extracted [1116]
-[16:37:41.439] ✓ Compiled successfully
-[16:38:01.099] Build Completed in /vercel/output [30s]
-`}</code><code className="text-white">{`🚀 Deployment complete – Easy!`}</code></pre>
+// New clean mock components replacing raw logs
+export const MockEditorLight = () => (
+    <div className="p-4 bg-gradient-to-br from-blue-50 to-violet-50 rounded-lg border h-40 flex flex-col justify-center">
+        <div className="space-y-2">
+            <div className="flex items-center gap-2">
+                <div className="w-2 h-2 bg-green-400 rounded-full"></div>
+                <span className="text-sm font-medium">Écrire en français</span>
+            </div>
+            <div className="bg-white/60 rounded p-2 text-xs">
+                "Crée-moi une page d'accueil moderne avec un hero et un CTA"
+            </div>
+            <div className="text-xs text-muted-foreground">→ IA génère le code automatiquement</div>
+        </div>
+    </div>
+);
+
+export const MockTerminalClean = () => (
+    <div className="p-4 bg-slate-900 rounded-lg h-40 flex flex-col justify-center">
+        <div className="space-y-1 text-xs">
+            <div className="text-green-400">✓ Site créé</div>
+            <div className="text-blue-400">✓ Design appliqué</div>
+            <div className="text-yellow-400">✓ Déployé en ligne</div>
+            <div className="text-white mt-2">🌐 https://ton-projet.netlify.app</div>
+        </div>
+    </div>
+);
+
+export const MockWorkshopRoom = () => (
+    <div className="p-4 bg-amber-50 rounded-lg border h-40 flex items-center justify-center">
+        <div className="text-center space-y-2">
+            <div className="flex justify-center gap-2">
+                <div className="w-8 h-8 bg-blue-200 rounded-full flex items-center justify-center text-xs">👨‍💻</div>
+                <div className="w-8 h-8 bg-pink-200 rounded-full flex items-center justify-center text-xs">👩‍💻</div>
+                <div className="w-8 h-8 bg-green-200 rounded-full flex items-center justify-center text-xs">👨‍🎨</div>
+            </div>
+            <div className="text-sm font-medium">Atelier Paris</div>
+            <div className="text-xs text-muted-foreground">10 places • Coaching • Pratique</div>
+        </div>
+    </div>
+);
+
+export const MockCardsGrid = () => (
+    <div className="p-4 h-40 flex items-center justify-center">
+        <div className="grid grid-cols-2 gap-2 w-full">
+            <div className="bg-gradient-to-br from-purple-100 to-pink-100 p-3 rounded-lg border">
+                <div className="text-xs font-medium">Idée</div>
+                <div className="text-xs text-muted-foreground">💡</div>
+            </div>
+            <div className="bg-gradient-to-br from-blue-100 to-cyan-100 p-3 rounded-lg border">
+                <div className="text-xs font-medium">Code</div>
+                <div className="text-xs text-muted-foreground">⚡</div>
+            </div>
+            <div className="bg-gradient-to-br from-green-100 to-emerald-100 p-3 rounded-lg border">
+                <div className="text-xs font-medium">Design</div>
+                <div className="text-xs text-muted-foreground">✨</div>
+            </div>
+            <div className="bg-gradient-to-br from-orange-100 to-red-100 p-3 rounded-lg border">
+                <div className="text-xs font-medium">Live</div>
+                <div className="text-xs text-muted-foreground">🚀</div>
+            </div>
+        </div>
+    </div>
+);
+
+export const MockPeopleAvatars = () => (
+    <div className="p-4 h-40 flex items-center justify-center">
+        <div className="flex -space-x-2">
+            <div className="w-10 h-10 bg-gradient-to-br from-blue-400 to-purple-500 rounded-full border-2 border-white flex items-center justify-center text-white text-sm">A</div>
+            <div className="w-10 h-10 bg-gradient-to-br from-green-400 to-blue-500 rounded-full border-2 border-white flex items-center justify-center text-white text-sm">M</div>
+            <div className="w-10 h-10 bg-gradient-to-br from-pink-400 to-red-500 rounded-full border-2 border-white flex items-center justify-center text-white text-sm">S</div>
+            <div className="w-10 h-10 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full border-2 border-white flex items-center justify-center text-white text-xs">+7</div>
+        </div>
+        <div className="ml-4 text-xs text-center">
+            <div className="font-medium">Team Spirit</div>
+            <div className="text-muted-foreground">Ensemble on va plus loin</div>
+        </div>
+    </div>
+);
+
+export const MockBadgeRareté = () => (
+    <div className="p-4 h-40 flex items-center justify-center">
+        <div className="text-center space-y-3">
+            <div className="inline-flex items-center gap-2 bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg">
+                <span>⚡</span>
+                <span>Compétence Rare</span>
+            </div>
+            <div className="text-xs text-muted-foreground">
+                Maîtrise IA + Code + Design
+            </div>
+        </div>
     </div>
 );
