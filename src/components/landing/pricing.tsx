@@ -26,6 +26,7 @@ const includedFeaturesTeam = [
     'Idéal pour écoles, agences et incubateurs',
 ];
 
+// Pricing Plan v6.4 - Updated with "🚀 Devenez Product Builder" and enhanced value propositions
 export default function Pricing() {
     return (
         <section id="pricing" className="py-12 md:py-20 lg:py-32 bg-muted/30">
@@ -135,3 +136,4 @@ export default function Pricing() {
         </section>
     );
 }
+
