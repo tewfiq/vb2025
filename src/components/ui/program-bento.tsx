@@ -7,11 +7,9 @@ import {
   MagicWandIcon,
   Link2Icon,
   GlobeIcon,
-  RocketIcon,
-  ArrowRightIcon
+  RocketIcon
 } from "@radix-ui/react-icons";
 import { cn } from "@/lib/utils";
-import { Button } from "@/components/ui/button";
 
 // Hook pour fade-in on scroll
 function useInView<T extends HTMLElement>(options?: IntersectionObserverInit) {
@@ -168,26 +166,6 @@ export function ProgramBentoSection({
           </div>
         </div>
 
-        {/* CTA Global */}
-        <div className="mt-12 flex justify-center">
-          <Button variant="outline" size="lg" asChild>
-            <a
-              href="#infos"
-              className="inline-flex items-center gap-2"
-              onClick={() => {
-                if (typeof window !== 'undefined' && window.gtag) {
-                  window.gtag('event', 'click_bento_cta', {
-                    event_category: 'Programme Bento',
-                    event_label: 'Global CTA - Voir modalités inscription',
-                  });
-                }
-              }}
-            >
-              Voir les modalités d'inscription
-              <ArrowRightIcon className="h-4 w-4" aria-hidden="true" />
-            </a>
-          </Button>
-        </div>
       </div>
     </section>
   );
@@ -199,7 +177,7 @@ export default function ProgramBentoDefaultV6() {
     {
       icon: "LightningBoltIcon",
       title: "De l'idée à l'intention",
-      copy: "Clarifie ton idée ou génère-la avec un LLM. Pose-la simplement, sans jargon technique. On part de tes intuitions pour construire une intention claire et actionnable. Cette étape détermine tout le reste : mieux tu defines ton projet, plus l'IA peut t'aider efficacement.",
+      copy: "Clarifie ton idée ou génère-la avec un LLM. Pose-la simplement, sans jargon technique. On part de tes intuitions pour construire une intention claire et actionnable. Cette première étape détermine absolument tout le reste : mieux tu définis ton projet, plus l'IA peut t'aider efficacement. Nous utilisons une méthode structurée pour transformer tes envies floues en brief précis. L'objectif : avoir une vision nette avant de toucher au code.",
       emphasis_bg: "gradient:blue->violet (10% opacity)",
       rowcol: "lg:row-start-1 lg:row-end-3 lg:col-start-1 lg:col-end-2",
     },
