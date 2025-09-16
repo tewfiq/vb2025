@@ -6,21 +6,24 @@ import SocialProofBadge from '@/components/landing/social-proof-badge';
 
 const includedFeaturesReduit = [
     'Atelier 2h complet',
-    'Même livrables',
+    'Même contenu que l'atelier principal',
     'Coaching & accompagnement',
+    'Compétence pratique immédiatement applicable',
 ];
 
 const includedFeatures = [
-    'Atelier 2h en présentiel',
-    'Dépôt GitHub personnel',
-    'Déploiement + URL publique',
-    'Kit documentaire',
+    'Atelier 2h intensif en présentiel',
+    'Méthode complète end-to-end : idée → code → déploiement',
+    'Pratique guidée étape par étape',
+    'Projet en ligne, immédiatement partageable',
+    'Kit documentaire pour continuer après l'atelier',
 ];
 
 const includedFeaturesTeam = [
     'Session privative',
-    'Contenu personnalisé',
+    'Contenu personnalisé (vos cas/projets)',
     'Planning dédié',
+    'Idéal pour écoles, agences et incubateurs',
 ];
 
 export default function Pricing() {
@@ -38,6 +41,9 @@ export default function Pricing() {
                     </h2>
                     <p className="mt-2 md:mt-4 text-base md:text-lg text-muted-foreground">
                         Des formules simples et claires, pour tous les profils.
+                    </p>
+                    <p className="mt-2 text-sm md:text-base text-muted-foreground italic">
+                        Chaque formule vous transmet la même compétence : apprendre à coder de bout en bout par la pratique et devenir Product Builder.
                     </p>
                 </div>
                 
@@ -76,7 +82,7 @@ export default function Pricing() {
                     {/* Standard Card */}
                     <Card className="flex flex-col h-full w-full max-w-sm transition-all hover:scale-[1.02] hover:shadow-lg">
                         <CardHeader className="pb-4">
-                            <CardTitle className="font-headline text-2xl">Standard</CardTitle>
+                            <CardTitle className="font-headline text-xl">🚀 Devenez Product Builder</CardTitle>
                             <div className="flex items-baseline gap-2">
                                 <span className="text-5xl font-bold tracking-tight">299 €</span>
                             </div>
@@ -93,7 +99,7 @@ export default function Pricing() {
                             </ul>
                         </CardContent>
                         <CardFooter>
-                            <Button className="w-full" variant="outline" asChild>
+                            <Button className="w-full" asChild>
                                 <Link href="https://buy.stripe.com/bJe5kEdSrgkcfhQaBn7EQ0c">Réserver — 299 €</Link>
                             </Button>
                         </CardFooter>
@@ -106,7 +112,7 @@ export default function Pricing() {
                             <div className="flex items-baseline gap-2">
                                 <span className="text-5xl font-bold tracking-tight">Sur devis</span>
                             </div>
-                            <p className="text-sm text-muted-foreground">Entreprise / École</p>
+                            <p className="text-sm text-muted-foreground">Entreprise / École (5 à 20 pers.)</p>
                         </CardHeader>
                         <CardContent className="flex-1">
                             <ul className="space-y-3 text-sm">
