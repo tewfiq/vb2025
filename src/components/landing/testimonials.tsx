@@ -4,7 +4,7 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 
 // Liste des avatars assignés à chaque témoignage (un avatar par témoignage)
-const avatarAssignments = {
+const avatarAssignments: Record<string, string> = {
   'Alex M.': 'Marwan.jpg', // Masculin
   'Dr. Mathieu D.': 'Pierre.jpg', // Masculin
   'Clara M.': 'Vanessa.jpg', // Féminin
@@ -20,9 +20,9 @@ function getAvatarSrc(name: string) {
 
 const testimonials = [
   { name: 'Alex M.', role: 'Étudiant UX/UI — ECV Paris', quote: "En 2h, j'ai créé et mis en ligne mon projet.", initials: 'AM' },
-  { name: 'Dr. Mathieu D.', role: 'Directeur Pédagogique — Digital College', quote: 'Nos étudiants produisent des projets concrets et partagent leur code sur GitHub.', initials: 'MD' },
-  { name: 'Clara M.', role: 'Designer Freelance — École Conte (alumni)', quote: 'L\'intégration IA a élevé mes offres clients — +40% de revenus.', initials: 'CM' },
-  { name: 'Karim N.', role: 'Étudiant Dev Web — Ascencia', quote: 'Atelier clair, concret, orienté résultat. On repart avec une URL en ligne.', initials: 'KN' },
+  { name: 'Dr. Mathieu D.', role: 'Directeur Pédagogique — Digital College', quote: 'Des projets concrets, code partagé sur GitHub.', initials: 'MD' },
+  { name: 'Clara M.', role: 'Designer Freelance — École Conte (alumni)', quote: 'L\'IA a élevé mes offres — +40% de revenus.', initials: 'CM' },
+  { name: 'Karim N.', role: 'Étudiant Dev Web — Ascencia', quote: 'Atelier clair, concret, orienté résultat.', initials: 'KN' },
 ];
 
 export default function Testimonials() {

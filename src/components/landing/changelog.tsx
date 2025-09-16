@@ -61,7 +61,7 @@ async function fetchPullRequests(): Promise<GitHubPullRequest[]> {
         const dateB = new Date(b.merged_at || b.closed_at).getTime();
         return dateB - dateA;
       })
-      .slice(0, 5);
+      .slice(0, 3);
 
     return filteredPRs;
   } catch (err) {
@@ -95,7 +95,7 @@ export default async function Changelog() {
             Changelog
           </h2>
           <p className="text-muted-foreground mt-1 md:mt-2 text-sm md:text-base">
-            Ce site évolue en continu avec la compétence que vous allez acquérir
+            Ce site évolue avec la même méthode que vous allez apprendre (GitHub + déploiement en continu).
           </p>
         </div>
 
