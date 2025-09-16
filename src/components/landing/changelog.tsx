@@ -1,6 +1,3 @@
-"use client";
-
-import { useState, useEffect } from "react";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { CalendarDays, GitPullRequest, ExternalLink, User } from "lucide-react";
@@ -25,132 +22,70 @@ interface GitHubPullRequest {
   }>;
 }
 
-export default function Changelog() {
-  const [pullRequests, setPullRequests] = useState<GitHubPullRequest[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
-
-  useEffect(() => {
-    const fetchPullRequests = async () => {
-      try {
-        const response = await fetch(
-          "https://api.github.com/repos/tewfiq/vb2025/pulls?state=closed&per_page=10&sort=updated&direction=desc"
-        );
-
-        if (!response.ok) {
-          throw new Error("Failed to fetch pull requests");
-        }
-
-        const data = await response.json();
-        // Filter and prioritize merged PRs
-        const filteredPRs = data
-          .filter((pr: GitHubPullRequest) => {
-            // Exclude draft PRs and certain labels
-            const excludeLabels = ['draft', 'wip', 'work-in-progress'];
-            const hasExcludedLabel = pr.labels.some(label =>
-              excludeLabels.includes(label.name.toLowerCase())
-            );
-            return !hasExcludedLabel;
-          })
-          .sort((a: GitHubPullRequest, b: GitHubPullRequest) => {
-            // Prioritize merged PRs, then sort by date
-            if (a.merged_at && !b.merged_at) return -1;
-            if (!a.merged_at && b.merged_at) return 1;
-            const dateA = new Date(a.merged_at || a.closed_at).getTime();
-            const dateB = new Date(b.merged_at || b.closed_at).getTime();
-            return dateB - dateA;
-          })
-          .slice(0, 8);
-
-        setPullRequests(filteredPRs);
-      } catch (err) {
-        setError("Impossible de charger les dernières contributions");
-        console.error("Error fetching GitHub pull requests:", err);
-      } finally {
-        setLoading(false);
+async function fetchPullRequests(): Promise<GitHubPullRequest[]> {
+  try {
+    const response = await fetch(
+      "https://api.github.com/repos/tewfiq/vb2025/pulls?state=closed&per_page=10&sort=updated&direction=desc",
+      {
+        headers: {
+          Accept: "application/vnd.github+json",
+          "X-GitHub-Api-Version": "2022-11-28",
+          "User-Agent": "vibe-coding-changelog",
+        },
+        next: { revalidate: 300 }, // Cache for 5 minutes
       }
-    };
-
-    fetchPullRequests();
-  }, []);
-
-  const formatDate = (dateString: string) => {
-    const date = new Date(dateString);
-    return date.toLocaleDateString("fr-FR", {
-      year: "numeric",
-      month: "long",
-      day: "numeric",
-    });
-  };
-
-  const truncateDescription = (text: string, maxLength: number = 150) => {
-    if (text.length <= maxLength) return text;
-    return text.substring(0, maxLength).trim() + "...";
-  };
-
-  if (loading) {
-    return (
-      <section className="py-12 md:py-20 lg:py-24 bg-muted/30">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-8 md:mb-12">
-            <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl md:text-4xl lg:text-5xl font-headline">
-              Changelog
-            </h2>
-            <p className="text-muted-foreground mt-1 md:mt-2 text-sm md:text-base">
-              Dernières contributions et améliorations
-            </p>
-          </div>
-          <div className="max-w-4xl mx-auto space-y-6">
-            {[...Array(3)].map((_, i) => (
-              <Card key={i} className="animate-pulse">
-                <CardHeader>
-                  <div className="h-6 bg-muted rounded w-1/3"></div>
-                  <div className="h-4 bg-muted rounded w-1/4"></div>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-2">
-                    <div className="h-4 bg-muted rounded"></div>
-                    <div className="h-4 bg-muted rounded w-3/4"></div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
     );
-  }
 
-  if (error) {
-    return (
-      <section className="py-12 md:py-20 lg:py-24 bg-muted/30">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-8 md:mb-12">
-            <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl md:text-4xl lg:text-5xl font-headline">
-              Changelog
-            </h2>
-            <p className="text-muted-foreground mt-1 md:mt-2 text-sm md:text-base">
-              Dernières contributions et améliorations
-            </p>
-          </div>
-          <div className="max-w-4xl mx-auto text-center">
-            <Card>
-              <CardContent className="p-8">
-                <p className="text-muted-foreground">{error}</p>
-                <Button
-                  variant="outline"
-                  className="mt-4"
-                  onClick={() => window.location.reload()}
-                >
-                  Réessayer
-                </Button>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-    );
+    if (!response.ok) {
+      console.error("Failed to fetch pull requests:", response.status);
+      return [];
+    }
+
+    const data = await response.json();
+
+    // Filter and prioritize merged PRs
+    const filteredPRs = data
+      .filter((pr: GitHubPullRequest) => {
+        // Only include merged PRs and exclude draft PRs
+        if (!pr.merged_at) return false;
+
+        const excludeLabels = ['draft', 'wip', 'work-in-progress'];
+        const hasExcludedLabel = pr.labels.some(label =>
+          excludeLabels.includes(label.name.toLowerCase())
+        );
+        return !hasExcludedLabel;
+      })
+      .sort((a: GitHubPullRequest, b: GitHubPullRequest) => {
+        // Sort by merge date descending
+        const dateA = new Date(a.merged_at || a.closed_at).getTime();
+        const dateB = new Date(b.merged_at || b.closed_at).getTime();
+        return dateB - dateA;
+      })
+      .slice(0, 8);
+
+    return filteredPRs;
+  } catch (err) {
+    console.error("Error fetching GitHub pull requests:", err);
+    return [];
   }
+}
+
+const formatDate = (dateString: string) => {
+  const date = new Date(dateString);
+  return date.toLocaleDateString("fr-FR", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
+};
+
+const truncateDescription = (text: string, maxLength: number = 150) => {
+  if (text.length <= maxLength) return text;
+  return text.substring(0, maxLength).trim() + "...";
+};
+
+export default async function Changelog() {
+  const pullRequests = await fetchPullRequests();
 
   return (
     <section className="py-12 md:py-20 lg:py-24 bg-muted/30">
@@ -160,7 +95,7 @@ export default function Changelog() {
             Changelog
           </h2>
           <p className="text-muted-foreground mt-1 md:mt-2 text-sm md:text-base">
-            Dernières mises à jour et améliorations
+            Dernières contributions et améliorations
           </p>
         </div>
 
@@ -194,10 +129,10 @@ export default function Changelog() {
                               </Badge>
                             )}
                             <Badge
-                              variant={pr.merged_at ? "default" : "secondary"}
-                              className={pr.merged_at ? "bg-green-600 hover:bg-green-700" : "bg-gray-600 hover:bg-gray-700"}
+                              variant="default"
+                              className="bg-green-600 hover:bg-green-700"
                             >
-                              {pr.merged_at ? "Merged" : "Closed"}
+                              Merged
                             </Badge>
                           </div>
                         </div>
