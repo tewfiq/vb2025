@@ -30,15 +30,18 @@ export default function Hero() {
           </span>
         </h1>
         <p className="mt-2 md:mt-4 max-w-2xl mx-auto text-base text-muted-foreground md:text-lg lg:text-xl">
-          Apprends à coder sans coder.<br />Tu écris en français, l'IA génère le code, tu déploies ton site.
+          Apprends à coder sans coder. Tu écris en français, l'IA t'aide à générer le code et tu déploies ton site.
+        </p>
+        <p className="mt-2 md:mt-4 max-w-2xl mx-auto text-sm text-muted-foreground/80 md:text-base font-medium">
+          Une compétence digitale transférable pour tes études, ton CV et tes projets.
+        </p>
+        <p className="mt-3 md:mt-4 text-sm text-accent font-semibold">
+          +1 000 étudiants formés en 2024–2025
         </p>
         <div className="mt-4 md:mt-8 flex flex-col sm:flex-row items-center justify-center gap-3 md:gap-4">
-          <Button size="lg" asChild className="bg-accent hover:bg-accent/90 text-accent-foreground relative">
+          <Button size="lg" asChild className="bg-accent hover:bg-accent/90 text-accent-foreground">
             <Link href="#pricing">
-              Je m'inscris — 149 € (-26 ans)
-              <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs px-2 py-1 rounded-full">
-                ✨
-              </span>
+              Je m'inscris — 149 € (-26 ans) ✨
             </Link>
           </Button>
           <Button size="lg" variant="outline" asChild>

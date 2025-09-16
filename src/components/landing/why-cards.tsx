@@ -1,13 +1,20 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { CodeSnippet, MockAppList, CommitList, DeploymentLog } from "./mock-components";
+import {
+  MockEditorLight,
+  MockTerminalClean,
+  MockWorkshopRoom,
+  MockCardsGrid,
+  MockPeopleAvatars,
+  MockBadgeRareté
+} from "./mock-components";
 
 const features = [
-    { title: "Apprends à coder…<br />en écrivant !", description: "Prends en main les outils qui buzzent : ChatGPT, Copilot, Bolt, Cursor.", content: <CodeSnippet /> },
-    { title: "Lance tes projets sans barrière", description: "Sites, apps, scripts, IA – ton idée, on la prototype ensemble.", content: <DeploymentLog /> },
-    { title: "Ateliers interactifs ✨", description: "Coaching par des formateurs passionnés, ambiance bienveillante et collaborative.", content: <MockAppList /> },
-    { title: "Créa instantanée", description: "Ton flow créatif, boosté par l'IA → résultat immédiat.", content: <CommitList /> },
-    { title: "Team Spirit", description: "Évolue dans une vibe collaborative, partage tes skills et ton énergie.", content: <CommitList /> },
-    { title: "Unfair Advantage", description: "Pendant que d'autres scrollent, toi tu crées. Ne passe pas à côté de cette compétence rare.", content: <DeploymentLog /> }
+    { title: "Apprends en écrivant", description: "Prends en main ChatGPT, Copilot, Cursor... et construis en langage naturel.", content: <MockEditorLight /> },
+    { title: "Lance tes projets sans barrière", description: "Sites, apps, scripts, IA — on prototype ensemble, de A à Z.", content: <MockTerminalClean /> },
+    { title: "Ateliers interactifs ✨", description: "Coaching bienveillant, pratique guidée, feedback immédiat.", content: <MockWorkshopRoom /> },
+    { title: "Créa instantanée", description: "Ton flow créatif, boosté par l'IA. Résultat concret immédiat.", content: <MockCardsGrid /> },
+    { title: "Team Spirit", description: "Une vibe collaborative pour progresser plus vite.", content: <MockPeopleAvatars /> },
+    { title: "Unfair Advantage", description: "Pendant que d'autres scrollent, toi tu crées. Compétence rare et transférable.", content: <MockBadgeRareté /> }
 ];
 
 export default function WhyCards() {

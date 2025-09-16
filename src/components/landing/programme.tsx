@@ -39,8 +39,8 @@ const features = [
     Icon: LightningBoltIcon,
     name: "1) De l'idée à l'intention",
     description:
-      "Clarifie ton idée (ou génère-la avec un LLM). Pose-la simplement, sans jargon. Objectif : passer de l'intuition à une intention claire.",
-    href: "#pricing",
+      "Clarifie ton idée (ou génère-la avec un LLM). Pose-la simplement, sans jargon.",
+    href: "#infos",
     cta: "Voir les modalités",
     background: <Bg />,
     className: "lg:row-start-1 lg:row-end-3 lg:col-start-1 lg:col-end-2",
@@ -49,8 +49,8 @@ const features = [
     Icon: TargetIcon,
     name: "2) Stratégie & cadrage",
     description:
-      "Problème/Solution avec la méthode Kindlin. Business model & pricing model. Résultat : un meta prompt solide qui guide la suite.",
-    href: "#pricing",
+      "Problème/Solution (Kindlin), business model & pricing. Un meta prompt solide guide la suite.",
+    href: "#infos",
     cta: "Voir les modalités",
     background: <Bg />,
     className: "lg:row-start-1 lg:row-end-2 lg:col-start-2 lg:col-end-3",
@@ -59,8 +59,8 @@ const features = [
     Icon: MagicWandIcon,
     name: "3) Travailler avec l'IA",
     description:
-      "Apprends à converser et à prompter efficacement. Obtiens des outputs de qualité (code, design, logique). Tu restes owner du process.",
-    href: "#pricing",
+      "Apprends à converser et prompter. Obtiens des outputs de qualité. Tu restes owner du process.",
+    href: "#infos",
     cta: "Voir les modalités",
     background: <Bg />,
     className: "lg:row-start-2 lg:row-end-3 lg:col-start-2 lg:col-end-3",
@@ -69,8 +69,8 @@ const features = [
     Icon: Link2Icon,
     name: "4) Extensions & APIs",
     description:
-      "Ajoute une base simple, une API ou une extension. Notions clés : sécurité, analytics. Enrichis ton projet sans le complexifier.",
-    href: "#pricing",
+      "Ajoute une base simple, une API ou une extension. Notions: sécurité & analytics.",
+    href: "#infos",
     cta: "Voir les modalités",
     background: <Bg />,
     className: "lg:row-start-1 lg:row-end-2 lg:col-start-3 lg:col-end-4",
@@ -79,8 +79,8 @@ const features = [
     Icon: GlobeIcon,
     name: "5) Mise en ligne",
     description:
-      "Dépôt GitHub, déploiement Netlify/Vercel. À la fin : une URL publique partageable. Résultat concret, immédiat.",
-    href: "#pricing",
+      "GitHub → Netlify/Vercel. À la fin: une URL publique partageable, immédiate.",
+    href: "#infos",
     cta: "Voir les modalités",
     background: <Bg />,
     className: "lg:row-start-2 lg:row-end-3 lg:col-start-3 lg:col-end-4",
@@ -89,8 +89,8 @@ const features = [
     Icon: RocketIcon,
     name: "6) Ton rôle de Product Builder",
     description:
-      "Pilote design, code, SEO, versioning. Posture \"Agency of One\". Ressources et prochaines étapes pour avancer après l'atelier.",
-    href: "#pricing",
+      "Pilote design, code, SEO, versioning. Posture « Agency of One ». Suite: ressources & prochaines étapes.",
+    href: "#infos",
     cta: "Voir les modalités",
     background: <Bg />,
     className: "lg:row-start-3 lg:row-end-4 lg:col-start-1 lg:col-end-4",
@@ -124,10 +124,10 @@ export default function Programme() {
             id="programme-title"
             className="text-3xl font-semibold tracking-tight text-foreground sm:text-4xl font-headline"
           >
-            Programme — Workshop Vibe Coding Paris
+            Programme
           </h2>
           <p className="mt-3 text-muted-foreground">
-            2h pour transformer une idée en projet digital concret : 1h de démo, 1h de pratique accompagnée.
+            En 2h, transforme une idée en projet concret. Apporte ton ordinateur, utilise tes propres fichiers.
           </p>
         </header>
 
