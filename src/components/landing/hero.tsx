@@ -5,7 +5,6 @@ import Link from 'next/link';
 import { RetroGrid } from '@/components/ui/retro-grid';
 import Logo from '@/components/logo';
 import SocialProofBadge from '@/components/landing/social-proof-badge';
-import { TypeWriter } from '@/components/ui/typewriter';
 
 export default function Hero() {
   return (
@@ -18,23 +17,13 @@ export default function Hero() {
         </div>
         
         <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-headline">
-          <TypeWriter 
-            texts={[
-              "Une compétence en 2h.\nRien de personnel.",
-              "Rien de magique.\nJuste une compétence.",
-              "Pas de promesses.\nJuste du concret."
-            ]}
-            delayBetween={3000}
-            typingSpeed={100}
-            deletingSpeed={50}
-            loop={true}
-          />
+          Une compétence<br />en 2h.<br />Rien de personnel.
         </h1>
         <p className="mt-2 md:mt-4 max-w-2xl mx-auto text-base text-muted-foreground md:text-lg lg:text-xl">
-          Tu écris en français, l'IA génère le code, tu déploies ton projet en ligne.
+          Apprends à coder sans coder.<br />Tu écris en français, l'IA génère le code, tu déploies ton site.
         </p>
         <div className="mt-4 md:mt-8 flex flex-col sm:flex-row items-center justify-center gap-3 md:gap-4">
-          <Button size="lg" asChild className="neo-brutalist-button bg-accent hover:bg-accent/90 text-accent-foreground relative">
+          <Button size="lg" asChild className="bg-accent hover:bg-accent/90 text-accent-foreground relative">
             <Link href="#pricing">
               Je m'inscris — 149 € (-26 ans)
               <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs px-2 py-1 rounded-full">
@@ -42,7 +31,7 @@ export default function Hero() {
               </span>
             </Link>
           </Button>
-          <Button size="lg" asChild className="neo-brutalist-button bg-secondary hover:bg-secondary/90 text-secondary-foreground">
+          <Button size="lg" variant="outline" asChild>
             <Link href="#pricing">
               Réserver au tarif normal — 299 €
             </Link>

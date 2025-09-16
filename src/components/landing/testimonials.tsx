@@ -22,6 +22,7 @@ const testimonials = [
   { name: 'Alex M.', role: 'Étudiant UX/UI — ECV Paris', quote: "En 2h, j'ai créé et mis en ligne mon projet.", initials: 'AM' },
   { name: 'Dr. Mathieu D.', role: 'Directeur Pédagogique — Digital College', quote: 'Nos étudiants produisent des projets concrets et partagent leur code sur GitHub.', initials: 'MD' },
   { name: 'Clara M.', role: 'Designer Freelance — École Conte (alumni)', quote: 'L\'intégration IA a élevé mes offres clients — +40% de revenus.', initials: 'CM' },
+  { name: 'Karim N.', role: 'Étudiant Dev Web — Ascencia', quote: 'Atelier clair, concret, orienté résultat. On repart avec une URL en ligne.', initials: 'KN' },
 ];
 
 export default function Testimonials() {
@@ -30,7 +31,7 @@ export default function Testimonials() {
       <div className="container mx-auto px-4 max-w-6xl">
         <div className="text-center max-w-3xl mx-auto mb-8 md:mb-16">
           <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl md:text-4xl lg:text-5xl font-headline">
-            Ils ont testé Vibe Coding
+            Ils ont testé<br />Vibe Coding Paris
           </h2>
         </div>
 
