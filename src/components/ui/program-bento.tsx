@@ -7,11 +7,9 @@ import {
   MagicWandIcon,
   Link2Icon,
   GlobeIcon,
-  RocketIcon,
-  ArrowRightIcon
+  RocketIcon
 } from "@radix-ui/react-icons";
 import { cn } from "@/lib/utils";
-import { Button } from "@/components/ui/button";
 
 // Hook pour fade-in on scroll
 function useInView<T extends HTMLElement>(options?: IntersectionObserverInit) {
@@ -33,8 +31,6 @@ interface ProgramCard {
   icon: 'LightningBoltIcon' | 'TargetIcon' | 'MagicWandIcon' | 'Link2Icon' | 'GlobeIcon' | 'RocketIcon';
   title: string;
   copy: string;
-  cta: string;
-  href: string;
   emphasis_bg?: string;
   rowcol: string;
 }
@@ -76,17 +72,6 @@ const ProgramBentoCard = ({
   const IconComponent = iconMap[card.icon];
   const hasEmphasis = card.emphasis_bg?.includes('gradient:blue->violet');
 
-  const handleClick = () => {
-    // Analytics event
-    if (typeof window !== 'undefined' && window.gtag) {
-      window.gtag('event', 'click_bento_cta', {
-        event_category: 'Programme Bento',
-        event_label: card.title,
-        card_position: index + 1,
-      });
-    }
-  };
-
   return (
     <div
       className={cn(
@@ -108,39 +93,21 @@ const ProgramBentoCard = ({
       <div className="pointer-events-none absolute inset-0 transform-gpu transition-all duration-300 group-hover:bg-black/5 dark:group-hover:bg-white/5 rounded-2xl" />
 
       {/* Contenu principal */}
-      <div className="pointer-events-none z-10 flex transform-gpu flex-col gap-3 p-6 transition-all duration-300 group-hover:-translate-y-1">
+      <div className="pointer-events-none z-10 flex transform-gpu flex-col gap-3 p-6 transition-all duration-300 group-hover:-translate-y-1 h-full">
         <IconComponent
-          className="h-10 w-10 origin-left transform-gpu text-accent transition-all duration-300 ease-in-out group-hover:scale-90"
+          className="h-10 w-10 origin-left transform-gpu text-accent transition-all duration-300 ease-in-out group-hover:scale-90 flex-shrink-0"
           aria-hidden="true"
         />
-        <div>
-          <h3 className="text-lg font-semibold text-foreground font-headline leading-tight">
+        <div className="flex-1 flex flex-col">
+          <h3 className="text-base lg:text-lg font-semibold text-foreground font-headline leading-tight mb-3">
             {card.title}
           </h3>
-          <p className="mt-2 text-sm text-muted-foreground leading-relaxed line-clamp-4">
+          <p className="text-sm text-muted-foreground leading-relaxed flex-1">
             {card.copy}
           </p>
         </div>
       </div>
 
-      {/* CTA qui apparaît au hover */}
-      <div className="pointer-events-none absolute bottom-0 left-0 right-0 flex w-full translate-y-10 transform-gpu flex-row items-center p-4 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
-        <Button
-          variant="ghost"
-          size="sm"
-          className="pointer-events-auto text-xs"
-          asChild
-        >
-          <a
-            href={card.href}
-            onClick={handleClick}
-            aria-label={`${card.cta} pour ${card.title}`}
-          >
-            {card.cta}
-            <ArrowRightIcon className="ml-1 h-3 w-3" aria-hidden="true" />
-          </a>
-        </Button>
-      </div>
     </div>
   );
 };
@@ -187,7 +154,7 @@ export function ProgramBentoSection({
 
         {/* Bento Grid 2×3 */}
         <div className="w-full">
-          <div className="grid w-full auto-rows-[240px] grid-cols-1 gap-4 lg:grid-cols-3 lg:grid-rows-3">
+          <div className="grid w-full auto-rows-[200px] sm:auto-rows-[220px] lg:auto-rows-[240px] grid-cols-1 gap-4 lg:grid-cols-3 lg:grid-rows-3">
             {cards.map((card, index) => (
               <ProgramBentoCard
                 key={card.title}
@@ -199,26 +166,6 @@ export function ProgramBentoSection({
           </div>
         </div>
 
-        {/* CTA Global */}
-        <div className="mt-12 flex justify-center">
-          <Button variant="outline" size="lg" asChild>
-            <a
-              href="#infos"
-              className="inline-flex items-center gap-2"
-              onClick={() => {
-                if (typeof window !== 'undefined' && window.gtag) {
-                  window.gtag('event', 'click_bento_cta', {
-                    event_category: 'Programme Bento',
-                    event_label: 'Global CTA - Voir modalités inscription',
-                  });
-                }
-              }}
-            >
-              Voir les modalités d'inscription
-              <ArrowRightIcon className="h-4 w-4" aria-hidden="true" />
-            </a>
-          </Button>
-        </div>
       </div>
     </section>
   );
@@ -229,51 +176,39 @@ export default function ProgramBentoDefaultV6() {
   const cardsData: ProgramCard[] = [
     {
       icon: "LightningBoltIcon",
-      title: "1) De l'idée à l'intention",
-      copy: "Clarifie ton idée (ou génère-la avec un LLM). Pose-la simplement, sans jargon.",
-      cta: "Voir les modalités",
-      href: "#infos",
+      title: "De l'idée à l'intention",
+      copy: "Clarifie ton idée ou génère-la avec un LLM. Pose-la simplement, sans jargon technique. On part de tes intuitions pour construire une intention claire et actionnable. Cette première étape détermine absolument tout le reste : mieux tu définis ton projet, plus l'IA peut t'aider efficacement. Nous utilisons une méthode structurée pour transformer tes envies floues en brief précis. L'objectif : avoir une vision nette avant de toucher au code.",
       emphasis_bg: "gradient:blue->violet (10% opacity)",
       rowcol: "lg:row-start-1 lg:row-end-3 lg:col-start-1 lg:col-end-2",
     },
     {
       icon: "TargetIcon",
-      title: "2) Stratégie & cadrage",
-      copy: "Problème/Solution (Kindlin), business model & pricing. Un meta prompt solide guide la suite.",
-      cta: "Voir les modalités",
-      href: "#infos",
+      title: "Stratégie & cadrage",
+      copy: "Problème/Solution avec la méthode Kindlin. Business model & pricing. Un meta prompt solide guide la suite.",
       rowcol: "lg:row-start-1 lg:row-end-2 lg:col-start-2 lg:col-end-3",
     },
     {
       icon: "MagicWandIcon",
-      title: "3) Travailler avec l'IA",
-      copy: "Apprends à converser et prompter. Obtiens des outputs de qualité. Tu restes owner du process.",
-      cta: "Voir les modalités",
-      href: "#infos",
+      title: "Travailler avec l'IA",
+      copy: "Apprends à converser et prompter efficacement. Obtiens des outputs de qualité. Tu restes owner du process.",
       rowcol: "lg:row-start-2 lg:row-end-3 lg:col-start-2 lg:col-end-3",
     },
     {
       icon: "Link2Icon",
-      title: "4) Extensions & APIs",
+      title: "Extensions & APIs",
       copy: "Ajoute une base simple, une API ou une extension. Notions: sécurité & analytics.",
-      cta: "Voir les modalités",
-      href: "#infos",
       rowcol: "lg:row-start-1 lg:row-end-2 lg:col-start-3 lg:col-end-4",
     },
     {
       icon: "GlobeIcon",
-      title: "5) Mise en ligne",
+      title: "Mise en ligne",
       copy: "GitHub → Netlify/Vercel. À la fin: une URL publique partageable, immédiate.",
-      cta: "Voir les modalités",
-      href: "#infos",
       rowcol: "lg:row-start-2 lg:row-end-3 lg:col-start-3 lg:col-end-4",
     },
     {
       icon: "RocketIcon",
-      title: "6) Ton rôle de Product Builder",
+      title: "Ton rôle de Product Builder",
       copy: "Pilote design, code, SEO, versioning. Posture « Agency of One ». Suite: ressources & prochaines étapes.",
-      cta: "Voir les modalités",
-      href: "#infos",
       rowcol: "lg:row-start-3 lg:row-end-4 lg:col-start-1 lg:col-end-4",
     },
   ];
