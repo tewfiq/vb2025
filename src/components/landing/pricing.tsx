@@ -75,13 +75,13 @@ export default function Pricing() {
                         </CardContent>
                         <CardFooter className="flex-col gap-3">
                             <Button className="w-full bg-accent hover:bg-accent/90" asChild>
-                                <Link href="https://buy.stripe.com/bJe8wQ3dN7NGc5EcJv7EQ0b">Je m'inscris — 149 €</Link>
+                                <Link href="#checkout-149">Je m'inscris — 149 €</Link>
                             </Button>
                         </CardFooter>
                     </Card>
 
-                    {/* Standard Card */}
-                    <Card className="flex flex-col h-full w-full max-w-sm transition-all hover:scale-[1.02] hover:shadow-lg">
+                    {/* Standard Card - Highlighted */}
+                    <Card className="flex flex-col h-full w-full max-w-sm border-2 border-primary shadow-2xl shadow-primary/20 relative transition-all hover:scale-[1.02] hover:shadow-2xl">
                         <CardHeader className="pb-4">
                             <CardTitle className="font-headline text-xl">🚀 Devenez Product Builder</CardTitle>
                             <div className="flex items-baseline gap-2">
@@ -101,7 +101,7 @@ export default function Pricing() {
                         </CardContent>
                         <CardFooter>
                             <Button className="w-full" asChild>
-                                <Link href="https://buy.stripe.com/bJe5kEdSrgkcfhQaBn7EQ0c">Réserver — 299 €</Link>
+                                <Link href="#checkout-299">Réserver — 299 €</Link>
                             </Button>
                         </CardFooter>
                     </Card>
@@ -127,7 +127,7 @@ export default function Pricing() {
                         </CardContent>
                         <CardFooter>
                             <Button className="w-full" variant="outline" asChild>
-                                <Link href="https://cal.com/tewfiqferahi/15min" target="_blank" rel="noopener noreferrer">Demander un devis</Link>
+                                <Link href="#contact">Demander un devis</Link>
                             </Button>
                         </CardFooter>
                     </Card>
