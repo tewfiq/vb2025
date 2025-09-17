@@ -1,5 +1,5 @@
-import ProgramBentoDefaultV6 from "@/components/ui/program-bento";
+import ProgrammeCard from "@/components/landing/programme-card";
 
 export default function Programme() {
-  return <ProgramBentoDefaultV6 />;
+  return <ProgrammeCard />;
 }
