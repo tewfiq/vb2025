@@ -44,19 +44,15 @@ export default function Pricing() {
                         Des formules simples et claires, pour tous les profils.
                     </p>
                     <p className="mt-2 text-sm md:text-base text-muted-foreground italic">
-                        Chaque formule vous transmet la même compétence : apprendre à coder de bout en bout par la pratique et devenir Product Builder.
+                        Chaque formule vous transmet la même compétence :<br />
+                        apprendre à coder de bout en bout par la pratique et devenir Product Builder.
                     </p>
                 </div>
                 
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto items-start justify-items-center">
                     {/* Réduit Card - Featured */}
                     <Card className="flex flex-col h-full w-full max-w-sm border-2 border-accent shadow-2xl shadow-accent/20 relative transition-all hover:scale-[1.02] hover:shadow-2xl">
-                         <div className="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2">
-                            <div className="bg-accent text-accent-foreground px-4 py-1 rounded-full text-sm font-semibold">
-                                🔥 Plus de 50% des places partent en tarif -26
-                            </div>
-                        </div>
-                        <CardHeader className="pb-4 pt-10">
+                        <CardHeader className="pb-4">
                             <CardTitle className="font-headline text-2xl">Réduit</CardTitle>
                             <div className="flex items-baseline gap-2">
                                 <span className="text-5xl font-bold tracking-tight text-accent">149 €</span>
