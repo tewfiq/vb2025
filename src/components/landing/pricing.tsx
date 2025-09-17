@@ -6,7 +6,7 @@ import SocialProofBadge from '@/components/landing/social-proof-badge';
 
 const includedFeaturesReduit = [
     'Atelier 2h complet',
-    'Même contenu que l'atelier principal',
+    'Même contenu que l\'atelier principal',
     'Coaching & accompagnement',
     'Compétence pratique immédiatement applicable',
 ];
@@ -16,7 +16,7 @@ const includedFeatures = [
     'Méthode complète end-to-end : idée → code → déploiement',
     'Pratique guidée étape par étape',
     'Projet en ligne, immédiatement partageable',
-    'Kit documentaire pour continuer après l'atelier',
+    'Kit documentaire pour continuer après l\'atelier',
 ];
 
 const includedFeaturesTeam = [
