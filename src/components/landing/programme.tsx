@@ -1,5 +1,5 @@
-import ProgrammeCard from "@/components/landing/programme-card";
+import Feature108Demo from "@/components/ui/feature108-demo";
 
 export default function Programme() {
-  return <ProgrammeCard />;
+  return <Feature108Demo />;
 }
