@@ -4,7 +4,7 @@ import { Card, CardHeader, CardTitle, CardContent, CardFooter } from '@/componen
 import { Check } from 'lucide-react';
 import SocialProofBadge from '@/components/landing/social-proof-badge';
 
-const includedFeaturesReduit = [
+const includedFeaturesStarter = [
     'Atelier 2h complet',
     'Même contenu que l\'atelier principal',
     'Coaching & accompagnement',
@@ -13,7 +13,7 @@ const includedFeaturesReduit = [
 
 const includedFeatures = [
     'Atelier 2h intensif en présentiel',
-    'Méthode complète end-to-end : idée → code → déploiement',
+    'Méthode complète end-to-end :<br />idée → code → déploiement',
     'Pratique guidée étape par étape',
     'Projet en ligne, immédiatement partageable',
     'Kit documentaire pour continuer après l\'atelier',
@@ -50,10 +50,10 @@ export default function Pricing() {
                 </div>
                 
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto items-start justify-items-center">
-                    {/* Réduit Card - Featured */}
+                    {/* Starter Card - Featured */}
                     <Card className="flex flex-col h-full w-full max-w-sm border-2 border-accent shadow-2xl shadow-accent/20 relative transition-all hover:scale-[1.02] hover:shadow-2xl">
                         <CardHeader className="pb-4">
-                            <CardTitle className="font-headline text-2xl">Réduit</CardTitle>
+                            <CardTitle className="font-headline text-2xl">Starter</CardTitle>
                             <div className="flex items-baseline gap-2">
                                 <span className="text-5xl font-bold tracking-tight text-accent">149 €</span>
                             </div>
@@ -61,7 +61,7 @@ export default function Pricing() {
                         </CardHeader>
                         <CardContent className="flex-1">
                             <ul className="space-y-3 text-sm">
-                                {includedFeaturesReduit.map(feature => (
+                                {includedFeaturesStarter.map(feature => (
                                     <li key={feature} className="flex items-center gap-2">
                                         <Check className="h-4 w-4 text-accent" />
                                         <span className="text-muted-foreground">{feature}</span>
