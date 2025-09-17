@@ -30,7 +30,8 @@ export default function Hero() {
           </span>
         </h1>
         <p className="mt-2 md:mt-4 max-w-2xl mx-auto text-base text-muted-foreground md:text-lg lg:text-xl">
-          Apprends à coder sans coder. Tu écris en français, l'IA t'aide à générer le code et tu déploies ton site.
+          Apprends à coder sans coder.<br />
+          Tu écris en français, l'IA t'aide à générer le code et tu déploies ton site.
         </p>
         <p className="mt-2 md:mt-4 max-w-2xl mx-auto text-sm text-muted-foreground/80 md:text-base font-medium">
           Une compétence digitale transférable pour tes études, ton CV et tes projets.
