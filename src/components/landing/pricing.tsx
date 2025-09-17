@@ -13,7 +13,7 @@ const includedFeaturesStarter = [
 
 const includedFeatures = [
     'Atelier 2h intensif en présentiel',
-    'Méthode complète end-to-end : idée → code → déploiement',
+    'Méthode complète end-to-end :<br />idée → code → déploiement',
     'Pratique guidée étape par étape',
     'Projet en ligne, immédiatement partageable',
     'Kit documentaire pour continuer après l\'atelier',
