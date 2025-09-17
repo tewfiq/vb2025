@@ -6,7 +6,6 @@ import Gallery from "@/components/landing/gallery";
 import Partners from "@/components/landing/partners";
 import WhyCards from "@/components/landing/why-cards";
 import MethodSteps from "@/components/landing/method-steps";
-import Testimonials from "@/components/landing/testimonials";
 import Pricing from "@/components/landing/pricing";
 import Faq from "@/components/landing/faq";
 import Changelog from "@/components/landing/changelog";
@@ -36,7 +35,6 @@ export default function Home() {
         <section id="comment-ca-marche">
           <MethodSteps />
         </section>
-        <Testimonials />
         <Pricing />
         <Faq />
         <Changelog />
