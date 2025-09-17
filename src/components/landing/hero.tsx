@@ -20,7 +20,7 @@ export default function Hero() {
           {/* Version mobile: Une compétence → 2h. → Rien de personnel. */}
           <span className="block md:hidden">
             Une compétence<br />
-            2h.<br />
+            en 2h.<br />
             Rien de personnel.
           </span>
           {/* Version desktop: Une compétence en 2h. → Rien de personnel. */}
