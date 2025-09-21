@@ -45,7 +45,7 @@ const Feature108 = ({
 
         <Tabs defaultValue={tabs[0]?.value} className="mt-8">
           {/* Mobile: Horizontal scroll, Desktop: Centered row */}
-          <div className="container">
+          <div className="mx-auto max-w-4xl">
             <TabsList className="flex w-full overflow-x-auto scrollbar-hide gap-3 md:justify-center md:gap-6 lg:gap-10 pb-2 md:pb-0 h-auto">
               {tabs.map((tab) => (
                 <TabsTrigger
