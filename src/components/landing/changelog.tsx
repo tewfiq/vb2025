@@ -79,9 +79,40 @@ const formatDate = (dateString: string) => {
   });
 };
 
-const truncateDescription = (text: string, maxLength: number = 150) => {
+const truncateDescription = (text: string, maxLength: number = 200) => {
   if (text.length <= maxLength) return text;
-  return text.substring(0, maxLength).trim() + "...";
+
+  // Find the last complete sentence within the limit
+  const truncated = text.substring(0, maxLength);
+  const lastSentence = truncated.lastIndexOf('. ');
+  const lastWord = truncated.lastIndexOf(' ');
+
+  // If we find a sentence end, use that; otherwise use last word
+  if (lastSentence > maxLength * 0.7) {
+    return truncated.substring(0, lastSentence + 1);
+  } else if (lastWord > maxLength * 0.8) {
+    return truncated.substring(0, lastWord) + "...";
+  }
+
+  return truncated + "...";
+};
+
+const parseMarkdownBasic = (text: string) => {
+  // Convert basic markdown to readable text while preserving structure
+  return text
+    // Convert headers to bold text
+    .replace(/#+\s*(.+)/g, '$1')
+    // Convert bold/italic markers
+    .replace(/\*\*(.+?)\*\*/g, '$1')
+    .replace(/\*(.+?)\*/g, '$1')
+    // Convert checkboxes to symbols
+    .replace(/\[x\]/gi, '✓')
+    .replace(/\[ \]/g, '○')
+    // Convert bullet points
+    .replace(/^[*-]\s+/gm, '• ')
+    // Clean up extra whitespace
+    .replace(/\n{3,}/g, '\n\n')
+    .trim();
 };
 
 export default async function Changelog() {
@@ -179,8 +210,24 @@ export default async function Changelog() {
                   </CardHeader>
                   {pr.body && (
                     <CardContent>
-                      <div className="prose prose-sm max-w-none text-muted-foreground">
-                        <p>{truncateDescription(pr.body.replace(/#+\s*/g, "").replace(/\*/g, "").replace(/\[x\]/g, "✓").replace(/\[ \]/g, "○"))}</p>
+                      <div className="prose prose-sm max-w-none">
+                        <div className="text-muted-foreground leading-relaxed">
+                          {parseMarkdownBasic(pr.body).split('\n').map((line, idx) => {
+                            if (line.startsWith('• ')) {
+                              return (
+                                <div key={idx} className="flex items-start gap-2 mb-1">
+                                  <span className="text-primary mt-1 text-xs">•</span>
+                                  <span className="flex-1">{truncateDescription(line.substring(2))}</span>
+                                </div>
+                              );
+                            }
+                            return line && (
+                              <p key={idx} className="mb-2 last:mb-0">
+                                {truncateDescription(line)}
+                              </p>
+                            );
+                          })}
+                        </div>
                       </div>
                     </CardContent>
                   )}
