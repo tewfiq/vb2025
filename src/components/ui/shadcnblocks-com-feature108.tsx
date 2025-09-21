@@ -40,18 +40,18 @@ const Feature108 = ({
         <div className="flex flex-col items-center gap-4 text-center">
           <Badge variant="outline">{badge}</Badge>
           <h1 className="max-w-3xl text-3xl font-semibold md:text-4xl">{heading}</h1>
-          <p className="text-muted-foreground">{description}</p>
+          <p className="text-muted-foreground max-w-2xl">{description}</p>
         </div>
 
         <Tabs defaultValue={tabs[0]?.value} className="mt-8">
           {/* Mobile: Horizontal scroll, Desktop: Centered row */}
           <div className="container">
-            <TabsList className="flex w-full overflow-x-auto scrollbar-hide gap-2 sm:justify-center sm:gap-4 md:gap-10 pb-2 sm:pb-0">
+            <TabsList className="flex w-full overflow-x-auto scrollbar-hide gap-3 md:justify-center md:gap-6 lg:gap-10 pb-2 md:pb-0 h-auto">
               {tabs.map((tab) => (
                 <TabsTrigger
                   key={tab.value}
                   value={tab.value}
-                  className="flex items-center gap-2 rounded-xl px-4 py-3 text-sm font-semibold text-muted-foreground data-[state=active]:bg-muted data-[state=active]:text-primary whitespace-nowrap flex-shrink-0"
+                  className="flex items-center gap-2 rounded-xl px-3 py-2 sm:px-4 sm:py-3 text-xs sm:text-sm font-semibold text-muted-foreground data-[state=active]:bg-muted data-[state=active]:text-primary whitespace-nowrap flex-shrink-0 min-w-fit"
                 >
                   {tab.icon} {tab.label}
                 </TabsTrigger>
