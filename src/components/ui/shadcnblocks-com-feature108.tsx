@@ -44,17 +44,20 @@ const Feature108 = ({
         </div>
 
         <Tabs defaultValue={tabs[0]?.value} className="mt-8">
-          <TabsList className="container flex flex-col items-center justify-center gap-4 sm:flex-row md:gap-10">
-            {tabs.map((tab) => (
-              <TabsTrigger
-                key={tab.value}
-                value={tab.value}
-                className="flex items-center gap-2 rounded-xl px-4 py-3 text-sm font-semibold text-muted-foreground data-[state=active]:bg-muted data-[state=active]:text-primary"
-              >
-                {tab.icon} {tab.label}
-              </TabsTrigger>
-            ))}
-          </TabsList>
+          {/* Mobile: Horizontal scroll, Desktop: Centered row */}
+          <div className="container">
+            <TabsList className="flex w-full overflow-x-auto scrollbar-hide gap-2 sm:justify-center sm:gap-4 md:gap-10 pb-2 sm:pb-0">
+              {tabs.map((tab) => (
+                <TabsTrigger
+                  key={tab.value}
+                  value={tab.value}
+                  className="flex items-center gap-2 rounded-xl px-4 py-3 text-sm font-semibold text-muted-foreground data-[state=active]:bg-muted data-[state=active]:text-primary whitespace-nowrap flex-shrink-0"
+                >
+                  {tab.icon} {tab.label}
+                </TabsTrigger>
+              ))}
+            </TabsList>
+          </div>
 
           <div className="mx-auto mt-8 max-w-screen-xl rounded-2xl bg-muted/70 p-6 lg:p-16">
             {tabs.map((tab) => (
