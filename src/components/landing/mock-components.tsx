@@ -58,13 +58,13 @@ export const CommitList = () => (
 
 // New clean mock components replacing raw logs
 export const MockEditorLight = () => (
-    <div className="p-4 bg-gradient-to-br from-blue-50 to-violet-50 rounded-lg border h-40 flex flex-col justify-center">
+    <div className="p-4 bg-gradient-to-br from-blue-50 to-violet-50 dark:from-blue-950/50 dark:to-violet-950/50 rounded-lg border h-40 flex flex-col justify-center">
         <div className="space-y-2">
             <div className="flex items-center gap-2">
                 <div className="w-2 h-2 bg-green-400 rounded-full"></div>
-                <span className="text-sm font-medium">Écrire en français</span>
+                <span className="text-sm font-medium text-slate-800 dark:text-slate-200">Écrire en français</span>
             </div>
-            <div className="bg-white/60 rounded p-2 text-xs">
+            <div className="bg-white/60 dark:bg-slate-800/60 rounded p-2 text-xs text-slate-700 dark:text-slate-300">
                 "Crée-moi une page d'accueil moderne avec un hero et un CTA"
             </div>
             <div className="text-xs text-muted-foreground">→ IA génère le code automatiquement</div>
@@ -100,21 +100,21 @@ export const MockWorkshopRoom = () => (
 export const MockCardsGrid = () => (
     <div className="p-4 h-40 flex items-center justify-center">
         <div className="grid grid-cols-2 gap-2 w-full">
-            <div className="bg-gradient-to-br from-purple-100 to-pink-100 p-3 rounded-lg border">
-                <div className="text-xs font-medium">Idée</div>
-                <div className="text-xs text-muted-foreground">💡</div>
+            <div className="bg-gradient-to-br from-purple-100 to-pink-100 dark:from-purple-900/40 dark:to-pink-900/40 p-3 rounded-lg border">
+                <div className="text-xs font-medium text-purple-800 dark:text-purple-200">Idée</div>
+                <div className="text-xs text-purple-600 dark:text-purple-300">💡</div>
             </div>
-            <div className="bg-gradient-to-br from-blue-100 to-cyan-100 p-3 rounded-lg border">
-                <div className="text-xs font-medium">Code</div>
-                <div className="text-xs text-muted-foreground">⚡</div>
+            <div className="bg-gradient-to-br from-blue-100 to-cyan-100 dark:from-blue-900/40 dark:to-cyan-900/40 p-3 rounded-lg border">
+                <div className="text-xs font-medium text-blue-800 dark:text-blue-200">Code</div>
+                <div className="text-xs text-blue-600 dark:text-blue-300">⚡</div>
             </div>
-            <div className="bg-gradient-to-br from-green-100 to-emerald-100 p-3 rounded-lg border">
-                <div className="text-xs font-medium">Design</div>
-                <div className="text-xs text-muted-foreground">✨</div>
+            <div className="bg-gradient-to-br from-green-100 to-emerald-100 dark:from-green-900/40 dark:to-emerald-900/40 p-3 rounded-lg border">
+                <div className="text-xs font-medium text-green-800 dark:text-green-200">Design</div>
+                <div className="text-xs text-green-600 dark:text-green-300">✨</div>
             </div>
-            <div className="bg-gradient-to-br from-orange-100 to-red-100 p-3 rounded-lg border">
-                <div className="text-xs font-medium">Live</div>
-                <div className="text-xs text-muted-foreground">🚀</div>
+            <div className="bg-gradient-to-br from-orange-100 to-red-100 dark:from-orange-900/40 dark:to-red-900/40 p-3 rounded-lg border">
+                <div className="text-xs font-medium text-orange-800 dark:text-orange-200">Live</div>
+                <div className="text-xs text-orange-600 dark:text-orange-300">🚀</div>
             </div>
         </div>
     </div>
