@@ -97,6 +97,26 @@ const truncateDescription = (text: string, maxLength: number = 200) => {
   return truncated + "...";
 };
 
+const extractSummary = (text: string): string => {
+  if (!text) return '';
+
+  // Look for Summary section
+  const summaryMatch = text.match(/## Summary\s*\n(.*?)(?=\n##|\n---|\n\n##|$)/is);
+  if (summaryMatch) {
+    return summaryMatch[1].trim();
+  }
+
+  // Fallback: look for summary in different formats
+  const summaryAltMatch = text.match(/Summary:?\s*\n(.*?)(?=\n[A-Z]|\n##|\n---|\n\n|$)/is);
+  if (summaryAltMatch) {
+    return summaryAltMatch[1].trim();
+  }
+
+  // If no summary section found, take first paragraph
+  const firstParagraph = text.split('\n\n')[0];
+  return firstParagraph || '';
+};
+
 const parseMarkdownBasic = (text: string) => {
   // Convert basic markdown to readable text while preserving structure
   return text
@@ -146,11 +166,11 @@ export default async function Changelog() {
                   <CardHeader>
                     <div className="flex items-start justify-between">
                       <div className="space-y-2 flex-1">
-                        <div className="flex items-start gap-3">
-                          <div className="flex items-center gap-2 flex-1">
-                            <CardTitle className="text-lg flex items-center gap-2">
-                              <GitPullRequest className="h-4 w-4" />
-                              PR #{pr.number}: {pr.title}
+                        <div className="flex flex-col sm:flex-row sm:items-start gap-3">
+                          <div className="flex items-center gap-2 flex-1 min-w-0">
+                            <CardTitle className="text-lg flex items-center gap-2 truncate">
+                              <GitPullRequest className="h-4 w-4 flex-shrink-0" />
+                              <span className="truncate">PR #{pr.number}: {pr.title}</span>
                             </CardTitle>
                           </div>
                           <div className="flex items-center gap-2 flex-shrink-0">
@@ -212,21 +232,26 @@ export default async function Changelog() {
                     <CardContent>
                       <div className="prose prose-sm max-w-none">
                         <div className="text-muted-foreground leading-relaxed">
-                          {parseMarkdownBasic(pr.body).split('\n').map((line, idx) => {
-                            if (line.startsWith('• ')) {
-                              return (
-                                <div key={idx} className="flex items-start gap-2 mb-1">
-                                  <span className="text-primary mt-1 text-xs">•</span>
-                                  <span className="flex-1">{truncateDescription(line.substring(2))}</span>
-                                </div>
+                          {(() => {
+                            const summary = extractSummary(pr.body);
+                            if (!summary) return null;
+
+                            return parseMarkdownBasic(summary).split('\n').map((line, idx) => {
+                              if (line.startsWith('• ')) {
+                                return (
+                                  <div key={idx} className="flex items-start gap-2 mb-1">
+                                    <span className="text-primary mt-1 text-xs">•</span>
+                                    <span className="flex-1">{truncateDescription(line.substring(2), 150)}</span>
+                                  </div>
+                                );
+                              }
+                              return line && (
+                                <p key={idx} className="mb-2 last:mb-0">
+                                  {truncateDescription(line, 150)}
+                                </p>
                               );
-                            }
-                            return line && (
-                              <p key={idx} className="mb-2 last:mb-0">
-                                {truncateDescription(line)}
-                              </p>
-                            );
-                          })}
+                            });
+                          })()}
                         </div>
                       </div>
                     </CardContent>
