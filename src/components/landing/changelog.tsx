@@ -167,10 +167,10 @@ export default async function Changelog() {
                     <div className="flex items-start justify-between">
                       <div className="space-y-2 flex-1">
                         <div className="flex flex-col sm:flex-row sm:items-start gap-3">
-                          <div className="flex items-center gap-2 flex-1 min-w-0">
-                            <CardTitle className="text-lg flex items-center gap-2 truncate">
-                              <GitPullRequest className="h-4 w-4 flex-shrink-0" />
-                              <span className="truncate">PR #{pr.number}: {pr.title}</span>
+                          <div className="flex items-start gap-2 flex-1 min-w-0">
+                            <GitPullRequest className="h-4 w-4 flex-shrink-0 mt-1" />
+                            <CardTitle className="text-lg break-words leading-tight">
+                              PR #{pr.number}: {pr.title}
                             </CardTitle>
                           </div>
                           <div className="flex items-center gap-2 flex-shrink-0">
