@@ -4,16 +4,20 @@ import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
 import { Menu } from 'lucide-react';
 import { ThemeSwitcher } from '@/components/theme-switcher';
+import { LanguageSwitcher } from '@/components/language-switcher';
 import Logo from '@/components/logo';
-
-const navLinks = [
-  { href: '#programme', label: 'Programme' },
-  { href: '#why', label: 'Pourquoi' },
-  { href: '#comment-ca-marche', label: 'Infos' },
-  { href: '#faq', label: 'FAQ' },
-];
+import { useTranslation } from '@/hooks/use-translation';
 
 export default function Header() {
+  const t = useTranslation()
+
+  const navLinks = [
+    { href: '#programme', label: t.navigation.programme },
+    { href: '#why', label: t.navigation.why },
+    { href: '#comment-ca-marche', label: t.navigation.info },
+    { href: '#faq', label: t.navigation.faq },
+  ]
+
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       {/* Desktop version */}
@@ -38,8 +42,9 @@ export default function Header() {
         </div>
         <div className="flex flex-1 items-center justify-end space-x-2">
           <Button asChild className='hidden sm:inline-flex'>
-            <Link href="#pricing">Réserver – 149 € (-26 ans)</Link>
+            <Link href="#pricing">{t.hero.buttons.register}</Link>
           </Button>
+          <LanguageSwitcher />
           <ThemeSwitcher />
         </div>
       </div>
@@ -80,7 +85,8 @@ export default function Header() {
             <Logo width={120} height={30} variant="mobile" />
           </Link>
         </div>
-        <div className="flex items-center">
+        <div className="flex items-center space-x-1">
+          <LanguageSwitcher />
           <ThemeSwitcher />
         </div>
       </div>
