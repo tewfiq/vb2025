@@ -2,35 +2,38 @@
 
 import { ChatBubbleIcon, LaptopIcon, RocketIcon } from "@radix-ui/react-icons";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-
-const steps = [
-  {
-    icon: ChatBubbleIcon,
-    title: "1. Idée → intention",
-    copy: "On clarifie ton idée avec un LLM. Objectif: intention nette.",
-    more: "Méthode Kindlin en 5 minutes, sans jargon."
-  },
-  {
-    icon: LaptopIcon,
-    title: "2. Atelier BYOD",
-    copy: "Tu viens avec ton laptop. On prépare l'environnement et on construit ensemble.",
-    more: "Aucun prérequis d'installation. Comptes créés sur place si besoin."
-  },
-  {
-    icon: RocketIcon,
-    title: "3. Mise en ligne",
-    copy: "GitHub → Netlify/Vercel. Tu repars avec une URL publique.",
-    more: "Vérification à chaque étape pour que tout fonctionne."
-  }
-];
+import { useTranslation } from "@/hooks/use-translation";
 
 export default function MethodSteps() {
+  const t = useTranslation();
+
+  const steps = [
+    {
+      icon: ChatBubbleIcon,
+      title: t.methodSteps.steps.ideaToIntention.title,
+      copy: t.methodSteps.steps.ideaToIntention.copy,
+      more: t.methodSteps.steps.ideaToIntention.more
+    },
+    {
+      icon: LaptopIcon,
+      title: t.methodSteps.steps.byodWorkshop.title,
+      copy: t.methodSteps.steps.byodWorkshop.copy,
+      more: t.methodSteps.steps.byodWorkshop.more
+    },
+    {
+      icon: RocketIcon,
+      title: t.methodSteps.steps.deployment.title,
+      copy: t.methodSteps.steps.deployment.copy,
+      more: t.methodSteps.steps.deployment.more
+    }
+  ];
+
   return (
     <section className="py-12 md:py-20 lg:py-24 bg-background">
       <div className="container mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-12">
           <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl md:text-5xl font-headline">
-            Comment ça marche ?
+            {t.methodSteps.title}
           </h2>
         </div>
 
