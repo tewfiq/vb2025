@@ -3,13 +3,11 @@
 import { Layout, Pointer, Zap } from "lucide-react"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
 
 interface TabContent {
   badge: string
   title: string
   description: string
-  buttonText: string
   imageSrc: string
   imageAlt: string
 }
@@ -70,9 +68,6 @@ const Feature108 = ({
                   <Badge variant="outline" className="w-fit bg-background">{tab.content.badge}</Badge>
                   <h3 className="text-3xl font-semibold lg:text-5xl">{tab.content.title}</h3>
                   <p className="text-muted-foreground lg:text-lg">{tab.content.description}</p>
-                  <Button className="mt-2.5 w-fit gap-2" size="lg">
-                    {tab.content.buttonText}
-                  </Button>
                 </div>
                 <img src={tab.content.imageSrc} alt={tab.content.imageAlt} className="rounded-xl" />
               </TabsContent>
