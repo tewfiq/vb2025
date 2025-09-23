@@ -35,15 +35,15 @@ export default function SocialProofBadge() {
   }, [language]);
 
   return (
-    <div className="flex flex-col items-center">
-      <div className="inline-flex items-center gap-2 bg-lime-400 text-lime-950 px-4 py-2 rounded-full text-sm font-bold border border-lime-300 shadow-lg shadow-lime-400/30">
-        <span className="relative flex h-3 w-3">
+    <div className="flex flex-col items-center max-w-xs">
+      <div className="inline-flex items-center gap-2 bg-lime-400 text-lime-950 px-3 py-1.5 rounded-full text-xs font-bold border border-lime-300 shadow-lg shadow-lime-400/30 whitespace-nowrap">
+        <span className="relative flex h-2.5 w-2.5">
           <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-500 opacity-75"></span>
-          <span className="relative inline-flex rounded-full h-3 w-3 bg-red-400"></span>
+          <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-red-400"></span>
         </span>
-        <span>{t.socialProofBadge.spotsRemaining}</span>
+        <span className="text-xs">{t.socialProofBadge.spotsRemaining}</span>
       </div>
-      <div className="mt-2 text-xs text-muted-foreground font-medium">
+      <div className="mt-1 text-xs text-muted-foreground font-medium text-center leading-tight">
         {currentDateTime} {t.socialProofBadge.timezone}
       </div>
     </div>

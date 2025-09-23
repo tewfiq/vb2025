@@ -17,10 +17,10 @@ export default function Pricing() {
   const t = useTranslation();
 
   return (
-    <section id="pricing" className="py-12 md:py-20 lg:py-32 bg-muted/30">
+    <section id="pricing" className="py-12 md:py-20 lg:py-32 bg-muted/30 relative scroll-mt-20 md:scroll-mt-32 lg:scroll-mt-40">
       <div className="container mx-auto px-4">
-        {/* Badge de social proof ajouté au-dessus du titre */}
-        <div className="mb-4 md:mb-8 flex justify-center">
+        {/* Badge de social proof en position absolue pour éviter les problèmes d'ancrage */}
+        <div className="absolute top-2 right-2 md:top-6 md:right-6 lg:top-8 lg:right-8 z-10">
           <SocialProofBadge />
         </div>
 
