@@ -3,10 +3,12 @@
 import Image from "next/image";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
+import { useTranslation } from "@/hooks/use-translation";
 
 export default function Partners() {
   const { theme, resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
+  const t = useTranslation();
 
   useEffect(() => {
     setMounted(true);
@@ -18,9 +20,7 @@ export default function Partners() {
       <section className="bg-background">
         <div className="container mx-auto px-4">
           <div className="text-center mb-8">
-            <h3 className="text-lg font-semibold text-muted-foreground font-headline">
-              Un grand merci à tous mes Étudiants en Bachelor, Master & MBA<br />en
-              2024-2025 👏
+            <h3 className="text-lg font-semibold text-muted-foreground font-headline" dangerouslySetInnerHTML={{ __html: t.partners.title }}>
             </h3>
           </div>
           <div className="flex flex-wrap items-center justify-center gap-x-12 gap-y-8">
@@ -41,9 +41,7 @@ export default function Partners() {
     <section className="bg-background">
       <div className="container mx-auto px-4">
         <div className="text-center mb-8">
-          <h3 className="text-lg font-semibold text-muted-foreground font-headline">
-            Un grand merci à tous mes Étudiants en Bachelor, Master & MBA<br />en
-            2024-2025 👏
+          <h3 className="text-lg font-semibold text-muted-foreground font-headline" dangerouslySetInnerHTML={{ __html: t.partners.title }}>
           </h3>
         </div>
         <div className="flex flex-wrap items-center justify-center gap-x-12 gap-y-8">
