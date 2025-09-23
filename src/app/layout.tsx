@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
-import { ThemeProvider } from "@/components/theme-provider";
+import { ClientProviders } from "@/components/client-providers";
 import GoogleAnalytics from "@/components/analytics";
 
 export const metadata: Metadata = {
@@ -17,7 +17,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="fr" suppressHydrationWarning>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
@@ -40,15 +40,10 @@ export default function RootLayout({
             GA_TRACKING_ID={process.env.NEXT_PUBLIC_GA_TRACKING_ID}
           />
         )}
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
+        <ClientProviders>
           {children}
           <Toaster />
-        </ThemeProvider>
+        </ClientProviders>
       </body>
     </html>
   );
