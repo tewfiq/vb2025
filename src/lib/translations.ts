@@ -191,6 +191,24 @@ export interface Translations {
     copyright: string
     tagline: string
   }
+  socialProofBadge: {
+    spotsRemaining: string
+    timezone: string
+  }
+  partners: {
+    title: string
+  }
+  changelog: {
+    title: string
+    subtitle: string
+    noContributions: string
+    viewOnGitHub: string
+    viewAllContributions: string
+    badges: {
+      latest: string
+      merged: string
+    }
+  }
   common: {
     toggleTheme: string
     toggleLanguage: string
@@ -409,6 +427,24 @@ export const translations: Record<Language, Translations> = {
       copyright: "Tous droits réservés.",
       tagline: "Une compétence en 2h. Rien de personnel."
     },
+    socialProofBadge: {
+      spotsRemaining: "🔥 Il reste 6 places ! Prenez la vôtre",
+      timezone: "(Paris UTC+2)"
+    },
+    partners: {
+      title: "Un grand merci à tous mes Étudiants en Bachelor, Master & MBA en 2024-2025 👏"
+    },
+    changelog: {
+      title: "Changelog",
+      subtitle: "Ce site évolue avec la même méthode que vous allez apprendre (GitHub + déploiement en continu).",
+      noContributions: "Aucune contribution disponible pour le moment.",
+      viewOnGitHub: "Voir sur GitHub",
+      viewAllContributions: "Voir toutes les contributions sur GitHub",
+      badges: {
+        latest: "Latest",
+        merged: "Merged"
+      }
+    },
     common: {
       toggleTheme: "Changer le thème",
       toggleLanguage: "Changer la langue"
@@ -624,6 +660,24 @@ export const translations: Record<Language, Translations> = {
       },
       copyright: "All rights reserved.",
       tagline: "A skill in 2h. Nothing personal."
+    },
+    socialProofBadge: {
+      spotsRemaining: "🔥 6 spots left! Get yours now",
+      timezone: "(Paris UTC+2)"
+    },
+    partners: {
+      title: "A big thank you to all my Bachelor, Master & MBA Students in 2024-2025 👏"
+    },
+    changelog: {
+      title: "Changelog",
+      subtitle: "This site evolves using the same method you'll learn (GitHub + continuous deployment).",
+      noContributions: "No contributions available at the moment.",
+      viewOnGitHub: "View on GitHub",
+      viewAllContributions: "View all contributions on GitHub",
+      badges: {
+        latest: "Latest",
+        merged: "Merged"
+      }
     },
     common: {
       toggleTheme: "Toggle theme",
