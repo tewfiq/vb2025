@@ -69,6 +69,128 @@ export interface Translations {
     }
     subtitle: string
   }
+  whyCards: {
+    title: {
+      line1: string
+      line2: string
+    }
+    subtitle: string
+    features: {
+      learnByWriting: {
+        title: string
+        description: string
+      }
+      launchProjects: {
+        title: string
+        description: string
+      }
+      interactiveWorkshops: {
+        title: string
+        description: string
+      }
+      instantCreation: {
+        title: string
+        description: string
+      }
+      teamSpirit: {
+        title: string
+        description: string
+      }
+      unfairAdvantage: {
+        title: string
+        description: string
+      }
+    }
+  }
+  methodSteps: {
+    title: string
+    steps: {
+      ideaToIntention: {
+        title: string
+        copy: string
+        more: string
+      }
+      byodWorkshop: {
+        title: string
+        copy: string
+        more: string
+      }
+      deployment: {
+        title: string
+        copy: string
+        more: string
+      }
+    }
+  }
+  pricing: {
+    title: string
+    subtitle: string
+    description: string
+    plans: {
+      starter: {
+        title: string
+        price: string
+        description: string
+        features: string[]
+        buttonText: string
+      }
+      standard: {
+        title: string
+        price: string
+        description: string
+        features: string[]
+        buttonText: string
+      }
+      team: {
+        title: string
+        price: string
+        description: string
+        features: string[]
+        buttonText: string
+      }
+    }
+  }
+  faq: {
+    title: string
+    questions: {
+      needToCoding: {
+        question: string
+        answer: string
+      }
+      projectOnline: {
+        question: string
+        answer: string
+      }
+      codeOwnership: {
+        question: string
+        answer: string
+      }
+      noIdea: {
+        question: string
+        answer: string
+      }
+      whoIsItFor: {
+        question: string
+        answer: string
+      }
+    }
+  }
+  footer: {
+    title: string
+    description: {
+      line1: string
+      line2: string
+    }
+    cta: string
+    links: {
+      about: string
+      contact: string
+      mentions: string
+      cgv: string
+    }
+    copyright: string
+    tagline: string
+  }
   common: {
     toggleTheme: string
     toggleLanguage: string
@@ -149,6 +271,144 @@ export const translations: Record<Language, Translations> = {
       },
       subtitle: "pendant l'année académique 2024 - 2025"
     },
+    whyCards: {
+      title: {
+        line1: "Pourquoi rejoindre",
+        line2: "Vibe Coding Paris ?"
+      },
+      subtitle: "Ton unfair advantage dans la révolution Gen AI.",
+      features: {
+        learnByWriting: {
+          title: "Apprends en écrivant",
+          description: "Prends en main ChatGPT, Copilot, Cursor... et construis en langage naturel."
+        },
+        launchProjects: {
+          title: "Lance tes projets sans barrière",
+          description: "Sites, apps, scripts, IA — on prototype ensemble, de A à Z."
+        },
+        interactiveWorkshops: {
+          title: "Ateliers interactifs ✨",
+          description: "Coaching bienveillant, pratique guidée, feedback immédiat."
+        },
+        instantCreation: {
+          title: "Créa instantanée",
+          description: "Ton flow créatif, boosté par l'IA. Résultat concret immédiat."
+        },
+        teamSpirit: {
+          title: "Team Spirit",
+          description: "Une vibe collaborative pour progresser plus vite."
+        },
+        unfairAdvantage: {
+          title: "Unfair Advantage",
+          description: "Pendant que d'autres scrollent, toi tu crées. Compétence rare et transférable."
+        }
+      }
+    },
+    methodSteps: {
+      title: "Comment ça marche ?",
+      steps: {
+        ideaToIntention: {
+          title: "1. Idée → intention",
+          copy: "On clarifie ton idée avec un LLM. Objectif: intention nette.",
+          more: "Méthode Kindlin en 5 minutes, sans jargon."
+        },
+        byodWorkshop: {
+          title: "2. Atelier BYOD",
+          copy: "Tu viens avec ton laptop. On prépare l'environnement et on construit ensemble.",
+          more: "Aucun prérequis d'installation. Comptes créés sur place si besoin."
+        },
+        deployment: {
+          title: "3. Mise en ligne",
+          copy: "GitHub → Netlify/Vercel. Tu repars avec une URL publique.",
+          more: "Vérification à chaque étape pour que tout fonctionne."
+        }
+      }
+    },
+    pricing: {
+      title: "Tarifs",
+      subtitle: "Des formules simples et claires, pour tous les profils.",
+      description: "Chaque formule vous transmet la même compétence :<br />apprendre à coder de bout en bout par la pratique et devenir Product Builder.",
+      plans: {
+        starter: {
+          title: "⭐ Starter",
+          price: "149 €",
+          description: "TTC / -26 ans & demandeurs d'emploi",
+          features: [
+            "Atelier 2h complet",
+            "Même contenu que l'atelier principal",
+            "Coaching & accompagnement",
+            "Compétence pratique immédiatement applicable"
+          ],
+          buttonText: "Je m'inscris — 149 €"
+        },
+        standard: {
+          title: "🚀 Devenez Product Builder",
+          price: "299 €",
+          description: "TTC / personne",
+          features: [
+            "Atelier 2h intensif en présentiel",
+            "Méthode complète end-to-end :<br />idée → code → déploiement",
+            "Pratique guidée étape par étape",
+            "Projet en ligne, immédiatement partageable",
+            "Kit documentaire pour continuer après l'atelier"
+          ],
+          buttonText: "Réserver — 299 €"
+        },
+        team: {
+          title: "👥 Équipe",
+          price: "Sur devis",
+          description: "Entreprise / École (5 à 20 pers.)",
+          features: [
+            "Session privative",
+            "Contenu personnalisé (vos cas/projets)",
+            "Planning dédié",
+            "Idéal pour écoles, agences et incubateurs"
+          ],
+          buttonText: "Demander un devis"
+        }
+      }
+    },
+    faq: {
+      title: "FAQ",
+      questions: {
+        needToCoding: {
+          question: "Faut-il savoir coder ?",
+          answer: "Non. Tout est guidé, aucun prérequis."
+        },
+        projectOnline: {
+          question: "Je repars vraiment avec un projet en ligne ?",
+          answer: "Oui. Tu obtiens ton repo GitHub et une URL publique."
+        },
+        codeOwnership: {
+          question: "Le code est à qui ?",
+          answer: "À toi. Le repo est personnel et réutilisable."
+        },
+        noIdea: {
+          question: "Et si je n'ai pas d'idée ?",
+          answer: "On en trouve une ensemble, pendant la session."
+        },
+        whoIsItFor: {
+          question: "C'est pour qui ?",
+          answer: "Pour toute personne curieuse d'apprendre et d'expérimenter."
+        }
+      }
+    },
+    footer: {
+      title: "Vibe Coding Paris",
+      description: {
+        line1: "Vibe Coding Paris — Débloque ton super pouvoir digital en 2h.",
+        line2: "De l'idée au site en ligne, avec l'IA comme copilote."
+      },
+      cta: "Slay le code, inscris-toi maintenant",
+      links: {
+        about: "À propos",
+        contact: "Contact",
+        mentions: "Mentions",
+        cgv: "CGV"
+      },
+      copyright: "Tous droits réservés.",
+      tagline: "Une compétence en 2h. Rien de personnel."
+    },
     common: {
       toggleTheme: "Changer le thème",
       toggleLanguage: "Changer la langue"
@@ -226,6 +486,144 @@ export const translations: Record<Language, Translations> = {
         line2: "in Gen AI Solutions"
       },
       subtitle: "during the 2024 - 2025 academic year"
+    },
+    whyCards: {
+      title: {
+        line1: "Why join",
+        line2: "Vibe Coding Paris?"
+      },
+      subtitle: "Your unfair advantage in the Gen AI revolution.",
+      features: {
+        learnByWriting: {
+          title: "Learn by writing",
+          description: "Master ChatGPT, Copilot, Cursor... and build in natural language."
+        },
+        launchProjects: {
+          title: "Launch projects without barriers",
+          description: "Websites, apps, scripts, AI — we prototype together, A to Z."
+        },
+        interactiveWorkshops: {
+          title: "Interactive workshops ✨",
+          description: "Supportive coaching, guided practice, immediate feedback."
+        },
+        instantCreation: {
+          title: "Instant creation",
+          description: "Your creative flow, boosted by AI. Immediate concrete results."
+        },
+        teamSpirit: {
+          title: "Team Spirit",
+          description: "A collaborative vibe to progress faster."
+        },
+        unfairAdvantage: {
+          title: "Unfair Advantage",
+          description: "While others scroll, you create. Rare and transferable skill."
+        }
+      }
+    },
+    methodSteps: {
+      title: "How does it work?",
+      steps: {
+        ideaToIntention: {
+          title: "1. Idea → intention",
+          copy: "We clarify your idea with an LLM. Goal: clear intention.",
+          more: "Kindlin method in 5 minutes, no jargon."
+        },
+        byodWorkshop: {
+          title: "2. BYOD Workshop",
+          copy: "You come with your laptop. We prepare the environment and build together.",
+          more: "No installation prerequisites. Accounts created on-site if needed."
+        },
+        deployment: {
+          title: "3. Go live",
+          copy: "GitHub → Netlify/Vercel. You leave with a public URL.",
+          more: "Verification at each step to ensure everything works."
+        }
+      }
+    },
+    pricing: {
+      title: "Pricing",
+      subtitle: "Simple and clear formulas for all profiles.",
+      description: "Each formula gives you the same skill:<br />learn to code end-to-end through practice and become a Product Builder.",
+      plans: {
+        starter: {
+          title: "⭐ Starter",
+          price: "€149",
+          description: "Tax incl. / Under 26 & job seekers",
+          features: [
+            "Complete 2h workshop",
+            "Same content as main workshop",
+            "Coaching & support",
+            "Immediately applicable practical skill"
+          ],
+          buttonText: "Register — €149"
+        },
+        standard: {
+          title: "🚀 Become a Product Builder",
+          price: "€299",
+          description: "Tax incl. / person",
+          features: [
+            "Intensive 2h in-person workshop",
+            "Complete end-to-end method:<br />idea → code → deployment",
+            "Step-by-step guided practice",
+            "Online project, immediately shareable",
+            "Documentation kit to continue after workshop"
+          ],
+          buttonText: "Book — €299"
+        },
+        team: {
+          title: "👥 Team",
+          price: "Custom quote",
+          description: "Company / School (5 to 20 people)",
+          features: [
+            "Private session",
+            "Personalized content (your cases/projects)",
+            "Dedicated scheduling",
+            "Ideal for schools, agencies and incubators"
+          ],
+          buttonText: "Request quote"
+        }
+      }
+    },
+    faq: {
+      title: "FAQ",
+      questions: {
+        needToCoding: {
+          question: "Do I need to know how to code?",
+          answer: "No. Everything is guided, no prerequisites."
+        },
+        projectOnline: {
+          question: "Do I really leave with a project online?",
+          answer: "Yes. You get your GitHub repo and a public URL."
+        },
+        codeOwnership: {
+          question: "Who owns the code?",
+          answer: "You do. The repo is personal and reusable."
+        },
+        noIdea: {
+          question: "What if I don't have an idea?",
+          answer: "We'll find one together during the session."
+        },
+        whoIsItFor: {
+          question: "Who is this for?",
+          answer: "For anyone curious to learn and experiment."
+        }
+      }
+    },
+    footer: {
+      title: "Vibe Coding Paris",
+      description: {
+        line1: "Vibe Coding Paris — Unlock your digital superpower in 2h.",
+        line2: "From idea to live website, with AI as copilot."
+      },
+      cta: "Slay the code, register now",
+      links: {
+        about: "About",
+        contact: "Contact",
+        mentions: "Legal",
+        cgv: "Terms"
+      },
+      copyright: "All rights reserved.",
+      tagline: "A skill in 2h. Nothing personal."
     },
     common: {
       toggleTheme: "Toggle theme",
