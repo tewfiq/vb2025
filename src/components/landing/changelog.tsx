@@ -1,7 +1,11 @@
+"use client";
+
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { CalendarDays, GitPullRequest, ExternalLink, User } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useTranslation } from "@/hooks/use-translation";
+import { useEffect, useState } from "react";
 
 interface GitHubPullRequest {
   id: number;
@@ -135,18 +139,60 @@ const parseMarkdownBasic = (text: string) => {
     .trim();
 };
 
-export default async function Changelog() {
-  const pullRequests = await fetchPullRequests();
+export default function Changelog() {
+  const [pullRequests, setPullRequests] = useState<GitHubPullRequest[]>([]);
+  const [loading, setLoading] = useState(true);
+  const t = useTranslation();
+
+  useEffect(() => {
+    const loadPullRequests = async () => {
+      try {
+        const prs = await fetchPullRequests();
+        setPullRequests(prs);
+      } catch (error) {
+        console.error('Failed to load pull requests:', error);
+        setPullRequests([]);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    loadPullRequests();
+  }, []);
+
+  if (loading) {
+    return (
+      <section className="py-12 md:py-20 lg:py-24 bg-muted/30">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-8 md:mb-12">
+            <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl md:text-4xl lg:text-5xl font-headline">
+              {t.changelog.title}
+            </h2>
+            <p className="text-muted-foreground mt-1 md:mt-2 text-sm md:text-base">
+              {t.changelog.subtitle}
+            </p>
+          </div>
+          <div className="max-w-4xl mx-auto">
+            <Card>
+              <CardContent className="p-8 text-center">
+                <p className="text-muted-foreground">Loading...</p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section className="py-12 md:py-20 lg:py-24 bg-muted/30">
       <div className="container mx-auto px-4">
         <div className="text-center mb-8 md:mb-12">
           <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl md:text-4xl lg:text-5xl font-headline">
-            Changelog
+            {t.changelog.title}
           </h2>
           <p className="text-muted-foreground mt-1 md:mt-2 text-sm md:text-base">
-            Ce site évolue avec la même méthode que vous allez apprendre (GitHub + déploiement en continu).
+            {t.changelog.subtitle}
           </p>
         </div>
 
@@ -155,7 +201,7 @@ export default async function Changelog() {
             <Card>
               <CardContent className="p-8 text-center">
                 <p className="text-muted-foreground">
-                  Aucune contribution disponible pour le moment.
+                  {t.changelog.noContributions}
                 </p>
               </CardContent>
             </Card>
@@ -176,14 +222,14 @@ export default async function Changelog() {
                           <div className="flex items-center gap-2 flex-shrink-0">
                             {index === 0 && (
                               <Badge variant="default" className="bg-blue-600 hover:bg-blue-700">
-                                Latest
+                                {t.changelog.badges.latest}
                               </Badge>
                             )}
                             <Badge
                               variant="default"
                               className="bg-green-600 hover:bg-green-700"
                             >
-                              Merged
+                              {t.changelog.badges.merged}
                             </Badge>
                           </div>
                         </div>
@@ -223,7 +269,7 @@ export default async function Changelog() {
                           className="flex items-center gap-1 flex-shrink-0 ml-4"
                         >
                           <ExternalLink className="h-3 w-3" />
-                          Voir sur GitHub
+                          {t.changelog.viewOnGitHub}
                         </a>
                       </Button>
                     </div>
@@ -270,7 +316,7 @@ export default async function Changelog() {
                 className="flex items-center gap-2"
               >
                 <ExternalLink className="h-4 w-4" />
-                Voir toutes les contributions sur GitHub
+                {t.changelog.viewAllContributions}
               </a>
             </Button>
           </div>
