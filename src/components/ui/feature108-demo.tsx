@@ -16,7 +16,6 @@ const demoData = {
         title: "De ton idée à une intention claire & actionnable",
         description:
           "Apporte ton ordi. On clarifie ton idée avec l'IA, sans jargon, puis on cadre avec la méthode Kindlin : problème → solution, business model, pricing. Tu sais où tu vas.",
-        buttonText: "Démarrer la session",
         imageSrc: "https://shadcnblocks.com/images/block/placeholder-dark-1.svg",
         imageAlt: "intention",
       },
@@ -30,7 +29,6 @@ const demoData = {
         title: "Travaille avec l'IA, étends, itère et débugge",
         description:
           "Tu apprends à dialoguer et à prompt-er efficacement. On ajoute une base simple, une API ou une extension. On voit sécurité & analytics pour des outputs qualitatifs en gardant la main sur ton projet.",
-        buttonText: "Voir la stack",
         imageSrc: "https://shadcnblocks.com/images/block/placeholder-dark-2.svg",
         imageAlt: "build",
       },
@@ -44,7 +42,6 @@ const demoData = {
         title: "Mise en ligne immédiate & rôle de Creative Product Builder",
         description:
           "On shippe : AI Code Assistant → GitHub → Netlify/Vercel → exécution async. En 2h tu repars avec une URL publique. Tu poursuis en autonomie. Tu pilotes design, code, SEO, versioning — posture « Agency of One ». Ressources & prochaines étapes incluses.",
-        buttonText: "Réserver ta place",
         imageSrc: "https://shadcnblocks.com/images/block/placeholder-dark-3.svg",
         imageAlt: "ship",
       },
