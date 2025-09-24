@@ -17,7 +17,7 @@ export default function Pricing() {
   const t = useTranslation();
 
   return (
-    <section id="pricing" className="py-12 md:py-20 lg:py-32 bg-muted/30 scroll-mt-16">
+    <section id="pricing" className="py-12 md:py-20 lg:py-32 bg-muted/30 scroll-mt-8">
       <div className="container mx-auto px-4">
 
         <div className="text-center max-w-3xl mx-auto mb-8 md:mb-16">
