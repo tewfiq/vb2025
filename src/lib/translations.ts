@@ -213,6 +213,17 @@ export interface Translations {
     toggleTheme: string
     toggleLanguage: string
   }
+  about: {
+    name: string
+    role: string
+    paragraphs: {
+      experience: string
+      excellence: string
+      background: string
+      passion: string
+    }
+    mission: string
+  }
   metadata: {
     title: string
     description: string
@@ -449,6 +460,17 @@ export const translations: Record<Language, Translations> = {
       toggleTheme: "Changer le thème",
       toggleLanguage: "Changer la langue"
     },
+    about: {
+      name: "Tewfiq Ferahi",
+      role: "Fondateur & Formateur Principal",
+      paragraphs: {
+        experience: "Avec plus de 20 ans d'expérience en transformation et stratégie digitale et 15 ans en design UX/UI, Tewfiq a collaboré avec plus de 30 clients, incluant startups, PME, entreprises du CAC 40, du Fortune 500 et du service public français.",
+        excellence: "Il excelle dans l'acculturation, la transmission et le coaching pour accompagner les étudiants et les jeunes professionnels vers l'excellence.",
+        background: "Diplômé en sciences économiques, il a cofondé deux Startups à Paris et San Francisco, apportant un mindset entrepreneurial et une expertise en technologies émergentes.",
+        passion: "Early adopter et passionné par la veille technologique, il mêle design, digital, business et mentoring pour développer des solutions innovantes et percutantes."
+      },
+      mission: "Ma mission est de rendre le Design Stratégique et les Solutions de Generative AI accessibles à tous, en combinant Créativité, Technologies et Business pour générer des impacts significatifs."
+    },
     metadata: {
       title: "Vibe Coding Paris — Débloque ton super pouvoir digital en 2h. De l'idée au site en ligne, avec l'IA comme copilote.",
       description: "Un atelier intensif et accessible. Tu explores, tu structures, tu repars avec un projet en ligne. Une compétence exploitable, en seulement 2h."
@@ -682,6 +704,17 @@ export const translations: Record<Language, Translations> = {
     common: {
       toggleTheme: "Toggle theme",
       toggleLanguage: "Toggle language"
+    },
+    about: {
+      name: "Tewfiq Ferahi",
+      role: "Founder & Principal Trainer",
+      paragraphs: {
+        experience: "With over 20 years of experience in digital transformation and strategy and 15 years in UX/UI design, Tewfiq has collaborated with more than 30 clients, including startups, SMEs, CAC 40 companies, Fortune 500 companies, and French public services.",
+        excellence: "He excels in acculturation, knowledge transfer, and coaching to guide students and young professionals toward excellence.",
+        background: "A graduate in economic sciences, he co-founded two startups in Paris and San Francisco, bringing an entrepreneurial mindset and expertise in emerging technologies.",
+        passion: "An early adopter passionate about technology scouting, he blends design, digital, business, and mentoring to develop innovative and impactful solutions."
+      },
+      mission: "My mission is to make Strategic Design and Generative AI Solutions accessible to everyone, combining Creativity, Technologies, and Business to generate significant impacts."
     },
     metadata: {
       title: "Vibe Coding Paris — Unlock your digital superpower in 2h. From idea to live website, with AI as copilot.",
