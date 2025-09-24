@@ -13,7 +13,7 @@ export default function TermsOfServicePage() {
       <div className="max-w-3xl mx-auto">
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl md:text-6xl font-headline mb-4">
-            Conditions Générales de Vente (CGV)
+            Conditions Générales<br />de Vente (CGV)
           </h1>
           <p className="text-lg text-accent font-semibold mb-2">
             Vibe Coding Paris — Masterclass & Formations
