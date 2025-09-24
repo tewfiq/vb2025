@@ -224,6 +224,10 @@ export interface Translations {
     }
     mission: string
   }
+  contact: {
+    title: string
+    description: string
+  }
   legal: {
     title: string
     subtitle: string
@@ -641,6 +645,10 @@ export const translations: Record<Language, Translations> = {
       },
       mission: "Ma mission est de rendre le Design Stratégique et les Solutions de Generative AI accessibles à tous, en combinant Créativité, Technologies et Business pour générer des impacts significatifs."
     },
+    contact: {
+      title: "Contact",
+      description: "Réservez directement un créneau de 15 minutes pour discuter de votre projet ou poser vos questions."
+    },
     legal: {
       title: "Mentions légales",
       subtitle: "Vibe Coding Paris",
@@ -1055,6 +1063,10 @@ export const translations: Record<Language, Translations> = {
         passion: "An early adopter passionate about technology scouting, he blends design, digital, business, and mentoring to develop innovative and impactful solutions."
       },
       mission: "My mission is to make Strategic Design and Generative AI Solutions accessible to everyone, combining Creativity, Technologies, and Business to generate significant impacts."
+    },
+    contact: {
+      title: "Contact",
+      description: "Book directly a 15-minute slot to discuss your project or ask your questions."
     },
     legal: {
       title: "Legal Notice",
