@@ -17,12 +17,8 @@ export default function Pricing() {
   const t = useTranslation();
 
   return (
-    <section id="pricing" className="py-12 md:py-20 lg:py-32 bg-muted/30 relative scroll-mt-20 md:scroll-mt-32 lg:scroll-mt-40">
+    <section id="pricing" className="py-12 md:py-20 lg:py-32 bg-muted/30 scroll-mt-16">
       <div className="container mx-auto px-4">
-        {/* Badge de social proof en position absolue pour éviter les problèmes d'ancrage */}
-        <div className="absolute top-2 right-2 md:top-6 md:right-6 lg:top-8 lg:right-8 z-10">
-          <SocialProofBadge />
-        </div>
 
         <div className="text-center max-w-3xl mx-auto mb-8 md:mb-16">
           <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl md:text-4xl lg:text-5xl font-headline">
@@ -133,6 +129,11 @@ export default function Pricing() {
               </Button>{" "}
             </CardFooter>
           </Card>
+        </div>
+
+        {/* Badge de social proof repositionné sous les cartes */}
+        <div className="flex justify-center mt-8 md:mt-12">
+          <SocialProofBadge />
         </div>
       </div>
     </section>
