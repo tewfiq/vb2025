@@ -75,10 +75,10 @@ export default function ContactPage() {
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-8">
           <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl md:text-6xl font-headline mb-4">
-            Contact
+            {t.contact.title}
           </h1>
           <p className="text-lg text-muted-foreground mb-8">
-            Réservez directement un créneau de 15 minutes pour discuter de votre projet ou poser vos questions.
+            {t.contact.description}
           </p>
         </div>
 
