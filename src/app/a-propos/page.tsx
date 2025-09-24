@@ -20,9 +20,17 @@ export default function AboutPage() {
           <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl md:text-6xl font-headline mb-4">
             {t.about.name}
           </h1>
-          <p className="text-xl text-accent font-semibold">
+          <p className="text-xl text-accent font-semibold mb-8">
             {t.about.role}
           </p>
+
+          <div className="flex justify-center mb-12">
+            <img
+              src="/tewfiq-teaching.png"
+              alt="Tewfiq Ferahi en train de donner un atelier avec ses étudiants"
+              className="rounded-lg shadow-2xl w-full max-w-2xl h-auto"
+            />
+          </div>
         </div>
 
         <div className="prose prose-lg max-w-none text-muted-foreground leading-relaxed">
