@@ -15,7 +15,7 @@ export default function Hero() {
       <RetroGrid />
       <div className="container mx-auto px-4 text-center relative z-10">
         {/* Badge de social proof déplacé au-dessus du titre */}
-        <div className="mb-4 md:mb-8">
+        <div className="mb-4 md:mb-8 flex justify-center">
           <SocialProofBadge />
         </div>
         
