@@ -224,6 +224,180 @@ export interface Translations {
     }
     mission: string
   }
+  contact: {
+    title: string
+    description: string
+  }
+  legal: {
+    title: string
+    subtitle: string
+    lastUpdated: string
+    sections: {
+      editor: {
+        title: string
+        content: {
+          description: string
+          name: string
+          organization: string
+          address1: string
+          address2: string
+          email: string
+          status: string
+          siret: string
+          tva: string
+        }
+      }
+      director: {
+        title: string
+        content: string
+      }
+      hosting: {
+        title: string
+        content: {
+          description: string
+          name: string
+          address: string
+          website: string
+        }
+      }
+      intellectual: {
+        title: string
+        content: {
+          para1: string
+          para2: string
+        }
+      }
+      privacy: {
+        title: string
+        content: {
+          para1: string
+          para2: string
+          para3: string
+          para4: string
+        }
+      }
+      cookies: {
+        title: string
+        content: {
+          para1: string
+          para2: string
+        }
+      }
+      liability: {
+        title: string
+        content: {
+          para1: string
+          para2: string
+        }
+      }
+      law: {
+        title: string
+        content: {
+          para1: string
+          para2: string
+        }
+      }
+    }
+  }
+  terms: {
+    title: string
+    subtitle: string
+    lastUpdated: string
+    sections: {
+      object: {
+        title: string
+        content: {
+          para1: string
+          para2: string
+        }
+      }
+      registration: {
+        title: string
+        content: {
+          para1: string
+          para2: string
+          para3: string
+          para4: string
+        }
+      }
+      pricing: {
+        title: string
+        content: {
+          para1: string
+          para2: string
+          pricing: {
+            starter: string
+            standard: string
+            enterprise: string
+          }
+          para3: string
+          para4: string
+        }
+      }
+      withdrawal: {
+        title: string
+        content: {
+          para1: string
+          para2: string
+          para3: string
+          para4: string
+          warning: string
+        }
+      }
+      cancellation: {
+        title: string
+        content: {
+          para1: string
+          para2: string
+          para3: string
+        }
+      }
+      training: {
+        title: string
+        content: {
+          para1: string
+          para2: string
+          para3: string
+          para4: string
+        }
+      }
+      intellectual: {
+        title: string
+        content: {
+          para1: string
+          para2: string
+          para3: string
+        }
+      }
+      liability: {
+        title: string
+        content: {
+          para1: string
+          para2: string
+          para3: string
+        }
+      }
+      privacy: {
+        title: string
+        content: {
+          para1: string
+          para2: string
+          para3: string
+        }
+      }
+      law: {
+        title: string
+        content: {
+          para1: string
+          para2: string
+        }
+      }
+      acceptance: {
+        title: string
+        content: string
+      }
+    }
+  }
   metadata: {
     title: string
     description: string
@@ -471,6 +645,180 @@ export const translations: Record<Language, Translations> = {
       },
       mission: "Ma mission est de rendre le Design Stratégique et les Solutions de Generative AI accessibles à tous, en combinant Créativité, Technologies et Business pour générer des impacts significatifs."
     },
+    contact: {
+      title: "Contact",
+      description: "Réservez directement un créneau de 15 minutes pour discuter de votre projet ou poser vos questions."
+    },
+    legal: {
+      title: "Mentions légales",
+      subtitle: "Vibe Coding Paris",
+      lastUpdated: "Dernière mise à jour : 24 septembre 2025",
+      sections: {
+        editor: {
+          title: "1. Éditeur du site",
+          content: {
+            description: "Le présent site est édité par :",
+            name: "Tewfiq Ferahi",
+            organization: "Vibe Coding Paris",
+            address1: "25, rue des Renaudes",
+            address2: "75017 Paris — France",
+            email: "tewfiqonline@gmail.com",
+            status: "Statut juridique : Micro-entreprise",
+            siret: "N° SIRET : 803 737 311",
+            tva: "TVA intracommunautaire : FR10803737311"
+          }
+        },
+        director: {
+          title: "2. Directeur de publication",
+          content: "Le directeur de la publication est Tewfiq Ferahi, en sa qualité de fondateur de Vibe Coding Paris."
+        },
+        hosting: {
+          title: "3. Hébergeur du site",
+          content: {
+            description: "Le site est hébergé par :",
+            name: "Netlify",
+            address: "https://www.netlify.com/",
+            website: "https://vb.tfq.one/"
+          }
+        },
+        intellectual: {
+          title: "4. Propriété intellectuelle",
+          content: {
+            para1: "L'ensemble des contenus du site (textes, images, graphismes, logos, vidéos, etc.) est protégé par le droit d'auteur et reste la propriété exclusive de Vibe Coding Paris, sauf mention contraire.",
+            para2: "Toute reproduction, représentation, modification ou exploitation, totale ou partielle, sans autorisation écrite préalable, est strictement interdite."
+          }
+        },
+        privacy: {
+          title: "5. Données personnelles",
+          content: {
+            para1: "Conformément au Règlement Général sur la Protection des Données (RGPD) :",
+            para2: "Les informations collectées via le site (formulaire de contact, réservation, paiement) sont nécessaires à la gestion des inscriptions et de la relation client.",
+            para3: "Les données sont traitées de manière confidentielle et ne sont jamais revendues à des tiers.",
+            para4: "Vous disposez d'un droit d'accès, de rectification et de suppression de vos données, que vous pouvez exercer en écrivant à :"
+          }
+        },
+        cookies: {
+          title: "6. Cookies",
+          content: {
+            para1: "Le site peut utiliser des cookies pour améliorer l'expérience utilisateur et des outils de mesure d'audience.",
+            para2: "Vous pouvez gérer vos préférences de cookies directement depuis votre navigateur."
+          }
+        },
+        liability: {
+          title: "7. Responsabilité",
+          content: {
+            para1: "L'éditeur du site met tout en œuvre pour assurer l'exactitude des informations diffusées, mais ne peut être tenu responsable d'erreurs, d'omissions ou de dysfonctionnements techniques.",
+            para2: "L'utilisation du site se fait sous la responsabilité exclusive de l'utilisateur."
+          }
+        },
+        law: {
+          title: "8. Droit applicable",
+          content: {
+            para1: "Les présentes mentions légales sont régies par le droit français.",
+            para2: "Tout litige relatif à l'utilisation du site sera soumis à la compétence exclusive des tribunaux de Paris."
+          }
+        }
+      }
+    },
+    terms: {
+      title: "Conditions Générales",
+      subtitle: "de Vente (CGV)",
+      lastUpdated: "Dernière mise à jour : 24 septembre 2025",
+      sections: {
+        object: {
+          title: "1. Objet",
+          content: {
+            para1: "Les présentes Conditions Générales de Vente (CGV) régissent la vente en ligne des ateliers et formations proposés par Vibe Coding Paris (ci-après \"l'Organisateur\"), accessibles via le site internet https://vb.tfq.one/",
+            para2: "Toute inscription à une formation implique l'acceptation sans réserve des présentes CGV."
+          }
+        },
+        registration: {
+          title: "2. Inscription & Public concerné",
+          content: {
+            para1: "Les formations sont ouvertes à toute personne majeure.",
+            para2: "Les mineurs de plus de 15 ans peuvent participer uniquement avec une autorisation écrite de leurs représentants légaux.",
+            para3: "Chaque session est limitée à 14 participants maximum.",
+            para4: "L'inscription est validée après paiement en ligne via Stripe et réception de l'email de confirmation."
+          }
+        },
+        pricing: {
+          title: "3. Tarifs & Modalités de paiement",
+          content: {
+            para1: "Les prix sont indiqués en euros, TTC (toutes taxes comprises).",
+            para2: "Trois formules sont proposées :",
+            pricing: {
+              starter: "Starter : 149 € TTC (tarif -26 ans et demandeurs d'emploi).",
+              standard: "Standard : 299 € TTC par personne.",
+              enterprise: "Entreprise/École : tarif sur devis."
+            },
+            para3: "Le paiement s'effectue exclusivement en ligne via la plateforme sécurisée Stripe.",
+            para4: "Aucune participation ne sera possible sans paiement complet au moment de l'inscription."
+          }
+        },
+        withdrawal: {
+          title: "4. Droit de rétractation",
+          content: {
+            para1: "Conformément au Code de la consommation :",
+            para2: "Vous disposez d'un délai de 14 jours après votre inscription pour exercer votre droit de rétractation, sans motif.",
+            para3: "Pour exercer ce droit, envoyez un email à [adresse de contact] en indiquant vos coordonnées et la formation concernée.",
+            para4: "Le remboursement sera effectué via Stripe dans un délai de 14 jours maximum.",
+            warning: "Si la formation a lieu avant la fin du délai légal de rétractation, vous reconnaissez renoncer expressément à ce droit."
+          }
+        },
+        cancellation: {
+          title: "5. Annulation & report",
+          content: {
+            para1: "En cas d'annulation de la part de l'Organisateur (force majeure, nombre insuffisant de participants…), un remboursement intégral sera proposé ou une reprogrammation à une date ultérieure.",
+            para2: "En cas d'annulation par le participant après la période légale de rétractation, aucun remboursement ne sera effectué, sauf cas de force majeure justifié (maladie grave, hospitalisation).",
+            para3: "Le transfert d'une place à une autre personne est possible sur demande écrite avant la formation."
+          }
+        },
+        training: {
+          title: "6. Déroulement des formations",
+          content: {
+            para1: "Les ateliers se déroulent en présentiel à Paris, en salle équipée (adresse précisée lors de l'inscription).",
+            para2: "Les sessions accueillent jusqu'à 14 participants.",
+            para3: "Les participants doivent apporter leur propre ordinateur (BYOD – Bring Your Own Device).",
+            para4: "L'Organisateur ne pourra être tenu responsable d'éventuels problèmes techniques liés au matériel personnel du participant."
+          }
+        },
+        intellectual: {
+          title: "7. Propriété intellectuelle",
+          content: {
+            para1: "Les supports pédagogiques, méthodes et contenus partagés durant les formations sont protégés par le droit d'auteur.",
+            para2: "Toute reproduction, diffusion ou utilisation en dehors d'un cadre strictement personnel est interdite sans l'accord écrit de l'Organisateur.",
+            para3: "Le participant conserve l'entière propriété des projets réalisés lors de la formation."
+          }
+        },
+        liability: {
+          title: "8. Responsabilité",
+          content: {
+            para1: "L'Organisateur met tout en œuvre pour assurer la qualité des formations.",
+            para2: "Il ne pourra être tenu responsable en cas de force majeure (grève, coupure internet/électricité, indisponibilité des locaux, etc.).",
+            para3: "L'Organisateur ne pourra être tenu responsable des dommages matériels, pertes de données ou préjudices indirects liés à l'utilisation des outils présentés."
+          }
+        },
+        privacy: {
+          title: "9. Protection des données personnelles (RGPD)",
+          content: {
+            para1: "Les informations collectées (nom, prénom, email, données de paiement) sont nécessaires pour gérer les inscriptions et le suivi des formations.",
+            para2: "Elles sont traitées de manière confidentielle et sécurisée via Stripe et Cal.com.",
+            para3: "Conformément à la réglementation RGPD, vous pouvez exercer vos droits d'accès, de rectification ou de suppression de vos données en écrivant à [adresse de contact]."
+          }
+        },
+        law: {
+          title: "10. Droit applicable & litiges",
+          content: {
+            para1: "Les présentes CGV sont régies par le droit français.",
+            para2: "En cas de litige, une solution amiable sera recherchée. À défaut, les tribunaux de Paris seront compétents."
+          }
+        },
+        acceptance: {
+          title: "✍️ Acceptation",
+          content: "En validant votre inscription et en procédant au paiement en ligne, vous reconnaissez avoir lu, compris et accepté les présentes CGV."
+        }
+      }
+    },
     metadata: {
       title: "Vibe Coding Paris — Débloque ton super pouvoir digital en 2h. De l'idée au site en ligne, avec l'IA comme copilote.",
       description: "Un atelier intensif et accessible. Tu explores, tu structures, tu repars avec un projet en ligne. Une compétence exploitable, en seulement 2h."
@@ -715,6 +1063,180 @@ export const translations: Record<Language, Translations> = {
         passion: "An early adopter passionate about technology scouting, he blends design, digital, business, and mentoring to develop innovative and impactful solutions."
       },
       mission: "My mission is to make Strategic Design and Generative AI Solutions accessible to everyone, combining Creativity, Technologies, and Business to generate significant impacts."
+    },
+    contact: {
+      title: "Contact",
+      description: "Book directly a 15-minute slot to discuss your project or ask your questions."
+    },
+    legal: {
+      title: "Legal Notice",
+      subtitle: "Vibe Coding Paris",
+      lastUpdated: "Last updated: September 24, 2025",
+      sections: {
+        editor: {
+          title: "1. Site Editor",
+          content: {
+            description: "This site is published by:",
+            name: "Tewfiq Ferahi",
+            organization: "Vibe Coding Paris",
+            address1: "25, rue des Renaudes",
+            address2: "75017 Paris — France",
+            email: "tewfiqonline@gmail.com",
+            status: "Legal status: Micro-enterprise",
+            siret: "SIRET No.: 803 737 311",
+            tva: "Intra-community VAT: FR10803737311"
+          }
+        },
+        director: {
+          title: "2. Publication Director",
+          content: "The publication director is Tewfiq Ferahi, in his capacity as founder of Vibe Coding Paris."
+        },
+        hosting: {
+          title: "3. Website Hosting",
+          content: {
+            description: "The site is hosted by:",
+            name: "Netlify",
+            address: "https://www.netlify.com/",
+            website: "https://vb.tfq.one/"
+          }
+        },
+        intellectual: {
+          title: "4. Intellectual Property",
+          content: {
+            para1: "All site content (text, images, graphics, logos, videos, etc.) is protected by copyright and remains the exclusive property of Vibe Coding Paris, unless otherwise stated.",
+            para2: "Any reproduction, representation, modification or exploitation, total or partial, without prior written authorization, is strictly prohibited."
+          }
+        },
+        privacy: {
+          title: "5. Personal Data",
+          content: {
+            para1: "In accordance with the General Data Protection Regulation (GDPR):",
+            para2: "Information collected via the site (contact form, reservation, payment) is necessary for managing registrations and customer relations.",
+            para3: "Data is processed confidentially and is never resold to third parties.",
+            para4: "You have the right to access, rectify and delete your data, which you can exercise by writing to:"
+          }
+        },
+        cookies: {
+          title: "6. Cookies",
+          content: {
+            para1: "The site may use cookies to improve user experience and audience measurement tools.",
+            para2: "You can manage your cookie preferences directly from your browser."
+          }
+        },
+        liability: {
+          title: "7. Liability",
+          content: {
+            para1: "The site editor makes every effort to ensure the accuracy of the information disseminated, but cannot be held responsible for errors, omissions or technical malfunctions.",
+            para2: "Use of the site is under the exclusive responsibility of the user."
+          }
+        },
+        law: {
+          title: "8. Applicable Law",
+          content: {
+            para1: "These legal notices are governed by French law.",
+            para2: "Any dispute relating to the use of the site will be subject to the exclusive jurisdiction of the Paris courts."
+          }
+        }
+      }
+    },
+    terms: {
+      title: "Terms and Conditions",
+      subtitle: "of Sale (T&C)",
+      lastUpdated: "Last updated: September 24, 2025",
+      sections: {
+        object: {
+          title: "1. Purpose",
+          content: {
+            para1: "These Terms and Conditions of Sale (T&C) govern the online sale of workshops and training offered by Vibe Coding Paris (hereinafter \"the Organizer\"), accessible via the website https://vb.tfq.one/",
+            para2: "Any registration for training implies unreserved acceptance of these T&C."
+          }
+        },
+        registration: {
+          title: "2. Registration & Target Audience",
+          content: {
+            para1: "Training is open to any adult.",
+            para2: "Minors over 15 years old can participate only with written authorization from their legal guardians.",
+            para3: "Each session is limited to a maximum of 14 participants.",
+            para4: "Registration is validated after online payment via Stripe and receipt of the confirmation email."
+          }
+        },
+        pricing: {
+          title: "3. Pricing & Payment Methods",
+          content: {
+            para1: "Prices are indicated in euros, all taxes included (TTC).",
+            para2: "Three formulas are offered:",
+            pricing: {
+              starter: "Starter: €149 TTC (rate for under 26 & job seekers).",
+              standard: "Standard: €299 TTC per person.",
+              enterprise: "Company/School: quote on request."
+            },
+            para3: "Payment is made exclusively online via the secure Stripe platform.",
+            para4: "No participation will be possible without full payment at the time of registration."
+          }
+        },
+        withdrawal: {
+          title: "4. Right of Withdrawal",
+          content: {
+            para1: "In accordance with the Consumer Code:",
+            para2: "You have 14 days after your registration to exercise your right of withdrawal, without reason.",
+            para3: "To exercise this right, send an email to [contact address] indicating your details and the training concerned.",
+            para4: "The refund will be made via Stripe within a maximum of 14 days.",
+            warning: "However, if the training takes place before the end of the legal withdrawal period, you acknowledge expressly waiving this right."
+          }
+        },
+        cancellation: {
+          title: "5. Cancellation & Postponement",
+          content: {
+            para1: "In case of cancellation by the Organizer (force majeure, insufficient number of participants...), a full refund will be offered or rescheduling to a later date.",
+            para2: "In case of cancellation by the participant after the legal withdrawal period, no refund will be made, except in cases of justified force majeure (serious illness, hospitalization).",
+            para3: "Transfer of a place to another person is possible upon written request before the training."
+          }
+        },
+        training: {
+          title: "6. Training Conduct",
+          content: {
+            para1: "Workshops take place in person in Paris, in an equipped room (address specified during registration).",
+            para2: "Sessions accommodate up to 14 participants.",
+            para3: "Participants must bring their own computer (BYOD – Bring Your Own Device).",
+            para4: "The Organizer cannot be held responsible for any technical problems related to the participant's personal equipment."
+          }
+        },
+        intellectual: {
+          title: "7. Intellectual Property",
+          content: {
+            para1: "Educational materials, methods and content shared during training are protected by copyright.",
+            para2: "Any reproduction, distribution or use outside of a strictly personal framework is prohibited without the written agreement of the Organizer.",
+            para3: "The participant retains full ownership of projects created during the training."
+          }
+        },
+        liability: {
+          title: "8. Liability",
+          content: {
+            para1: "The Organizer makes every effort to ensure the quality of training.",
+            para2: "It cannot be held responsible in cases of force majeure (strike, internet/electricity outage, unavailability of premises, etc.).",
+            para3: "The Organizer cannot be held responsible for material damage, data loss or indirect damages related to the use of the tools presented."
+          }
+        },
+        privacy: {
+          title: "9. Personal Data Protection (GDPR)",
+          content: {
+            para1: "The information collected (name, first name, email, payment data) is necessary to manage registrations and training follow-up.",
+            para2: "They are processed confidentially and securely via Stripe and Cal.com.",
+            para3: "In accordance with GDPR regulations, you can exercise your rights of access, rectification or deletion of your data by writing to [contact address]."
+          }
+        },
+        law: {
+          title: "10. Applicable Law & Disputes",
+          content: {
+            para1: "These T&C are governed by French law.",
+            para2: "In case of dispute, an amicable solution will be sought. Otherwise, the Paris courts will be competent."
+          }
+        },
+        acceptance: {
+          title: "✍️ Acceptance",
+          content: "By validating your registration and proceeding with online payment, you acknowledge having read, understood and accepted these T&C."
+        }
+      }
     },
     metadata: {
       title: "Vibe Coding Paris — Unlock your digital superpower in 2h. From idea to live website, with AI as copilot.",
