@@ -15,45 +15,58 @@ export default function ContactPage() {
   const t = useTranslation();
 
   useEffect(() => {
-    // Check if Cal script is already loaded
-    if (typeof window !== 'undefined' && !window.Cal) {
-      const script = document.createElement('script');
-      script.src = 'https://app.cal.com/embed/embed.js';
-      script.async = true;
-      document.head.appendChild(script);
+    // Use the exact Cal.com embed script provided
+    const initCal = () => {
+      if (typeof window !== 'undefined') {
+        // Cal.com initialization function - exact copy of their embed code
+        (function (C: any, A: string, L: string) {
+          let p = function (a: any, ar: any) { a.q.push(ar); };
+          let d = C.document;
+          C.Cal = C.Cal || function () {
+            let cal = C.Cal;
+            let ar = arguments;
+            if (!cal.loaded) {
+              cal.ns = {};
+              cal.q = cal.q || [];
+              d.head.appendChild(d.createElement("script")).src = A;
+              cal.loaded = true;
+            }
+            if (ar[0] === L) {
+              const api = function () { p(api, arguments); };
+              const namespace = ar[1];
+              api.q = api.q || [];
+              if (typeof namespace === "string") {
+                cal.ns[namespace] = cal.ns[namespace] || api;
+                p(cal.ns[namespace], ar);
+                p(cal, ["initNamespace", namespace]);
+              } else p(cal, ar);
+              return;
+            }
+            p(cal, ar);
+          };
+        })(window, "https://app.cal.com/embed/embed.js", "init");
 
-      script.onload = () => {
-        // Initialize Cal.com widget
-        if (window.Cal) {
-          window.Cal("init", "15min", { origin: "https://app.cal.com" });
+        // Initialize Cal
+        window.Cal("init", "15min", { origin: "https://app.cal.com" });
 
-          window.Cal.ns["15min"]("inline", {
-            elementOrSelector: "#my-cal-inline-15min",
-            config: { layout: "month_view" },
-            calLink: "tewfiqferahi/15min",
-          });
+        // Setup inline widget
+        window.Cal.ns["15min"]("inline", {
+          elementOrSelector: "#my-cal-inline-15min",
+          config: { layout: "month_view" },
+          calLink: "tewfiqferahi/15min",
+        });
 
-          window.Cal.ns["15min"]("ui", {
-            hideEventTypeDetails: false,
-            layout: "month_view"
-          });
-        }
-      };
-    } else if (window.Cal) {
-      // Cal is already loaded, just initialize the widget
-      window.Cal("init", "15min", { origin: "https://app.cal.com" });
+        // Setup UI
+        window.Cal.ns["15min"]("ui", {
+          hideEventTypeDetails: false,
+          layout: "month_view"
+        });
+      }
+    };
 
-      window.Cal.ns["15min"]("inline", {
-        elementOrSelector: "#my-cal-inline-15min",
-        config: { layout: "month_view" },
-        calLink: "tewfiqferahi/15min",
-      });
-
-      window.Cal.ns["15min"]("ui", {
-        hideEventTypeDetails: false,
-        layout: "month_view"
-      });
-    }
+    // Add a small delay to ensure DOM is ready
+    const timer = setTimeout(initCal, 100);
+    return () => clearTimeout(timer);
   }, []);
 
   return (
@@ -69,18 +82,11 @@ export default function ContactPage() {
           </p>
         </div>
 
-        <div className="bg-background rounded-lg shadow-lg border">
+        <div className="bg-background rounded-lg shadow-lg border overflow-hidden">
           <div
             style={{ width: '100%', height: '600px', overflow: 'scroll' }}
             id="my-cal-inline-15min"
-          >
-            <div className="flex items-center justify-center h-full">
-              <div className="text-center">
-                <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-accent mx-auto mb-4"></div>
-                <p className="text-muted-foreground">Chargement du calendrier...</p>
-              </div>
-            </div>
-          </div>
+          />
         </div>
       </div>
     </div>
