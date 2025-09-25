@@ -97,7 +97,7 @@ export default function Pricing() {
           </Card>
 
           {/* Team Card */}
-          <Card className="flex flex-col h-full w-full max-w-sm transition-all hover:scale-[1.02] hover:shadow-lg">
+          <Card className="flex flex-col h-full w-full max-w-sm border-2 border-green-500 shadow-2xl shadow-green-500/20 relative transition-all hover:scale-[1.02] hover:shadow-2xl">
             <CardHeader className="pb-4">
               <CardTitle className="font-headline text-xl">
                 {t.pricing.plans.team.title}
@@ -115,7 +115,7 @@ export default function Pricing() {
               <ul className="space-y-3 text-sm">
                 {t.pricing.plans.team.features.map((feature) => (
                   <li key={feature} className="flex items-center gap-2">
-                    <Check className="h-4 w-4 text-primary" />
+                    <Check className="h-4 w-4 text-green-500" />
                     <span className="text-muted-foreground">{feature}</span>
                   </li>
                 ))}
