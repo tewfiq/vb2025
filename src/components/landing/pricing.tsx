@@ -35,7 +35,7 @@ export default function Pricing() {
           {/* Starter Card - Featured */}
           <Card className="flex flex-col h-full w-full max-w-sm border-2 border-accent shadow-2xl shadow-accent/20 relative transition-all hover:scale-[1.02] hover:shadow-2xl">
             <CardHeader className="pb-4">
-              <CardTitle className="font-headline text-2xl">
+              <CardTitle className="font-headline text-xl">
                 {t.pricing.plans.starter.title}
               </CardTitle>
               <div className="flex items-baseline gap-2">
@@ -99,7 +99,7 @@ export default function Pricing() {
           {/* Team Card */}
           <Card className="flex flex-col h-full w-full max-w-sm transition-all hover:scale-[1.02] hover:shadow-lg">
             <CardHeader className="pb-4">
-              <CardTitle className="font-headline text-2xl">
+              <CardTitle className="font-headline text-xl">
                 {t.pricing.plans.team.title}
               </CardTitle>
               <div className="flex items-baseline gap-2">
