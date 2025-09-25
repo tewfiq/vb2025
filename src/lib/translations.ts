@@ -533,7 +533,7 @@ export const translations: Record<Language, Translations> = {
       description: "Chaque formule vous transmet la même compétence :<br />apprendre à coder de bout en bout par la pratique et devenir Product Builder.",
       plans: {
         starter: {
-          title: "⭐ Starter",
+          title: "🚀 Product Builder Masterclass",
           price: "149 €",
           description: "TTC / -26 ans & demandeurs d'emploi",
           features: [
@@ -545,7 +545,7 @@ export const translations: Record<Language, Translations> = {
           buttonText: "Je m'inscris — 149 €"
         },
         standard: {
-          title: "🚀 Devenez Product Builder",
+          title: "🚀 Product Builder Masterclass",
           price: "299 €",
           description: "TTC / personne",
           features: [
@@ -952,7 +952,7 @@ export const translations: Record<Language, Translations> = {
       description: "Each formula gives you the same skill:<br />learn to code end-to-end through practice and become a Product Builder.",
       plans: {
         starter: {
-          title: "⭐ Starter",
+          title: "🚀 Product Builder Masterclass",
           price: "€149",
           description: "Tax incl. / Under 26 & job seekers",
           features: [
@@ -964,7 +964,7 @@ export const translations: Record<Language, Translations> = {
           buttonText: "Register — €149"
         },
         standard: {
-          title: "🚀 Become a Product Builder",
+          title: "🚀 Product Builder Masterclass",
           price: "€299",
           description: "Tax incl. / person",
           features: [
