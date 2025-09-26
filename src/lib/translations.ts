@@ -6,6 +6,7 @@ export interface Translations {
     why: string
     info: string
     faq: string
+    students: string
   }
   hero: {
     badgeText: string
@@ -398,6 +399,13 @@ export interface Translations {
       }
     }
   }
+  studentsDialog: {
+    title: string
+    welcome: string
+    description: string
+    specialPricing: string
+    process: string
+  }
   metadata: {
     title: string
     description: string
@@ -410,7 +418,8 @@ export const translations: Record<Language, Translations> = {
       programme: "Programme",
       why: "Pourquoi",
       info: "Infos",
-      faq: "FAQ"
+      faq: "FAQ",
+      students: "Mes étudiants"
     },
     hero: {
       badgeText: "Social proof badge FR", // This will need to be checked in the actual component
@@ -819,6 +828,13 @@ export const translations: Record<Language, Translations> = {
         }
       }
     },
+    studentsDialog: {
+      title: "Espace Étudiants - Tarif Préférentiel",
+      welcome: "Bienvenue mes étudiants ! 👨‍🎓",
+      description: "Réservez un créneau de 15 minutes pour discuter de votre projet et obtenir votre code promo.",
+      specialPricing: "Avec votre code promo : 99€ au lieu de 149€",
+      process: "📅 RDV 15min → 💬 Code promo → 🎟️ Tarif étudiant → 💳 99€"
+    },
     metadata: {
       title: "Vibe Coding Paris — Débloque ton super pouvoir digital en 2h. De l'idée au site en ligne, avec l'IA comme copilote.",
       description: "Un atelier intensif et accessible. Tu explores, tu structures, tu repars avec un projet en ligne. Une compétence exploitable, en seulement 2h."
@@ -829,7 +845,8 @@ export const translations: Record<Language, Translations> = {
       programme: "Program",
       why: "Why",
       info: "Info",
-      faq: "FAQ"
+      faq: "FAQ",
+      students: "My students"
     },
     hero: {
       badgeText: "Social proof badge EN",
@@ -1237,6 +1254,13 @@ export const translations: Record<Language, Translations> = {
           content: "By validating your registration and proceeding with online payment, you acknowledge having read, understood and accepted these T&C."
         }
       }
+    },
+    studentsDialog: {
+      title: "Students Area - Special Rate",
+      welcome: "Welcome my students! 👨‍🎓",
+      description: "Book a 15-minute slot to discuss your project and get your promo code.",
+      specialPricing: "With your promo code: €99 instead of €149",
+      process: "📅 15min meeting → 💬 Promo code → 🎟️ Student rate → 💳 €99"
     },
     metadata: {
       title: "Vibe Coding Paris — Unlock your digital superpower in 2h. From idea to live website, with AI as copilot.",
