@@ -558,7 +558,7 @@ export const translations: Record<Language, Translations> = {
           buttonText: "Réserver — 299 €"
         },
         team: {
-          title: "👥 Équipe",
+          title: "🏢 Entreprise",
           price: "Sur devis",
           description: "Entreprise / École (5 à 20 pers.)",
           features: [
@@ -567,7 +567,7 @@ export const translations: Record<Language, Translations> = {
             "Planning dédié",
             "Idéal pour écoles, agences et incubateurs"
           ],
-          buttonText: "Demander un devis"
+          buttonText: "Réserver une Session"
         }
       }
     },
@@ -977,7 +977,7 @@ export const translations: Record<Language, Translations> = {
           buttonText: "Book — €299"
         },
         team: {
-          title: "👥 Team",
+          title: "🏢 Company",
           price: "Custom quote",
           description: "Company / School (5 to 20 people)",
           features: [
@@ -986,7 +986,7 @@ export const translations: Record<Language, Translations> = {
             "Dedicated scheduling",
             "Ideal for schools, agencies and incubators"
           ],
-          buttonText: "Request quote"
+          buttonText: "Book a Session"
         }
       }
     },
