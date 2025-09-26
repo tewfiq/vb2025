@@ -96,7 +96,7 @@ export default function Pricing() {
             </CardFooter>
           </Card>
 
-          {/* Team Card */}
+          {/* Company Card */}
           <Card className="flex flex-col h-full w-full max-w-sm border-2 border-green-500 shadow-2xl shadow-green-500/20 relative transition-all hover:scale-[1.02] hover:shadow-2xl">
             <CardHeader className="pb-4">
               <CardTitle className="font-headline text-xl">

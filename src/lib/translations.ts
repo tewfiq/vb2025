@@ -558,7 +558,7 @@ export const translations: Record<Language, Translations> = {
           buttonText: "Réserver — 299 €"
         },
         team: {
-          title: "👥 Équipe",
+          title: "🏢 Entreprise",
           price: "Sur devis",
           description: "Entreprise / École (5 à 20 pers.)",
           features: [
@@ -977,7 +977,7 @@ export const translations: Record<Language, Translations> = {
           buttonText: "Book — €299"
         },
         team: {
-          title: "👥 Team",
+          title: "🏢 Company",
           price: "Custom quote",
           description: "Company / School (5 to 20 people)",
           features: [
