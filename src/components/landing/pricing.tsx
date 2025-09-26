@@ -122,7 +122,7 @@ export default function Pricing() {
               </ul>
             </CardContent>
             <CardFooter className="flex-col gap-3">
-              <Button className="w-full border-2 border-green-500 text-green-500 hover:bg-green-500 hover:text-white transition-colors" asChild>
+              <Button className="w-full border-2 border-green-500 text-white hover:bg-green-500 hover:text-white transition-colors" asChild>
                 <Link href="https://cal.com/tewfiqferahi/15min">
                   {t.pricing.plans.team.buttonText}
                 </Link>
