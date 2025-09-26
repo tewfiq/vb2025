@@ -829,7 +829,7 @@ export const translations: Record<Language, Translations> = {
       }
     },
     studentsDialog: {
-      title: "Espace Étudiants - Tarif Préférentiel",
+      title: "Masterclass Vibe Coding Paris 2025\nEspace Étudiants - Tarif Préférentiel",
       welcome: "Bienvenue mes étudiants ! 👨‍🎓",
       description: "Réservez un créneau de 15 minutes pour discuter de votre projet et obtenir votre code promo.",
       specialPricing: "Avec votre code promo : 99€ au lieu de 149€",
@@ -1256,7 +1256,7 @@ export const translations: Record<Language, Translations> = {
       }
     },
     studentsDialog: {
-      title: "Students Area - Special Rate",
+      title: "Masterclass Vibe Coding Paris 2025\nStudents Area - Special Rate",
       welcome: "Welcome my students! 👨‍🎓",
       description: "Book a 15-minute slot to discuss your project and get your promo code.",
       specialPricing: "With your promo code: €99 instead of €149",
