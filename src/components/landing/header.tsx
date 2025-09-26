@@ -7,6 +7,7 @@ import { ThemeSwitcher } from '@/components/theme-switcher';
 import { LanguageSwitcher } from '@/components/language-switcher';
 import Logo from '@/components/logo';
 import { useTranslation } from '@/hooks/use-translation';
+import StudentDialog from '@/components/landing/student-dialog';
 
 export default function Header() {
   const t = useTranslation()
@@ -41,6 +42,7 @@ export default function Header() {
           </nav>
         </div>
         <div className="flex flex-1 items-center justify-end space-x-2">
+          <StudentDialog variant="outline" className="hidden sm:inline-flex" />
           <Button asChild className='hidden sm:inline-flex'>
             <Link href="#pricing">{t.hero.buttons.register}</Link>
           </Button>
@@ -76,6 +78,9 @@ export default function Header() {
                     {link.label}
                   </Link>
                 ))}
+                <div className="pt-4 border-t border-border">
+                  <StudentDialog variant="outline" size="lg" className="w-full justify-start" />
+                </div>
               </div>
             </SheetContent>
           </Sheet>
