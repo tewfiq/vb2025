@@ -87,12 +87,12 @@ export default function Pricing() {
                 ))}
               </ul>
             </CardContent>
-            <CardFooter>
+            <CardFooter className="flex-col gap-3">
               <Button className="w-full" asChild>
                 <Link href="https://buy.stripe.com/bJe5kEdSrgkcfhQaBn7EQ0c">
                   {t.pricing.plans.standard.buttonText}
                 </Link>
-              </Button>{" "}
+              </Button>
             </CardFooter>
           </Card>
 
@@ -121,12 +121,12 @@ export default function Pricing() {
                 ))}
               </ul>
             </CardContent>
-            <CardFooter>
-              <Button className="w-full" variant="outline" asChild>
+            <CardFooter className="flex-col gap-3">
+              <Button className="w-full border-2 border-green-500 text-green-500 hover:bg-green-500 hover:text-white transition-colors" asChild>
                 <Link href="https://cal.com/tewfiqferahi/15min">
                   {t.pricing.plans.team.buttonText}
                 </Link>
-              </Button>{" "}
+              </Button>
             </CardFooter>
           </Card>
         </div>

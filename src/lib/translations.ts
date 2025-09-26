@@ -567,7 +567,7 @@ export const translations: Record<Language, Translations> = {
             "Planning dédié",
             "Idéal pour écoles, agences et incubateurs"
           ],
-          buttonText: "Demander un devis"
+          buttonText: "Réserver une Session"
         }
       }
     },
@@ -986,7 +986,7 @@ export const translations: Record<Language, Translations> = {
             "Dedicated scheduling",
             "Ideal for schools, agencies and incubators"
           ],
-          buttonText: "Request quote"
+          buttonText: "Book a Session"
         }
       }
     },
