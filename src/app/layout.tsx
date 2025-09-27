@@ -3,6 +3,7 @@ import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
 import { ClientProviders } from "@/components/client-providers";
 import GoogleAnalytics from "@/components/analytics";
+import { QrShareButton } from "@/components/ui/qr-share-button";
 
 export const metadata: Metadata = {
   title:
@@ -43,6 +44,7 @@ export default function RootLayout({
         <ClientProviders>
           {children}
           <Toaster />
+          <QrShareButton />
         </ClientProviders>
       </body>
     </html>
