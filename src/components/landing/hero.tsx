@@ -11,7 +11,21 @@ export default function Hero() {
   const t = useTranslation()
 
   return (
-    <section id="hero" className="relative w-full min-h-[100dvh] md:min-h-screen flex items-center justify-center bg-background hero-provoc">
+    <section id="hero" className="relative w-full min-h-[100dvh] md:min-h-screen flex items-center justify-center bg-background hero-provoc overflow-hidden">
+      {/* Animated Paris GIF Background */}
+      <div
+        className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: 'url(/backgrounds/paris-hero.gif)',
+          backgroundAttachment: 'fixed'
+        }}
+        role="img"
+        aria-label="Animation de Paris en arrière-plan"
+      />
+
+      {/* Dark overlay for better text contrast */}
+      <div className="absolute inset-0 bg-black/40" />
+
       <RetroGrid />
       <div className="container mx-auto px-4 text-center relative z-10">
         {/* Badge de social proof déplacé au-dessus du titre */}
