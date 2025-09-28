@@ -14,20 +14,22 @@ export default function Hero() {
     <section id="hero" className="relative w-full min-h-[100dvh] md:min-h-screen flex items-center justify-center bg-background hero-provoc overflow-hidden">
       {/* Animated Paris GIF Background */}
       <div
-        className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat"
+        className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat z-0"
         style={{
           backgroundImage: 'url(/backgrounds/paris-hero.gif)',
-          backgroundAttachment: 'fixed'
+          backgroundColor: '#1a1a1a', // Fallback color to see if div is working
         }}
         role="img"
         aria-label="Animation de Paris en arrière-plan"
       />
 
       {/* Dark overlay for better text contrast */}
-      <div className="absolute inset-0 bg-black/40" />
+      <div className="absolute inset-0 bg-black/30 z-10" />
 
-      <RetroGrid />
-      <div className="container mx-auto px-4 text-center relative z-10">
+      <div className="relative z-20">
+        <RetroGrid />
+      </div>
+      <div className="container mx-auto px-4 text-center relative z-30">
         {/* Badge de social proof déplacé au-dessus du titre */}
         <div className="mb-4 md:mb-8 flex justify-center">
           <SocialProofBadge />
