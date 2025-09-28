@@ -10,19 +10,19 @@ import { useEffect, useState } from 'react';
 
 export default function Hero() {
   const t = useTranslation()
-  const [gridOrigin, setGridOrigin] = useState({ x: "67%", y: "78%" })
+  const [gridOrigin, setGridOrigin] = useState({ x: "67%", y: "88%" })
 
   useEffect(() => {
     const updateGridOrigin = () => {
       if (window.innerWidth < 768) {
-        // Mobile: Tour Eiffel peut être plus centrée
-        setGridOrigin({ x: "65%", y: "75%" })
+        // Mobile: Pieds de la Tour Eiffel
+        setGridOrigin({ x: "65%", y: "85%" })
       } else if (window.innerWidth < 1024) {
-        // Tablet
-        setGridOrigin({ x: "66%", y: "76%" })
+        // Tablet: Pieds de la Tour Eiffel
+        setGridOrigin({ x: "66%", y: "87%" })
       } else {
-        // Desktop
-        setGridOrigin({ x: "67%", y: "78%" })
+        // Desktop: Pieds de la Tour Eiffel (sol)
+        setGridOrigin({ x: "67%", y: "88%" })
       }
     }
 
@@ -51,7 +51,7 @@ export default function Hero() {
         className="z-20"
         originX={gridOrigin.x}
         originY={gridOrigin.y}
-        angle={60}
+        angle={65}
       />
       <div className="container mx-auto px-4 text-center relative z-30">
         {/* Badge de social proof déplacé au-dessus du titre */}
