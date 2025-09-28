@@ -10,7 +10,7 @@ export function RetroGrid({
   return (
     <div
       className={cn(
-        "pointer-events-none absolute size-full overflow-hidden opacity-40 [perspective:200px]",
+        "pointer-events-none absolute size-full overflow-hidden opacity-60 [perspective:200px]",
         className,
       )}
       style={{ "--grid-angle": `${angle}deg` } as React.CSSProperties}
@@ -32,8 +32,8 @@ export function RetroGrid({
         />
       </div>
 
-      {/* Background Gradient */}
-      <div className="absolute inset-0 bg-gradient-to-t from-white to-transparent to-90% dark:from-black" />
+      {/* Background Gradient - Reduced for GIF visibility */}
+      <div className="absolute inset-0 bg-gradient-to-t from-white/20 to-transparent to-90% dark:from-black/20" />
     </div>
   );
 }
