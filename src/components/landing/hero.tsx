@@ -26,9 +26,7 @@ export default function Hero() {
       {/* Overlay for better text contrast - adaptive for light/dark mode */}
       <div className="absolute inset-0 bg-black/50 dark:bg-black/30 z-10" />
 
-      <div className="relative z-20">
-        <RetroGrid />
-      </div>
+      <RetroGrid className="z-20" />
       <div className="container mx-auto px-4 text-center relative z-30">
         {/* Badge de social proof déplacé au-dessus du titre */}
         <div className="mb-4 md:mb-8 flex justify-center">
