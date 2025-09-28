@@ -6,9 +6,30 @@ import { RetroGrid } from '@/components/ui/retro-grid';
 import Logo from '@/components/logo';
 import SocialProofBadge from '@/components/landing/social-proof-badge';
 import { useTranslation } from '@/hooks/use-translation';
+import { useEffect, useState } from 'react';
 
 export default function Hero() {
   const t = useTranslation()
+  const [gridOrigin, setGridOrigin] = useState({ x: "67%", y: "78%" })
+
+  useEffect(() => {
+    const updateGridOrigin = () => {
+      if (window.innerWidth < 768) {
+        // Mobile: Tour Eiffel peut être plus centrée
+        setGridOrigin({ x: "65%", y: "75%" })
+      } else if (window.innerWidth < 1024) {
+        // Tablet
+        setGridOrigin({ x: "66%", y: "76%" })
+      } else {
+        // Desktop
+        setGridOrigin({ x: "67%", y: "78%" })
+      }
+    }
+
+    updateGridOrigin()
+    window.addEventListener('resize', updateGridOrigin)
+    return () => window.removeEventListener('resize', updateGridOrigin)
+  }, [])
 
   return (
     <section id="hero" className="relative w-full min-h-[100dvh] md:min-h-screen flex items-center justify-center bg-background hero-provoc overflow-hidden">
@@ -26,7 +47,12 @@ export default function Hero() {
       {/* Overlay for better text contrast - adaptive for light/dark mode */}
       <div className="absolute inset-0 bg-black/50 dark:bg-black/30 z-10" />
 
-      <RetroGrid className="z-20" />
+      <RetroGrid
+        className="z-20"
+        originX={gridOrigin.x}
+        originY={gridOrigin.y}
+        angle={60}
+      />
       <div className="container mx-auto px-4 text-center relative z-30">
         {/* Badge de social proof déplacé au-dessus du titre */}
         <div className="mb-4 md:mb-8 flex justify-center">
