@@ -23,8 +23,8 @@ export default function Hero() {
         aria-label="Animation de Paris en arrière-plan"
       />
 
-      {/* Dark overlay for better text contrast */}
-      <div className="absolute inset-0 bg-black/30 z-10" />
+      {/* Overlay for better text contrast - adaptive for light/dark mode */}
+      <div className="absolute inset-0 bg-black/50 dark:bg-black/30 z-10" />
 
       <div className="relative z-20">
         <RetroGrid />
@@ -35,7 +35,7 @@ export default function Hero() {
           <SocialProofBadge />
         </div>
         
-        <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-headline">
+        <h1 className="text-3xl font-bold tracking-tight text-white sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-headline">
           {/* Version mobile */}
           <span className="block md:hidden">
             {t.hero.title.mobile.line1}<br />
@@ -48,11 +48,11 @@ export default function Hero() {
             {t.hero.title.desktop.line2}
           </span>
         </h1>
-        <p className="mt-2 md:mt-4 max-w-2xl mx-auto text-base text-muted-foreground md:text-lg lg:text-xl">
+        <p className="mt-2 md:mt-4 max-w-2xl mx-auto text-base text-white/90 md:text-lg lg:text-xl">
           {t.hero.subtitle.line1}<br />
           {t.hero.subtitle.line2}
         </p>
-        <p className="mt-2 md:mt-4 max-w-2xl mx-auto text-sm text-muted-foreground/80 md:text-base font-medium">
+        <p className="mt-2 md:mt-4 max-w-2xl mx-auto text-sm text-white/80 md:text-base font-medium">
           {t.hero.description}
         </p>
         <p className="mt-3 md:mt-4 text-sm text-accent font-semibold">
@@ -71,7 +71,7 @@ export default function Hero() {
           </Button>
         </div>
         
-        <div className="mt-6 md:mt-12 flex flex-wrap items-center justify-center gap-4 md:gap-6 text-xs md:text-sm text-muted-foreground">
+        <div className="mt-6 md:mt-12 flex flex-wrap items-center justify-center gap-4 md:gap-6 text-xs md:text-sm text-white/70">
           <div className="flex items-center gap-2">
             <span>{t.hero.features.capacity}</span>
           </div>
