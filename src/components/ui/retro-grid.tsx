@@ -3,9 +3,13 @@ import { cn } from "@/lib/utils";
 export function RetroGrid({
   className,
   angle = 65,
+  originX = "50%",
+  originY = "50%",
 }: {
   className?: string;
   angle?: number;
+  originX?: string;
+  originY?: string;
 }) {
   return (
     <div
@@ -13,10 +17,18 @@ export function RetroGrid({
         "pointer-events-none absolute size-full overflow-hidden opacity-80 [perspective:200px]",
         className,
       )}
-      style={{ "--grid-angle": `${angle}deg` } as React.CSSProperties}
+      style={{
+        "--grid-angle": `${angle}deg`,
+        "perspectiveOrigin": `${originX} ${originY}`,
+      } as React.CSSProperties}
     >
       {/* Grid */}
-      <div className="absolute inset-0 [transform:rotateX(var(--grid-angle))]">
+      <div
+        className="absolute inset-0 [transform:rotateX(var(--grid-angle))]"
+        style={{
+          transformOrigin: `${originX} ${originY}`,
+        }}
+      >
         <div
           className={cn(
             "animate-grid",
