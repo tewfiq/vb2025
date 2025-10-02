@@ -34,13 +34,6 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap"
           rel="stylesheet"
         />
-        {/* Preload hero background for better performance */}
-        <link
-          rel="preload"
-          href="/backgrounds/paris-hero.gif"
-          as="image"
-          type="image/gif"
-        />
       </head>
       <body className="font-body antialiased" suppressHydrationWarning={true}>
         {process.env.NEXT_PUBLIC_GA_TRACKING_ID && (
