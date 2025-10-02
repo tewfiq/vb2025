@@ -277,26 +277,14 @@ export default function Changelog() {
                   {pr.body && (
                     <CardContent>
                       <div className="prose prose-sm max-w-none">
-                        <div className="text-muted-foreground leading-relaxed">
+                        <div className="text-muted-foreground leading-relaxed line-clamp-3">
                           {(() => {
                             const summary = extractSummary(pr.body);
                             if (!summary) return null;
 
-                            return parseMarkdownBasic(summary).split('\n').map((line, idx) => {
-                              if (line.startsWith('• ')) {
-                                return (
-                                  <div key={idx} className="flex items-start gap-2 mb-1">
-                                    <span className="text-primary mt-1 text-xs">•</span>
-                                    <span className="flex-1">{truncateDescription(line.substring(2), 150)}</span>
-                                  </div>
-                                );
-                              }
-                              return line && (
-                                <p key={idx} className="mb-2 last:mb-0">
-                                  {truncateDescription(line, 150)}
-                                </p>
-                              );
-                            });
+                            const parsed = parseMarkdownBasic(summary);
+                            const truncated = truncateDescription(parsed, 200);
+                            return <p>{truncated}</p>;
                           })()}
                         </div>
                       </div>
