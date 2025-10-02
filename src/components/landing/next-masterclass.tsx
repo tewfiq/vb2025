@@ -52,7 +52,6 @@ export default function NextMasterclass() {
             {infoItems.map((item, index) => (
               <Card
                 key={index}
-                className="border-border/40 hover:border-accent/50 transition-all hover:shadow-lg dark:bg-card/50 dark:backdrop-blur-sm"
               >
                 <CardContent className="p-6">
                   <div className="flex items-center gap-4">
@@ -71,7 +70,7 @@ export default function NextMasterclass() {
           </div>
 
           {/* Colonne droite : Google Maps */}
-          <Card className="border-border/40 overflow-hidden h-full min-h-[400px] lg:min-h-[500px] dark:bg-card/50 dark:backdrop-blur-sm">
+          <Card className="overflow-hidden h-full min-h-[400px] lg:min-h-[500px]">
             <CardContent className="p-0 h-full">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.4385449371564!2d2.3633333!3d48.8625825!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66e1c3df3c7d5%3A0x9b6c1c3c3c3c3c3c!2s1%20Rue%20de%20Bretagne%2C%2075003%20Paris!5e0!3m2!1sfr!2sfr!4v1234567890123!5m2!1sfr!2sfr"
