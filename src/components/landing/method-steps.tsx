@@ -40,10 +40,10 @@ export default function MethodSteps() {
         <div className="max-w-4xl mx-auto">
           <Accordion type="single" collapsible className="space-y-6">
             {steps.map((step, index) => (
-              <AccordionItem key={index} value={`item-${index}`} className="border border-border rounded-lg px-6">
+              <AccordionItem key={index} value={`item-${index}`} className="border border-border dark:border-border/40 dark:bg-card/30 rounded-lg px-6">
                 <AccordionTrigger className="hover:no-underline">
                   <div className="flex items-center gap-4 text-left">
-                    <div className="flex-shrink-0 w-10 h-10 bg-accent/10 rounded-lg flex items-center justify-center">
+                    <div className="flex-shrink-0 w-10 h-10 bg-accent/10 dark:bg-accent/20 rounded-lg flex items-center justify-center">
                       <step.icon className="w-5 h-5 text-accent" />
                     </div>
                     <div>

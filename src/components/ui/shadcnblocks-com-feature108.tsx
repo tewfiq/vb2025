@@ -49,7 +49,7 @@ const Feature108 = ({
                 <TabsTrigger
                   key={tab.value}
                   value={tab.value}
-                  className="flex items-center gap-2 rounded-xl px-3 py-2 sm:px-4 sm:py-3 text-xs sm:text-sm font-semibold text-muted-foreground data-[state=active]:bg-muted data-[state=active]:text-primary whitespace-nowrap flex-shrink-0 min-w-fit"
+                  className="flex items-center gap-2 rounded-xl px-3 py-2 sm:px-4 sm:py-3 text-xs sm:text-sm font-semibold text-muted-foreground data-[state=active]:bg-muted dark:data-[state=active]:bg-muted/30 data-[state=active]:text-primary whitespace-nowrap flex-shrink-0 min-w-fit"
                 >
                   {tab.icon} {tab.label}
                 </TabsTrigger>
@@ -57,7 +57,7 @@ const Feature108 = ({
             </TabsList>
           </div>
 
-          <div className="mx-auto mt-8 max-w-4xl rounded-2xl bg-muted/70 p-6 lg:p-16">
+          <div className="mx-auto mt-8 max-w-4xl rounded-2xl bg-muted/70 dark:bg-muted/20 p-6 lg:p-16">
             {tabs.map((tab) => (
               <TabsContent
                 key={tab.value}
@@ -65,7 +65,7 @@ const Feature108 = ({
                 className="grid place-items-center gap-20 lg:grid-cols-2 lg:gap-10"
               >
                 <div className="flex flex-col gap-5">
-                  <Badge variant="outline" className="w-fit bg-background">{tab.content.badge}</Badge>
+                  <Badge variant="outline" className="w-fit bg-background dark:bg-background/50">{tab.content.badge}</Badge>
                   <h3 className="text-3xl font-semibold lg:text-5xl">{tab.content.title}</h3>
                   <p className="text-muted-foreground lg:text-lg">{tab.content.description}</p>
                 </div>
