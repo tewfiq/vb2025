@@ -632,7 +632,7 @@ export const translations: Record<Language, Translations> = {
       tagline: "Une compétence en 2h. Rien de personnel."
     },
     socialProofBadge: {
-      spotsRemaining: "🔥 Il reste 6 places ! Prenez la vôtre",
+      spotsRemaining: "🔥 Il reste 2 places !",
       timezone: "(Paris UTC+2)"
     },
     partners: {
