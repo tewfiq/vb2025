@@ -24,7 +24,7 @@ export default function WhyCards() {
     ];
 
     return (
-        <section id="why" className="py-12 md:py-20 lg:py-32 bg-muted/30">
+        <section id="why" className="py-12 md:py-20 lg:py-32 bg-muted/30 dark:bg-muted/10">
             <div className="container mx-auto px-4 max-w-6xl">
                 <div className="text-center max-w-3xl mx-auto mb-8 md:mb-16">
                     <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl md:text-4xl lg:text-5xl font-headline">
@@ -38,7 +38,7 @@ export default function WhyCards() {
                 {/* Cartes principales */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {features.map((feature, index) => (
-                        <Card key={index} className="flex flex-col overflow-hidden bg-card/80 backdrop-blur-sm transition-all hover:scale-[1.02] hover:shadow-lg">
+                        <Card key={index} className="flex flex-col overflow-hidden bg-card/80 dark:bg-card/50 backdrop-blur-sm transition-all hover:scale-[1.02] hover:shadow-lg dark:border-border/40">
                             <CardHeader>
                                 <CardTitle className="font-headline text-xl" dangerouslySetInnerHTML={{ __html: feature.title }}></CardTitle>
                                 <p className="text-sm font-normal text-muted-foreground pt-1">{feature.description}</p>

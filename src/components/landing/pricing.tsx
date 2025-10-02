@@ -17,7 +17,7 @@ export default function Pricing() {
   const t = useTranslation();
 
   return (
-    <section id="pricing" className="py-12 md:py-20 lg:py-32 bg-muted/30 -scroll-mt-16">
+    <section id="pricing" className="py-12 md:py-20 lg:py-32 bg-muted/30 dark:bg-muted/10 -scroll-mt-16">
       <div className="container mx-auto px-4">
 
         <div className="text-center max-w-3xl mx-auto mb-8 md:mb-16">
@@ -33,7 +33,7 @@ export default function Pricing() {
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto items-start justify-items-center">
           {/* Starter Card - Featured */}
-          <Card className="flex flex-col h-full w-full max-w-sm border-2 border-accent shadow-2xl shadow-accent/20 relative transition-all hover:scale-[1.02] hover:shadow-2xl">
+          <Card className="flex flex-col h-full w-full max-w-sm border-2 border-accent shadow-2xl shadow-accent/20 dark:shadow-accent/10 relative transition-all hover:scale-[1.02] hover:shadow-2xl dark:bg-card/80 dark:backdrop-blur-sm">
             <CardHeader className="pb-4">
               <CardTitle className="font-headline text-xl">
                 {t.pricing.plans.starter.title}
@@ -67,7 +67,7 @@ export default function Pricing() {
           </Card>
 
           {/* Standard Card - Highlighted */}
-          <Card className="flex flex-col h-full w-full max-w-sm border-2 border-primary shadow-2xl shadow-primary/20 relative transition-all hover:scale-[1.02] hover:shadow-2xl">
+          <Card className="flex flex-col h-full w-full max-w-sm border-2 border-primary shadow-2xl shadow-primary/20 dark:shadow-primary/10 relative transition-all hover:scale-[1.02] hover:shadow-2xl dark:bg-card/80 dark:backdrop-blur-sm">
             <CardHeader className="pb-4">
               <CardTitle className="font-headline text-xl">
                 {t.pricing.plans.standard.title}
@@ -97,7 +97,7 @@ export default function Pricing() {
           </Card>
 
           {/* Company Card */}
-          <Card className="flex flex-col h-full w-full max-w-sm border-2 border-slate-300 shadow-2xl shadow-slate-300/20 relative transition-all hover:scale-[1.02] hover:shadow-2xl">
+          <Card className="flex flex-col h-full w-full max-w-sm border-2 border-slate-300 dark:border-slate-600 shadow-2xl shadow-slate-300/20 dark:shadow-slate-600/10 relative transition-all hover:scale-[1.02] hover:shadow-2xl dark:bg-card/80 dark:backdrop-blur-sm">
             <CardHeader className="pb-4">
               <CardTitle className="font-headline text-xl">
                 {t.pricing.plans.team.title}
@@ -115,7 +115,7 @@ export default function Pricing() {
               <ul className="space-y-3 text-sm">
                 {t.pricing.plans.team.features.map((feature) => (
                   <li key={feature} className="flex items-center gap-2">
-                    <Check className="h-4 w-4 text-slate-600" />
+                    <Check className="h-4 w-4 text-slate-600 dark:text-slate-400" />
                     <span className="text-muted-foreground">{feature}</span>
                   </li>
                 ))}
