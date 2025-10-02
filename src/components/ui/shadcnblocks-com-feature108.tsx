@@ -66,7 +66,7 @@ const Feature108 = ({
               >
                 <div className="flex flex-col gap-5">
                   <Badge variant="outline" className="w-fit bg-background dark:bg-background/50">{tab.content.badge}</Badge>
-                  <h3 className="text-3xl font-semibold lg:text-5xl">{tab.content.title}</h3>
+                  <h3 className="text-3xl font-semibold lg:text-5xl" dangerouslySetInnerHTML={{ __html: tab.content.title }}></h3>
                   <p className="text-muted-foreground lg:text-lg">{tab.content.description}</p>
                 </div>
                 <img src={tab.content.imageSrc} alt={tab.content.imageAlt} className="rounded-xl" />
