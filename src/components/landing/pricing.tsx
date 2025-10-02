@@ -33,7 +33,7 @@ export default function Pricing() {
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto items-start justify-items-center">
           {/* Starter Card - Featured */}
-          <Card className="flex flex-col h-full w-full max-w-sm border-2 border-accent shadow-2xl shadow-accent/20 dark:shadow-accent/10 relative transition-all hover:scale-[1.02] hover:shadow-2xl dark:bg-card/80 dark:backdrop-blur-sm">
+          <Card className="flex flex-col h-full w-full max-w-sm border-[3px] border-accent relative">
             <CardHeader className="pb-4">
               <CardTitle className="font-headline text-xl">
                 {t.pricing.plans.starter.title}
@@ -67,7 +67,7 @@ export default function Pricing() {
           </Card>
 
           {/* Standard Card - Highlighted */}
-          <Card className="flex flex-col h-full w-full max-w-sm border-2 border-primary shadow-2xl shadow-primary/20 dark:shadow-primary/10 relative transition-all hover:scale-[1.02] hover:shadow-2xl dark:bg-card/80 dark:backdrop-blur-sm">
+          <Card className="flex flex-col h-full w-full max-w-sm border-[3px] border-primary relative">
             <CardHeader className="pb-4">
               <CardTitle className="font-headline text-xl">
                 {t.pricing.plans.standard.title}
@@ -97,7 +97,7 @@ export default function Pricing() {
           </Card>
 
           {/* Company Card */}
-          <Card className="flex flex-col h-full w-full max-w-sm border-2 border-slate-300 dark:border-slate-600 shadow-2xl shadow-slate-300/20 dark:shadow-slate-600/10 relative transition-all hover:scale-[1.02] hover:shadow-2xl dark:bg-card/80 dark:backdrop-blur-sm">
+          <Card className="flex flex-col h-full w-full max-w-sm border-[3px] border-slate-300 dark:border-slate-600 relative">
             <CardHeader className="pb-4">
               <CardTitle className="font-headline text-xl">
                 {t.pricing.plans.team.title}
