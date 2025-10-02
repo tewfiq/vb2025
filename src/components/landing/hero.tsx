@@ -19,7 +19,7 @@ export default function Hero() {
           <SocialProofBadge />
         </div>
         
-        <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-headline drop-shadow-[3px_3px_0px_rgba(0,0,0,1)] dark:drop-shadow-[3px_3px_0px_rgba(255,255,255,0.4)]">
+        <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-headline drop-shadow-[2px_2px_0px_rgba(0,0,0,0.15)] dark:drop-shadow-[2px_2px_0px_rgba(255,255,255,0.2)]">
           {/* Version mobile */}
           <span className="block md:hidden">
             {t.hero.title.mobile.line1}<br />
