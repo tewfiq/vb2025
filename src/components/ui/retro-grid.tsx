@@ -3,32 +3,20 @@ import { cn } from "@/lib/utils";
 export function RetroGrid({
   className,
   angle = 65,
-  originX = "50%",
-  originY = "50%",
 }: {
   className?: string;
   angle?: number;
-  originX?: string;
-  originY?: string;
 }) {
   return (
     <div
       className={cn(
-        "pointer-events-none absolute size-full overflow-hidden opacity-80 [perspective:200px]",
+        "pointer-events-none absolute size-full overflow-hidden opacity-70 [perspective:200px]",
         className,
       )}
-      style={{
-        "--grid-angle": `${angle}deg`,
-        "perspectiveOrigin": `${originX} ${originY}`,
-      } as React.CSSProperties}
+      style={{ "--grid-angle": `${angle}deg` } as React.CSSProperties}
     >
       {/* Grid */}
-      <div
-        className="absolute inset-0 [transform:rotateX(var(--grid-angle))]"
-        style={{
-          transformOrigin: `${originX} ${originY}`,
-        }}
-      >
+      <div className="absolute inset-0 [transform:rotateX(var(--grid-angle))]">
         <div
           className={cn(
             "animate-grid",
@@ -36,16 +24,16 @@ export function RetroGrid({
             "[background-repeat:repeat] [background-size:60px_60px] [height:300vh] [inset:0%_0px] [margin-left:-50%] [transform-origin:100%_0_0] [width:600vw]",
 
             // Light Styles
-            "[background-image:linear-gradient(to_right,rgba(255,255,255,0.7)_1px,transparent_0),linear-gradient(to_bottom,rgba(255,255,255,0.7)_1px,transparent_0)]",
+            "[background-image:linear-gradient(to_right,rgba(0,0,0,0.3)_1px,transparent_0),linear-gradient(to_bottom,rgba(0,0,0,0.3)_1px,transparent_0)]",
 
             // Dark styles
-            "dark:[background-image:linear-gradient(to_right,rgba(255,255,255,0.8)_1px,transparent_0),linear-gradient(to_bottom,rgba(255,255,255,0.8)_1px,transparent_0)]",
+            "dark:[background-image:linear-gradient(to_right,rgba(255,255,255,0.4)_1px,transparent_0),linear-gradient(to_bottom,rgba(255,255,255,0.4)_1px,transparent_0)]",
           )}
         />
       </div>
 
-      {/* Background Gradient - Reduced for GIF visibility */}
-      <div className="absolute inset-0 bg-gradient-to-t from-white/20 to-transparent to-90% dark:from-black/20" />
+      {/* Background Gradient */}
+      <div className="absolute inset-0 bg-gradient-to-t from-white to-transparent to-90% dark:from-black" />
     </div>
   );
 }
