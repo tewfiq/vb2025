@@ -6,6 +6,7 @@ import { WorkshopsSection } from "@/components/landing/workshops-section";
 import WhyCards from "@/components/landing/why-cards";
 import MethodSteps from "@/components/landing/method-steps";
 import Pricing from "@/components/landing/pricing";
+import NextMasterclass from "@/components/landing/next-masterclass";
 import Faq from "@/components/landing/faq";
 import Changelog from "@/components/landing/changelog";
 import Footer from "@/components/landing/footer";
@@ -24,6 +25,7 @@ export default function Home() {
           <MethodSteps />
         </section>
         <Pricing />
+        <NextMasterclass />
         <Faq />
         <Changelog />
       </main>
