@@ -410,6 +410,16 @@ export interface Translations {
     title: string
     description: string
   }
+  nextMasterclass: {
+    title: string
+    subtitle: string
+    info: {
+      date: string
+      time: string
+      location: string
+      metro: string
+    }
+  }
 }
 
 export const translations: Record<Language, Translations> = {
@@ -838,6 +848,16 @@ export const translations: Record<Language, Translations> = {
     metadata: {
       title: "Vibe Coding Paris — Débloque ton super pouvoir digital en 2h. De l'idée au site en ligne, avec l'IA comme copilote.",
       description: "Un atelier intensif et accessible. Tu explores, tu structures, tu repars avec un projet en ligne. Une compétence exploitable, en seulement 2h."
+    },
+    nextMasterclass: {
+      title: "Prochaine Masterclass",
+      subtitle: "Rejoins-nous pour la prochaine session à Paris",
+      info: {
+        date: "Samedi 4 octobre 2025",
+        time: "9h30 - 11h30",
+        location: "1, rue de Bretagne 75003 Paris, France",
+        metro: "Métro : Filles du Calvaire (Ligne 8)"
+      }
     }
   },
   en: {
@@ -1265,6 +1285,16 @@ export const translations: Record<Language, Translations> = {
     metadata: {
       title: "Vibe Coding Paris — Unlock your digital superpower in 2h. From idea to live website, with AI as copilot.",
       description: "An intensive and accessible workshop. You explore, structure, and leave with an online project. A transferable skill, in just 2h."
+    },
+    nextMasterclass: {
+      title: "Next Masterclass",
+      subtitle: "Join us for the next session in Paris",
+      info: {
+        date: "Saturday October 4, 2025",
+        time: "9h30 - 11h30",
+        location: "1, rue de Bretagne 75003 Paris, France",
+        metro: "Metro: Filles du Calvaire (Line 8)"
+      }
     }
   }
 }
