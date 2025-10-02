@@ -481,7 +481,7 @@ export const translations: Record<Language, Translations> = {
         ship: {
           label: "3 • Ship",
           badge: "Phase 3 — Ship & Grow",
-          title: "Mise en ligne immédiate & rôle de Creative Product Builder",
+          title: "Mise en ligne immédiate<br />& rôle de Creative Product Builder",
           description: "On shippe : AI Code Assistant → GitHub → Netlify/Vercel → exécution async. En 2h tu repars avec une URL publique. Tu poursuis en autonomie. Tu pilotes design, code, SEO, versioning — posture « Agency of One ». Ressources & prochaines étapes incluses."
         }
       }
@@ -906,7 +906,7 @@ export const translations: Record<Language, Translations> = {
         intention: {
           label: "1 • Intention",
           badge: "Phase 1 — Intention",
-          title: "From your idea to a clear & actionable intention",
+          title: "From your idea to<br />a clear & actionable intention",
           description: "Bring your laptop. We clarify your idea with AI, without jargon, then frame it with the Kindlin method: problem → solution, business model, pricing. You know where you're going."
         },
         build: {
@@ -918,7 +918,7 @@ export const translations: Record<Language, Translations> = {
         ship: {
           label: "3 • Ship",
           badge: "Phase 3 — Ship & Grow",
-          title: "Immediate online deployment & Creative Product Builder role",
+          title: "Immediate online deployment<br />& Creative Product Builder role",
           description: "We ship: AI Code Assistant → GitHub → Netlify/Vercel → async execution. In 2h you leave with a public URL. You continue autonomously. You manage design, code, SEO, versioning — 'Agency of One' approach. Resources & next steps included."
         }
       }
