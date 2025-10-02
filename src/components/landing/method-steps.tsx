@@ -40,7 +40,7 @@ export default function MethodSteps() {
         <div className="max-w-4xl mx-auto">
           <Accordion type="single" collapsible className="space-y-6">
             {steps.map((step, index) => (
-              <AccordionItem key={index} value={`item-${index}`} className="border border-border dark:border-border/40 dark:bg-card/30 rounded-lg px-6">
+              <AccordionItem key={index} value={`item-${index}`} className="border-[3px] border-border rounded-lg px-6 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] dark:shadow-[4px_4px_0px_0px_rgba(255,255,255,0.4)] transition-all duration-300 hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] dark:hover:shadow-[2px_2px_0px_0px_rgba(255,255,255,0.4)] bg-card">
                 <AccordionTrigger className="hover:no-underline">
                   <div className="flex items-center gap-4 text-left">
                     <div className="flex-shrink-0 w-10 h-10 bg-accent/10 dark:bg-accent/20 rounded-lg flex items-center justify-center">

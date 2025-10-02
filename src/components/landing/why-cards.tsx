@@ -38,7 +38,7 @@ export default function WhyCards() {
                 {/* Cartes principales */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {features.map((feature, index) => (
-                        <Card key={index} className="flex flex-col overflow-hidden bg-card/80 dark:bg-card/50 backdrop-blur-sm transition-all hover:scale-[1.02] hover:shadow-lg dark:border-border/40">
+                        <Card key={index} className="flex flex-col overflow-hidden">
                             <CardHeader>
                                 <CardTitle className="font-headline text-xl" dangerouslySetInnerHTML={{ __html: feature.title }}></CardTitle>
                                 <p className="text-sm font-normal text-muted-foreground pt-1">{feature.description}</p>
