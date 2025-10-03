@@ -7,9 +7,9 @@ import { QrShareButton } from "@/components/ui/qr-share-button";
 
 export const metadata: Metadata = {
   title:
-    "Product Building Paris — Acquérir une compétence critique en 2h : les bases du Product Building jusqu'à la publication d'un premier projet.",
+    "Vibe Coding Paris — Débloque ton super pouvoir digital en 2h. De l'idée au site en ligne, avec l'IA comme copilote.",
   description:
-    "Masterclass Product Building – Paris. 2h intensives pour publier un premier projet. Stratégie + Design + Build + Publication.",
+    "Un atelier intensif et accessible. Tu explores, tu structures, tu repars avec un projet en ligne. Une compétence exploitable, en seulement 2h.",
 };
 
 export default function RootLayout({
