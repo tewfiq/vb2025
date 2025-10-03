@@ -435,20 +435,20 @@ export const translations: Record<Language, Translations> = {
       badgeText: "Social proof badge FR", // This will need to be checked in the actual component
       title: {
         mobile: {
-          line1: "Acquérir une compétence",
-          line2: "critique en 2h :",
-          line3: "les bases du Product Building"
+          line1: "Une compétence",
+          line2: "en 2h.",
+          line3: "Rien de personnel."
         },
         desktop: {
-          line1: "Acquérir une compétence critique en 2h :",
-          line2: "les bases du Product Building jusqu'à la publication d'un premier projet."
+          line1: "Une compétence en 2h.",
+          line2: "Rien de personnel."
         }
       },
       subtitle: {
-        line1: "Une compétence digitale critique et transférable",
-        line2: "pour tes études, ton CV et tes projets."
+        line1: "Apprends à coder sans coder.",
+        line2: "Tu écris en français, l'IA t'aide à générer le code et tu déploies ton site."
       },
-      description: "Déjà adoptée par plus de 1 000 étudiants en 2024–2025.",
+      description: "Une compétence digitale transférable pour tes études, ton CV et tes projets.",
       studentsCount: "+1 000 étudiants formés en 2024–2025",
       buttons: {
         register: "Je m'inscris — 149 € (-26 ans) ✨",
@@ -462,27 +462,27 @@ export const translations: Record<Language, Translations> = {
       }
     },
     programme: {
-      badge: "Product Building",
-      heading: "Programme — Les fondamentaux du Product Building",
-      description: "En 2h, passer de l'idée à un premier projet<br />digital publié.",
+      badge: "Vibe Coding Paris",
+      heading: "Programme — Creative Product Builder en 2h",
+      description: "En 2h, transforme ton idée en projet concret.",
       phases: {
         intention: {
-          label: "1 • Idée → Stratégie claire",
-          badge: "Phase 1 — Stratégie",
-          title: "De ton idée à une intention claire",
-          description: "Identification du problème, première piste de solution,<br />cadrage business simple (proposition de valeur, modèle, prix)."
+          label: "1 • Intention",
+          badge: "Phase 1 — Intention",
+          title: "De ton idée à une intention claire & actionnable",
+          description: "Apporte ton ordi. On clarifie ton idée avec l'IA, sans jargon, puis on cadre avec la méthode Kindlin : problème → solution, business model, pricing. Tu sais où tu vas."
         },
         build: {
-          label: "2 • Structure → Branding & sections",
-          badge: "Phase 2 — Structure",
-          title: "Structure → Branding & sections",
-          description: "Structuration du projet, définition des sections,<br />branding et identité visuelle de ton projet."
+          label: "2 • Build",
+          badge: "Phase 2 — Build & Iterate",
+          title: "Travaille avec l'IA, étends, itère et débugge",
+          description: "Tu apprends à dialoguer et à prompt-er efficacement. On ajoute une base simple, une API ou une extension. On voit sécurité & analytics pour des outputs qualitatifs en gardant la main sur ton projet."
         },
         ship: {
-          label: "3 • Build → Génération & Publication",
-          badge: "Phase 3 — Publication",
-          title: "Build → Génération & Publication",
-          description: "Génération du projet avec l'IA, mise en ligne<br />et publication. Tu repars avec un projet accessible en ligne."
+          label: "3 • Ship",
+          badge: "Phase 3 — Ship & Grow",
+          title: "Mise en ligne immédiate<br />& rôle de Creative Product Builder",
+          description: "On shippe : AI Code Assistant → GitHub → Netlify/Vercel → exécution async. En 2h tu repars avec une URL publique. Tu poursuis en autonomie. Tu pilotes design, code, SEO, versioning — posture « Agency of One ». Ressources & prochaines étapes incluses."
         }
       }
     },
@@ -496,33 +496,33 @@ export const translations: Record<Language, Translations> = {
     whyCards: {
       title: {
         line1: "Pourquoi rejoindre",
-        line2: "Product Building Paris ?"
+        line2: "Vibe Coding Paris ?"
       },
-      subtitle: "Déjà pratiqué par des étudiants<br />en Bachelor, Master et MBA,<br />en design, marketing et business.",
+      subtitle: "Ton unfair advantage dans la révolution Gen AI.",
       features: {
         learnByWriting: {
-          title: "Découvrir les fondamentaux<br />du Product Building",
-          description: "Apprendre à penser, concevoir et publier comme un Product Builder."
+          title: "Apprends en écrivant",
+          description: "Prends en main ChatGPT, Copilot, Cursor... et construis en langage naturel."
         },
         launchProjects: {
-          title: "Transformer une idée<br />en projet structuré et visible",
-          description: "De l'intention claire jusqu'au projet en ligne, étape par étape."
+          title: "Lance tes projets sans barrière",
+          description: "Sites, apps, scripts, IA — on prototype ensemble, de A à Z."
         },
         interactiveWorkshops: {
-          title: "Comprendre la logique :<br />intention → structure → publication",
-          description: "Une méthode claire pour passer de l'idée au déploiement."
+          title: "Ateliers interactifs ✨",
+          description: "Coaching bienveillant, pratique guidée, feedback immédiat."
         },
         instantCreation: {
-          title: "Repartir avec un premier<br />projet en ligne",
-          description: "Un projet digital publié et partageable dès la fin de l'atelier."
+          title: "Créa instantanée",
+          description: "Ton flow créatif, boosté par l'IA. Résultat concret immédiat."
         },
         teamSpirit: {
-          title: "Pas seulement coder :<br />penser Product",
-          description: "Apprendre à concevoir un produit digital de bout en bout."
+          title: "Team Spirit",
+          description: "Une vibe collaborative pour progresser plus vite."
         },
         unfairAdvantage: {
-          title: "Compétence rare :<br />Stratégie + Design + Build + Publication",
-          description: "Une compétence complète et transférable pour tes projets."
+          title: "Unfair Advantage",
+          description: "Pendant que d'autres scrollent, toi tu crées. Compétence rare et transférable."
         }
       }
     },
@@ -530,26 +530,26 @@ export const translations: Record<Language, Translations> = {
       title: "Comment ça marche ?",
       steps: {
         ideaToIntention: {
-          title: "1. Idée → cadrage clair et stratégique",
-          copy: "Identification du problème, solution et cadrage business simple.",
-          more: "Proposition de valeur, modèle et pricing en quelques minutes."
+          title: "1. Idée → intention",
+          copy: "On clarifie ton idée avec un LLM. Objectif: intention nette.",
+          more: "Méthode Kindlin en 5 minutes, sans jargon."
         },
         byodWorkshop: {
-          title: "2. Atelier BYOD → construction guidée étape par étape",
-          copy: "Tu apportes ton laptop, on construit ton projet ensemble.",
-          more: "Accompagnement complet de la structure à la génération du projet."
+          title: "2. Atelier BYOD",
+          copy: "Tu viens avec ton laptop. On prépare l'environnement et on construit ensemble.",
+          more: "Aucun prérequis d'installation. Comptes créés sur place si besoin."
         },
         deployment: {
-          title: "3. Publication → un premier projet accessible en ligne",
+          title: "3. Mise en ligne",
           copy: "GitHub → Netlify/Vercel. Tu repars avec une URL publique.",
-          more: "Ton premier projet digital publié et partageable immédiatement."
+          more: "Vérification à chaque étape pour que tout fonctionne."
         }
       }
     },
     pricing: {
       title: "Tarifs",
       subtitle: "Des formules simples et claires, pour tous les profils.",
-      description: "Chaque formule vous transmet la même compétence critique :<br />apprendre les bases du Product Building par la pratique<br />et publier un premier projet digital.",
+      description: "Chaque formule vous transmet la même compétence :<br />apprendre à coder de bout en bout par la pratique et devenir Product Builder.",
       plans: {
         starter: {
           title: "🚀 Product Builder Masterclass",
@@ -595,33 +595,33 @@ export const translations: Record<Language, Translations> = {
       questions: {
         needToCoding: {
           question: "Faut-il savoir coder ?",
-          answer: "Non, l'atelier est pensé pour tous les niveaux."
+          answer: "Non. Tout est guidé, aucun prérequis."
         },
         projectOnline: {
           question: "Je repars vraiment avec un projet en ligne ?",
-          answer: "Oui, chaque participant publie un premier projet digital."
+          answer: "Oui. Tu obtiens ton repo GitHub et une URL publique."
         },
         codeOwnership: {
           question: "Le code est à qui ?",
-          answer: "À vous, vous repartez avec votre projet."
+          answer: "À toi. Le repo est personnel et réutilisable."
         },
         noIdea: {
           question: "Et si je n'ai pas d'idée ?",
-          answer: "Nous vous proposons un canevas simple pour commencer."
+          answer: "On en trouve une ensemble, pendant la session."
         },
         whoIsItFor: {
           question: "C'est pour qui ?",
-          answer: "Étudiants, solopreneurs, salariés en évolution et personnes en reconversion."
+          answer: "Pour toute personne curieuse d'apprendre et d'expérimenter."
         }
       }
     },
     footer: {
       title: "Vibe Coding Paris",
       description: {
-        line1: "Product Building Paris — Acquérir une compétence critique en 2h.",
-        line2: "Les bases du Product Building jusqu'à la publication d'un premier projet."
+        line1: "Vibe Coding Paris — Débloque ton super pouvoir digital en 2h.",
+        line2: "De l'idée au site en ligne, avec l'IA comme copilote."
       },
-      cta: "Je m'inscris maintenant",
+      cta: "Slay le code, inscris-toi maintenant",
       links: {
         about: "À propos",
         contact: "Contact",
@@ -629,7 +629,7 @@ export const translations: Record<Language, Translations> = {
         cgv: "CGV"
       },
       copyright: "Tous droits réservés.",
-      tagline: "Les fondamentaux du Product Building en 2h."
+      tagline: "Une compétence en 2h. Rien de personnel."
     },
     socialProofBadge: {
       spotsRemaining: "🔥 Il reste 2 places !",
@@ -846,11 +846,11 @@ export const translations: Record<Language, Translations> = {
       process: "📅 RDV 15min → 💬 Code promo → 🎟️ Tarif étudiant → 💳 99€"
     },
     metadata: {
-      title: "Product Building Paris — Acquérir une compétence critique en 2h : les bases du Product Building jusqu'à la publication d'un premier projet.",
-      description: "Masterclass Product Building – Paris. 2h intensives pour publier un premier projet. Stratégie + Design + Build + Publication."
+      title: "Vibe Coding Paris — Débloque ton super pouvoir digital en 2h. De l'idée au site en ligne, avec l'IA comme copilote.",
+      description: "Un atelier intensif et accessible. Tu explores, tu structures, tu repars avec un projet en ligne. Une compétence exploitable, en seulement 2h."
     },
     nextMasterclass: {
-      title: "Prochaine Masterclass Product Building",
+      title: "Prochaine Masterclass",
       subtitle: "Rejoins-nous pour la prochaine session à Paris",
       info: {
         date: "Samedi 4 octobre 2025",
@@ -872,20 +872,20 @@ export const translations: Record<Language, Translations> = {
       badgeText: "Social proof badge EN",
       title: {
         mobile: {
-          line1: "Acquire a critical skill",
-          line2: "in 2 hours:",
-          line3: "the fundamentals of Product Building"
+          line1: "A skill",
+          line2: "in 2h.",
+          line3: "Nothing personal."
         },
         desktop: {
-          line1: "Acquire a critical skill in 2 hours:",
-          line2: "the fundamentals of Product Building up to publishing your first project."
+          line1: "A skill in 2h.",
+          line2: "Nothing personal."
         }
       },
       subtitle: {
-        line1: "A critical and transferable digital skill",
-        line2: "for your studies, your CV, and your projects."
+        line1: "Learn to code without coding.",
+        line2: "You write in English, AI helps you generate code and you deploy your site."
       },
-      description: "Already adopted by over 1,000 students in 2024–2025.",
+      description: "A transferable digital skill for your studies, CV and projects.",
       studentsCount: "+1,000 students trained in 2024–2025",
       buttons: {
         register: "Register — €149 (under 26) ✨",
@@ -899,27 +899,27 @@ export const translations: Record<Language, Translations> = {
       }
     },
     programme: {
-      badge: "Product Building",
-      heading: "Program — Fundamentals of Product Building",
-      description: "In 2 hours, go from an idea to a first<br />published digital project.",
+      badge: "Vibe Coding Paris",
+      heading: "Program — Creative Product Builder in 2h",
+      description: "In 2h, transform your idea into a concrete project.",
       phases: {
         intention: {
-          label: "1 • Idea → Clear strategy",
-          badge: "Phase 1 — Strategy",
-          title: "From your idea to a clear intention",
-          description: "Identify the problem, draft a first solution,<br />and frame the business simply (value proposition, model, pricing)."
+          label: "1 • Intention",
+          badge: "Phase 1 — Intention",
+          title: "From your idea to<br />a clear & actionable intention",
+          description: "Bring your laptop. We clarify your idea with AI, without jargon, then frame it with the Kindlin method: problem → solution, business model, pricing. You know where you're going."
         },
         build: {
-          label: "2 • Structure → Branding & sections",
-          badge: "Phase 2 — Structure",
-          title: "Structure → Branding & sections",
-          description: "Project structuring, defining sections,<br />branding and visual identity of your project."
+          label: "2 • Build",
+          badge: "Phase 2 — Build & Iterate",
+          title: "Work with AI, extend, iterate and debug",
+          description: "You learn to dialogue and prompt effectively. We add a simple base, an API or an extension. We cover security & analytics for quality outputs while keeping control of your project."
         },
         ship: {
-          label: "3 • Build → Generation & Publication",
-          badge: "Phase 3 — Publication",
-          title: "Build → Generation & Publication",
-          description: "Project generation with AI, going live<br />and publishing. You leave with a project accessible online."
+          label: "3 • Ship",
+          badge: "Phase 3 — Ship & Grow",
+          title: "Immediate online deployment<br />& Creative Product Builder role",
+          description: "We ship: AI Code Assistant → GitHub → Netlify/Vercel → async execution. In 2h you leave with a public URL. You continue autonomously. You manage design, code, SEO, versioning — 'Agency of One' approach. Resources & next steps included."
         }
       }
     },
@@ -933,33 +933,33 @@ export const translations: Record<Language, Translations> = {
     whyCards: {
       title: {
         line1: "Why join",
-        line2: "Product Building Paris?"
+        line2: "Vibe Coding Paris?"
       },
-      subtitle: "Already practiced by Bachelor, Master and MBA students<br />in design, marketing, and business.",
+      subtitle: "Your unfair advantage in the Gen AI revolution.",
       features: {
         learnByWriting: {
-          title: "Discover the fundamentals<br />of Product Building",
-          description: "Learn to think, design, and publish like a Product Builder."
+          title: "Learn by writing",
+          description: "Master ChatGPT, Copilot, Cursor... and build in natural language."
         },
         launchProjects: {
-          title: "Turn an idea into<br />a structured, visible project",
-          description: "From clear intention to an online project, step by step."
+          title: "Launch projects without barriers",
+          description: "Websites, apps, scripts, AI — we prototype together, A to Z."
         },
         interactiveWorkshops: {
-          title: "Understand the logic:<br />intention → structure → publication",
-          description: "A clear method to go from idea to deployment."
+          title: "Interactive workshops ✨",
+          description: "Supportive coaching, guided practice, immediate feedback."
         },
         instantCreation: {
-          title: "Leave with a first<br />project online",
-          description: "A digital project published and shareable at the end of the workshop."
+          title: "Instant creation",
+          description: "Your creative flow, boosted by AI. Immediate concrete results."
         },
         teamSpirit: {
-          title: "Not just coding:<br />think Product",
-          description: "Learn to design a digital product end-to-end."
+          title: "Team Spirit",
+          description: "A collaborative vibe to progress faster."
         },
         unfairAdvantage: {
-          title: "Rare skill:<br />Strategy + Design + Build + Publication",
-          description: "A complete and transferable skill for your projects."
+          title: "Unfair Advantage",
+          description: "While others scroll, you create. Rare and transferable skill."
         }
       }
     },
@@ -967,26 +967,26 @@ export const translations: Record<Language, Translations> = {
       title: "How does it work?",
       steps: {
         ideaToIntention: {
-          title: "1. Idea → clear and strategic framing",
-          copy: "Problem identification, solution, and simple business framing.",
-          more: "Value proposition, model, and pricing in minutes."
+          title: "1. Idea → intention",
+          copy: "We clarify your idea with an LLM. Goal: clear intention.",
+          more: "Kindlin method in 5 minutes, no jargon."
         },
         byodWorkshop: {
-          title: "2. BYOD workshop → step-by-step guided building",
-          copy: "You bring your laptop, we build your project together.",
-          more: "Complete support from structure to project generation."
+          title: "2. BYOD Workshop",
+          copy: "You come with your laptop. We prepare the environment and build together.",
+          more: "No installation prerequisites. Accounts created on-site if needed."
         },
         deployment: {
-          title: "3. Publication → a first project accessible online",
+          title: "3. Go live",
           copy: "GitHub → Netlify/Vercel. You leave with a public URL.",
-          more: "Your first digital project published and shareable immediately."
+          more: "Verification at each step to ensure everything works."
         }
       }
     },
     pricing: {
       title: "Pricing",
       subtitle: "Simple and clear formulas for all profiles.",
-      description: "Each option teaches you the same critical skill:<br />learning the basics of Product Building through practice<br />and publishing a first digital project.",
+      description: "Each formula gives you the same skill:<br />learn to code end-to-end through practice and become a Product Builder.",
       plans: {
         starter: {
           title: "🚀 Product Builder Masterclass",
@@ -1032,33 +1032,33 @@ export const translations: Record<Language, Translations> = {
       questions: {
         needToCoding: {
           question: "Do I need to know how to code?",
-          answer: "No, the workshop is designed for all levels."
+          answer: "No. Everything is guided, no prerequisites."
         },
         projectOnline: {
           question: "Do I really leave with a project online?",
-          answer: "Yes, each participant publishes a first digital project."
+          answer: "Yes. You get your GitHub repo and a public URL."
         },
         codeOwnership: {
           question: "Who owns the code?",
-          answer: "You do, you leave with your own project."
+          answer: "You do. The repo is personal and reusable."
         },
         noIdea: {
           question: "What if I don't have an idea?",
-          answer: "We provide a simple framework to get started."
+          answer: "We'll find one together during the session."
         },
         whoIsItFor: {
-          question: "Who is it for?",
-          answer: "Students, solopreneurs, employees evolving in their careers, and people in reconversion."
+          question: "Who is this for?",
+          answer: "For anyone curious to learn and experiment."
         }
       }
     },
     footer: {
       title: "Vibe Coding Paris",
       description: {
-        line1: "Product Building Paris — Acquire a critical skill in 2 hours.",
-        line2: "The fundamentals of Product Building up to publishing your first project."
+        line1: "Vibe Coding Paris — Unlock your digital superpower in 2h.",
+        line2: "From idea to live website, with AI as copilot."
       },
-      cta: "Register now",
+      cta: "Slay the code, register now",
       links: {
         about: "About",
         contact: "Contact",
@@ -1066,7 +1066,7 @@ export const translations: Record<Language, Translations> = {
         cgv: "Terms"
       },
       copyright: "All rights reserved.",
-      tagline: "Fundamentals of Product Building in 2 hours."
+      tagline: "A skill in 2h. Nothing personal."
     },
     socialProofBadge: {
       spotsRemaining: "🔥 6 spots left! Get yours now",
@@ -1283,11 +1283,11 @@ export const translations: Record<Language, Translations> = {
       process: "📅 15min meeting → 💬 Promo code → 🎟️ Student rate → 💳 €99"
     },
     metadata: {
-      title: "Product Building Paris — Acquire a critical skill in 2 hours: the fundamentals of Product Building up to publishing your first project.",
-      description: "Product Building Masterclass – Paris. 2 hours of intensive work to publish a first project. Strategy + Design + Build + Publication."
+      title: "Vibe Coding Paris — Unlock your digital superpower in 2h. From idea to live website, with AI as copilot.",
+      description: "An intensive and accessible workshop. You explore, structure, and leave with an online project. A transferable skill, in just 2h."
     },
     nextMasterclass: {
-      title: "Next Product Building Masterclass",
+      title: "Next Masterclass",
       subtitle: "Join us for the next session in Paris",
       info: {
         date: "Saturday October 4, 2025",
