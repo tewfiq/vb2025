@@ -420,6 +420,11 @@ export interface Translations {
       metro: string
     }
   }
+  firstMasterclassGallery: {
+    title: string
+    thanksMessage: string
+    participatingCompanies: string
+  }
 }
 
 export const translations: Record<Language, Translations> = {
@@ -458,7 +463,7 @@ export const translations: Record<Language, Translations> = {
         capacity: "🎟️ 10 places / session",
         location: "📍 Paris — salle équipée",
         level: "✨ Tous niveaux",
-        date: "📅 Samedi 4 Octobre 2025"
+        date: "📅 Samedi 18 Octobre 2025"
       }
     },
     programme: {
@@ -632,7 +637,7 @@ export const translations: Record<Language, Translations> = {
       tagline: "Une compétence en 2h. Rien de personnel."
     },
     socialProofBadge: {
-      spotsRemaining: "🔥 Il reste 2 places !",
+      spotsRemaining: "🔥 10 à 12 places disponibles !",
       timezone: "(Paris UTC+2)"
     },
     partners: {
@@ -850,14 +855,19 @@ export const translations: Record<Language, Translations> = {
       description: "Un atelier intensif et accessible. Tu explores, tu structures, tu repars avec un projet en ligne. Une compétence exploitable, en seulement 2h."
     },
     nextMasterclass: {
-      title: "Prochaine Masterclass",
+      title: "2ème Batch — Prochaine Masterclass",
       subtitle: "Rejoins-nous pour la prochaine session à Paris",
       info: {
-        date: "Samedi 4 octobre 2025",
+        date: "Samedi 18 octobre 2025",
         time: "9h30 - 11h30",
         location: "1, rue de Bretagne 75003 Paris, France",
         metro: "Métro : Filles du Calvaire (Ligne 8)"
       }
+    },
+    firstMasterclassGallery: {
+      title: "1ère Masterclass — Samedi 4 Octobre 2025",
+      thanksMessage: "Un grand merci aux participants studieux, participatifs et prolifiques ! 🎉",
+      participatingCompanies: "Avec la participation de"
     }
   },
   en: {
@@ -895,7 +905,7 @@ export const translations: Record<Language, Translations> = {
         capacity: "🎟️ 10 spots / session",
         location: "📍 Paris — equipped room",
         level: "✨ All levels",
-        date: "📅 Saturday October 4, 2025"
+        date: "📅 Saturday October 18, 2025"
       }
     },
     programme: {
@@ -1069,7 +1079,7 @@ export const translations: Record<Language, Translations> = {
       tagline: "A skill in 2h. Nothing personal."
     },
     socialProofBadge: {
-      spotsRemaining: "🔥 6 spots left! Get yours now",
+      spotsRemaining: "🔥 10 to 12 spots available!",
       timezone: "(Paris UTC+2)"
     },
     partners: {
@@ -1287,14 +1297,19 @@ export const translations: Record<Language, Translations> = {
       description: "An intensive and accessible workshop. You explore, structure, and leave with an online project. A transferable skill, in just 2h."
     },
     nextMasterclass: {
-      title: "Next Masterclass",
+      title: "2nd Batch — Next Masterclass",
       subtitle: "Join us for the next session in Paris",
       info: {
-        date: "Saturday October 4, 2025",
+        date: "Saturday October 18, 2025",
         time: "9h30 - 11h30",
         location: "1, rue de Bretagne 75003 Paris, France",
         metro: "Metro: Filles du Calvaire (Line 8)"
       }
+    },
+    firstMasterclassGallery: {
+      title: "1st Masterclass — Saturday October 4, 2025",
+      thanksMessage: "A big thank you to all the dedicated, participative and prolific participants! 🎉",
+      participatingCompanies: "With the participation of"
     }
   }
 }

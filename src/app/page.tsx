@@ -7,6 +7,7 @@ import WhyCards from "@/components/landing/why-cards";
 import MethodSteps from "@/components/landing/method-steps";
 import Pricing from "@/components/landing/pricing";
 import NextMasterclass from "@/components/landing/next-masterclass";
+import FirstMasterclassGallery from "@/components/landing/first-masterclass-gallery";
 import Faq from "@/components/landing/faq";
 import Changelog from "@/components/landing/changelog";
 import Footer from "@/components/landing/footer";
@@ -26,6 +27,7 @@ export default function Home() {
         </section>
         <Pricing />
         <NextMasterclass />
+        <FirstMasterclassGallery />
         <Faq />
         <Changelog />
       </main>
