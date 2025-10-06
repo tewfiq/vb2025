@@ -855,7 +855,7 @@ export const translations: Record<Language, Translations> = {
       description: "Un atelier intensif et accessible. Tu explores, tu structures, tu repars avec un projet en ligne. Une compétence exploitable, en seulement 2h."
     },
     nextMasterclass: {
-      title: "2ème Batch — Prochaine Masterclass",
+      title: "2ème Batch\nProchaine Masterclass",
       subtitle: "Rejoins-nous pour la prochaine session à Paris",
       info: {
         date: "Samedi 18 octobre 2025",
