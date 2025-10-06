@@ -865,7 +865,7 @@ export const translations: Record<Language, Translations> = {
       }
     },
     firstMasterclassGallery: {
-      title: "1ère Masterclass — Samedi 4 Octobre 2025",
+      title: "1ère Masterclass\nSamedi 4 Octobre 2025",
       thanksMessage: "Un grand merci aux participants studieux, participatifs et prolifiques ! 🎉",
       participatingCompanies: "Avec la participation de"
     }
