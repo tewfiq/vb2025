@@ -71,7 +71,7 @@ const companies = [
   },
   {
     name: "Le Progrès",
-    logo: "/companies/le-progres.svg",
+    logo: "/companies/le-progres.png",
   },
   {
     name: "Moon Croissant",
@@ -183,13 +183,13 @@ export default function FirstMasterclassGallery() {
             {companies.map((company, index) => (
               <div
                 key={index}
-                className="relative w-32 h-16 md:w-40 md:h-20 flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300 opacity-70 hover:opacity-100"
+                className="relative w-20 h-20 md:w-24 md:h-24 flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300 opacity-70 hover:opacity-100"
               >
                 <Image
                   src={company.logo}
                   alt={company.name}
-                  width={160}
-                  height={80}
+                  width={100}
+                  height={100}
                   className="object-contain"
                 />
               </div>
