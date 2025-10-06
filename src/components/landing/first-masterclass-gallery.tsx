@@ -66,16 +66,20 @@ const images = [
 
 const companies = [
   {
+    name: "Seven Boys & Girls",
+    logo: "/companies/seven.png",
+  },
+  {
     name: "Le Progrès",
     logo: "/companies/le-progres.svg",
   },
   {
     name: "Moon Croissant",
-    logo: "/companies/moon-croissant.svg",
+    logo: "/companies/moon.png",
   },
   {
-    name: "Pretty Box Paris",
-    logo: "/companies/pretty-box-paris.svg",
+    name: "Ray Ban Meta",
+    logo: "/companies/rayban-meta.png",
   },
 ];
 
