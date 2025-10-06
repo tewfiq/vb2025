@@ -15,52 +15,52 @@ import { useTranslation } from "@/hooks/use-translation";
 
 const images = [
   {
-    src: "/slideshow/IMG_1158-min.jpeg",
-    alt: "Atelier Vibe Coding Paris 1",
+    src: "/slideshow/IMG_1501-min.jpeg",
+    alt: "Masterclass Vibe Coding Paris - 4 octobre 2025",
   },
   {
-    src: "/slideshow/IMG_1187-min.jpeg",
-    alt: "Atelier Vibe Coding Paris 2",
+    src: "/slideshow/IMG_1502-min.jpeg",
+    alt: "Masterclass Vibe Coding Paris - 4 octobre 2025",
   },
   {
-    src: "/slideshow/IMG_1290-min.jpeg",
-    alt: "Atelier Vibe Coding Paris 3",
+    src: "/slideshow/IMG_1503-min.jpeg",
+    alt: "Masterclass Vibe Coding Paris - 4 octobre 2025",
   },
   {
-    src: "/slideshow/IMG_1297-min.jpeg",
-    alt: "Atelier Vibe Coding Paris 4",
+    src: "/slideshow/IMG_1504-min.jpeg",
+    alt: "Masterclass Vibe Coding Paris - 4 octobre 2025",
   },
   {
-    src: "/slideshow/IMG_1319-min.jpeg",
-    alt: "Atelier Vibe Coding Paris 5",
+    src: "/slideshow/IMG_1505-min.jpeg",
+    alt: "Masterclass Vibe Coding Paris - 4 octobre 2025",
   },
   {
-    src: "/slideshow/IMG_1320-min.jpeg",
-    alt: "Atelier Vibe Coding Paris 6",
+    src: "/slideshow/IMG_1506-min.jpeg",
+    alt: "Masterclass Vibe Coding Paris - 4 octobre 2025",
   },
   {
-    src: "/slideshow/IMG_1321-min.jpeg",
-    alt: "Atelier Vibe Coding Paris 7",
+    src: "/slideshow/IMG_1507-min.jpeg",
+    alt: "Masterclass Vibe Coding Paris - 4 octobre 2025",
   },
   {
-    src: "/slideshow/IMG_1347-min.jpeg",
-    alt: "Atelier Vibe Coding Paris 8",
+    src: "/slideshow/IMG_1508-min.jpeg",
+    alt: "Masterclass Vibe Coding Paris - 4 octobre 2025",
   },
   {
-    src: "/slideshow/IMG_1349-min.jpeg",
-    alt: "Atelier Vibe Coding Paris 9",
+    src: "/slideshow/IMG_1509-min.jpeg",
+    alt: "Masterclass Vibe Coding Paris - 4 octobre 2025",
   },
   {
-    src: "/slideshow/IMG_1436-min.jpeg",
-    alt: "Atelier Vibe Coding Paris 10",
+    src: "/slideshow/IMG_1510-min.jpeg",
+    alt: "Masterclass Vibe Coding Paris - 4 octobre 2025",
   },
   {
-    src: "/slideshow/IMG_1437-min.jpeg",
-    alt: "Atelier Vibe Coding Paris 11",
+    src: "/slideshow/IMG_1511-min.jpeg",
+    alt: "Masterclass Vibe Coding Paris - 4 octobre 2025",
   },
   {
-    src: "/slideshow/IMG_1438-min.jpeg",
-    alt: "Atelier Vibe Coding Paris 12",
+    src: "/slideshow/IMG_1512-min.jpeg",
+    alt: "Masterclass Vibe Coding Paris - 4 octobre 2025",
   },
 ];
 
