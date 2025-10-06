@@ -68,18 +68,22 @@ const companies = [
   {
     name: "Seven Boys & Girls",
     logo: "/companies/seven.png",
+    url: "https://sevenboysandgirls.com/",
   },
   {
     name: "Le Progrès",
     logo: "/companies/le-progres.png",
+    url: "https://www.leprogresmarais.fr/",
   },
   {
     name: "Moon Croissant",
     logo: "/companies/moon.png",
+    url: "https://www.mooncoffeeshopworld.com/",
   },
   {
     name: "Ray Ban Meta",
     logo: "/companies/rayban-meta.png",
+    url: "https://www.instagram.com/raybanmeta/",
   },
 ];
 
@@ -181,9 +185,12 @@ export default function FirstMasterclassGallery() {
           </p>
           <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12">
             {companies.map((company, index) => (
-              <div
+              <a
                 key={index}
-                className="relative w-20 h-20 md:w-24 md:h-24 flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300 opacity-70 hover:opacity-100"
+                href={company.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="relative w-20 h-20 md:w-24 md:h-24 flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300 opacity-70 hover:opacity-100 cursor-pointer"
               >
                 <Image
                   src={company.logo}
@@ -192,7 +199,7 @@ export default function FirstMasterclassGallery() {
                   height={100}
                   className="object-contain"
                 />
-              </div>
+              </a>
             ))}
           </div>
         </div>
