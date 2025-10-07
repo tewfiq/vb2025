@@ -8,6 +8,7 @@ import MethodSteps from "@/components/landing/method-steps";
 import Pricing from "@/components/landing/pricing";
 import FirstMasterclassGallery from "@/components/landing/first-masterclass-gallery";
 import Faq from "@/components/landing/faq";
+import Changelog from "@/components/landing/changelog";
 import Footer from "@/components/landing/footer";
 
 export default function Home() {
@@ -26,6 +27,7 @@ export default function Home() {
         <Pricing />
         <FirstMasterclassGallery />
         <Faq />
+        <Changelog />
       </main>
       <Footer />
     </div>
