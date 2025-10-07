@@ -582,7 +582,7 @@ export const translations: Record<Language, Translations> = {
           buttonText: "Réserver — 299 €"
         },
         team: {
-          title: "🏢 Entreprise",
+          title: "🏢 Écoles & Entreprises",
           price: "Sur devis",
           description: "Entreprise / École (5 à 20 pers.)",
           features: [
@@ -892,11 +892,11 @@ export const translations: Record<Language, Translations> = {
         }
       },
       subtitle: {
-        line1: "Learn to code without coding.",
-        line2: "You write in English, AI helps you generate code and you deploy your site."
+        line1: "Learn to code without coding, in English, with AI as your copilot.",
+        line2: "From idea to live website, without code or jargon."
       },
-      description: "A transferable digital skill for your studies, CV and projects.",
-      studentsCount: "+1,000 students trained in 2024–2025",
+      description: "A transferable digital skill for your studies, your CV, and your projects.",
+      studentsCount: "+1,000 participants trained in 2024–2025",
       buttons: {
         register: "Register — €149 (under 26) ✨",
         registerNormal: "Book at regular price — €299"
@@ -916,20 +916,20 @@ export const translations: Record<Language, Translations> = {
         intention: {
           label: "1 • Intention",
           badge: "Phase 1 — Intention",
-          title: "From your idea to<br />a clear & actionable intention",
-          description: "Bring your laptop. We clarify your idea with AI, without jargon, then frame it with the Kindlin method: problem → solution, business model, pricing. You know where you're going."
+          title: "Clarify your idea with AI",
+          description: "Bring your laptop. We clarify your idea with AI, without jargon. We frame it with the Kindlin method: problem → solution, business model, pricing. You know where you're going."
         },
         build: {
           label: "2 • Build",
           badge: "Phase 2 — Build & Iterate",
-          title: "Work with AI, extend, iterate and debug",
-          description: "You learn to dialogue and prompt effectively. We add a simple base, an API or an extension. We cover security & analytics for quality outputs while keeping control of your project."
+          title: "Generate code without coding",
+          description: "You learn to dialogue and prompt effectively. We add a simple base, an API or an extension. Security and analytics for quality outputs, while you keep control of your project."
         },
         ship: {
           label: "3 • Ship",
           badge: "Phase 3 — Ship & Grow",
-          title: "Immediate online deployment<br />& Creative Product Builder role",
-          description: "We ship: AI Code Assistant → GitHub → Netlify/Vercel → async execution. In 2h you leave with a public URL. You continue autonomously. You manage design, code, SEO, versioning — 'Agency of One' approach. Resources & next steps included."
+          title: "Deploy your project online",
+          description: "We deploy: AI Code Assistant → GitHub → Netlify/Vercel. In 2h, you leave with your own published website. You continue autonomously. You manage design, code, SEO, versioning — 'Agency of One' approach. Resources and next steps included."
         }
       }
     },
@@ -942,34 +942,34 @@ export const translations: Record<Language, Translations> = {
     },
     whyCards: {
       title: {
-        line1: "Why join",
-        line2: "Vibe Coding Paris?"
+        line1: "What you",
+        line2: "gain"
       },
-      subtitle: "Your unfair advantage in the Gen AI revolution.",
+      subtitle: "Your decisive advantage in the Gen AI revolution.",
       features: {
         learnByWriting: {
-          title: "Learn by writing",
-          description: "Master ChatGPT, Copilot, Cursor... and build in natural language."
+          title: "A rare skill",
+          description: "AI, code, and design combined in 2h. Master ChatGPT, Copilot, Cursor, and build in natural language."
         },
         launchProjects: {
-          title: "Launch projects without barriers",
-          description: "Websites, apps, scripts, AI — we prototype together, A to Z."
+          title: "Learning by writing",
+          description: "You write in English, AI generates. Websites, apps, scripts — create everything in natural language."
         },
         interactiveWorkshops: {
-          title: "Interactive workshops ✨",
-          description: "Supportive coaching, guided practice, immediate feedback."
+          title: "A concrete result",
+          description: "You leave with a real project, online, ready to share."
         },
         instantCreation: {
+          title: "A collective experience",
+          description: "Supportive approach, guided practice, and team dynamics to progress faster."
+        },
+        teamSpirit: {
           title: "Instant creation",
           description: "Your creative flow, boosted by AI. Immediate concrete results."
         },
-        teamSpirit: {
-          title: "Team Spirit",
-          description: "A collaborative vibe to progress faster."
-        },
         unfairAdvantage: {
-          title: "Unfair Advantage",
-          description: "While others scroll, you create. Rare and transferable skill."
+          title: "Competitive advantage",
+          description: "While others hesitate, you create. Rare and transferable skill."
         }
       }
     },
@@ -1024,7 +1024,7 @@ export const translations: Record<Language, Translations> = {
           buttonText: "Book — €299"
         },
         team: {
-          title: "🏢 Company",
+          title: "🏢 Schools & Companies",
           price: "Custom quote",
           description: "Company / School (5 to 20 people)",
           features: [
@@ -1045,19 +1045,19 @@ export const translations: Record<Language, Translations> = {
           answer: "No. Everything is guided, no prerequisites."
         },
         projectOnline: {
-          question: "Do I really leave with a project online?",
+          question: "Do you really leave with a live website?",
           answer: "Yes. You get your GitHub repo and a public URL."
         },
         codeOwnership: {
-          question: "Who owns the code?",
-          answer: "You do. The repo is personal and reusable."
+          question: "Do you own the code?",
+          answer: "Yes. The repo is personal and reusable."
         },
         noIdea: {
-          question: "What if I don't have an idea?",
+          question: "What if you don't have an idea?",
           answer: "We'll find one together during the session."
         },
         whoIsItFor: {
-          question: "Who is this for?",
+          question: "Who is this training for?",
           answer: "For anyone curious to learn and experiment."
         }
       }
@@ -1065,10 +1065,10 @@ export const translations: Record<Language, Translations> = {
     footer: {
       title: "Vibe Coding Paris",
       description: {
-        line1: "Vibe Coding Paris — Unlock your digital superpower in 2h.",
+        line1: "Vibe Coding Paris — Develop your digital superpower in 2h.",
         line2: "From idea to live website, with AI as copilot."
       },
-      cta: "Slay the code, register now",
+      cta: "Join the next session",
       links: {
         about: "About",
         contact: "Contact",
