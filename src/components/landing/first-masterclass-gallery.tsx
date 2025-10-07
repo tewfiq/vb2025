@@ -19,10 +19,6 @@ const images = [
     alt: "Masterclass Vibe Coding Paris - 4 octobre 2025",
   },
   {
-    src: "/slideshow/IMG_1502-min.jpeg",
-    alt: "Masterclass Vibe Coding Paris - 4 octobre 2025",
-  },
-  {
     src: "/slideshow/IMG_1503-min.jpeg",
     alt: "Masterclass Vibe Coding Paris - 4 octobre 2025",
   },
