@@ -450,11 +450,11 @@ export const translations: Record<Language, Translations> = {
         }
       },
       subtitle: {
-        line1: "Apprends à coder sans coder.",
-        line2: "Tu écris en français, l'IA t'aide à générer le code et tu déploies ton site."
+        line1: "Apprenez à coder sans coder, en français, avec l'IA comme copilote.",
+        line2: "De l'idée au site en ligne, sans code ni jargon."
       },
-      description: "Une compétence digitale transférable pour tes études, ton CV et tes projets.",
-      studentsCount: "+1 000 étudiants formés en 2024–2025",
+      description: "Une compétence digitale transférable pour vos études, votre CV et vos projets.",
+      studentsCount: "+1 000 participants formés en 2024–2025",
       buttons: {
         register: "Je m'inscris — 149 € (-26 ans) ✨",
         registerNormal: "Réserver au tarif normal — 299 €"
@@ -469,25 +469,25 @@ export const translations: Record<Language, Translations> = {
     programme: {
       badge: "Vibe Coding Paris",
       heading: "Programme — Creative Product Builder en 2h",
-      description: "En 2h, transforme ton idée en projet concret.",
+      description: "En 2h, transformez votre idée en projet concret.",
       phases: {
         intention: {
           label: "1 • Intention",
           badge: "Phase 1 — Intention",
-          title: "De ton idée à une intention claire & actionnable",
-          description: "Apporte ton ordi. On clarifie ton idée avec l'IA, sans jargon, puis on cadre avec la méthode Kindlin : problème → solution, business model, pricing. Tu sais où tu vas."
+          title: "Clarifiez votre idée avec l'IA",
+          description: "Apportez votre ordinateur. Nous clarifions votre idée avec l'IA, sans jargon. Nous cadrons avec la méthode Kindlin : problème → solution, business model, pricing. Vous savez où vous allez."
         },
         build: {
           label: "2 • Build",
           badge: "Phase 2 — Build & Iterate",
-          title: "Travaille avec l'IA, étends, itère et débugge",
-          description: "Tu apprends à dialoguer et à prompt-er efficacement. On ajoute une base simple, une API ou une extension. On voit sécurité & analytics pour des outputs qualitatifs en gardant la main sur ton projet."
+          title: "Générez le code sans coder",
+          description: "Vous apprenez à dialoguer et à prompter efficacement. Nous ajoutons une base simple, une API ou une extension. Sécurité et analytics pour des outputs qualitatifs, tout en gardant le contrôle de votre projet."
         },
         ship: {
           label: "3 • Ship",
           badge: "Phase 3 — Ship & Grow",
-          title: "Mise en ligne immédiate<br />& rôle de Creative Product Builder",
-          description: "On shippe : AI Code Assistant → GitHub → Netlify/Vercel → exécution async. En 2h tu repars avec une URL publique. Tu poursuis en autonomie. Tu pilotes design, code, SEO, versioning — posture « Agency of One ». Ressources & prochaines étapes incluses."
+          title: "Mettez votre projet en ligne",
+          description: "Nous déployons : AI Code Assistant → GitHub → Netlify/Vercel. En 2h, vous repartez avec votre propre site publié. Vous poursuivez en autonomie. Vous pilotez design, code, SEO, versioning — posture « Agency of One ». Ressources et prochaines étapes incluses."
         }
       }
     },
@@ -500,34 +500,34 @@ export const translations: Record<Language, Translations> = {
     },
     whyCards: {
       title: {
-        line1: "Pourquoi rejoindre",
-        line2: "Vibe Coding Paris ?"
+        line1: "Ce que",
+        line2: "vous gagnez"
       },
-      subtitle: "Ton unfair advantage dans la révolution Gen AI.",
+      subtitle: "Votre avantage décisif dans la révolution Gen AI.",
       features: {
         learnByWriting: {
-          title: "Apprends en écrivant",
-          description: "Prends en main ChatGPT, Copilot, Cursor... et construis en langage naturel."
+          title: "Une compétence rare",
+          description: "IA, code et design réunis en 2h. Maîtrisez ChatGPT, Copilot, Cursor et construisez en langage naturel."
         },
         launchProjects: {
-          title: "Lance tes projets sans barrière",
-          description: "Sites, apps, scripts, IA — on prototype ensemble, de A à Z."
+          title: "Apprentissage par l'écriture",
+          description: "Vous écrivez en français, l'IA génère. Sites, apps, scripts — créez tout en langage naturel."
         },
         interactiveWorkshops: {
-          title: "Ateliers interactifs ✨",
-          description: "Coaching bienveillant, pratique guidée, feedback immédiat."
+          title: "Un résultat concret",
+          description: "Vous repartez avec un projet réel, en ligne, prêt à partager."
         },
         instantCreation: {
-          title: "Créa instantanée",
-          description: "Ton flow créatif, boosté par l'IA. Résultat concret immédiat."
+          title: "Une expérience collective",
+          description: "Bienveillance, pratique guidée et dynamique d'équipe pour progresser plus vite."
         },
         teamSpirit: {
-          title: "Team Spirit",
-          description: "Une vibe collaborative pour progresser plus vite."
+          title: "Création instantanée",
+          description: "Votre flow créatif, boosté par l'IA. Résultat concret immédiat."
         },
         unfairAdvantage: {
-          title: "Unfair Advantage",
-          description: "Pendant que d'autres scrollent, toi tu crées. Compétence rare et transférable."
+          title: "Avantage compétitif",
+          description: "Pendant que d'autres hésitent, vous créez. Compétence rare et transférable."
         }
       }
     },
@@ -536,17 +536,17 @@ export const translations: Record<Language, Translations> = {
       steps: {
         ideaToIntention: {
           title: "1. Idée → intention",
-          copy: "On clarifie ton idée avec un LLM. Objectif: intention nette.",
+          copy: "Nous clarifions votre idée avec un LLM. Objectif : intention nette.",
           more: "Méthode Kindlin en 5 minutes, sans jargon."
         },
         byodWorkshop: {
           title: "2. Atelier BYOD",
-          copy: "Tu viens avec ton laptop. On prépare l'environnement et on construit ensemble.",
+          copy: "Vous venez avec votre ordinateur. Nous préparons l'environnement et construisons ensemble.",
           more: "Aucun prérequis d'installation. Comptes créés sur place si besoin."
         },
         deployment: {
           title: "3. Mise en ligne",
-          copy: "GitHub → Netlify/Vercel. Tu repars avec une URL publique.",
+          copy: "GitHub → Netlify/Vercel. Vous repartez avec une URL publique.",
           more: "Vérification à chaque étape pour que tout fonctionne."
         }
       }
@@ -603,30 +603,30 @@ export const translations: Record<Language, Translations> = {
           answer: "Non. Tout est guidé, aucun prérequis."
         },
         projectOnline: {
-          question: "Je repars vraiment avec un projet en ligne ?",
-          answer: "Oui. Tu obtiens ton repo GitHub et une URL publique."
+          question: "Repartez-vous vraiment avec un site en ligne ?",
+          answer: "Oui. Vous obtenez votre repo GitHub et une URL publique."
         },
         codeOwnership: {
-          question: "Le code est à qui ?",
-          answer: "À toi. Le repo est personnel et réutilisable."
+          question: "Le code vous appartient-il ?",
+          answer: "Oui. Le repo est personnel et réutilisable."
         },
         noIdea: {
-          question: "Et si je n'ai pas d'idée ?",
-          answer: "On en trouve une ensemble, pendant la session."
+          question: "Et si vous n'avez pas d'idée ?",
+          answer: "Nous en trouvons une ensemble, pendant la session."
         },
         whoIsItFor: {
-          question: "C'est pour qui ?",
-          answer: "Pour toute personne curieuse d'apprendre et d'expérimenter."
+          question: "À qui s'adresse la formation ?",
+          answer: "À toute personne curieuse d'apprendre et d'expérimenter."
         }
       }
     },
     footer: {
       title: "Vibe Coding Paris",
       description: {
-        line1: "Vibe Coding Paris — Débloque ton super pouvoir digital en 2h.",
+        line1: "Vibe Coding Paris — Développez votre super-pouvoir digital en 2h.",
         line2: "De l'idée au site en ligne, avec l'IA comme copilote."
       },
-      cta: "Slay le code, inscris-toi maintenant",
+      cta: "Rejoindre la prochaine session",
       links: {
         about: "À propos",
         contact: "Contact",
