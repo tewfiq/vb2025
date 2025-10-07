@@ -138,7 +138,7 @@ export default function FirstMasterclassGallery() {
       <div className="container mx-auto px-4">
         {/* Titre et message de remerciement */}
         <div className="text-center max-w-3xl mx-auto mb-8 md:mb-12">
-          <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl md:text-4xl lg:text-5xl font-headline mb-4">
+          <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl md:text-4xl lg:text-5xl font-headline mb-4 whitespace-pre-line">
             {t.firstMasterclassGallery.title}
           </h2>
           <p className="text-lg md:text-xl text-muted-foreground">
