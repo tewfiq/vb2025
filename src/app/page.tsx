@@ -19,13 +19,13 @@ export default function Home() {
         <Hero />
         <Programme />
 
-        <WorkshopsSection />
+        <FirstMasterclassGallery />
         <WhyCards />
         <section id="comment-ca-marche">
           <MethodSteps />
         </section>
         <Pricing />
-        <FirstMasterclassGallery />
+        <WorkshopsSection />
         <Faq />
         <Changelog />
       </main>
