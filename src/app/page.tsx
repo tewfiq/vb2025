@@ -21,12 +21,12 @@ export default function Home() {
       <main className="flex-1">
         <Hero />
         <Programme />
-        <NextMasterclass />
         <FirstMasterclassGallery />
         <WhyCards />
         <section id="comment-ca-marche">
           <MethodSteps />
         </section>
+        <NextMasterclass />
         <Pricing />
         <WorkshopsSection />
         <Faq />
