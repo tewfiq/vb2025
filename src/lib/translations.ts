@@ -865,7 +865,7 @@ export const translations: Record<Language, Translations> = {
       cta: "Réserver ma place"
     },
     nextMasterclass: {
-      title: "3ème Batch\nProchaine Masterclass",
+      title: "2ème Batch\nProchaine Masterclass",
       subtitle: "Rejoins-nous pour la prochaine session à Paris",
       info: {
         date: "Samedi 8 novembre 2025",
@@ -1312,7 +1312,7 @@ export const translations: Record<Language, Translations> = {
       cta: "Book my spot"
     },
     nextMasterclass: {
-      title: "3rd Batch — Next Masterclass",
+      title: "2nd Batch — Next Masterclass",
       subtitle: "Join us for the next session in Paris",
       info: {
         date: "Saturday November 8, 2025",
