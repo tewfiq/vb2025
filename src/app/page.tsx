@@ -2,6 +2,7 @@ import Header from "@/components/landing/header";
 import AnnouncementBanner from "@/components/landing/announcement-banner";
 import Hero from "@/components/landing/hero";
 import Programme from "@/components/landing/programme";
+import NextMasterclass from "@/components/landing/next-masterclass";
 
 import { WorkshopsSection } from "@/components/landing/workshops-section";
 import WhyCards from "@/components/landing/why-cards";
@@ -15,12 +16,12 @@ import Footer from "@/components/landing/footer";
 export default function Home() {
   return (
     <div className="flex min-h-screen flex-col bg-background">
-      <Header />
       <AnnouncementBanner />
+      <Header />
       <main className="flex-1">
         <Hero />
         <Programme />
-
+        <NextMasterclass />
         <FirstMasterclassGallery />
         <WhyCards />
         <section id="comment-ca-marche">
