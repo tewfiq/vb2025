@@ -12,7 +12,7 @@ export default function AnnouncementBanner() {
   if (!isVisible) return null;
 
   return (
-    <div className="relative bg-gradient-to-r from-cyan-500 to-blue-600 dark:from-cyan-600 dark:to-blue-700">
+    <div className="sticky top-0 z-[60] bg-gradient-to-r from-cyan-500 to-blue-600 dark:from-cyan-600 dark:to-blue-700">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between py-3 gap-4">
           {/* Contenu principal */}
