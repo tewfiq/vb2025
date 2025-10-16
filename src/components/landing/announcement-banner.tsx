@@ -17,7 +17,7 @@ export default function AnnouncementBanner() {
         <div className="flex items-center justify-between py-3 gap-4">
           {/* Contenu principal */}
           <Link
-            href="#next-masterclass"
+            href="#pricing"
             className="flex-1 flex items-center justify-center gap-3 text-white hover:text-white/90 transition-colors group"
           >
             <Calendar className="w-5 h-5 flex-shrink-0" />
