@@ -468,7 +468,7 @@ export const translations: Record<Language, Translations> = {
         capacity: "🎟️ 10 places / session",
         location: "📍 Paris — salle équipée",
         level: "✨ Tous niveaux",
-        date: "📅 Samedi 8 Novembre 2025"
+        date: "📅 Samedi 15 Novembre 2025"
       }
     },
     programme: {
@@ -861,14 +861,14 @@ export const translations: Record<Language, Translations> = {
     },
     announcementBanner: {
       text: "Prochaine Masterclass",
-      date: "Samedi 8 novembre 2025",
+      date: "Samedi 15 novembre 2025",
       cta: "Réserver ma place"
     },
     nextMasterclass: {
       title: "2ème Batch\nProchaine Masterclass",
       subtitle: "Rejoins-nous pour la prochaine session à Paris",
       info: {
-        date: "Samedi 8 novembre 2025",
+        date: "Samedi 15 novembre 2025",
         time: "9h30 - 11h30",
         location: "1, rue de Bretagne 75003 Paris, France",
         metro: "Métro : Filles du Calvaire (Ligne 8)"
@@ -915,7 +915,7 @@ export const translations: Record<Language, Translations> = {
         capacity: "🎟️ 10 spots / session",
         location: "📍 Paris — equipped room",
         level: "✨ All levels",
-        date: "📅 Saturday November 8, 2025"
+        date: "📅 Saturday November 15, 2025"
       }
     },
     programme: {
@@ -1308,14 +1308,14 @@ export const translations: Record<Language, Translations> = {
     },
     announcementBanner: {
       text: "Next Masterclass",
-      date: "Saturday November 8, 2025",
+      date: "Saturday November 15, 2025",
       cta: "Book my spot"
     },
     nextMasterclass: {
       title: "2nd Batch — Next Masterclass",
       subtitle: "Join us for the next session in Paris",
       info: {
-        date: "Saturday November 8, 2025",
+        date: "Saturday November 15, 2025",
         time: "9h30 - 11h30",
         location: "1, rue de Bretagne 75003 Paris, France",
         metro: "Metro: Filles du Calvaire (Line 8)"
