@@ -38,7 +38,7 @@ export default function NextMasterclass() {
     <section id="next-masterclass" className="py-12 md:py-20 lg:py-32 bg-background -scroll-mt-16">
       <div className="container mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-8 md:mb-16">
-          <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl md:text-4xl lg:text-5xl font-headline">
+          <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl md:text-4xl lg:text-5xl font-headline whitespace-pre-line">
             {t.nextMasterclass.title}
           </h2>
           <p className="mt-2 md:mt-4 text-base md:text-lg text-muted-foreground">
