@@ -4,9 +4,14 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import Logo from "@/components/logo";
 import { useTranslation } from "@/hooks/use-translation";
+import { trackCTAClick } from "@/lib/analytics";
 
 export default function Footer() {
   const t = useTranslation();
+
+  const handleFooterCTAClick = () => {
+    trackCTAClick("Join Next Session", "Footer");
+  };
 
   return (
     <footer className="bg-muted/30">
@@ -24,7 +29,7 @@ export default function Footer() {
             </span>
           </p>
           <Button size="lg" className="mt-8" asChild>
-            <Link href="#pricing">{t.footer.cta}</Link>
+            <Link href="#pricing" onClick={handleFooterCTAClick}>{t.footer.cta}</Link>
           </Button>
         </div>
         <div className="mt-16 pt-8 border-t flex flex-col sm:flex-row justify-between items-center gap-4">

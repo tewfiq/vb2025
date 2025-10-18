@@ -68,3 +68,47 @@ export const trackSectionView = (sectionName: string) => {
     label: sectionName,
   });
 };
+
+// E-commerce event tracking for payment CTAs
+export const trackPaymentCTAClick = ({
+  planName,
+  price,
+  currency = 'EUR',
+}: {
+  planName: string;
+  price: number;
+  currency?: string;
+}) => {
+  if (typeof window !== 'undefined' && window.gtag) {
+    window.gtag('event', 'begin_checkout', {
+      currency: currency,
+      value: price,
+      items: [
+        {
+          item_id: planName.toLowerCase().replace(/\s+/g, '_'),
+          item_name: planName,
+          price: price,
+          quantity: 1,
+        },
+      ],
+    });
+  }
+};
+
+// Track consultation/booking CTAs
+export const trackConsultationClick = (source: string) => {
+  event({
+    action: 'consultation_click',
+    category: 'engagement',
+    label: source,
+  });
+};
+
+// Track general CTA clicks with more context
+export const trackCTAClick = (ctaName: string, location: string) => {
+  event({
+    action: 'cta_click',
+    category: 'engagement',
+    label: `${ctaName} - ${location}`,
+  });
+};

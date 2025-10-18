@@ -8,9 +8,14 @@ import { LanguageSwitcher } from '@/components/language-switcher';
 import Logo from '@/components/logo';
 import { useTranslation } from '@/hooks/use-translation';
 import StudentDialog from '@/components/landing/student-dialog';
+import { trackCTAClick } from '@/lib/analytics';
 
 export default function Header() {
   const t = useTranslation()
+
+  const handleHeaderCTAClick = () => {
+    trackCTAClick("Register", "Header");
+  };
 
   const navLinks = [
     { href: '#programme', label: t.navigation.programme },
@@ -44,7 +49,7 @@ export default function Header() {
         <div className="flex flex-1 items-center justify-end space-x-2">
           <StudentDialog variant="outline" className="hidden sm:inline-flex" />
           <Button asChild className='hidden sm:inline-flex'>
-            <Link href="#pricing">{t.hero.buttons.register}</Link>
+            <Link href="#pricing" onClick={handleHeaderCTAClick}>{t.hero.buttons.register}</Link>
           </Button>
           <LanguageSwitcher />
           <ThemeSwitcher />

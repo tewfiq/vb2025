@@ -11,6 +11,7 @@ import {
 } from '@/components/ui/dialog';
 import { GraduationCap } from 'lucide-react';
 import { useTranslation } from '@/hooks/use-translation';
+import { trackConsultationClick } from '@/lib/analytics';
 
 // Extend Window interface for Cal.com
 declare global {
@@ -33,6 +34,10 @@ export default function StudentDialog({
   const t = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
   const [calInitialized, setCalInitialized] = useState(false);
+
+  const handleStudentDialogOpen = () => {
+    trackConsultationClick("Student Dialog - Header");
+  };
 
   useEffect(() => {
     if (!isOpen || calInitialized) return;
@@ -104,7 +109,7 @@ export default function StudentDialog({
   return (
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
       <DialogTrigger asChild>
-        <Button variant={variant} size={size} className={className}>
+        <Button variant={variant} size={size} className={className} onClick={handleStudentDialogOpen}>
           <GraduationCap className="mr-2 h-4 w-4" />
           {t.navigation.students}
         </Button>

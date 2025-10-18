@@ -12,9 +12,30 @@ import {
 import { Check } from "lucide-react";
 import SocialProofBadge from "@/components/landing/social-proof-badge";
 import { useTranslation } from "@/hooks/use-translation";
+import { trackPaymentCTAClick, trackConsultationClick } from "@/lib/analytics";
 
 export default function Pricing() {
   const t = useTranslation();
+
+  const handleStarterClick = () => {
+    trackPaymentCTAClick({
+      planName: "Starter - Product Builder Masterclass",
+      price: 149,
+      currency: "EUR",
+    });
+  };
+
+  const handleStandardClick = () => {
+    trackPaymentCTAClick({
+      planName: "Standard - Product Builder Masterclass",
+      price: 299,
+      currency: "EUR",
+    });
+  };
+
+  const handleTeamClick = () => {
+    trackConsultationClick("Pricing - Team Plan");
+  };
 
   return (
     <section id="pricing" className="py-12 md:py-20 lg:py-32 bg-muted/30 dark:bg-muted/10 -scroll-mt-16">
@@ -59,7 +80,10 @@ export default function Pricing() {
             </CardContent>
             <CardFooter className="flex-col gap-3">
               <Button className="w-full bg-accent hover:bg-accent/90" asChild>
-                <Link href="https://buy.stripe.com/bJe8wQ3dN7NGc5EcJv7EQ0b">
+                <Link
+                  href="https://buy.stripe.com/bJe8wQ3dN7NGc5EcJv7EQ0b"
+                  onClick={handleStarterClick}
+                >
                   {t.pricing.plans.starter.buttonText}
                 </Link>
               </Button>
@@ -89,7 +113,10 @@ export default function Pricing() {
             </CardContent>
             <CardFooter className="flex-col gap-3">
               <Button className="w-full" asChild>
-                <Link href="https://buy.stripe.com/bJe5kEdSrgkcfhQaBn7EQ0c">
+                <Link
+                  href="https://buy.stripe.com/bJe5kEdSrgkcfhQaBn7EQ0c"
+                  onClick={handleStandardClick}
+                >
                   {t.pricing.plans.standard.buttonText}
                 </Link>
               </Button>
@@ -123,7 +150,10 @@ export default function Pricing() {
             </CardContent>
             <CardFooter className="flex-col gap-3">
               <Button className="w-full bg-slate-700 hover:bg-slate-800 text-white border-2 border-slate-700 hover:border-slate-800 transition-colors" asChild>
-                <Link href="https://cal.com/tewfiqferahi/15min">
+                <Link
+                  href="https://cal.com/tewfiqferahi/15min"
+                  onClick={handleTeamClick}
+                >
                   {t.pricing.plans.team.buttonText}
                 </Link>
               </Button>
