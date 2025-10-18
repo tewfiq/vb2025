@@ -57,19 +57,19 @@ const Feature108 = ({
             </TabsList>
           </div>
 
-          <div className="mx-auto mt-8 max-w-4xl rounded-2xl bg-muted/70 dark:bg-muted/20 p-6 lg:p-16">
+          <div className="mx-auto mt-8 max-w-4xl rounded-2xl bg-muted/70 dark:bg-muted/20 p-4 lg:p-10">
             {tabs.map((tab) => (
               <TabsContent
                 key={tab.value}
                 value={tab.value}
-                className="grid place-items-center gap-20 lg:grid-cols-2 lg:gap-10"
+                className="grid place-items-center gap-8 lg:grid-cols-2 lg:gap-10"
               >
                 <div className="flex flex-col gap-5">
-                  <Badge variant="outline" className="w-fit bg-background dark:bg-background/50">{tab.content.badge}</Badge>
+                  <Badge variant="default" className="w-fit">{tab.content.badge}</Badge>
                   <h3 className="text-3xl font-semibold lg:text-5xl" dangerouslySetInnerHTML={{ __html: tab.content.title }}></h3>
                   <p className="text-muted-foreground lg:text-lg">{tab.content.description}</p>
                 </div>
-                <img src={tab.content.imageSrc} alt={tab.content.imageAlt} className="rounded-xl" />
+                <img src={tab.content.imageSrc} alt={tab.content.imageAlt} className="rounded-xl max-h-[320px] lg:max-h-[380px] object-contain w-full" />
               </TabsContent>
             ))}
           </div>
