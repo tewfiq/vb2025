@@ -6,9 +6,18 @@ import { RetroGrid } from '@/components/ui/retro-grid';
 import Logo from '@/components/logo';
 import SocialProofBadge from '@/components/landing/social-proof-badge';
 import { useTranslation } from '@/hooks/use-translation';
+import { trackCTAClick } from '@/lib/analytics';
 
 export default function Hero() {
   const t = useTranslation()
+
+  const handleStarterCTAClick = () => {
+    trackCTAClick("Register Starter", "Hero Section");
+  };
+
+  const handleStandardCTAClick = () => {
+    trackCTAClick("Register Standard", "Hero Section");
+  };
 
   return (
     <section id="hero" className="relative w-full min-h-[100dvh] md:min-h-screen flex items-center justify-center bg-background hero-provoc">
@@ -44,12 +53,12 @@ export default function Hero() {
         </p>
         <div className="mt-4 md:mt-8 flex flex-col sm:flex-row items-center justify-center gap-3 md:gap-4">
           <Button size="lg" asChild className="bg-accent hover:bg-accent/90 text-accent-foreground">
-            <Link href="#pricing">
+            <Link href="#pricing" onClick={handleStarterCTAClick}>
               {t.hero.buttons.register}
             </Link>
           </Button>
           <Button size="lg" variant="outline" asChild>
-            <Link href="#pricing">
+            <Link href="#pricing" onClick={handleStandardCTAClick}>
               {t.hero.buttons.registerNormal}
             </Link>
           </Button>
