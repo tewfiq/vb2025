@@ -47,7 +47,8 @@ export default function Header() {
           </nav>
         </div>
         <div className="flex flex-1 items-center justify-end space-x-2">
-          <StudentDialog variant="outline" className="hidden sm:inline-flex" />
+          {/* Temporarily hidden - "Mes étudiants" CTA - Can be re-enabled by uncommenting the line below */}
+          {/* <StudentDialog variant="outline" className="hidden sm:inline-flex" /> */}
           <Button asChild className='hidden sm:inline-flex'>
             <Link href="#pricing" onClick={handleHeaderCTAClick}>{t.hero.buttons.register}</Link>
           </Button>
@@ -83,9 +84,10 @@ export default function Header() {
                     {link.label}
                   </Link>
                 ))}
-                <div className="pt-4 border-t border-border">
+                {/* Temporarily hidden - "Mes étudiants" CTA - Can be re-enabled by uncommenting the lines below */}
+                {/* <div className="pt-4 border-t border-border">
                   <StudentDialog variant="outline" size="lg" className="w-full justify-start" />
-                </div>
+                </div> */}
               </div>
             </SheetContent>
           </Sheet>
