@@ -10,7 +10,6 @@ import MethodSteps from "@/components/landing/method-steps";
 import Pricing from "@/components/landing/pricing";
 import FirstMasterclassGallery from "@/components/landing/first-masterclass-gallery";
 import TestimonialsVideo from "@/components/landing/testimonials-video";
-import TestimonialsVideoDebug from "@/components/landing/testimonials-video-debug";
 import Faq from "@/components/landing/faq";
 import Changelog from "@/components/landing/changelog";
 import GitHubContributions from "@/components/landing/github-contributions";
@@ -25,8 +24,7 @@ export default function Home() {
         <Hero />
         <Programme />
         <FirstMasterclassGallery />
-        <TestimonialsVideoDebug />
-        {/* <TestimonialsVideo /> */}
+        <TestimonialsVideo />
         <WhyCards />
         <section id="comment-ca-marche">
           <MethodSteps />

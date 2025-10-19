@@ -10,27 +10,34 @@ import {
 import { IPhoneMockup } from "@/components/ui/iphone-mockup";
 import { useTranslation } from "@/hooks/use-translation";
 import { cn } from "@/lib/utils";
+import { Play } from "lucide-react";
+import Image from "next/image";
 
 // Configuration des vidéos YouTube Shorts
 const testimonialVideos = [
   {
     youtubeId: "j6ozc_gm9LU",
+    shortsUrl: "https://www.youtube.com/shorts/j6ozc_gm9LU",
     alt: "Témoignage participant 1",
   },
   {
     youtubeId: "Wi023ODB78Y",
+    shortsUrl: "https://www.youtube.com/shorts/Wi023ODB78Y",
     alt: "Témoignage participant 2",
   },
   {
     youtubeId: "w17p8dwWysg",
+    shortsUrl: "https://www.youtube.com/shorts/w17p8dwWysg",
     alt: "Témoignage participant 3",
   },
   {
     youtubeId: "A9Wct5BJPNo",
+    shortsUrl: "https://www.youtube.com/shorts/A9Wct5BJPNo",
     alt: "Témoignage participant 4",
   },
   {
     youtubeId: "D3wDdYA2UJg",
+    shortsUrl: "https://www.youtube.com/shorts/D3wDdYA2UJg",
     alt: "Témoignage participant 5",
   },
 ];
@@ -73,10 +80,14 @@ export default function TestimonialsVideo() {
         // Retour au début pour loop infini
         api.scrollTo(0);
       }
-    }, 8000); // Change de vidéo toutes les 8 secondes
+    }, 4000); // Change de vidéo toutes les 4 secondes
 
     return () => clearInterval(interval);
   }, [api, isPaused]);
+
+  const handleVideoClick = (shortsUrl: string) => {
+    window.open(shortsUrl, "_blank", "noopener,noreferrer");
+  };
 
   if (!isClient) {
     return (
@@ -127,17 +138,35 @@ export default function TestimonialsVideo() {
                   <CarouselContent className="h-full -mt-4">
                     {testimonialVideos.map((video, index) => (
                       <CarouselItem key={index} className="h-full pt-4 basis-full">
-                        <div className="relative w-full h-full bg-black">
-                          <iframe
-                            src={`https://www.youtube.com/embed/${video.youtubeId}?rel=0&modestbranding=1&playsinline=1&enablejsapi=1`}
-                            title={video.alt}
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            allowFullScreen
-                            className="w-full h-full border-0"
-                            style={{ minHeight: '600px' }}
-                            loading={index === 0 ? "eager" : "lazy"}
+                        <button
+                          onClick={() => handleVideoClick(video.shortsUrl)}
+                          className="relative w-full h-full bg-black group cursor-pointer overflow-hidden"
+                          style={{ minHeight: "600px" }}
+                        >
+                          {/* YouTube Thumbnail - qualité maximale */}
+                          <Image
+                            src={`https://img.youtube.com/vi/${video.youtubeId}/maxresdefault.jpg`}
+                            alt={video.alt}
+                            fill
+                            className="object-cover"
+                            sizes="(max-width: 768px) 100vw, 384px"
+                            priority={index === 0}
                           />
-                        </div>
+
+                          {/* Overlay avec bouton Play */}
+                          <div className="absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-all duration-300 flex items-center justify-center">
+                            <div className="bg-white/90 dark:bg-black/90 rounded-full p-6 group-hover:scale-110 transition-transform duration-300">
+                              <Play className="w-12 h-12 text-red-600 fill-red-600" />
+                            </div>
+                          </div>
+
+                          {/* Texte "Cliquez pour voir" */}
+                          <div className="absolute bottom-8 left-0 right-0 text-center">
+                            <span className="bg-black/70 text-white px-4 py-2 rounded-full text-sm font-medium">
+                              Cliquez pour voir le témoignage
+                            </span>
+                          </div>
+                        </button>
                       </CarouselItem>
                     ))}
                   </CarouselContent>
@@ -160,16 +189,35 @@ export default function TestimonialsVideo() {
               <CarouselContent className="-mt-4">
                 {testimonialVideos.map((video, index) => (
                   <CarouselItem key={index} className="pt-4 basis-full">
-                    <div className="relative w-full bg-black rounded-lg overflow-hidden" style={{ paddingBottom: '177.78%' }}>
-                      <iframe
-                        src={`https://www.youtube.com/embed/${video.youtubeId}?rel=0&modestbranding=1&playsinline=1&enablejsapi=1`}
-                        title={video.alt}
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        allowFullScreen
-                        className="absolute top-0 left-0 w-full h-full border-0"
-                        loading={index === 0 ? "eager" : "lazy"}
+                    <button
+                      onClick={() => handleVideoClick(video.shortsUrl)}
+                      className="relative w-full bg-black rounded-lg overflow-hidden group cursor-pointer"
+                      style={{ paddingBottom: "177.78%" }}
+                    >
+                      {/* YouTube Thumbnail */}
+                      <Image
+                        src={`https://img.youtube.com/vi/${video.youtubeId}/maxresdefault.jpg`}
+                        alt={video.alt}
+                        fill
+                        className="object-cover"
+                        sizes="(max-width: 768px) 100vw, 384px"
+                        priority={index === 0}
                       />
-                    </div>
+
+                      {/* Overlay avec bouton Play */}
+                      <div className="absolute inset-0 bg-black/30 group-active:bg-black/50 transition-all duration-300 flex items-center justify-center">
+                        <div className="bg-white/90 dark:bg-black/90 rounded-full p-6 group-active:scale-110 transition-transform duration-300">
+                          <Play className="w-12 h-12 text-red-600 fill-red-600" />
+                        </div>
+                      </div>
+
+                      {/* Texte "Appuyez pour voir" */}
+                      <div className="absolute bottom-8 left-0 right-0 text-center">
+                        <span className="bg-black/70 text-white px-4 py-2 rounded-full text-sm font-medium">
+                          Appuyez pour voir le témoignage
+                        </span>
+                      </div>
+                    </button>
                   </CarouselItem>
                 ))}
               </CarouselContent>
