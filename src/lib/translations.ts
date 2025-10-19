@@ -674,10 +674,10 @@ export const translations: Record<Language, Translations> = {
       subtitle: "Activité de développement sur le repo de ce site.",
       loading: "Chargement...",
       noData: "Aucune donnée de contribution disponible.",
-      totalCount: "{{count}} contributions en {{year}}",
+      totalCount: "{{count}} commits en {{year}}",
       legendLess: "Moins",
       legendMore: "Plus",
-      viewProfile: "Voir le profil GitHub"
+      viewProfile: "Voir les commits"
     },
     common: {
       toggleTheme: "Changer le thème",
@@ -1131,10 +1131,10 @@ export const translations: Record<Language, Translations> = {
       subtitle: "Development activity on this site's repository.",
       loading: "Loading...",
       noData: "No contribution data available.",
-      totalCount: "{{count}} contributions in {{year}}",
+      totalCount: "{{count}} commits in {{year}}",
       legendLess: "Less",
       legendMore: "More",
-      viewProfile: "View GitHub profile"
+      viewProfile: "View commits"
     },
     common: {
       toggleTheme: "Toggle theme",

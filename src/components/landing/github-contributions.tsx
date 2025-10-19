@@ -15,32 +15,90 @@ import {
   type Activity,
 } from "@/components/kibo-ui/contribution-graph";
 import { cn } from "@/lib/utils";
+import { eachDayOfInterval, formatISO, startOfYear, endOfYear } from "date-fns";
 
-interface GitHubContributionsResponse {
-  total: Record<string, number>;
-  contributions: Activity[];
+interface GitHubCommit {
+  sha: string;
+  commit: {
+    author: {
+      name: string;
+      email: string;
+      date: string;
+    };
+    message: string;
+  };
+  author: {
+    login: string;
+  } | null;
 }
 
-const GITHUB_USERNAME = "tewfiq";
-const GITHUB_PROFILE_URL = `https://github.com/${GITHUB_USERNAME}`;
+const GITHUB_REPO = "tewfiq/vb2025";
+const GITHUB_REPO_URL = `https://github.com/${GITHUB_REPO}`;
 
-async function fetchGitHubContributions(): Promise<GitHubContributionsResponse | null> {
+async function fetchRepoCommits(): Promise<Activity[]> {
   try {
-    const url = new URL(`/v4/${GITHUB_USERNAME}`, 'https://github-contributions-api.jogruber.de');
-    const response = await fetch(url.toString(), {
-      next: { revalidate: 60 * 60 * 24 }, // Cache for 24 hours
-    });
+    const now = new Date();
+    const yearStart = startOfYear(now);
+
+    // Fetch commits from the repository for the current year
+    const response = await fetch(
+      `https://api.github.com/repos/${GITHUB_REPO}/commits?since=${yearStart.toISOString()}&per_page=1000`,
+      {
+        headers: {
+          Accept: "application/vnd.github+json",
+          "X-GitHub-Api-Version": "2022-11-28",
+          "User-Agent": "vibe-coding-contributions",
+        },
+        next: { revalidate: 60 * 60 * 24 }, // Cache for 24 hours
+      }
+    );
 
     if (!response.ok) {
-      console.error("Failed to fetch GitHub contributions:", response.status);
-      return null;
+      console.error("Failed to fetch repo commits:", response.status);
+      return [];
     }
 
-    const data = await response.json() as GitHubContributionsResponse;
-    return data;
+    const commits = await response.json() as GitHubCommit[];
+
+    // Create a map to count commits per day
+    const commitsByDate = new Map<string, number>();
+
+    commits.forEach((commit) => {
+      const date = formatISO(new Date(commit.commit.author.date), { representation: "date" });
+      commitsByDate.set(date, (commitsByDate.get(date) || 0) + 1);
+    });
+
+    // Get all days in the current year
+    const days = eachDayOfInterval({
+      start: yearStart,
+      end: endOfYear(now),
+    });
+
+    // Calculate max commits per day to determine levels
+    const maxCommits = Math.max(...Array.from(commitsByDate.values()), 1);
+
+    // Generate activity data for each day
+    const activities: Activity[] = days.map((day) => {
+      const date = formatISO(day, { representation: "date" });
+      const count = commitsByDate.get(date) || 0;
+
+      // Calculate level (0-4) based on commit count
+      let level = 0;
+      if (count > 0) {
+        level = Math.min(4, Math.ceil((count / maxCommits) * 4));
+      }
+
+      return {
+        date,
+        count,
+        level,
+      };
+    });
+
+    return activities;
   } catch (err) {
-    console.error("Error fetching GitHub contributions:", err);
-    return null;
+    console.error("Error fetching repo commits:", err);
+    return [];
   }
 }
 
@@ -53,12 +111,12 @@ export default function GitHubContributions() {
   useEffect(() => {
     const loadContributions = async () => {
       try {
-        const response = await fetchGitHubContributions();
-        if (response) {
-          setData(response.contributions);
-          const currentYear = new Date().getFullYear();
-          setTotal(response.total[currentYear] || 0);
-        }
+        const activities = await fetchRepoCommits();
+        setData(activities);
+
+        // Calculate total commits for the year
+        const totalCommits = activities.reduce((sum, activity) => sum + activity.count, 0);
+        setTotal(totalCommits);
       } catch (error) {
         console.error('Failed to load contributions:', error);
         setData([]);
@@ -136,7 +194,7 @@ export default function GitHubContributions() {
             <CardHeader>
               <div className="flex items-start justify-between">
                 <div className="space-y-2 flex-1">
-                  <CardTitle className="text-lg">@{GITHUB_USERNAME}</CardTitle>
+                  <CardTitle className="text-lg">{GITHUB_REPO}</CardTitle>
                   <CardDescription>
                     {t.githubContributions.totalCount
                       .replace("{{count}}", String(total))
@@ -145,7 +203,7 @@ export default function GitHubContributions() {
                 </div>
                 <Button variant="ghost" size="sm" asChild>
                   <a
-                    href={GITHUB_PROFILE_URL}
+                    href={`${GITHUB_REPO_URL}/commits`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-1 flex-shrink-0 ml-4"
