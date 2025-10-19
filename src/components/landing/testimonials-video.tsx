@@ -11,27 +11,27 @@ import { IPhoneMockup } from "@/components/ui/iphone-mockup";
 import { useTranslation } from "@/hooks/use-translation";
 import { cn } from "@/lib/utils";
 
-// Configuration des vid\u00e9os YouTube Shorts
+// Configuration des vidéos YouTube Shorts
 const testimonialVideos = [
   {
     youtubeId: "j6ozc_gm9LU",
-    alt: "T\u00e9moignage participant 1",
+    alt: "Témoignage participant 1",
   },
   {
     youtubeId: "Wi023ODB78Y",
-    alt: "T\u00e9moignage participant 2",
+    alt: "Témoignage participant 2",
   },
   {
     youtubeId: "w17p8dwWysg",
-    alt: "T\u00e9moignage participant 3",
+    alt: "Témoignage participant 3",
   },
   {
     youtubeId: "A9Wct5BJPNo",
-    alt: "T\u00e9moignage participant 4",
+    alt: "Témoignage participant 4",
   },
   {
     youtubeId: "D3wDdYA2UJg",
-    alt: "T\u00e9moignage participant 5",
+    alt: "Témoignage participant 5",
   },
 ];
 
@@ -70,10 +70,10 @@ export default function TestimonialsVideo() {
       if (api.canScrollNext()) {
         api.scrollNext();
       } else {
-        // Retour au d\u00e9but pour loop infini
+        // Retour au début pour loop infini
         api.scrollTo(0);
       }
-    }, 8000); // Change de vid\u00e9o toutes les 8 secondes
+    }, 8000); // Change de vidéo toutes les 8 secondes
 
     return () => clearInterval(interval);
   }, [api, isPaused]);
@@ -113,57 +113,60 @@ export default function TestimonialsVideo() {
         >
           {/* Desktop: iPhone Mockup visible */}
           <div className="hidden md:block">
-            <IPhoneMockup className="max-w-sm mx-auto">
-              <Carousel
-                setApi={setApi}
-                opts={{
-                  align: "start",
-                  loop: true,
-                }}
-                orientation="vertical"
-                className="w-full h-full"
-              >
-                <CarouselContent className="h-full">
-                  {testimonialVideos.map((video, index) => (
-                    <CarouselItem key={index} className="h-full">
-                      <div className="relative w-full h-full bg-black">
-                        <iframe
-                          src={`https://www.youtube.com/embed/${video.youtubeId}?autoplay=1&mute=1&loop=1&playlist=${video.youtubeId}&controls=0&modestbranding=1&rel=0&showinfo=0&playsinline=1`}
-                          title={video.alt}
-                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                          allowFullScreen
-                          className="absolute inset-0 w-full h-full border-0"
-                          loading={index === 0 ? "eager" : "lazy"}
-                        />
-                      </div>
-                    </CarouselItem>
-                  ))}
-                </CarouselContent>
-              </Carousel>
-            </IPhoneMockup>
+            <div className="max-w-sm mx-auto">
+              <IPhoneMockup>
+                <Carousel
+                  setApi={setApi}
+                  opts={{
+                    align: "center",
+                    loop: true,
+                  }}
+                  orientation="vertical"
+                  className="w-full h-full"
+                >
+                  <CarouselContent className="h-full -mt-4">
+                    {testimonialVideos.map((video, index) => (
+                      <CarouselItem key={index} className="h-full pt-4 basis-full">
+                        <div className="relative w-full h-full bg-black">
+                          <iframe
+                            src={`https://www.youtube.com/embed/${video.youtubeId}?rel=0&modestbranding=1&playsinline=1&enablejsapi=1`}
+                            title={video.alt}
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowFullScreen
+                            className="w-full h-full border-0"
+                            style={{ minHeight: '600px' }}
+                            loading={index === 0 ? "eager" : "lazy"}
+                          />
+                        </div>
+                      </CarouselItem>
+                    ))}
+                  </CarouselContent>
+                </Carousel>
+              </IPhoneMockup>
+            </div>
           </div>
 
-          {/* Mobile: Plein \u00e9cran sans mockup */}
+          {/* Mobile: Plein écran sans mockup */}
           <div className="md:hidden">
             <Carousel
               setApi={setApi}
               opts={{
-                align: "start",
+                align: "center",
                 loop: true,
               }}
               orientation="vertical"
               className="w-full max-w-md mx-auto"
             >
-              <CarouselContent>
+              <CarouselContent className="-mt-4">
                 {testimonialVideos.map((video, index) => (
-                  <CarouselItem key={index}>
-                    <div className="relative w-full aspect-[9/16] bg-black rounded-lg overflow-hidden">
+                  <CarouselItem key={index} className="pt-4 basis-full">
+                    <div className="relative w-full bg-black rounded-lg overflow-hidden" style={{ paddingBottom: '177.78%' }}>
                       <iframe
-                        src={`https://www.youtube.com/embed/${video.youtubeId}?autoplay=1&mute=1&loop=1&playlist=${video.youtubeId}&controls=0&modestbranding=1&rel=0&showinfo=0&playsinline=1`}
+                        src={`https://www.youtube.com/embed/${video.youtubeId}?rel=0&modestbranding=1&playsinline=1&enablejsapi=1`}
                         title={video.alt}
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                         allowFullScreen
-                        className="absolute inset-0 w-full h-full border-0"
+                        className="absolute top-0 left-0 w-full h-full border-0"
                         loading={index === 0 ? "eager" : "lazy"}
                       />
                     </div>
@@ -188,7 +191,7 @@ export default function TestimonialsVideo() {
                     ? "bg-primary w-8"
                     : "bg-muted-foreground/30 hover:bg-muted-foreground/50"
                 )}
-                aria-label={`Aller \u00e0 la vid\u00e9o ${index + 1}`}
+                aria-label={`Aller à la vidéo ${index + 1}`}
               />
             ))}
           </div>
@@ -203,7 +206,7 @@ export default function TestimonialsVideo() {
         {isPaused && (
           <div className="hidden md:block text-center mt-4">
             <span className="text-xs text-muted-foreground">
-              D\u00e9filement automatique en pause
+              Défilement automatique en pause
             </span>
           </div>
         )}
