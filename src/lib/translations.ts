@@ -210,6 +210,16 @@ export interface Translations {
       merged: string
     }
   }
+  githubContributions: {
+    title: string
+    subtitle: string
+    loading: string
+    noData: string
+    totalCount: string
+    legendLess: string
+    legendMore: string
+    viewProfile: string
+  }
   common: {
     toggleTheme: string
     toggleLanguage: string
@@ -659,6 +669,16 @@ export const translations: Record<Language, Translations> = {
         merged: "Merged"
       }
     },
+    githubContributions: {
+      title: "Mes contributions GitHub",
+      subtitle: "Activité de développement sur le repo de ce site.",
+      loading: "Chargement...",
+      noData: "Aucune donnée de contribution disponible.",
+      totalCount: "{{count}} contributions en {{year}}",
+      legendLess: "Moins",
+      legendMore: "Plus",
+      viewProfile: "Voir le profil GitHub"
+    },
     common: {
       toggleTheme: "Changer le thème",
       toggleLanguage: "Changer la langue"
@@ -1105,6 +1125,16 @@ export const translations: Record<Language, Translations> = {
         latest: "Latest",
         merged: "Merged"
       }
+    },
+    githubContributions: {
+      title: "My GitHub contributions",
+      subtitle: "Development activity on this site's repository.",
+      loading: "Loading...",
+      noData: "No contribution data available.",
+      totalCount: "{{count}} contributions in {{year}}",
+      legendLess: "Less",
+      legendMore: "More",
+      viewProfile: "View GitHub profile"
     },
     common: {
       toggleTheme: "Toggle theme",

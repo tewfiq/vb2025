@@ -11,6 +11,7 @@ import Pricing from "@/components/landing/pricing";
 import FirstMasterclassGallery from "@/components/landing/first-masterclass-gallery";
 import Faq from "@/components/landing/faq";
 import Changelog from "@/components/landing/changelog";
+import GitHubContributions from "@/components/landing/github-contributions";
 import Footer from "@/components/landing/footer";
 
 export default function Home() {
@@ -31,6 +32,7 @@ export default function Home() {
         <WorkshopsSection />
         <Faq />
         <Changelog />
+        <GitHubContributions />
       </main>
       <Footer />
     </div>
