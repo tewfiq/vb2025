@@ -1,5 +1,6 @@
 "use client"
 
+import { useEffect, useState } from "react"
 import { Layout, Pointer, Zap } from "lucide-react"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Badge } from "@/components/ui/badge"
@@ -24,6 +25,8 @@ interface Feature108Props {
   heading?: string
   description?: string
   tabs?: Tab[]
+  enableAutoplay?: boolean
+  autoplayInterval?: number
 }
 
 const Feature108 = ({
@@ -31,9 +34,40 @@ const Feature108 = ({
   heading = "Programme — Creative Product Builder en 2h",
   description = "En 2h, transforme ton idée en projet concret.",
   tabs = [],
+  enableAutoplay = true,
+  autoplayInterval = 5000,
 }: Feature108Props) => {
+  const [activeTab, setActiveTab] = useState(tabs[0]?.value || "")
+  const [isPaused, setIsPaused] = useState(false)
+
+  useEffect(() => {
+    if (!enableAutoplay || tabs.length === 0 || isPaused) return
+
+    const interval = setInterval(() => {
+      setActiveTab((currentTab) => {
+        const currentIndex = tabs.findIndex((tab) => tab.value === currentTab)
+        const nextIndex = (currentIndex + 1) % tabs.length
+        return tabs[nextIndex].value
+      })
+    }, autoplayInterval)
+
+    return () => clearInterval(interval)
+  }, [enableAutoplay, autoplayInterval, tabs, isPaused])
+
+  const handleTabClick = (value: string) => {
+    setActiveTab(value)
+    // Reset autoplay timer by briefly pausing and resuming
+    setIsPaused(true)
+    setTimeout(() => setIsPaused(false), 100)
+  }
+
   return (
-    <section id="programme" className="py-24 md:py-32">
+    <section
+      id="programme"
+      className="py-24 md:py-32"
+      onMouseEnter={() => setIsPaused(true)}
+      onMouseLeave={() => setIsPaused(false)}
+    >
       <div className="container mx-auto">
         <div className="flex flex-col items-center gap-4 text-center">
           <Badge variant="outline">{badge}</Badge>
@@ -41,7 +75,7 @@ const Feature108 = ({
           <p className="text-muted-foreground max-w-2xl">{description}</p>
         </div>
 
-        <Tabs defaultValue={tabs[0]?.value} className="mt-8">
+        <Tabs value={activeTab} onValueChange={handleTabClick} className="mt-8">
           {/* Mobile: Horizontal scroll, Desktop: Centered row */}
           <div className="mx-auto max-w-4xl">
             <TabsList className="flex w-full overflow-x-auto scrollbar-hide gap-3 md:justify-center md:gap-6 lg:gap-10 pb-2 md:pb-0 h-auto">
