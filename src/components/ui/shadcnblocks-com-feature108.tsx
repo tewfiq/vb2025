@@ -40,8 +40,16 @@ const Feature108 = ({
   const [activeTab, setActiveTab] = useState(tabs[0]?.value || "")
   const [isPaused, setIsPaused] = useState(false)
 
+  // Initialize activeTab when tabs are available
   useEffect(() => {
-    if (!enableAutoplay || tabs.length === 0 || isPaused) return
+    if (tabs.length > 0 && !activeTab) {
+      setActiveTab(tabs[0].value)
+    }
+  }, [tabs, activeTab])
+
+  // Autoplay effect
+  useEffect(() => {
+    if (!enableAutoplay || tabs.length === 0 || isPaused || !activeTab) return
 
     const interval = setInterval(() => {
       setActiveTab((currentTab) => {
@@ -52,7 +60,7 @@ const Feature108 = ({
     }, autoplayInterval)
 
     return () => clearInterval(interval)
-  }, [enableAutoplay, autoplayInterval, tabs, isPaused])
+  }, [enableAutoplay, autoplayInterval, tabs.length, isPaused, activeTab])
 
   const handleTabClick = (value: string) => {
     setActiveTab(value)
