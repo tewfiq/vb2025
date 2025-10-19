@@ -10,28 +10,35 @@ import {
 import { IPhoneMockup } from "@/components/ui/iphone-mockup";
 import { useTranslation } from "@/hooks/use-translation";
 import { cn } from "@/lib/utils";
+import { Play } from "lucide-react";
+import Image from "next/image";
 
-// Configuration des vid\u00e9os YouTube Shorts
+// Configuration des vidéos YouTube Shorts
 const testimonialVideos = [
   {
     youtubeId: "j6ozc_gm9LU",
-    alt: "T\u00e9moignage participant 1",
+    shortsUrl: "https://www.youtube.com/shorts/j6ozc_gm9LU",
+    alt: "Témoignage participant 1",
   },
   {
     youtubeId: "Wi023ODB78Y",
-    alt: "T\u00e9moignage participant 2",
+    shortsUrl: "https://www.youtube.com/shorts/Wi023ODB78Y",
+    alt: "Témoignage participant 2",
   },
   {
     youtubeId: "w17p8dwWysg",
-    alt: "T\u00e9moignage participant 3",
+    shortsUrl: "https://www.youtube.com/shorts/w17p8dwWysg",
+    alt: "Témoignage participant 3",
   },
   {
     youtubeId: "A9Wct5BJPNo",
-    alt: "T\u00e9moignage participant 4",
+    shortsUrl: "https://www.youtube.com/shorts/A9Wct5BJPNo",
+    alt: "Témoignage participant 4",
   },
   {
     youtubeId: "D3wDdYA2UJg",
-    alt: "T\u00e9moignage participant 5",
+    shortsUrl: "https://www.youtube.com/shorts/D3wDdYA2UJg",
+    alt: "Témoignage participant 5",
   },
 ];
 
@@ -70,13 +77,17 @@ export default function TestimonialsVideo() {
       if (api.canScrollNext()) {
         api.scrollNext();
       } else {
-        // Retour au d\u00e9but pour loop infini
+        // Retour au début pour loop infini
         api.scrollTo(0);
       }
-    }, 8000); // Change de vid\u00e9o toutes les 8 secondes
+    }, 4000); // Change de vidéo toutes les 4 secondes
 
     return () => clearInterval(interval);
   }, [api, isPaused]);
+
+  const handleVideoClick = (shortsUrl: string) => {
+    window.open(shortsUrl, "_blank", "noopener,noreferrer");
+  };
 
   if (!isClient) {
     return (
@@ -113,60 +124,100 @@ export default function TestimonialsVideo() {
         >
           {/* Desktop: iPhone Mockup visible */}
           <div className="hidden md:block">
-            <IPhoneMockup className="max-w-sm mx-auto">
-              <Carousel
-                setApi={setApi}
-                opts={{
-                  align: "start",
-                  loop: true,
-                }}
-                orientation="vertical"
-                className="w-full h-full"
-              >
-                <CarouselContent className="h-full">
-                  {testimonialVideos.map((video, index) => (
-                    <CarouselItem key={index} className="h-full">
-                      <div className="relative w-full h-full bg-black">
-                        <iframe
-                          src={`https://www.youtube.com/embed/${video.youtubeId}?autoplay=1&mute=1&loop=1&playlist=${video.youtubeId}&controls=0&modestbranding=1&rel=0&showinfo=0&playsinline=1`}
-                          title={video.alt}
-                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                          allowFullScreen
-                          className="absolute inset-0 w-full h-full border-0"
-                          loading={index === 0 ? "eager" : "lazy"}
-                        />
-                      </div>
-                    </CarouselItem>
-                  ))}
-                </CarouselContent>
-              </Carousel>
-            </IPhoneMockup>
+            <div className="max-w-sm mx-auto">
+              <IPhoneMockup>
+                <Carousel
+                  setApi={setApi}
+                  opts={{
+                    align: "center",
+                    loop: true,
+                  }}
+                  orientation="vertical"
+                  className="w-full h-full"
+                >
+                  <CarouselContent className="h-full -mt-4">
+                    {testimonialVideos.map((video, index) => (
+                      <CarouselItem key={index} className="h-full pt-4 basis-full">
+                        <button
+                          onClick={() => handleVideoClick(video.shortsUrl)}
+                          className="relative w-full h-full bg-black group cursor-pointer overflow-hidden"
+                          style={{ minHeight: "600px" }}
+                        >
+                          {/* YouTube Thumbnail - qualité maximale */}
+                          <Image
+                            src={`https://img.youtube.com/vi/${video.youtubeId}/maxresdefault.jpg`}
+                            alt={video.alt}
+                            fill
+                            className="object-cover"
+                            sizes="(max-width: 768px) 100vw, 384px"
+                            priority={index === 0}
+                          />
+
+                          {/* Overlay avec bouton Play */}
+                          <div className="absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-all duration-300 flex items-center justify-center">
+                            <div className="bg-white/90 dark:bg-black/90 rounded-full p-6 group-hover:scale-110 transition-transform duration-300">
+                              <Play className="w-12 h-12 text-red-600 fill-red-600" />
+                            </div>
+                          </div>
+
+                          {/* Texte "Cliquez pour voir" */}
+                          <div className="absolute bottom-8 left-0 right-0 text-center">
+                            <span className="bg-black/70 text-white px-4 py-2 rounded-full text-sm font-medium">
+                              Cliquez pour voir le témoignage
+                            </span>
+                          </div>
+                        </button>
+                      </CarouselItem>
+                    ))}
+                  </CarouselContent>
+                </Carousel>
+              </IPhoneMockup>
+            </div>
           </div>
 
-          {/* Mobile: Plein \u00e9cran sans mockup */}
+          {/* Mobile: Plein écran sans mockup */}
           <div className="md:hidden">
             <Carousel
               setApi={setApi}
               opts={{
-                align: "start",
+                align: "center",
                 loop: true,
               }}
               orientation="vertical"
               className="w-full max-w-md mx-auto"
             >
-              <CarouselContent>
+              <CarouselContent className="-mt-4">
                 {testimonialVideos.map((video, index) => (
-                  <CarouselItem key={index}>
-                    <div className="relative w-full aspect-[9/16] bg-black rounded-lg overflow-hidden">
-                      <iframe
-                        src={`https://www.youtube.com/embed/${video.youtubeId}?autoplay=1&mute=1&loop=1&playlist=${video.youtubeId}&controls=0&modestbranding=1&rel=0&showinfo=0&playsinline=1`}
-                        title={video.alt}
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowFullScreen
-                        className="absolute inset-0 w-full h-full border-0"
-                        loading={index === 0 ? "eager" : "lazy"}
+                  <CarouselItem key={index} className="pt-4 basis-full">
+                    <button
+                      onClick={() => handleVideoClick(video.shortsUrl)}
+                      className="relative w-full bg-black rounded-lg overflow-hidden group cursor-pointer"
+                      style={{ paddingBottom: "177.78%" }}
+                    >
+                      {/* YouTube Thumbnail */}
+                      <Image
+                        src={`https://img.youtube.com/vi/${video.youtubeId}/maxresdefault.jpg`}
+                        alt={video.alt}
+                        fill
+                        className="object-cover"
+                        sizes="(max-width: 768px) 100vw, 384px"
+                        priority={index === 0}
                       />
-                    </div>
+
+                      {/* Overlay avec bouton Play */}
+                      <div className="absolute inset-0 bg-black/30 group-active:bg-black/50 transition-all duration-300 flex items-center justify-center">
+                        <div className="bg-white/90 dark:bg-black/90 rounded-full p-6 group-active:scale-110 transition-transform duration-300">
+                          <Play className="w-12 h-12 text-red-600 fill-red-600" />
+                        </div>
+                      </div>
+
+                      {/* Texte "Appuyez pour voir" */}
+                      <div className="absolute bottom-8 left-0 right-0 text-center">
+                        <span className="bg-black/70 text-white px-4 py-2 rounded-full text-sm font-medium">
+                          Appuyez pour voir le témoignage
+                        </span>
+                      </div>
+                    </button>
                   </CarouselItem>
                 ))}
               </CarouselContent>
@@ -188,7 +239,7 @@ export default function TestimonialsVideo() {
                     ? "bg-primary w-8"
                     : "bg-muted-foreground/30 hover:bg-muted-foreground/50"
                 )}
-                aria-label={`Aller \u00e0 la vid\u00e9o ${index + 1}`}
+                aria-label={`Aller à la vidéo ${index + 1}`}
               />
             ))}
           </div>
@@ -203,7 +254,7 @@ export default function TestimonialsVideo() {
         {isPaused && (
           <div className="hidden md:block text-center mt-4">
             <span className="text-xs text-muted-foreground">
-              D\u00e9filement automatique en pause
+              Défilement automatique en pause
             </span>
           </div>
         )}
