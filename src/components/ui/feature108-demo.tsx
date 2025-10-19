@@ -1,4 +1,5 @@
 "use client"
+import { useMemo } from "react"
 import { Layout, Pointer, Zap } from "lucide-react"
 import { Feature108 } from "@/components/ui/shadcnblocks-com-feature108"
 import { useTranslation } from "@/hooks/use-translation"
@@ -6,7 +7,7 @@ import { useTranslation } from "@/hooks/use-translation"
 export default function Feature108Demo() {
   const t = useTranslation()
 
-  const demoData = {
+  const demoData = useMemo(() => ({
     badge: t.programme.badge,
     heading: t.programme.heading,
     description: t.programme.description,
@@ -48,7 +49,7 @@ export default function Feature108Demo() {
         },
       },
     ],
-  }
+  }), [t])
 
   return <Feature108 {...demoData} />
 }
