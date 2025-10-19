@@ -39,6 +39,7 @@ const Feature108 = ({
 }: Feature108Props) => {
   const [activeTab, setActiveTab] = useState(tabs[0]?.value || "")
   const [isPaused, setIsPaused] = useState(false)
+  const [progress, setProgress] = useState(0)
 
   // Initialize activeTab when tabs are available
   useEffect(() => {
@@ -47,23 +48,40 @@ const Feature108 = ({
     }
   }, [tabs, activeTab])
 
-  // Autoplay effect
+  // Progress bar effect - updates every 100ms for smooth animation
+  useEffect(() => {
+    if (!enableAutoplay || tabs.length === 0 || isPaused || !activeTab) {
+      setProgress(0)
+      return
+    }
+
+    const progressInterval = setInterval(() => {
+      setProgress((prev) => {
+        const increment = (100 / autoplayInterval) * 100
+        return prev + increment
+      })
+    }, 100)
+
+    return () => clearInterval(progressInterval)
+  }, [enableAutoplay, autoplayInterval, tabs.length, isPaused, activeTab])
+
+  // Autoplay effect - switches to next tab when progress reaches 100%
   useEffect(() => {
     if (!enableAutoplay || tabs.length === 0 || isPaused || !activeTab) return
 
-    const interval = setInterval(() => {
+    if (progress >= 100) {
       setActiveTab((currentTab) => {
         const currentIndex = tabs.findIndex((tab) => tab.value === currentTab)
         const nextIndex = (currentIndex + 1) % tabs.length
         return tabs[nextIndex].value
       })
-    }, autoplayInterval)
-
-    return () => clearInterval(interval)
-  }, [enableAutoplay, autoplayInterval, tabs.length, isPaused, activeTab])
+      setProgress(0)
+    }
+  }, [progress, enableAutoplay, tabs, isPaused, activeTab])
 
   const handleTabClick = (value: string) => {
     setActiveTab(value)
+    setProgress(0)
     // Reset autoplay timer by briefly pausing and resuming
     setIsPaused(true)
     setTimeout(() => setIsPaused(false), 100)
@@ -88,13 +106,22 @@ const Feature108 = ({
           <div className="mx-auto max-w-4xl">
             <TabsList className="flex w-full overflow-x-auto scrollbar-hide gap-3 md:justify-center md:gap-6 lg:gap-10 pb-2 md:pb-0 h-auto">
               {tabs.map((tab) => (
-                <TabsTrigger
-                  key={tab.value}
-                  value={tab.value}
-                  className="flex items-center gap-2 rounded-xl px-3 py-2 sm:px-4 sm:py-3 text-xs sm:text-sm font-semibold text-muted-foreground data-[state=active]:bg-muted dark:data-[state=active]:bg-muted/30 data-[state=active]:text-primary whitespace-nowrap flex-shrink-0 min-w-fit"
-                >
-                  {tab.icon} {tab.label}
-                </TabsTrigger>
+                <div key={tab.value} className="relative flex flex-col flex-shrink-0">
+                  <TabsTrigger
+                    value={tab.value}
+                    className="flex items-center gap-2 rounded-xl px-3 py-2 sm:px-4 sm:py-3 text-xs sm:text-sm font-semibold text-muted-foreground data-[state=active]:bg-muted dark:data-[state=active]:bg-muted/30 data-[state=active]:text-primary whitespace-nowrap min-w-fit"
+                  >
+                    {tab.icon} {tab.label}
+                  </TabsTrigger>
+                  {enableAutoplay && activeTab === tab.value && !isPaused && (
+                    <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-muted rounded-full overflow-hidden">
+                      <div
+                        className="h-full bg-primary transition-all duration-100 ease-linear"
+                        style={{ width: `${Math.min(progress, 100)}%` }}
+                      />
+                    </div>
+                  )}
+                </div>
               ))}
             </TabsList>
           </div>
