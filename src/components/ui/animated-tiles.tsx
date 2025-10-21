@@ -1,42 +1,73 @@
 "use client"
 
-import { useEffect, useRef } from "react"
+import { useEffect, useRef, useState } from "react"
 
 interface AnimatedTilesProps {
-  rows?: number
-  cols?: number
+  imageUrl: string
   tileSize?: number
-  imageUrl?: string
   backgroundColor?: string
+  className?: string
 }
 
 export function AnimatedTiles({
-  rows = 12,
-  cols = 8,
-  tileSize = 50,
-  imageUrl = "https://raw.githubusercontent.com/aliimam-in/aliimam/refs/heads/main/apps/www/public/ai.jpg",
+  imageUrl,
+  tileSize = 60,
   backgroundColor = "transparent",
+  className = "",
 }: AnimatedTilesProps) {
   const containerRef = useRef<HTMLDivElement>(null)
   const tilesRef = useRef<HTMLDivElement>(null)
+  const [imageDimensions, setImageDimensions] = useState<{ width: number; height: number } | null>(null)
 
-  const maxOpacities = [
-    [0.0, 0.2, 0.4, 0.6, 0.6, 0.4, 0.2, 0.0],
-    [0.2, 0.4, 0.8, 1.0, 1.0, 0.6, 0.4, 0.2],
-    [0.2, 0.4, 1.0, 1.0, 1.0, 0.8, 0.6, 0.2],
-    [0.2, 0.6, 1.0, 1.0, 1.0, 1.0, 0.6, 0.2],
-    [0.2, 0.6, 1.0, 1.0, 1.0, 1.0, 0.6, 0.2],
-    [0.2, 0.6, 1.0, 1.0, 1.0, 1.0, 0.6, 0.2],
-    [0.2, 0.4, 0.8, 1.0, 1.0, 0.8, 0.6, 0.2],
-    [0.2, 0.4, 0.6, 0.8, 0.8, 0.6, 0.4, 0.1],
-    [0.1, 0.2, 0.4, 0.4, 0.4, 0.4, 0.2, 0.1],
-    [0.0, 0.2, 0.2, 0.2, 0.2, 0.2, 0.1, 0.1],
-    [0.0, 0.1, 0.1, 0.1, 0.1, 0.1, 0.0, 0.0],
-    [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
-  ]
+  // Load image to get natural dimensions
+  useEffect(() => {
+    const img = new Image()
+    img.onload = () => {
+      setImageDimensions({ width: img.naturalWidth, height: img.naturalHeight })
+    }
+    img.src = imageUrl
+  }, [imageUrl])
+
+  // Generate dynamic opacity matrix based on grid size
+  const generateOpacityMatrix = (rows: number, cols: number): number[][] => {
+    const matrix: number[][] = []
+    const centerRow = rows / 2
+    const centerCol = cols / 2
+
+    for (let row = 0; row < rows; row++) {
+      matrix[row] = []
+      for (let col = 0; col < cols; col++) {
+        // Calculate distance from center (normalized)
+        const distRow = Math.abs(row - centerRow) / centerRow
+        const distCol = Math.abs(col - centerCol) / centerCol
+        const distance = Math.sqrt(distRow * distRow + distCol * distCol)
+
+        // Create a spotlight effect: center is bright, edges are dim
+        // Using an inverse quadratic falloff for smooth transition
+        const opacity = Math.max(0, Math.min(1, 1 - (distance * 0.7)))
+        matrix[row][col] = opacity
+      }
+    }
+
+    return matrix
+  }
 
   useEffect(() => {
-    if (!tilesRef.current) return
+    if (!tilesRef.current || !containerRef.current || !imageDimensions) return
+
+    const containerWidth = containerRef.current.offsetWidth
+    if (containerWidth === 0) return
+
+    // Calculate grid dimensions based on container width and image aspect ratio
+    const aspectRatio = imageDimensions.height / imageDimensions.width
+    const cols = Math.ceil(containerWidth / tileSize)
+    const rows = Math.ceil(cols * aspectRatio)
+
+    const totalWidth = cols * tileSize
+    const totalHeight = rows * tileSize
+
+    // Generate dynamic opacity matrix for this grid size
+    const maxOpacities = generateOpacityMatrix(rows, cols)
 
     const tiles: HTMLDivElement[] = []
     tilesRef.current.innerHTML = ""
@@ -49,8 +80,9 @@ export function AnimatedTiles({
         tile.style.height = `${tileSize}px`
         tile.style.backgroundImage = `url(${imageUrl})`
         tile.style.backgroundPosition = `${-col * tileSize}px ${-row * tileSize}px`
-        tile.style.backgroundSize = `${cols * tileSize}px ${rows * tileSize}px`
+        tile.style.backgroundSize = `${totalWidth}px ${totalHeight}px`
         tile.style.float = "left"
+        tile.style.boxSizing = "border-box"
         tiles.push(tile)
         tilesRef.current.appendChild(tile)
       }
@@ -62,15 +94,10 @@ export function AnimatedTiles({
     tiles.forEach((tile, i) => {
       const row = Math.floor(i / cols)
       const col = i % cols
-      const variance = 0.4
-      const maxOpacity = maxOpacities[row]?.[col] ?? 0
-      const minOpacity = Math.max(0, maxOpacity - variance)
-      const duration = Math.random() * 0.25 + 0.75 // 0.75 to 1 second
-
-      if (maxOpacity === 0) {
-        tile.style.opacity = "0"
-        return
-      }
+      const variance = 0.3
+      const maxOpacity = maxOpacities[row]?.[col] ?? 0.5
+      const minOpacity = Math.max(0.1, maxOpacity - variance)
+      const duration = Math.random() * 0.3 + 0.7 // 0.7 to 1 second
 
       startTimes[i] = Math.random() * duration
       let startTime: number | null = null
@@ -93,26 +120,49 @@ export function AnimatedTiles({
     return () => {
       animationFrames.forEach((frameId) => cancelAnimationFrame(frameId))
     }
-  }, [rows, cols, tileSize, imageUrl])
+  }, [imageDimensions, imageUrl, tileSize])
+
+  if (!imageDimensions) {
+    // Show loading placeholder with same aspect ratio
+    return (
+      <div
+        ref={containerRef}
+        className={className}
+        style={{
+          backgroundColor,
+          width: "100%",
+          aspectRatio: "16/9",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        <div className="animate-pulse bg-muted/20 w-full h-full" />
+      </div>
+    )
+  }
+
+  const aspectRatio = imageDimensions.height / imageDimensions.width
 
   return (
     <div
       ref={containerRef}
+      className={className}
       style={{
         backgroundColor,
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
         width: "100%",
+        aspectRatio: `${imageDimensions.width}/${imageDimensions.height}`,
+        position: "relative",
       }}
     >
       <div
         ref={tilesRef}
         style={{
-          width: `${cols * tileSize}px`,
-          height: `${rows * tileSize}px`,
+          width: "100%",
+          height: "100%",
           position: "relative",
           overflow: "hidden",
+          lineHeight: 0,
         }}
       />
     </div>

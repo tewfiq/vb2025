@@ -26,15 +26,10 @@ export default function AboutPage() {
           </p>
 
           <div className="flex justify-center mb-12">
-            <div className="rounded-lg shadow-2xl overflow-hidden w-full max-w-2xl">
-              <AnimatedTiles
-                rows={12}
-                cols={16}
-                tileSize={50}
-                imageUrl="/tewfiq-teaching.png"
-                backgroundColor="transparent"
-              />
-            </div>
+            <AnimatedTiles
+              imageUrl="/tewfiq-teaching.png"
+              className="rounded-lg shadow-2xl w-full max-w-2xl"
+            />
           </div>
         </div>
 
