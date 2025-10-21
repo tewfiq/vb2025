@@ -3,6 +3,7 @@
 import { Metadata } from 'next/types';
 import { BackButton } from '@/components/ui/back-button';
 import { useTranslation } from '@/hooks/use-translation';
+import { AnimatedTiles } from '@/components/ui/animated-tiles';
 
 // Note: This will be replaced with dynamic metadata when we implement server-side translation support
 // export const metadata: Metadata = {
@@ -25,11 +26,15 @@ export default function AboutPage() {
           </p>
 
           <div className="flex justify-center mb-12">
-            <img
-              src="/tewfiq-teaching.png"
-              alt="Tewfiq Ferahi en train de donner un atelier avec ses étudiants"
-              className="rounded-lg shadow-2xl w-full max-w-2xl h-auto"
-            />
+            <div className="rounded-lg shadow-2xl overflow-hidden w-full max-w-2xl">
+              <AnimatedTiles
+                rows={12}
+                cols={16}
+                tileSize={50}
+                imageUrl="/tewfiq-teaching.png"
+                backgroundColor="transparent"
+              />
+            </div>
           </div>
         </div>
 
