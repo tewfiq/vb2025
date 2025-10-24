@@ -479,7 +479,7 @@ export const translations: Record<Language, Translations> = {
         registerNormal: "Réserver au tarif normal — 299 €"
       },
       features: {
-        capacity: "🎟️ 10 places / session",
+        capacity: "🎟️ 10 à 12 places disponibles !",
         location: "📍 Paris — salle équipée",
         level: "✨ Tous niveaux",
         date: "📅 Samedi 15 Novembre 2025"
@@ -656,7 +656,7 @@ export const translations: Record<Language, Translations> = {
       tagline: "Une compétence en 2h. Rien de personnel."
     },
     socialProofBadge: {
-      spotsRemaining: "🔥 10 à 12 places disponibles !",
+      spotsRemaining: "🔥 8 places disponibles !",
       timezone: "(Paris UTC+2)"
     },
     partners: {
@@ -940,7 +940,7 @@ export const translations: Record<Language, Translations> = {
         registerNormal: "Book at regular price — €299"
       },
       features: {
-        capacity: "🎟️ 10 spots / session",
+        capacity: "🎟️ 10 to 12 spots available!",
         location: "📍 Paris — equipped room",
         level: "✨ All levels",
         date: "📅 Saturday November 15, 2025"
@@ -1117,7 +1117,7 @@ export const translations: Record<Language, Translations> = {
       tagline: "A skill in 2h. Nothing personal."
     },
     socialProofBadge: {
-      spotsRemaining: "🔥 10 to 12 spots available!",
+      spotsRemaining: "🔥 8 spots available!",
       timezone: "(Paris UTC+2)"
     },
     partners: {
