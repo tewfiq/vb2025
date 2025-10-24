@@ -656,7 +656,7 @@ export const translations: Record<Language, Translations> = {
       tagline: "Une compétence en 2h. Rien de personnel."
     },
     socialProofBadge: {
-      spotsRemaining: "🔥 10 à 12 places disponibles !",
+      spotsRemaining: "🔥 8 places disponibles !",
       timezone: "(Paris UTC+2)"
     },
     partners: {
@@ -1117,7 +1117,7 @@ export const translations: Record<Language, Translations> = {
       tagline: "A skill in 2h. Nothing personal."
     },
     socialProofBadge: {
-      spotsRemaining: "🔥 10 to 12 spots available!",
+      spotsRemaining: "🔥 8 spots available!",
       timezone: "(Paris UTC+2)"
     },
     partners: {
