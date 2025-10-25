@@ -22,6 +22,7 @@ export default function Header() {
     { href: '#why', label: t.navigation.why },
     { href: '#comment-ca-marche', label: t.navigation.info },
     { href: '#faq', label: t.navigation.faq },
+    { href: '/blog', label: t.navigation.blog },
   ]
 
   return (

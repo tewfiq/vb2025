@@ -7,6 +7,7 @@ export interface Translations {
     info: string
     faq: string
     students: string
+    blog: string
   }
   hero: {
     badgeText: string
@@ -188,9 +189,20 @@ export interface Translations {
       contact: string
       mentions: string
       cgv: string
+      blog: string
     }
     copyright: string
     tagline: string
+  }
+  blog: {
+    title: string
+    subtitle: string
+    latestArticles: string
+    latestArticlesDescription: string
+    viewAllArticles: string
+    backToBlog: string
+    minRead: string
+    noArticles: string
   }
   socialProofBadge: {
     spotsRemaining: string
@@ -453,7 +465,8 @@ export const translations: Record<Language, Translations> = {
       why: "Pourquoi",
       info: "Infos",
       faq: "FAQ",
-      students: "Mes étudiants"
+      students: "Mes étudiants",
+      blog: "Blog"
     },
     hero: {
       badgeText: "Social proof badge FR", // This will need to be checked in the actual component
@@ -650,10 +663,21 @@ export const translations: Record<Language, Translations> = {
         about: "À propos",
         contact: "Contact",
         mentions: "Mentions",
-        cgv: "CGV"
+        cgv: "CGV",
+        blog: "Blog"
       },
       copyright: "Tous droits réservés.",
       tagline: "Une compétence en 2h. Rien de personnel."
+    },
+    blog: {
+      title: "Blog",
+      subtitle: "Découvrez nos articles sur le développement web, les conseils pour apprendre à coder et les dernières actualités de Vibe Coding Paris.",
+      latestArticles: "Derniers Articles",
+      latestArticlesDescription: "Découvrez nos derniers articles sur le développement web, les langages de programmation et nos conseils pour réussir dans la tech.",
+      viewAllArticles: "Voir tous les articles",
+      backToBlog: "Retour au blog",
+      minRead: "min de lecture",
+      noArticles: "Aucun article disponible pour le moment."
     },
     socialProofBadge: {
       spotsRemaining: "🔥 8 places disponibles !",
@@ -914,7 +938,8 @@ export const translations: Record<Language, Translations> = {
       why: "Why",
       info: "Info",
       faq: "FAQ",
-      students: "My students"
+      students: "My students",
+      blog: "Blog"
     },
     hero: {
       badgeText: "Social proof badge EN",
@@ -1111,10 +1136,21 @@ export const translations: Record<Language, Translations> = {
         about: "About",
         contact: "Contact",
         mentions: "Legal",
-        cgv: "Terms"
+        cgv: "Terms",
+        blog: "Blog"
       },
       copyright: "All rights reserved.",
       tagline: "A skill in 2h. Nothing personal."
+    },
+    blog: {
+      title: "Blog",
+      subtitle: "Discover our articles about web development, coding tips, and the latest news from Vibe Coding Paris.",
+      latestArticles: "Latest Articles",
+      latestArticlesDescription: "Discover our latest articles about web development, programming languages, and tips for succeeding in tech.",
+      viewAllArticles: "View all articles",
+      backToBlog: "Back to blog",
+      minRead: "min read",
+      noArticles: "No articles available at the moment."
     },
     socialProofBadge: {
       spotsRemaining: "🔥 8 spots available!",
