@@ -4,12 +4,63 @@ import { Toaster } from "@/components/ui/toaster";
 import { ClientProviders } from "@/components/client-providers";
 import GoogleAnalytics from "@/components/analytics";
 import { QrShareButton } from "@/components/ui/qr-share-button";
+import { siteConfig } from "@/lib/site-config";
 
 export const metadata: Metadata = {
-  title:
-    "Vibe Coding Paris — Débloque ton super pouvoir digital en 2h. De l'idée au site en ligne, avec l'IA comme copilote.",
-  description:
-    "Un atelier intensif et accessible. Tu explores, tu structures, tu repars avec un projet en ligne. Une compétence exploitable, en seulement 2h.",
+  metadataBase: new URL(siteConfig.url),
+  title: {
+    default: "Vibe Coding Paris — Débloque ton super pouvoir digital en 2h. De l'idée au site en ligne, avec l'IA comme copilote.",
+    template: "%s - Vibe Coding Paris",
+  },
+  description: siteConfig.description,
+  keywords: [
+    "vibe coding",
+    "coding paris",
+    "atelier code",
+    "apprentissage programmation",
+    "développement web",
+    "IA",
+    "workshop",
+    "bootcamp",
+    "Next.js",
+    "React",
+  ],
+  authors: [{ name: "Tewfiq Ziouche" }],
+  creator: "Vibe Coding Paris",
+  openGraph: {
+    type: "website",
+    locale: "fr_FR",
+    url: siteConfig.url,
+    title: "Vibe Coding Paris",
+    description: siteConfig.description,
+    siteName: siteConfig.name,
+    images: [
+      {
+        url: siteConfig.ogImage,
+        width: 1200,
+        height: 630,
+        alt: "Vibe Coding Paris",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Vibe Coding Paris",
+    description: siteConfig.description,
+    images: [siteConfig.ogImage],
+    creator: siteConfig.social.twitter,
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
 };
 
 export default function RootLayout({
