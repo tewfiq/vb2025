@@ -13,6 +13,7 @@ import FirstMasterclassGallery from "@/components/landing/first-masterclass-gall
 import Faq from "@/components/landing/faq";
 import Changelog from "@/components/landing/changelog";
 import GitHubContributions from "@/components/landing/github-contributions";
+import BlogLatest from "@/components/blog/blog-latest";
 import Footer from "@/components/landing/footer";
 
 export default function Home() {
@@ -35,6 +36,7 @@ export default function Home() {
         <Faq />
         <Changelog />
         <GitHubContributions />
+        <BlogLatest />
       </main>
       <Footer />
     </div>
