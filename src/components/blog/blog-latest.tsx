@@ -8,7 +8,7 @@ import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 
 export default function BlogLatest() {
-  const { t } = useTranslation();
+  const t = useTranslation();
   const latestPosts = getLatestPosts(3);
 
   if (latestPosts.length === 0) {

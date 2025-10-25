@@ -3,6 +3,7 @@
 import { BlogPost } from '@/lib/blog/types';
 import { formatDate } from '@/lib/blog/utils';
 import { useTranslation } from '@/hooks/use-translation';
+import { useLanguage } from '@/components/language-provider';
 import { Calendar, Clock, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -14,7 +15,8 @@ interface BlogCardProps {
 }
 
 export default function BlogCard({ post }: BlogCardProps) {
-  const { t, language } = useTranslation();
+  const t = useTranslation();
+  const { language } = useLanguage();
 
   return (
     <Link href={`/blog/${post.slug}`}>

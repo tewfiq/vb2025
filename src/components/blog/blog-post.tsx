@@ -3,6 +3,7 @@
 import { BlogPost } from '@/lib/blog/types';
 import { formatDate } from '@/lib/blog/utils';
 import { useTranslation } from '@/hooks/use-translation';
+import { useLanguage } from '@/components/language-provider';
 import { Calendar, Clock, User, ArrowLeft } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -15,7 +16,8 @@ interface BlogPostProps {
 }
 
 export default function BlogPostComponent({ post }: BlogPostProps) {
-  const { t, language } = useTranslation();
+  const t = useTranslation();
+  const { language } = useLanguage();
 
   return (
     <article className="py-12">

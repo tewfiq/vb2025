@@ -4,7 +4,7 @@ import { useTranslation } from '@/hooks/use-translation';
 import { BookOpen } from 'lucide-react';
 
 export default function BlogHero() {
-  const { t } = useTranslation();
+  const t = useTranslation();
 
   return (
     <section className="py-20 bg-gradient-to-b from-primary/10 via-background to-background">
