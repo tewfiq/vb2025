@@ -41,6 +41,12 @@ export default function Footer() {
               {t.footer.links.about}
             </Link>
             <Link
+              href="/blog"
+              className="text-muted-foreground hover:text-foreground"
+            >
+              {t.footer.links.blog}
+            </Link>
+            <Link
               href="/contact"
               className="text-muted-foreground hover:text-foreground"
             >
