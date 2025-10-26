@@ -236,17 +236,19 @@ Anti Fund is the recognition that this path is not just viable, but desirable.
       en: "CEO of an AI Army: 5 Lessons to Build a Business Solo",
     },
     excerpt: {
-      fr: "Découvrez comment orchestrer une armée d'agents IA pour construire une entreprise technologique seul, du concept au produit final.",
-      en: "Discover how to orchestrate an army of AI agents to build a tech business solo, from concept to final product.",
+      fr: "Devenez un product builder solo : orchestrez des agents IA comme Claude Code pour construire votre entreprise tech. Maîtrisez le context engineering pour maximiser votre productivité.",
+      en: "Become a solo product builder: orchestrate AI agents like Claude Code to build your tech business. Master context engineering to maximize your productivity.",
     },
     content: {
       fr: `# PDG d'une armée d'IA : 5 leçons pour bâtir seul une entreprise
 
-## Introduction : L'ère de l'entrepreneur-startup est arrivée
+## Introduction : L'ère du Product Builder Solo est arrivée
 
 Pendant des années, un gouffre a séparé l'idée brillante du produit fonctionnel. Un gouffre rempli de levées de fonds, de recrutements techniques et de cycles de développement interminables. Pour l'entrepreneur solo, ce gouffre était souvent synonyme de cimetière de projets. Mais cette époque est révolue. La barrière à l'entrée pour créer une entreprise technologique n'a pas seulement été abaissée, elle a été pulvérisée.
 
-Nous entrons dans un nouveau paradigme de création, où les outils d'IA ne sont plus de simples assistants, mais une véritable armée d'employés virtuels à vos ordres. Un seul individu peut désormais orchestrer la puissance de frappe d'une startup financée par du capital-risque. Cet article n'est pas une simple liste d'astuces ; c'est un aperçu de l'avenir de l'entrepreneuriat, distillant les cinq leçons les plus contre-intuitives tirées de la construction d'une application de A à Z avec une équipe d'agents IA.
+Nous entrons dans un nouveau paradigme de création, où les outils d'IA comme **Claude Code** ne sont plus de simples assistants, mais une véritable armée d'employés virtuels à vos ordres. Un seul individu peut désormais orchestrer la puissance de frappe d'une startup financée par du capital-risque. C'est l'essence même du **Vibe Coding** : devenir un **product builder** solo en maîtrisant le **context engineering** pour diriger efficacement vos agents IA.
+
+Cet article n'est pas une simple liste d'astuces ; c'est un aperçu de l'avenir de l'entrepreneuriat, distillant les cinq leçons les plus contre-intuitives tirées de la construction d'une application de A à Z avec une équipe d'agents IA.
 
 ## Leçon 1 : Le vrai défi n'est plus de construire, mais de trouver la bonne idée
 
@@ -268,19 +270,21 @@ Même si personne n'achète jamais votre produit, vous aurez au minimum créé u
 
 Avec une idée qui vous passionne en main, la prochaine étape est de passer de la vision à l'exécution, non pas en tant que développeur, mais en tant que PDG.
 
-## Leçon 3 : Abandonnez le "pair programming" pour le paradigme du "PDG et ses employés IA"
+## Leçon 3 : Abandonnez le "pair programming" pour le paradigme du "Product Builder avec Context Engineering"
 
-L'erreur fondamentale est de voir une IA comme OpenAI Codex comme un "stagiaire" avec qui l'on programme en binôme. Le véritable changement de mentalité est de passer du rôle de codeur assisté à celui de dirigeant. Vous n'êtes plus un artisan, vous êtes le PDG d'une équipe d'agents IA spécialisés. La première tâche d'un bon PDG est de fournir un brief clair. Avant de déléguer la construction à votre "ingénieur IA", vous utilisez un "stratège IA" comme ChatGPT pour transformer votre idée en un document de spécifications produit (PRD) détaillé. C'est ce plan qui garantit que vos employés IA exécuteront votre vision avec précision.
+L'erreur fondamentale est de voir une IA comme **Claude Code** ou OpenAI Codex comme un "stagiaire" avec qui l'on programme en binôme. Le véritable changement de mentalité est de passer du rôle de codeur assisté à celui de **product builder**. Vous n'êtes plus un artisan, vous êtes le PDG d'une équipe d'agents IA spécialisés. C'est le cœur du **Vibe Coding** : maîtriser le **context engineering** pour diriger efficacement vos agents.
+
+La première tâche d'un bon **product builder** est de fournir un brief clair - c'est le **context engineering** en action. Avant de déléguer la construction à votre "ingénieur IA", vous utilisez un "stratège IA" comme ChatGPT ou **Claude Code** pour transformer votre idée en un document de spécifications produit (PRD) détaillé. C'est ce plan qui garantit que vos employés IA exécuteront votre vision avec précision.
 
 C'est là que le concept des "8 employés" prend tout son sens. Il ne s'agit pas d'un seul outil, mais d'une main-d'œuvre multi-plateforme et asynchrone :
 
-* **L'Ingénieur Logiciel** (Agent Codex local) : Il travaille directement dans votre IDE (Visual Studio Code) pour construire le MVP, en utilisant la stack que vous lui imposez, comme Next.js et Superbase.
-* **Le Directeur Marketing** (Agent Codex cloud) : Simultanément, il élabore un plan marketing complet.
-* **Le Chef de Produit** (Agent Codex cloud) : En parallèle, il définit la feuille de route du produit à court et long terme.
-* **Le Stratège & Rédacteur** (ChatGPT) : Il a déjà rédigé le PRD et peut maintenant créer le contenu de la page d'accueil.
+* **L'Ingénieur Logiciel** (**Claude Code** ou Agent Codex local) : Il travaille directement dans votre IDE (Visual Studio Code) pour construire le MVP, en utilisant la stack que vous lui imposez, comme Next.js et Superbase.
+* **Le Directeur Marketing** (Agent IA cloud) : Simultanément, il élabore un plan marketing complet.
+* **Le Chef de Produit** (Agent IA cloud) : En parallèle, il définit la feuille de route du produit à court et long terme.
+* **Le Stratège & Rédacteur** (ChatGPT ou **Claude Code**) : Il a déjà rédigé le PRD et peut maintenant créer le contenu de la page d'accueil.
 * **L'Analyste de Marché** (Idea Browser) : Il continue de valider des hypothèses sur le potentiel mobile de l'application.
 
-La distinction entre agents "locaux" et "cloud" est révolutionnaire. L'agent local modifie le code sur votre machine. Les agents cloud, eux, travaillent sur les serveurs d'OpenAI et peuvent être commandés depuis n'importe où : votre téléphone, un navigateur web, votre IDE. C'est ce qui permet de "lancer trois tâches avant de dormir pour que l'application ait progressé au réveil". Votre entreprise ne dort jamais.
+La distinction entre agents "locaux" et "cloud" est révolutionnaire. L'agent local comme **Claude Code** modifie le code sur votre machine. Les agents cloud travaillent sur les serveurs et peuvent être commandés depuis n'importe où : votre téléphone, un navigateur web, votre IDE. C'est ce qui permet de "lancer trois tâches avant de dormir pour que l'application ait progressé au réveil". Votre entreprise ne dort jamais.
 
 ## Leçon 4 : Votre meilleure idée est rarement la première
 
@@ -405,60 +409,88 @@ The model is here. Your only limit now is the clarity of your vision.
   {
     slug: "bienvenue-vibe-coding-paris",
     title: {
-      fr: "Bienvenue chez Vibe Coding Paris",
-      en: "Welcome to Vibe Coding Paris",
+      fr: "Bienvenue chez Vibe Coding Paris 🚀",
+      en: "Welcome to Vibe Coding Paris 🚀",
     },
     excerpt: {
-      fr: "Découvrez notre approche unique de l'apprentissage du code à Paris, combinant théorie et pratique dans une ambiance conviviale.",
-      en: "Discover our unique approach to learning code in Paris, combining theory and practice in a friendly atmosphere.",
+      fr: "Découvrez le Vibe Coding à Paris : apprenez à coder avec Claude Code, maîtrisez le product building et le context engineering. De l'idée au produit avec l'IA comme copilote.",
+      en: "Discover Vibe Coding in Paris: learn to code with Claude Code, master product building and context engineering. From idea to product with AI as your copilot.",
     },
     content: {
-      fr: `# Bienvenue chez Vibe Coding Paris
+      fr: `# Bienvenue chez Vibe Coding Paris 🚀
 
-Vibe Coding Paris est né d'une vision simple : rendre l'apprentissage du code accessible, pratique et convivial.
+Vibe Coding Paris est né d'une vision simple : rendre l'apprentissage du code accessible, pratique et convivial. Ici, on apprend à devenir un **product builder** en maîtrisant le **context engineering** et en utilisant des outils comme **Claude Code** pour décupler sa productivité.
 
 ## Notre Mission
 
-Nous croyons que tout le monde peut apprendre à coder, peu importe son âge ou son parcours. Notre mission est de créer un environnement d'apprentissage où la théorie rencontre la pratique, où les débutants deviennent des développeurs confiants.
+Nous croyons que tout le monde peut apprendre à coder, peu importe son âge ou son parcours. Notre mission est de créer un environnement d'apprentissage où la théorie rencontre la pratique, où les débutants deviennent des **product builders** confiants capables de transformer une idée en produit.
 
-## Notre Approche
+## Notre Approche : Le Vibe Coding
 
-Notre méthode d'enseignement se base sur trois piliers fondamentaux :
+Le **Vibe Coding**, c'est notre philosophie d'apprentissage qui combine :
 
-1. **Apprentissage Pratique** : Pas de cours magistraux ennuyeux. Ici, on code dès le premier jour.
-2. **Projets Réels** : Vous travaillez sur des projets concrets qui enrichissent votre portfolio.
-3. **Communauté Active** : Rejoignez une communauté de passionnés qui s'entraident et progressent ensemble.
+1. **Apprentissage Pratique avec l'IA** : Pas de cours magistraux ennuyeux. Ici, on code dès le premier jour avec **Claude Code** comme copilote. Vous apprenez le **context engineering** - l'art de communiquer efficacement avec l'IA pour maximiser votre productivité.
+
+2. **Product Building Réel** : Vous ne créez pas de projets factices, mais de vrais produits. De l'idée initiale au déploiement en ligne, vous devenez un **product builder** complet. Chaque projet enrichit votre portfolio et vos compétences.
+
+3. **Communauté Active** : Rejoignez une communauté de passionnés qui pratiquent le **Vibe Coding** et s'entraident. Partagez vos projets, apprenez des autres et progressez ensemble.
+
+## Maîtrisez les Outils Modernes
+
+Chez Vibe Coding Paris, vous apprenez à utiliser :
+
+- **Claude Code** : Votre assistant IA pour coder plus vite et mieux
+- **Context Engineering** : L'art de formuler des prompts efficaces pour l'IA
+- **Product Building** : La méthodologie pour passer de l'idée au produit fini
+- Les frameworks modernes (Next.js, React, TypeScript)
+- Le déploiement et la mise en production
 
 ## Pourquoi Paris ?
 
-Paris est un écosystème tech en pleine expansion. Startups, scale-ups, grands groupes : les opportunités ne manquent pas pour les développeurs. Vibe Coding Paris vous prépare à saisir ces opportunités.
+Paris est un écosystème tech en pleine expansion. Startups, scale-ups, grands groupes : les opportunités ne manquent pas pour les **product builders** et développeurs qui maîtrisent les outils d'IA. **Vibe Coding Paris** vous prépare à saisir ces opportunités en vous formant aux compétences les plus demandées.
 
-## Prêt à Commencer ?
+## Prêt à Commencer le Vibe Coding ?
 
-Que vous soyez débutant complet ou que vous souhaitiez perfectionner vos compétences, nous avons un programme adapté pour vous. Rejoignez-nous pour la prochaine session !`,
-      en: `# Welcome to Vibe Coding Paris
+Que vous soyez débutant complet ou que vous souhaitiez perfectionner vos compétences en **product building** et **context engineering**, nous avons un programme adapté pour vous. Apprenez à coder avec **Claude Code** et rejoignez le mouvement du **Vibe Coding** !
 
-Vibe Coding Paris was born from a simple vision: making learning to code accessible, practical, and friendly.
+Rejoignez-nous pour la prochaine session et découvrez comment transformer vos idées en produits concrets en un temps record.`,
+      en: `# Welcome to Vibe Coding Paris 🚀
+
+Vibe Coding Paris was born from a simple vision: making learning to code accessible, practical, and friendly. Here, you learn to become a **product builder** by mastering **context engineering** and using tools like **Claude Code** to multiply your productivity.
 
 ## Our Mission
 
-We believe that everyone can learn to code, regardless of age or background. Our mission is to create a learning environment where theory meets practice, where beginners become confident developers.
+We believe that everyone can learn to code, regardless of age or background. Our mission is to create a learning environment where theory meets practice, where beginners become confident **product builders** capable of transforming an idea into a product.
 
-## Our Approach
+## Our Approach: Vibe Coding
 
-Our teaching method is based on three fundamental pillars:
+**Vibe Coding** is our learning philosophy that combines:
 
-1. **Hands-On Learning**: No boring lectures. Here, you code from day one.
-2. **Real Projects**: You work on concrete projects that enrich your portfolio.
-3. **Active Community**: Join a community of enthusiasts who help each other and grow together.
+1. **Hands-On Learning with AI**: No boring lectures. Here, you code from day one with **Claude Code** as your copilot. You learn **context engineering** - the art of communicating effectively with AI to maximize your productivity.
+
+2. **Real Product Building**: You don't create fake projects, but real products. From initial idea to online deployment, you become a complete **product builder**. Each project enriches your portfolio and skills.
+
+3. **Active Community**: Join a community of enthusiasts practicing **Vibe Coding** and helping each other. Share your projects, learn from others, and grow together.
+
+## Master Modern Tools
+
+At Vibe Coding Paris, you learn to use:
+
+- **Claude Code**: Your AI assistant to code faster and better
+- **Context Engineering**: The art of formulating effective prompts for AI
+- **Product Building**: The methodology to go from idea to finished product
+- Modern frameworks (Next.js, React, TypeScript)
+- Deployment and production
 
 ## Why Paris?
 
-Paris is a rapidly expanding tech ecosystem. Startups, scale-ups, large corporations: there's no shortage of opportunities for developers. Vibe Coding Paris prepares you to seize these opportunities.
+Paris is a rapidly expanding tech ecosystem. Startups, scale-ups, large corporations: there's no shortage of opportunities for **product builders** and developers who master AI tools. **Vibe Coding Paris** prepares you to seize these opportunities by training you in the most in-demand skills.
 
-## Ready to Start?
+## Ready to Start Vibe Coding?
 
-Whether you're a complete beginner or looking to perfect your skills, we have a program tailored for you. Join us for the next session!`,
+Whether you're a complete beginner or looking to perfect your **product building** and **context engineering** skills, we have a program tailored for you. Learn to code with **Claude Code** and join the **Vibe Coding** movement!
+
+Join us for the next session and discover how to transform your ideas into concrete products in record time.`,
     },
     author: {
       name: "Tewfiq",
@@ -575,15 +607,17 @@ We're only at the very beginning of what we can accomplish. Karpathy's vision ha
       en: "9 Essential Steps to Create Your First Successful App",
     },
     excerpt: {
-      fr: "Un guide pratique complet pour transformer ton idée d'application en un produit fonctionnel et rentable, étape par étape.",
-      en: "A complete practical guide to transform your app idea into a functional and profitable product, step by step.",
+      fr: "Devenez product builder : le guide complet en 9 étapes pour transformer votre idée en produit rentable. Apprenez le Vibe Coding et le context engineering pour réussir.",
+      en: "Become a product builder: the complete 9-step guide to transform your idea into a profitable product. Learn Vibe Coding and context engineering for success.",
     },
     content: {
       fr: `# Les 9 Étapes Essentielles pour Créer Ta Première Application à Succès
 
-## Introduction : Démystifier la Création d'Application
+## Introduction : Devenez Product Builder avec le Vibe Coding
 
-Tu as une idée d'application mais tu ne sais pas par où commencer ? Le processus peut sembler complexe, mais il est loin d'être insurmontable. Ce guide démystifie la création d'une application en la décomposant en neuf étapes claires. Ces étapes sont basées sur l'expérience de Shinobi, une app d'apprentissage des langues générant près de 10 000 $ mensuels.
+Tu as une idée d'application mais tu ne sais pas par où commencer ? Le processus peut sembler complexe, mais il est loin d'être insurmontable. Ce guide démystifie la création d'une application en la décomposant en neuf étapes claires. C'est l'approche du **product builder** moderne : utiliser le **Vibe Coding** et des outils comme **Claude Code** pour maximiser votre productivité à chaque étape.
+
+Ces étapes sont basées sur l'expérience de Shinobi, une app d'apprentissage des langues générant près de 10 000 $ mensuels. En maîtrisant le **context engineering** et en adoptant la méthodologie du **product building**, vous pourrez transformer votre idée en produit rentable.
 
 ## Première Partie : La Fondation
 
@@ -593,7 +627,7 @@ Tu as une idée d'application mais tu ne sais pas par où commencer ? Le process
 
 **Identifier un problème** : Une app à succès résout un problème spécifique pour une niche. "Aider les peintres à organiser leurs vernissages" est plus précis que "réseau social pour peintres".
 
-**Affiner avec l'IA** : Utilise Claude ou ChatGPT pour challenger ton idée et explorer de nouveaux angles.
+**Affiner avec l'IA** : Utilise **Claude Code** ou ChatGPT pour challenger ton idée et explorer de nouveaux angles. C'est du **context engineering** : formuler les bonnes questions pour obtenir les meilleures réponses de l'IA.
 
 ### 2. Réaliser une Étude de Marché
 
@@ -666,9 +700,11 @@ Workflow :
 **Persévérer** : Personne DL → marketing / DL mais partent → produit
 **Abandonner** : Pas de demande ou barrière insurmontable
 
-## Conclusion
+## Conclusion : Devenez Product Builder
 
-Créer une app = marathon. De l'idée au service client, chaque étape est essentielle. Lance-toi, apprends de tes erreurs, et écoute tes utilisateurs. C'est la clé du succès.`,
+Créer une app = marathon. De l'idée au service client, chaque étape est essentielle. En adoptant la mentalité du **product builder** et en maîtrisant le **Vibe Coding**, vous maximisez vos chances de succès. Utilisez **Claude Code** et le **context engineering** pour accélérer votre développement.
+
+Lance-toi, apprends de tes erreurs, et écoute tes utilisateurs. C'est la clé du succès. Rejoignez **Vibe Coding Paris** pour apprendre ces compétences essentielles et transformer vos idées en produits concrets !`,
       en: `# 9 Essential Steps to Create Your First Successful App
 
 ## Introduction: Demystifying App Creation

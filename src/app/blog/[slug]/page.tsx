@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import BlogPostComponent from '@/components/blog/blog-post';
 import { getAllPosts, getPostBySlug } from '@/lib/blog/utils';
+import { BlogPostingSchema, BreadcrumbSchema } from '@/components/seo/structured-data';
 
 interface BlogPostPageProps {
   params: Promise<{
@@ -31,9 +32,9 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
   const imageUrl = `${siteUrl}${post.image}`;
 
   return {
-    title: `${post.title.fr} - Blog Vibe Coding Paris`,
+    title: `${post.title.fr} - Blog Vibe Coding Paris 🚀`,
     description: post.excerpt.fr,
-    keywords: [...post.tags, 'Vibe Coding Paris', 'blog', 'développement', 'code'],
+    keywords: [...post.tags, 'vibe coding', 'vibe coding paris', 'claude code', 'product builder', 'context engineering', 'Vibe Coding Paris', 'blog', 'développement', 'code', 'claude ai', 'agents ia'],
     authors: [{ name: post.author.name }],
     openGraph: {
       title: post.title.fr,
@@ -76,9 +77,23 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     notFound();
   }
 
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://vb.tfq.one';
+  const articleUrl = `${siteUrl}/blog/${slug}`;
+  const imageUrl = `${siteUrl}${post.image}`;
+
+  const breadcrumbItems = [
+    { name: 'Accueil', url: siteUrl },
+    { name: 'Blog', url: `${siteUrl}/blog` },
+    { name: post.title.fr, url: articleUrl },
+  ];
+
   return (
-    <main>
-      <BlogPostComponent post={post} />
-    </main>
+    <>
+      <BlogPostingSchema post={post} url={articleUrl} imageUrl={imageUrl} />
+      <BreadcrumbSchema items={breadcrumbItems} />
+      <main>
+        <BlogPostComponent post={post} />
+      </main>
+    </>
   );
 }
