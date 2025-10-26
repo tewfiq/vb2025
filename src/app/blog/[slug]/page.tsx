@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
     };
   }
 
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://vibecoding.paris';
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://vb.tfq.one';
   const articleUrl = `${siteUrl}/blog/${slug}`;
   const imageUrl = `${siteUrl}${post.image}`;
 

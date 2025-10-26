@@ -1,15 +1,243 @@
-import { BlogPost } from '@/lib/blog/types';
+import { BlogPost } from "@/lib/blog/types";
 
 export const blogPosts: BlogPost[] = [
   {
-    slug: 'pdg-armee-ia-5-lecons-entrepreneur-solo',
+    slug: "4-verites-surprenantes-french-tech-2025",
     title: {
-      fr: 'PDG d\'une armée d\'IA : 5 leçons pour bâtir seul une entreprise',
-      en: 'CEO of an AI Army: 5 Lessons to Build a Business Solo',
+      fr: "4 Vérités Surprenantes sur la French Tech en 2025",
+      en: "4 Surprising Truths About French Tech in 2025",
     },
     excerpt: {
-      fr: 'Découvrez comment orchestrer une armée d\'agents IA pour construire une entreprise technologique seul, du concept au produit final.',
-      en: 'Discover how to orchestrate an army of AI agents to build a tech business solo, from concept to final product.',
+      fr: "Le Panorama 2025 révèle une French Tech transformée : décentralisée, stratégique et mature. Découvrez les 4 vérités qui redéfinissent l'innovation française.",
+      en: "The 2025 Panorama reveals a transformed French Tech: decentralized, strategic and mature. Discover the 4 truths redefining French innovation.",
+    },
+    content: {
+      fr: `# 4 Vérités Surprenantes sur la French Tech en 2025
+
+Quand on pense à la French Tech, l'image d'un écosystème hyper-centralisé à Paris, obsédé par les levées de fonds record, persiste. Pourtant, cette vision est aujourd'hui un cliché dépassé. Le "Panorama de la French Tech 2025" révèle une réalité bien plus profonde : celle d'un écosystème qui a atteint un nouveau stade de maturité, plus stratégique et solidement ancré dans les territoires. Loin des paillettes, voici les quatre enseignements qui redéfinissent l'identité de l'innovation française.
+
+## 1. Non, la French Tech n'est plus seulement parisienne.
+
+Une transformation structurelle s'opère sur le plan géographique. Le rapport confirme un basculement symbolique : 56 % des startups se trouvent désormais hors d'Île-de-France. Cette dynamique se traduit par une forte vitalité de l'emploi en régions, avec des croissances supérieures à 5 % en Auvergne-Rhône-Alpes, Occitanie ou Provence-Alpes-Côte d'Azur. Ce succès n'est pas le fruit du hasard, mais le résultat d'écosystèmes locaux soutenus par des réseaux de formation, des infrastructures solides et un tissu d'investisseurs de plus en plus actif.
+
+Ce rééquilibrage se reflète même dans le financement : si les tours de table les plus importants (séries C et suivantes) restent concentrés à Paris, 57 % des opérations d'amorçage ont lieu en régions. Cette décentralisation est notamment portée par les secteurs stratégiques comme la greentech et la deeptech, qui expliquent pourquoi le sud du pays concentre désormais 36 % des investissements. Plus qu'un simple rééquilibrage, cette diffusion nationale bâtit un écosystème plus résilient, moins vulnérable aux risques d'une sur-concentration.
+
+## 2. Au-delà du logiciel, l'ère de la tech stratégique a commencé.
+
+Si le logiciel demeure le premier secteur de la French Tech (31 % des startups), une diversification massive s'observe vers des domaines à fort enjeu. L'écosystème s'oriente résolument vers la greentech (11 %), les startups industrielles (9 %) et la deeptech (7 %).
+
+Cette réorientation stratégique répond à des impératifs nationaux clairs : la souveraineté numérique, la transition écologique et la réindustrialisation. Cette montée en puissance de la deeptech ne se fait pas ex nihilo ; elle est irriguée par des institutions d'excellence comme Polytechnique, qui forme non seulement les ingénieurs mais aussi les entrepreneurs et investisseurs qui bâtissent cette souveraineté technologique. Ce virage montre que la French Tech ne se contente plus de créer des services, elle ambitionne de résoudre des problèmes fondamentaux.
+
+## 3. L'IA française est puissante, et elle n'est pas qu'à Paris.
+
+L'intelligence artificielle est l'exemple le plus emblématique de cette double maturité, à la fois technologique et géographique. Près de 1 900 startups sont actives dans ce domaine, et plus de la moitié sont implantées hors d'Île-de-France. Des pôles d'excellence régionaux se sont affirmés, portés par des structures de pointe comme SequoIA à Rennes, MIAI à Grenoble ou ANITI à Toulouse.
+
+Ces clusters prouvent que l'innovation de pointe ne dépend plus d'un hub unique, mais s'appuie sur des écosystèmes locaux complets intégrant laboratoires de recherche, universités et investisseurs. L'ancrage territorial de l'IA démontre la capacité de la France à construire des pôles de compétitivité mondiaux sur des technologies de rupture, une véritable marque de souveraineté.
+
+## 4. Moins de « méga-levées », plus d'emplois durables.
+
+Alors que l'écosystème était autrefois jugé à l'aune de ses « méga-levées », le véritable indicateur de sa robustesse est désormais sa capacité à générer des emplois stables et qualifiés. Les chiffres sont éloquents : les 18 000 startups actives emploient 450 000 personnes, dont 45 000 au sein des programmes d'élite French Tech 120 et Next40, preuve que les scale-ups sont de puissants moteurs d'emploi.
+
+Malgré un contexte économique global plus tendu et la fin du cycle record des levées de 2021-2022, le secteur a prouvé sa résilience avec une croissance de l'emploi de +4,6 % sur le seul premier semestre de 2025. La French Tech n'est plus seulement un moteur d'innovation ; elle est devenue un pilier de l'économie nationale, créatrice de valeur et d'emplois pérennes.
+
+## Conclusion
+
+Le panorama 2025 dessine les contours d'une French Tech transformée : plus décentralisée, plus stratégique et plus mature. En s'ancrant profondément dans les territoires pour répondre aux grands défis technologiques, économiques et environnementaux, elle a forgé une nouvelle identité, plus résiliente et souveraine.
+
+La French Tech a prouvé sa solidité et son ancrage national ; quel sera le prochain grand défi qui définira sa prochaine décennie ?`,
+      en: `# 4 Surprising Truths About French Tech in 2025
+
+When you think of French Tech, the image of a hyper-centralized ecosystem obsessed with record fundraising rounds persists. Yet this vision is now outdated. The "French Tech Panorama 2025" reveals a far deeper reality: that of an ecosystem that has reached a new stage of maturity, more strategic and firmly rooted in territories. Far from the glitz, here are four lessons that redefine the identity of French innovation.
+
+## 1. No, French Tech is no longer just Parisian.
+
+A structural transformation is happening geographically. The report confirms a symbolic shift: 56% of startups are now located outside Île-de-France. This dynamic translates into strong employment growth in regions, with growth rates exceeding 5% in Auvergne-Rhône-Alpes, Occitanie, and Provence-Alpes-Côte d'Azur. This success is not accidental, but the result of local ecosystems supported by training networks, solid infrastructure, and an increasingly active investor community.
+
+This rebalancing is even reflected in funding: while the largest fundraising rounds (Series C and beyond) remain concentrated in Paris, 57% of seed operations occur in regions. This decentralization is notably driven by strategic sectors such as greentech and deeptech, which explain why southern France now concentrates 36% of investments. More than a simple rebalancing, this national diffusion builds a more resilient ecosystem, less vulnerable to the risks of over-concentration.
+
+## 2. Beyond software, the era of strategic tech has begun.
+
+While software remains the leading sector of French Tech (31% of startups), massive diversification is occurring toward domains with high stakes. The ecosystem is resolutely turning toward greentech (11%), industrial startups (9%), and deeptech (7%).
+
+This strategic reorientation responds to clear national imperatives: digital sovereignty, ecological transition, and reindustrialization. This rise of deeptech is not created out of thin air; it is nourished by institutions of excellence such as Polytechnique, which trains not only engineers but also entrepreneurs and investors building this technological sovereignty. This pivot shows that French Tech no longer merely creates services; it aspires to solve fundamental problems.
+
+## 3. French AI is powerful, and it's not just in Paris.
+
+Artificial intelligence is the most emblematic example of this dual maturity, both technological and geographical. Nearly 1,900 startups are active in this field, and more than half are located outside Île-de-France. Regional centers of excellence have established themselves, led by cutting-edge structures like SequoIA in Rennes, MIAI in Grenoble, and ANITI in Toulouse.
+
+These clusters prove that cutting-edge innovation no longer depends on a single hub, but relies on complete local ecosystems integrating research laboratories, universities, and investors. The territorial anchoring of AI demonstrates France's ability to build globally competitive hubs in breakthrough technologies, a true mark of sovereignty.
+
+## 4. Fewer "mega-rounds," more sustainable jobs.
+
+While the ecosystem was once judged by its "mega-rounds," the true indicator of its robustness is now its ability to generate stable, quality jobs. The figures speak for themselves: 18,000 active startups employ 450,000 people, including 45,000 within the French Tech 120 and Next40 elite programs, proof that scale-ups are powerful job engines.
+
+Despite a tenser global economic context and the end of the record fundraising cycle of 2021-2022, the sector proved its resilience with employment growth of +4.6% in just the first half of 2025. French Tech is no longer just an innovation engine; it has become a pillar of the national economy, creating value and sustainable jobs.
+
+## Conclusion
+
+The 2025 panorama outlines a transformed French Tech: more decentralized, more strategic, and more mature. By firmly anchoring itself in territories to meet major technological, economic, and environmental challenges, it has forged a new identity, more resilient and sovereign.
+
+French Tech has proven its strength and national anchoring; what will be the next great challenge that defines its next decade?`,
+    },
+    author: {
+      name: "Tewfiq",
+    },
+    date: "2025-10-26",
+    readTime: 7,
+    image: "/backgrounds/frenchtech-min.png",
+    tags: ["French Tech", "Innovation", "Entrepreneuriat", "IA", "Territoires"],
+    published: true,
+  },
+  {
+    slug: "boxeur-reinvente-capital-risque-4-lecons-anti-fund",
+    title: {
+      fr: "Un Boxeur Réinvente le Capital-Risque : 4 Leçons de l'Anti Fund",
+      en: "A Boxer Reinvents Venture Capital: 4 Lessons from Anti Fund",
+    },
+    excerpt: {
+      fr: "Découvrez comment une vision radicale du capital-risque remet en question les normes du financement et offre une alternative pour les entrepreneurs.",
+      en: "Discover how a radical vision of venture capital challenges funding norms and offers an alternative for entrepreneurs.",
+    },
+    content: {
+      fr: `# Un Boxeur Réinvente le Capital-Risque : 4 Leçons de l'Anti Fund
+
+## Introduction : Quand le Capital-Risque Rencontre la Philosophie du Ring
+
+Le monde du capital-risque s'est construit sur des principes qui datent d'une autre époque. Levées de fonds massives, équipes nombreuses, bureaux prestigieux, ralentissement constant. Le modèle dominant du VC valorise la croissance à tout prix, souvent au détriment de l'indépendance, de l'autonomie et de la pérennité des entreprises qu'il finance.
+
+C'est dans ce contexte qu'émerge une vision radicalement différente : l'Anti Fund. Fondé sur la conviction que le modèle traditionnel du VC n'est pas la seule voie, l'Anti Fund propose une alternative où l'entrepreneur reste maître de son destin, où la profitabilité précoce prime sur la croissance exponentielle, et où l'indépendance est un actif, pas un handicap.
+
+Contrairement à ce que le nom pourrait laisser entendre, ce n'est pas une critique hostile du capital-risque. C'est une proposition constructive : comment financer les meilleures idées autrement, pour que les entrepreneurs trouvent un équilibre entre ambition et autonomie.
+
+## Leçon 1 : La Profitabilité n'est Pas l'Ennemie de l'Ambition
+
+La pensée traditionnelle du VC moderne établit un faux choix : soit tu croîs vite, soit tu croîs pas. Soit tu brûles du capital pour conquérir le marché, soit tu es "conservateur" et sans ambition. Cette dichotomie est fausse.
+
+L'Anti Fund postule que les entreprises les plus robustes et les plus durables sont celles qui allient ambition et profitabilité dès le départ. Cela ne signifie pas de petites marges et une croissance à 10% par an. Cela signifie être intelligent dans son allocation de capital, maximiser chaque dollar investi, et croître de manière durable plutôt que chaotique.
+
+> "Startups live or die by two levers: capital and attention. If capital is a commodity, capturing attention is not."
+
+C'est exactement ce que l'Anti Fund incarne. Plutôt que de miser uniquement sur le capital, il reconnaît que dans un univers saturé de startups, l'attention devient le ressource la plus rare. Un entrepreneur avec une stratégie marketing intelligente et une compréhension profonde de son marché surpassera toujours celui qui brûle simplement du cash pour acquérir des utilisateurs au coût exorbitant.
+
+## Leçon 2 : L'Indépendance Est Une Stratégie, Pas Une Limite
+
+Le modèle traditionnel du VC crée une dépendance structurelle. Une fois que tu as levé un Series A de 5 millions, tu as besoin de Series B, puis Series C, jusqu'à un IPO ou une sortie massive. Tu es enfermé dans une trajectoire où le succès = croissance exponentielle. Toute autre issue est un "échec".
+
+L'Anti Fund renverse cette logique. Il reconnaît que la majorité des entrepreneurs ne veulent pas d'un IPO. Ils veulent construire une entreprise profitable, autonome, qui leur permet de vivre décemment, de prendre des décisions sans répondre à des VCs externes, et de garder la propriété de leur vision.
+
+Cette indépendance n'est pas un "plafond de verre" pour l'ambition. C'est une plateforme de lancement pour une excellence authentique. Un entrepreneur indépendant peut pivoter rapidement, rester fidèle à sa mission originale, recruter des talents passionnés plutôt que des chasseurs de stock-options, et créer une culture alignée avec ses valeurs.
+
+## Leçon 3 : La Profitabilité Rapide Signifie Discipline Stratégique
+
+Contrairement à ce qu'on pourrait penser, viser la profitabilité précoce n'est pas une "limitation entrepreneuriale". C'est une discipline stratégique qui aiguise chaque décision.
+
+Quand tu dois être profitable au mois 18, tu ne peux pas te permettre :
+
+- D'engager une équipe massive sans ROI clair
+- De brûler des millions en marketing de vanité
+- De développer des features que personne ne demande
+- De poursuivre des pivots sans données solides
+
+Cette contrainte force une clarté impitoyable. Elle te pousse à comprendre profondément tes utilisateurs, à optimiser brutalement chaque métrique, à concentrer ton energie sur ce qui marche.
+
+Les plus grandes réussites tech de la dernière décennie ne sont pas nées de la "brûlure de capital". Elles sont nées d'une obsession pour le product-market fit. L'Anti Fund reconnaît cette vérité et en fait son fondement.
+
+## Leçon 4 : L'Attention Est La Nouvelle Monnaie
+
+Dans un monde où le capital n'est plus rare (la barrière à l'entrée technique a craqué), ce qui compte n'est plus le capital, c'est l'attention.
+
+L'entrepreneur qui comprend comment générer de l'attention organique—par un produit si bon qu'on en parle, par une vision si claire qu'elle inspire, par une stratégie si intelligente qu'elle devient virale—cet entrepreneur surpassera toujours celui qui brûle simplement du cash en acquêtes payantes.
+
+L'Anti Fund ne finance pas juste des idées. Il finance des entrepreneurs qui savent capturer l'attention. C'est une inversion de la logique traditionnelle du VC : au lieu de supposer que "plus de capital = plus de croissance", il suppose que "plus d'attention = plus d'opportunités".
+
+## Conclusion : Le Modèle Émergent de l'Entrepreneuriat Durable
+
+L'Anti Fund n'est pas une critique du VC traditionnel. C'est une reconnaissance que le modèle unique ne fonctionne pas pour tous. Pendant que la majorité des startups continue à chasser le capital de la Silicon Valley, une nouvelle génération d'entrepreneurs se tourne vers des modèles alternatifs : bootstrapping intelligent, angel investing sélectif, et financement alternatif.
+
+Le vrai succès entrepreneurial du prochain siècle ne sera pas mesuré en valorisation ou en nombres d'utilisateurs. Il sera mesuré en impact durable, en autonomie, et en la capacité à créer de la valeur sans être esclave du capital.
+
+L'Anti Fund, c'est la reconnaissance que cette voie est non seulement viable, mais souhaitable.
+
+**Quelle voie choisiras-tu pour construire ?**`,
+      en: `# A Boxer Reinvents Venture Capital: 4 Lessons from Anti Fund
+
+## Introduction: When Venture Capital Meets the Philosophy of the Ring
+
+The world of venture capital has been built on principles that date back to another era. Massive fundraising rounds, large teams, prestigious offices, constant slowdown. The dominant VC model values growth at any cost, often at the expense of the independence, autonomy, and sustainability of the companies it finances.
+
+It's in this context that a radically different vision emerges: Anti Fund. Founded on the conviction that the traditional VC model is not the only path, Anti Fund proposes an alternative where entrepreneurs remain masters of their destiny, where early profitability takes precedence over exponential growth, and where independence is an asset, not a handicap.
+
+Contrary to what the name might suggest, this is not a hostile criticism of venture capital. It's a constructive proposition: how to finance the best ideas differently, so that entrepreneurs find a balance between ambition and autonomy.
+
+## Lesson 1: Profitability Is Not the Enemy of Ambition
+
+Modern traditional VC thinking establishes a false choice: either you grow fast, or you don't grow. Either you burn capital to conquer the market, or you're "conservative" and without ambition. This dichotomy is false.
+
+Anti Fund posits that the most robust and sustainable companies are those that combine ambition and profitability from the start. This doesn't mean small margins and 10% annual growth. It means being smart about capital allocation, maximizing every dollar invested, and growing sustainably rather than chaotically.
+
+> "Startups live or die by two levers: capital and attention. If capital is a commodity, capturing attention is not."
+
+This is exactly what Anti Fund embodies. Rather than betting solely on capital, it recognizes that in a universe saturated with startups, attention becomes the rarest resource. An entrepreneur with an intelligent marketing strategy and deep market understanding will always outpace one who simply burns cash to acquire users at exorbitant costs.
+
+## Lesson 2: Independence Is a Strategy, Not a Limit
+
+The traditional VC model creates structural dependency. Once you've raised a $5M Series A, you need Series B, then Series C, until an IPO or massive exit. You're locked into a trajectory where success = exponential growth. Any other outcome is a "failure."
+
+Anti Fund reverses this logic. It recognizes that the majority of entrepreneurs don't want an IPO. They want to build a profitable, autonomous company that allows them to live decently, make decisions without answering to external VCs, and retain ownership of their vision.
+
+This independence is not a "glass ceiling" for ambition. It's a launchpad for authentic excellence. An independent entrepreneur can pivot quickly, remain faithful to their original mission, recruit talented people passionate about the work rather than stock-option hunters, and create a culture aligned with their values.
+
+## Lesson 3: Early Profitability Means Strategic Discipline
+
+Contrary to what you might think, aiming for early profitability is not an "entrepreneurial limitation." It's a strategic discipline that sharpens every decision.
+
+When you need to be profitable by month 18, you can't afford to:
+
+- Hire massive teams without clear ROI
+- Burn millions on vanity marketing
+- Develop features nobody is asking for
+- Pursue pivots without solid data
+
+This constraint forces ruthless clarity. It pushes you to deeply understand your users, brutally optimize every metric, and concentrate your energy on what works.
+
+The greatest tech successes of the last decade weren't born from "capital burn." They were born from an obsession with product-market fit. Anti Fund recognizes this truth and makes it its foundation.
+
+## Lesson 4: Attention Is the New Currency
+
+In a world where capital is no longer rare (the technical barrier to entry has cracked), what matters is no longer capital—it's attention.
+
+The entrepreneur who understands how to generate organic attention—through a product so good people talk about it, through a vision so clear it inspires, through a strategy so smart it goes viral—this entrepreneur will always outpace one who simply burns cash on paid acquisition.
+
+Anti Fund doesn't just finance ideas. It finances entrepreneurs who know how to capture attention. It's an inversion of traditional VC logic: instead of assuming "more capital = more growth," it assumes "more attention = more opportunities."
+
+## Conclusion: The Emerging Model of Sustainable Entrepreneurship
+
+Anti Fund is not a criticism of traditional VC. It's a recognition that a one-size-fits-all model doesn't work for everyone. While the majority of startups continue to chase Silicon Valley capital, a new generation of entrepreneurs is turning to alternative models: smart bootstrapping, selective angel investing, and alternative financing.
+
+The true entrepreneurial success of the next century won't be measured in valuation or user numbers. It will be measured in lasting impact, autonomy, and the ability to create value without being enslaved by capital.
+
+Anti Fund is the recognition that this path is not just viable, but desirable.
+
+**Which path will you choose to build?**`,
+    },
+    author: {
+      name: "Tewfiq",
+    },
+    date: "2025-10-26",
+    readTime: 8,
+    image: "/backgrounds/antifund.png",
+    tags: ["Capital-risque", "Entrepreneuriat", "Innovation", "Marketing"],
+    published: true,
+  },
+  {
+    slug: "pdg-armee-ia-5-lecons-entrepreneur-solo",
+    title: {
+      fr: "PDG d'une armée d'IA : 5 leçons pour bâtir seul une entreprise",
+      en: "CEO of an AI Army: 5 Lessons to Build a Business Solo",
+    },
+    excerpt: {
+      fr: "Découvrez comment orchestrer une armée d'agents IA pour construire une entreprise technologique seul, du concept au produit final.",
+      en: "Discover how to orchestrate an army of AI agents to build a tech business solo, from concept to final product.",
     },
     content: {
       fr: `# PDG d'une armée d'IA : 5 leçons pour bâtir seul une entreprise
@@ -166,23 +394,23 @@ The model is here. Your only limit now is the clarity of your vision.
 **What order will you give first?**`,
     },
     author: {
-      name: 'Tewfiq',
+      name: "Tewfiq",
     },
-    date: '2025-10-25',
+    date: "2025-10-25",
     readTime: 10,
-    image: '/backgrounds/paris-hero.gif',
-    tags: ['IA', 'Entrepreneuriat', 'Innovation', 'No-Code'],
+    image: "/backgrounds/pdg-min.png",
+    tags: ["IA", "Entrepreneuriat", "Innovation", "No-Code"],
     published: true,
   },
   {
-    slug: 'bienvenue-vibe-coding-paris',
+    slug: "bienvenue-vibe-coding-paris",
     title: {
-      fr: 'Bienvenue chez Vibe Coding Paris',
-      en: 'Welcome to Vibe Coding Paris',
+      fr: "Bienvenue chez Vibe Coding Paris",
+      en: "Welcome to Vibe Coding Paris",
     },
     excerpt: {
-      fr: 'Découvrez notre approche unique de l\'apprentissage du code à Paris, combinant théorie et pratique dans une ambiance conviviale.',
-      en: 'Discover our unique approach to learning code in Paris, combining theory and practice in a friendly atmosphere.',
+      fr: "Découvrez notre approche unique de l'apprentissage du code à Paris, combinant théorie et pratique dans une ambiance conviviale.",
+      en: "Discover our unique approach to learning code in Paris, combining theory and practice in a friendly atmosphere.",
     },
     content: {
       fr: `# Bienvenue chez Vibe Coding Paris
@@ -233,23 +461,23 @@ Paris is a rapidly expanding tech ecosystem. Startups, scale-ups, large corporat
 Whether you're a complete beginner or looking to perfect your skills, we have a program tailored for you. Join us for the next session!`,
     },
     author: {
-      name: 'Tewfiq',
+      name: "Tewfiq",
     },
-    date: '2025-01-15',
+    date: "2025-09-03",
     readTime: 5,
-    image: '/backgrounds/paris-hero.gif',
-    tags: ['Annonce', 'Communauté', 'Démarrage'],
+    image: "/backgrounds/vibe-min.png",
+    tags: ["Annonce", "Communauté", "Démarrage"],
     published: true,
   },
   {
-    slug: '4-idees-choc-podcast-karpathy',
+    slug: "4-idees-choc-podcast-karpathy",
     title: {
-      fr: '4 Idées Choc du Podcast d\'Andrej Karpathy que Tout le Monde a Manquées',
-      en: '4 Shocking Ideas from Andrej Karpathy\'s Podcast Everyone Missed',
+      fr: "4 Idées Choc du Podcast d'Andrej Karpathy que Tout le Monde a Manquées",
+      en: "4 Shocking Ideas from Andrej Karpathy's Podcast Everyone Missed",
     },
     excerpt: {
-      fr: 'Au-delà de la controverse, découvrez les 4 leçons cruciales d\'Andrej Karpathy sur l\'avenir de l\'IA et des agents intelligents.',
-      en: 'Beyond the controversy, discover 4 crucial lessons from Andrej Karpathy on the future of AI and intelligent agents.',
+      fr: "Au-delà de la controverse, découvrez les 4 leçons cruciales d'Andrej Karpathy sur l'avenir de l'IA et des agents intelligents.",
+      en: "Beyond the controversy, discover 4 crucial lessons from Andrej Karpathy on the future of AI and intelligent agents.",
     },
     content: {
       fr: `# 4 Idées Choc du Podcast d'Andrej Karpathy que Tout le Monde a Manquées
@@ -332,23 +560,23 @@ Rather than a pessimistic verdict, Karpathy's perspective, when translated for b
 We're only at the very beginning of what we can accomplish. Karpathy's vision has opened a door to think more deeply about our systems. The question therefore isn't whether we should build, but how we're going to build reliable agents with effective memory that are truly useful today?`,
     },
     author: {
-      name: 'Tewfiq',
+      name: "Tewfiq",
     },
-    date: '2025-10-25',
+    date: "2025-10-25",
     readTime: 8,
-    image: '/backgrounds/paris-min.gif',
-    tags: ['IA', 'Recherche', 'Agents', 'OpenAI'],
+    image: "/backgrounds/karpathy-min.png",
+    tags: ["IA", "Recherche", "Agents", "OpenAI"],
     published: true,
   },
   {
-    slug: '9-etapes-creer-premiere-application-succes',
+    slug: "9-etapes-creer-premiere-application-succes",
     title: {
-      fr: 'Les 9 Étapes Essentielles pour Créer Ta Première Application à Succès',
-      en: '9 Essential Steps to Create Your First Successful App',
+      fr: "Les 9 Étapes Essentielles pour Créer Ta Première Application à Succès",
+      en: "9 Essential Steps to Create Your First Successful App",
     },
     excerpt: {
-      fr: 'Un guide pratique complet pour transformer ton idée d\'application en un produit fonctionnel et rentable, étape par étape.',
-      en: 'A complete practical guide to transform your app idea into a functional and profitable product, step by step.',
+      fr: "Un guide pratique complet pour transformer ton idée d'application en un produit fonctionnel et rentable, étape par étape.",
+      en: "A complete practical guide to transform your app idea into a functional and profitable product, step by step.",
     },
     content: {
       fr: `# Les 9 Étapes Essentielles pour Créer Ta Première Application à Succès
@@ -533,12 +761,12 @@ Workflow:
 Creating an app = marathon. From idea to customer service, each step is essential. Launch, learn from mistakes, and listen to users. That's the key to success.`,
     },
     author: {
-      name: 'Tewfiq',
+      name: "Tewfiq",
     },
-    date: '2025-10-25',
+    date: "2025-10-25",
     readTime: 12,
-    image: '/backgrounds/paris-hero.gif',
-    tags: ['Développement', 'Entrepreneuriat', 'MVP', 'Guide'],
+    image: "/backgrounds/9 étapes-min.png",
+    tags: ["Développement", "Entrepreneuriat", "MVP", "Guide"],
     published: true,
   },
 ];

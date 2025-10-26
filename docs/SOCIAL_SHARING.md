@@ -63,7 +63,7 @@ Meta tags génériques pour la page de liste des articles.
 Créer un fichier `.env.local` :
 
 ```bash
-NEXT_PUBLIC_SITE_URL=https://vibecoding.paris
+NEXT_PUBLIC_SITE_URL=https://vb.tfq.one
 ```
 
 ## 📱 Test des previews
@@ -101,8 +101,8 @@ Pour chaque nouvel article :
 <!-- Open Graph -->
 <meta property="og:title" content="PDG d'une armée d'IA : 5 leçons..." />
 <meta property="og:description" content="Découvrez comment orchestrer..." />
-<meta property="og:url" content="https://vibecoding.paris/blog/..." />
-<meta property="og:image" content="https://vibecoding.paris/backgrounds/..." />
+<meta property="og:url" content="https://vb.tfq.one/blog/..." />
+<meta property="og:image" content="https://vb.tfq.one/backgrounds/..." />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 <meta property="og:type" content="article" />
@@ -114,7 +114,7 @@ Pour chaque nouvel article :
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="PDG d'une armée d'IA..." />
 <meta name="twitter:description" content="Découvrez comment..." />
-<meta name="twitter:image" content="https://vibecoding.paris/..." />
+<meta name="twitter:image" content="https://vb.tfq.one/..." />
 <meta name="twitter:creator" content="@vibecoding" />
 ```
 
@@ -156,7 +156,7 @@ Outils recommandés :
 │     Description courte ou           │
 │     point clé de l'article          │
 │                                     │
-│  Tewfiq Ziouche | vibecoding.paris  │
+│  Tewfiq Ziouche | vb.tfq.one  │
 │  (bas, petite taille)               │
 └─────────────────────────────────────┘
 ```
