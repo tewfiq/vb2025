@@ -8,7 +8,7 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://vb.tfq.one';
 export const metadata: Metadata = {
   title: 'Blog - Vibe Coding Paris 🚀 | Claude Code, Product Builder & Context Engineering',
   description: 'Maîtrisez le Vibe Coding avec Claude Code ! Découvrez nos guides sur le product building, le context engineering, les agents IA et l\'entrepreneuriat tech. Apprenez à coder avec l\'IA comme copilote.',
-  keywords: ['vibe coding', 'vibe coding paris', 'claude code', 'product builder', 'context engineering', 'blog', 'développement web', 'programmation', 'code', 'IA', 'claude ai', 'agents ia', 'entrepreneuriat', 'Vibe Coding Paris'],
+  keywords: ['vibe coding', 'vibe coding paris', 'vb.tfq.one', 'vb tfq one', 'claude code', 'product builder', 'context engineering', 'blog', 'développement web', 'programmation', 'code', 'IA', 'claude ai', 'agents ia', 'entrepreneuriat', 'Vibe Coding Paris'],
   openGraph: {
     title: 'Blog - Vibe Coding Paris 🚀 | Claude Code & Product Builder',
     description: 'Maîtrisez le Vibe Coding avec Claude Code ! Guides sur le product building, context engineering et agents IA.',

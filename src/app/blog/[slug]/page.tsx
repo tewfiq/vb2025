@@ -34,7 +34,7 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
   return {
     title: `${post.title.fr} - Blog Vibe Coding Paris 🚀`,
     description: post.excerpt.fr,
-    keywords: [...post.tags, 'vibe coding', 'vibe coding paris', 'claude code', 'product builder', 'context engineering', 'Vibe Coding Paris', 'blog', 'développement', 'code', 'claude ai', 'agents ia'],
+    keywords: [...post.tags, 'vibe coding', 'vibe coding paris', 'vb.tfq.one', 'vb tfq one', 'claude code', 'product builder', 'context engineering', 'Vibe Coding Paris', 'blog', 'développement', 'code', 'claude ai', 'agents ia'],
     authors: [{ name: post.author.name }],
     openGraph: {
       title: post.title.fr,

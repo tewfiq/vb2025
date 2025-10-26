@@ -17,6 +17,8 @@ export const metadata: Metadata = {
   keywords: [
     "vibe coding",
     "vibe coding paris",
+    "vb.tfq.one",
+    "vb tfq one",
     "claude code",
     "product builder",
     "context engineering",

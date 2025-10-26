@@ -56,7 +56,7 @@ export function OrganizationSchema() {
     alternateName: 'Vibe Coding',
     url: 'https://vb.tfq.one',
     logo: 'https://vb.tfq.one/backgrounds/paris-hero.gif',
-    description: 'Un atelier intensif et accessible où l\'on apprend le Vibe Coding avec Claude Code. Product building, context engineering et développement assisté par IA.',
+    description: 'Un atelier intensif et accessible sur vb.tfq.one où l\'on apprend le Vibe Coding avec Claude Code. Product building, context engineering et développement assisté par IA.',
     sameAs: [
       'https://twitter.com/vibecoding',
       'https://www.linkedin.com/company/vibe-coding-paris',
@@ -72,7 +72,7 @@ export function OrganizationSchema() {
       '@type': 'Person',
       name: 'Tewfiq Ziouche',
     },
-    keywords: 'vibe coding, vibe coding paris, claude code, product builder, context engineering, formation développement, IA',
+    keywords: 'vibe coding, vibe coding paris, vb.tfq.one, vb tfq one, claude code, product builder, context engineering, formation développement, IA',
   };
 
   return (
@@ -89,7 +89,7 @@ export function WebSiteSchema() {
     '@type': 'WebSite',
     name: 'Vibe Coding Paris',
     url: 'https://vb.tfq.one',
-    description: 'Maîtrisez le Vibe Coding avec Claude Code. Formation au product building, context engineering et développement assisté par IA.',
+    description: 'Maîtrisez le Vibe Coding avec Claude Code sur vb.tfq.one. Formation au product building, context engineering et développement assisté par IA.',
     publisher: {
       '@type': 'Organization',
       name: 'Vibe Coding Paris',

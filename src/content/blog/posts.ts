@@ -413,8 +413,8 @@ The model is here. Your only limit now is the clarity of your vision.
       en: "Welcome to Vibe Coding Paris 🚀",
     },
     excerpt: {
-      fr: "Découvrez le Vibe Coding à Paris : apprenez à coder avec Claude Code, maîtrisez le product building et le context engineering. De l'idée au produit avec l'IA comme copilote.",
-      en: "Discover Vibe Coding in Paris: learn to code with Claude Code, master product building and context engineering. From idea to product with AI as your copilot.",
+      fr: "Découvrez le Vibe Coding à Paris sur vb.tfq.one : apprenez à coder avec Claude Code, maîtrisez le product building et le context engineering. De l'idée au produit avec l'IA comme copilote.",
+      en: "Discover Vibe Coding in Paris on vb.tfq.one: learn to code with Claude Code, master product building and context engineering. From idea to product with AI as your copilot.",
     },
     content: {
       fr: `# Bienvenue chez Vibe Coding Paris 🚀
@@ -453,7 +453,7 @@ Paris est un écosystème tech en pleine expansion. Startups, scale-ups, grands 
 
 Que vous soyez débutant complet ou que vous souhaitiez perfectionner vos compétences en **product building** et **context engineering**, nous avons un programme adapté pour vous. Apprenez à coder avec **Claude Code** et rejoignez le mouvement du **Vibe Coding** !
 
-Rejoignez-nous pour la prochaine session et découvrez comment transformer vos idées en produits concrets en un temps record.`,
+Rejoignez-nous sur **vb.tfq.one** pour la prochaine session et découvrez comment transformer vos idées en produits concrets en un temps record.`,
       en: `# Welcome to Vibe Coding Paris 🚀
 
 Vibe Coding Paris was born from a simple vision: making learning to code accessible, practical, and friendly. Here, you learn to become a **product builder** by mastering **context engineering** and using tools like **Claude Code** to multiply your productivity.
@@ -490,7 +490,7 @@ Paris is a rapidly expanding tech ecosystem. Startups, scale-ups, large corporat
 
 Whether you're a complete beginner or looking to perfect your **product building** and **context engineering** skills, we have a program tailored for you. Learn to code with **Claude Code** and join the **Vibe Coding** movement!
 
-Join us for the next session and discover how to transform your ideas into concrete products in record time.`,
+Join us on **vb.tfq.one** for the next session and discover how to transform your ideas into concrete products in record time.`,
     },
     author: {
       name: "Tewfiq",
@@ -704,7 +704,7 @@ Workflow :
 
 Créer une app = marathon. De l'idée au service client, chaque étape est essentielle. En adoptant la mentalité du **product builder** et en maîtrisant le **Vibe Coding**, vous maximisez vos chances de succès. Utilisez **Claude Code** et le **context engineering** pour accélérer votre développement.
 
-Lance-toi, apprends de tes erreurs, et écoute tes utilisateurs. C'est la clé du succès. Rejoignez **Vibe Coding Paris** pour apprendre ces compétences essentielles et transformer vos idées en produits concrets !`,
+Lance-toi, apprends de tes erreurs, et écoute tes utilisateurs. C'est la clé du succès. Rejoignez **Vibe Coding Paris** sur **vb.tfq.one** pour apprendre ces compétences essentielles et transformer vos idées en produits concrets !`,
       en: `# 9 Essential Steps to Create Your First Successful App
 
 ## Introduction: Demystifying App Creation
