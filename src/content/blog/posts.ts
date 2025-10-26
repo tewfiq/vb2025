@@ -2,6 +2,147 @@ import { BlogPost } from "@/lib/blog/types";
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "boxeur-reinvente-capital-risque-4-lecons-anti-fund",
+    title: {
+      fr: "Un Boxeur Réinvente le Capital-Risque : 4 Leçons de l'Anti Fund",
+      en: "A Boxer Reinvents Venture Capital: 4 Lessons from Anti Fund",
+    },
+    excerpt: {
+      fr: "Découvrez comment une vision radicale du capital-risque remet en question les normes du financement et offre une alternative pour les entrepreneurs.",
+      en: "Discover how a radical vision of venture capital challenges funding norms and offers an alternative for entrepreneurs.",
+    },
+    content: {
+      fr: `# Un Boxeur Réinvente le Capital-Risque : 4 Leçons de l'Anti Fund
+
+## Introduction : Quand le Capital-Risque Rencontre la Philosophie du Ring
+
+Le monde du capital-risque s'est construit sur des principes qui datent d'une autre époque. Levées de fonds massives, équipes nombreuses, bureaux prestigieux, ralentissement constant. Le modèle dominant du VC valorise la croissance à tout prix, souvent au détriment de l'indépendance, de l'autonomie et de la pérennité des entreprises qu'il finance.
+
+C'est dans ce contexte qu'émerge une vision radicalement différente : l'Anti Fund. Fondé sur la conviction que le modèle traditionnel du VC n'est pas la seule voie, l'Anti Fund propose une alternative où l'entrepreneur reste maître de son destin, où la profitabilité précoce prime sur la croissance exponentielle, et où l'indépendance est un actif, pas un handicap.
+
+Contrairement à ce que le nom pourrait laisser entendre, ce n'est pas une critique hostile du capital-risque. C'est une proposition constructive : comment financer les meilleures idées autrement, pour que les entrepreneurs trouvent un équilibre entre ambition et autonomie.
+
+## Leçon 1 : La Profitabilité n'est Pas l'Ennemie de l'Ambition
+
+La pensée traditionnelle du VC moderne établit un faux choix : soit tu croîs vite, soit tu croîs pas. Soit tu brûles du capital pour conquérir le marché, soit tu es "conservateur" et sans ambition. Cette dichotomie est fausse.
+
+L'Anti Fund postule que les entreprises les plus robustes et les plus durables sont celles qui allient ambition et profitabilité dès le départ. Cela ne signifie pas de petites marges et une croissance à 10% par an. Cela signifie être intelligent dans son allocation de capital, maximiser chaque dollar investi, et croître de manière durable plutôt que chaotique.
+
+> "Startups live or die by two levers: capital and attention. If capital is a commodity, capturing attention is not."
+
+C'est exactement ce que l'Anti Fund incarne. Plutôt que de miser uniquement sur le capital, il reconnaît que dans un univers saturé de startups, l'attention devient le ressource la plus rare. Un entrepreneur avec une stratégie marketing intelligente et une compréhension profonde de son marché surpassera toujours celui qui brûle simplement du cash pour acquérir des utilisateurs au coût exorbitant.
+
+## Leçon 2 : L'Indépendance Est Une Stratégie, Pas Une Limite
+
+Le modèle traditionnel du VC crée une dépendance structurelle. Une fois que tu as levé un Series A de 5 millions, tu as besoin de Series B, puis Series C, jusqu'à un IPO ou une sortie massive. Tu es enfermé dans une trajectoire où le succès = croissance exponentielle. Toute autre issue est un "échec".
+
+L'Anti Fund renverse cette logique. Il reconnaît que la majorité des entrepreneurs ne veulent pas d'un IPO. Ils veulent construire une entreprise profitable, autonome, qui leur permet de vivre décemment, de prendre des décisions sans répondre à des VCs externes, et de garder la propriété de leur vision.
+
+Cette indépendance n'est pas un "plafond de verre" pour l'ambition. C'est une plateforme de lancement pour une excellence authentique. Un entrepreneur indépendant peut pivoter rapidement, rester fidèle à sa mission originale, recruter des talents passionnés plutôt que des chasseurs de stock-options, et créer une culture alignée avec ses valeurs.
+
+## Leçon 3 : La Profitabilité Rapide Signifie Discipline Stratégique
+
+Contrairement à ce qu'on pourrait penser, viser la profitabilité précoce n'est pas une "limitation entrepreneuriale". C'est une discipline stratégique qui aiguise chaque décision.
+
+Quand tu dois être profitable au mois 18, tu ne peux pas te permettre :
+
+- D'engager une équipe massive sans ROI clair
+- De brûler des millions en marketing de vanité
+- De développer des features que personne ne demande
+- De poursuivre des pivots sans données solides
+
+Cette contrainte force une clarté impitoyable. Elle te pousse à comprendre profondément tes utilisateurs, à optimiser brutalement chaque métrique, à concentrer ton energie sur ce qui marche.
+
+Les plus grandes réussites tech de la dernière décennie ne sont pas nées de la "brûlure de capital". Elles sont nées d'une obsession pour le product-market fit. L'Anti Fund reconnaît cette vérité et en fait son fondement.
+
+## Leçon 4 : L'Attention Est La Nouvelle Monnaie
+
+Dans un monde où le capital n'est plus rare (la barrière à l'entrée technique a craqué), ce qui compte n'est plus le capital, c'est l'attention.
+
+L'entrepreneur qui comprend comment générer de l'attention organique—par un produit si bon qu'on en parle, par une vision si claire qu'elle inspire, par une stratégie si intelligente qu'elle devient virale—cet entrepreneur surpassera toujours celui qui brûle simplement du cash en acquêtes payantes.
+
+L'Anti Fund ne finance pas juste des idées. Il finance des entrepreneurs qui savent capturer l'attention. C'est une inversion de la logique traditionnelle du VC : au lieu de supposer que "plus de capital = plus de croissance", il suppose que "plus d'attention = plus d'opportunités".
+
+## Conclusion : Le Modèle Émergent de l'Entrepreneuriat Durable
+
+L'Anti Fund n'est pas une critique du VC traditionnel. C'est une reconnaissance que le modèle unique ne fonctionne pas pour tous. Pendant que la majorité des startups continue à chasser le capital de la Silicon Valley, une nouvelle génération d'entrepreneurs se tourne vers des modèles alternatifs : bootstrapping intelligent, angel investing sélectif, et financement alternatif.
+
+Le vrai succès entrepreneurial du prochain siècle ne sera pas mesuré en valorisation ou en nombres d'utilisateurs. Il sera mesuré en impact durable, en autonomie, et en la capacité à créer de la valeur sans être esclave du capital.
+
+L'Anti Fund, c'est la reconnaissance que cette voie est non seulement viable, mais souhaitable.
+
+**Quelle voie choisiras-tu pour construire ?**`,
+      en: `# A Boxer Reinvents Venture Capital: 4 Lessons from Anti Fund
+
+## Introduction: When Venture Capital Meets the Philosophy of the Ring
+
+The world of venture capital has been built on principles that date back to another era. Massive fundraising rounds, large teams, prestigious offices, constant slowdown. The dominant VC model values growth at any cost, often at the expense of the independence, autonomy, and sustainability of the companies it finances.
+
+It's in this context that a radically different vision emerges: Anti Fund. Founded on the conviction that the traditional VC model is not the only path, Anti Fund proposes an alternative where entrepreneurs remain masters of their destiny, where early profitability takes precedence over exponential growth, and where independence is an asset, not a handicap.
+
+Contrary to what the name might suggest, this is not a hostile criticism of venture capital. It's a constructive proposition: how to finance the best ideas differently, so that entrepreneurs find a balance between ambition and autonomy.
+
+## Lesson 1: Profitability Is Not the Enemy of Ambition
+
+Modern traditional VC thinking establishes a false choice: either you grow fast, or you don't grow. Either you burn capital to conquer the market, or you're "conservative" and without ambition. This dichotomy is false.
+
+Anti Fund posits that the most robust and sustainable companies are those that combine ambition and profitability from the start. This doesn't mean small margins and 10% annual growth. It means being smart about capital allocation, maximizing every dollar invested, and growing sustainably rather than chaotically.
+
+> "Startups live or die by two levers: capital and attention. If capital is a commodity, capturing attention is not."
+
+This is exactly what Anti Fund embodies. Rather than betting solely on capital, it recognizes that in a universe saturated with startups, attention becomes the rarest resource. An entrepreneur with an intelligent marketing strategy and deep market understanding will always outpace one who simply burns cash to acquire users at exorbitant costs.
+
+## Lesson 2: Independence Is a Strategy, Not a Limit
+
+The traditional VC model creates structural dependency. Once you've raised a $5M Series A, you need Series B, then Series C, until an IPO or massive exit. You're locked into a trajectory where success = exponential growth. Any other outcome is a "failure."
+
+Anti Fund reverses this logic. It recognizes that the majority of entrepreneurs don't want an IPO. They want to build a profitable, autonomous company that allows them to live decently, make decisions without answering to external VCs, and retain ownership of their vision.
+
+This independence is not a "glass ceiling" for ambition. It's a launchpad for authentic excellence. An independent entrepreneur can pivot quickly, remain faithful to their original mission, recruit talented people passionate about the work rather than stock-option hunters, and create a culture aligned with their values.
+
+## Lesson 3: Early Profitability Means Strategic Discipline
+
+Contrary to what you might think, aiming for early profitability is not an "entrepreneurial limitation." It's a strategic discipline that sharpens every decision.
+
+When you need to be profitable by month 18, you can't afford to:
+
+- Hire massive teams without clear ROI
+- Burn millions on vanity marketing
+- Develop features nobody is asking for
+- Pursue pivots without solid data
+
+This constraint forces ruthless clarity. It pushes you to deeply understand your users, brutally optimize every metric, and concentrate your energy on what works.
+
+The greatest tech successes of the last decade weren't born from "capital burn." They were born from an obsession with product-market fit. Anti Fund recognizes this truth and makes it its foundation.
+
+## Lesson 4: Attention Is the New Currency
+
+In a world where capital is no longer rare (the technical barrier to entry has cracked), what matters is no longer capital—it's attention.
+
+The entrepreneur who understands how to generate organic attention—through a product so good people talk about it, through a vision so clear it inspires, through a strategy so smart it goes viral—this entrepreneur will always outpace one who simply burns cash on paid acquisition.
+
+Anti Fund doesn't just finance ideas. It finances entrepreneurs who know how to capture attention. It's an inversion of traditional VC logic: instead of assuming "more capital = more growth," it assumes "more attention = more opportunities."
+
+## Conclusion: The Emerging Model of Sustainable Entrepreneurship
+
+Anti Fund is not a criticism of traditional VC. It's a recognition that a one-size-fits-all model doesn't work for everyone. While the majority of startups continue to chase Silicon Valley capital, a new generation of entrepreneurs is turning to alternative models: smart bootstrapping, selective angel investing, and alternative financing.
+
+The true entrepreneurial success of the next century won't be measured in valuation or user numbers. It will be measured in lasting impact, autonomy, and the ability to create value without being enslaved by capital.
+
+Anti Fund is the recognition that this path is not just viable, but desirable.
+
+**Which path will you choose to build?**`,
+    },
+    author: {
+      name: "Tewfiq",
+    },
+    date: "2025-10-26",
+    readTime: 8,
+    image: "/backgrounds/antifund.png",
+    tags: ["Capital-risque", "Entrepreneuriat", "Innovation", "Marketing"],
+    published: true,
+  },
+  {
     slug: "pdg-armee-ia-5-lecons-entrepreneur-solo",
     title: {
       fr: "PDG d'une armée d'IA : 5 leçons pour bâtir seul une entreprise",
@@ -170,7 +311,7 @@ The model is here. Your only limit now is the clarity of your vision.
     },
     date: "2025-10-25",
     readTime: 10,
-    image: "/backgrounds/paris-hero.gif",
+    image: "/backgrounds/pdg-min.png",
     tags: ["IA", "Entrepreneuriat", "Innovation", "No-Code"],
     published: true,
   },
@@ -237,7 +378,7 @@ Whether you're a complete beginner or looking to perfect your skills, we have a 
     },
     date: "2025-09-03",
     readTime: 5,
-    image: "/backgrounds/paris-hero.gif",
+    image: "/backgrounds/vibe-min.png",
     tags: ["Annonce", "Communauté", "Démarrage"],
     published: true,
   },
@@ -336,7 +477,7 @@ We're only at the very beginning of what we can accomplish. Karpathy's vision ha
     },
     date: "2025-10-25",
     readTime: 8,
-    image: "/backgrounds/paris-min.gif",
+    image: "/backgrounds/karpathy-min.png",
     tags: ["IA", "Recherche", "Agents", "OpenAI"],
     published: true,
   },
@@ -537,7 +678,7 @@ Creating an app = marathon. From idea to customer service, each step is essentia
     },
     date: "2025-10-25",
     readTime: 12,
-    image: "/backgrounds/paris-hero.gif",
+    image: "/backgrounds/9 étapes-min.png",
     tags: ["Développement", "Entrepreneuriat", "MVP", "Guide"],
     published: true,
   },
