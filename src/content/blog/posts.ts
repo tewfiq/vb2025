@@ -166,7 +166,7 @@ The model is here. Your only limit now is the clarity of your vision.
 **What order will you give first?**`,
     },
     author: {
-      name: 'Tewfiq Ziouche',
+      name: 'Tewfiq',
     },
     date: '2025-10-25',
     readTime: 10,
@@ -233,7 +233,7 @@ Paris is a rapidly expanding tech ecosystem. Startups, scale-ups, large corporat
 Whether you're a complete beginner or looking to perfect your skills, we have a program tailored for you. Join us for the next session!`,
     },
     author: {
-      name: 'Tewfiq Ziouche',
+      name: 'Tewfiq',
     },
     date: '2025-01-15',
     readTime: 5,
@@ -332,7 +332,7 @@ Rather than a pessimistic verdict, Karpathy's perspective, when translated for b
 We're only at the very beginning of what we can accomplish. Karpathy's vision has opened a door to think more deeply about our systems. The question therefore isn't whether we should build, but how we're going to build reliable agents with effective memory that are truly useful today?`,
     },
     author: {
-      name: 'Tewfiq Ziouche',
+      name: 'Tewfiq',
     },
     date: '2025-10-25',
     readTime: 8,
@@ -533,7 +533,7 @@ Workflow:
 Creating an app = marathon. From idea to customer service, each step is essential. Launch, learn from mistakes, and listen to users. That's the key to success.`,
     },
     author: {
-      name: 'Tewfiq Ziouche',
+      name: 'Tewfiq',
     },
     date: '2025-10-25',
     readTime: 12,
