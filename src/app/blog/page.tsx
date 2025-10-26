@@ -6,12 +6,12 @@ import { getAllPosts } from '@/lib/blog/utils';
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://vb.tfq.one';
 
 export const metadata: Metadata = {
-  title: 'Blog - Vibe Coding Paris',
-  description: 'Découvrez nos articles sur le développement web, les langages de programmation, et les conseils pour devenir développeur.',
-  keywords: ['blog', 'développement web', 'programmation', 'code', 'IA', 'entrepreneuriat', 'Vibe Coding Paris'],
+  title: 'Blog - Vibe Coding Paris 🚀 | Claude Code, Product Builder & Context Engineering',
+  description: 'Maîtrisez le Vibe Coding avec Claude Code ! Découvrez nos guides sur le product building, le context engineering, les agents IA et l\'entrepreneuriat tech. Apprenez à coder avec l\'IA comme copilote.',
+  keywords: ['vibe coding', 'vibe coding paris', 'vb.tfq.one', 'vb tfq one', 'claude code', 'product builder', 'context engineering', 'blog', 'développement web', 'programmation', 'code', 'IA', 'claude ai', 'agents ia', 'entrepreneuriat', 'Vibe Coding Paris'],
   openGraph: {
-    title: 'Blog - Vibe Coding Paris',
-    description: 'Découvrez nos articles sur le développement web, les langages de programmation, et les conseils pour devenir développeur.',
+    title: 'Blog - Vibe Coding Paris 🚀 | Claude Code & Product Builder',
+    description: 'Maîtrisez le Vibe Coding avec Claude Code ! Guides sur le product building, context engineering et agents IA.',
     url: `${siteUrl}/blog`,
     siteName: 'Vibe Coding Paris',
     images: [
@@ -27,8 +27,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Blog - Vibe Coding Paris',
-    description: 'Découvrez nos articles sur le développement web, les langages de programmation, et les conseils pour devenir développeur.',
+    title: 'Blog - Vibe Coding Paris 🚀 | Claude Code & Product Builder',
+    description: 'Maîtrisez le Vibe Coding avec Claude Code ! Guides sur le product building, context engineering et agents IA.',
     images: [`${siteUrl}/backgrounds/paris-hero.gif`],
     creator: '@vibecoding',
     site: '@vibecoding',

@@ -5,6 +5,7 @@ import { ClientProviders } from "@/components/client-providers";
 import GoogleAnalytics from "@/components/analytics";
 import { QrShareButton } from "@/components/ui/qr-share-button";
 import { siteConfig } from "@/lib/site-config";
+import { OrganizationSchema, WebSiteSchema } from "@/components/seo/structured-data";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -15,11 +16,19 @@ export const metadata: Metadata = {
   description: siteConfig.description,
   keywords: [
     "vibe coding",
+    "vibe coding paris",
+    "vb.tfq.one",
+    "vb tfq one",
+    "claude code",
+    "product builder",
+    "context engineering",
     "coding paris",
     "atelier code",
     "apprentissage programmation",
     "développement web",
     "IA",
+    "claude ai",
+    "agents ia",
     "workshop",
     "bootcamp",
     "Next.js",
@@ -87,6 +96,8 @@ export default function RootLayout({
         />
       </head>
       <body className="font-body antialiased" suppressHydrationWarning={true}>
+        <OrganizationSchema />
+        <WebSiteSchema />
         {process.env.NEXT_PUBLIC_GA_TRACKING_ID && (
           <GoogleAnalytics
             GA_TRACKING_ID={process.env.NEXT_PUBLIC_GA_TRACKING_ID}
