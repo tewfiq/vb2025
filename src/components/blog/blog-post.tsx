@@ -1,17 +1,19 @@
-'use client';
+"use client";
 
-import { BlogPost } from '@/lib/blog/types';
-import { formatDate } from '@/lib/blog/utils';
-import { useTranslation } from '@/hooks/use-translation';
-import { useLanguage } from '@/components/language-provider';
-import { Calendar, Clock, User, ArrowLeft } from 'lucide-react';
-import Image from 'next/image';
-import Link from 'next/link';
-import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import SocialShare from './social-share';
-import { siteConfig } from '@/lib/site-config';
+import { BlogPost } from "@/lib/blog/types";
+import { formatDate } from "@/lib/blog/utils";
+import { useTranslation } from "@/hooks/use-translation";
+import { useLanguage } from "@/components/language-provider";
+import { Calendar, Clock, User, ArrowLeft } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import SocialShare from "./social-share";
+import GiscusComments from "./giscus-comments";
+import { siteConfig } from "@/lib/site-config";
+import ReactMarkdown from "react-markdown";
 
 interface BlogPostProps {
   post: BlogPost;
@@ -52,7 +54,10 @@ export default function BlogPostComponent({ post }: BlogPostProps) {
               <div className="flex flex-wrap items-center gap-6 text-muted-foreground">
                 <div className="flex items-center gap-2">
                   <Avatar className="h-10 w-10">
-                    <AvatarImage src={post.author.avatar} alt={post.author.name} />
+                    <AvatarImage
+                      src={post.author.avatar}
+                      alt={post.author.name}
+                    />
                     <AvatarFallback>
                       <User className="h-5 w-5" />
                     </AvatarFallback>
@@ -65,7 +70,9 @@ export default function BlogPostComponent({ post }: BlogPostProps) {
                 </div>
                 <div className="flex items-center gap-1">
                   <Clock className="h-4 w-4" />
-                  <span>{post.readTime} {t.blog.minRead}</span>
+                  <span>
+                    {post.readTime} {t.blog.minRead}
+                  </span>
                 </div>
               </div>
               <SocialShare
@@ -102,13 +109,21 @@ export default function BlogPostComponent({ post }: BlogPostProps) {
               prose-li:my-2
               prose-code:text-primary prose-code:bg-muted prose-code:px-1 prose-code:py-0.5 prose-code:rounded
               prose-blockquote:border-l-4 prose-blockquote:border-primary prose-blockquote:pl-4 prose-blockquote:italic"
-            dangerouslySetInnerHTML={{
-              __html: post.content[language].replace(/\n/g, '<br />')
-            }}
-          />
+          >
+            <ReactMarkdown>{post.content[language]}</ReactMarkdown>
+          </div>
+
+          {/* Comments Section */}
+          <div className="pt-12 mt-12 border-t">
+            <h2 className="text-3xl font-headline font-bold mb-2">
+              {t.comments.title}
+            </h2>
+            <p className="text-muted-foreground mb-8">{t.comments.subtitle}</p>
+            <GiscusComments slug={post.slug} />
+          </div>
 
           {/* Back to blog & Share */}
-          <div className="pt-8 border-t">
+          <div className="pt-8 mt-12 border-t">
             <div className="flex flex-wrap items-center justify-between gap-4">
               <Link href="/blog">
                 <Button>
@@ -117,7 +132,9 @@ export default function BlogPostComponent({ post }: BlogPostProps) {
                 </Button>
               </Link>
               <div className="flex items-center gap-4">
-                <span className="text-sm text-muted-foreground">Vous avez aimé cet article ?</span>
+                <span className="text-sm text-muted-foreground">
+                  Vous avez aimé cet article ?
+                </span>
                 <SocialShare
                   url={articleUrl}
                   title={post.title[language]}

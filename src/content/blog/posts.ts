@@ -1,15 +1,15 @@
-import { BlogPost } from '@/lib/blog/types';
+import { BlogPost } from "@/lib/blog/types";
 
 export const blogPosts: BlogPost[] = [
   {
-    slug: 'pdg-armee-ia-5-lecons-entrepreneur-solo',
+    slug: "pdg-armee-ia-5-lecons-entrepreneur-solo",
     title: {
-      fr: 'PDG d\'une armée d\'IA : 5 leçons pour bâtir seul une entreprise',
-      en: 'CEO of an AI Army: 5 Lessons to Build a Business Solo',
+      fr: "PDG d'une armée d'IA : 5 leçons pour bâtir seul une entreprise",
+      en: "CEO of an AI Army: 5 Lessons to Build a Business Solo",
     },
     excerpt: {
-      fr: 'Découvrez comment orchestrer une armée d\'agents IA pour construire une entreprise technologique seul, du concept au produit final.',
-      en: 'Discover how to orchestrate an army of AI agents to build a tech business solo, from concept to final product.',
+      fr: "Découvrez comment orchestrer une armée d'agents IA pour construire une entreprise technologique seul, du concept au produit final.",
+      en: "Discover how to orchestrate an army of AI agents to build a tech business solo, from concept to final product.",
     },
     content: {
       fr: `# PDG d'une armée d'IA : 5 leçons pour bâtir seul une entreprise
@@ -166,23 +166,23 @@ The model is here. Your only limit now is the clarity of your vision.
 **What order will you give first?**`,
     },
     author: {
-      name: 'Tewfiq',
+      name: "Tewfiq",
     },
-    date: '2025-10-25',
+    date: "2025-10-25",
     readTime: 10,
-    image: '/backgrounds/paris-hero.gif',
-    tags: ['IA', 'Entrepreneuriat', 'Innovation', 'No-Code'],
+    image: "/backgrounds/paris-hero.gif",
+    tags: ["IA", "Entrepreneuriat", "Innovation", "No-Code"],
     published: true,
   },
   {
-    slug: 'bienvenue-vibe-coding-paris',
+    slug: "bienvenue-vibe-coding-paris",
     title: {
-      fr: 'Bienvenue chez Vibe Coding Paris',
-      en: 'Welcome to Vibe Coding Paris',
+      fr: "Bienvenue chez Vibe Coding Paris",
+      en: "Welcome to Vibe Coding Paris",
     },
     excerpt: {
-      fr: 'Découvrez notre approche unique de l\'apprentissage du code à Paris, combinant théorie et pratique dans une ambiance conviviale.',
-      en: 'Discover our unique approach to learning code in Paris, combining theory and practice in a friendly atmosphere.',
+      fr: "Découvrez notre approche unique de l'apprentissage du code à Paris, combinant théorie et pratique dans une ambiance conviviale.",
+      en: "Discover our unique approach to learning code in Paris, combining theory and practice in a friendly atmosphere.",
     },
     content: {
       fr: `# Bienvenue chez Vibe Coding Paris
@@ -233,23 +233,23 @@ Paris is a rapidly expanding tech ecosystem. Startups, scale-ups, large corporat
 Whether you're a complete beginner or looking to perfect your skills, we have a program tailored for you. Join us for the next session!`,
     },
     author: {
-      name: 'Tewfiq',
+      name: "Tewfiq",
     },
-    date: '2025-01-15',
+    date: "2025-09-03",
     readTime: 5,
-    image: '/backgrounds/paris-hero.gif',
-    tags: ['Annonce', 'Communauté', 'Démarrage'],
+    image: "/backgrounds/paris-hero.gif",
+    tags: ["Annonce", "Communauté", "Démarrage"],
     published: true,
   },
   {
-    slug: '4-idees-choc-podcast-karpathy',
+    slug: "4-idees-choc-podcast-karpathy",
     title: {
-      fr: '4 Idées Choc du Podcast d\'Andrej Karpathy que Tout le Monde a Manquées',
-      en: '4 Shocking Ideas from Andrej Karpathy\'s Podcast Everyone Missed',
+      fr: "4 Idées Choc du Podcast d'Andrej Karpathy que Tout le Monde a Manquées",
+      en: "4 Shocking Ideas from Andrej Karpathy's Podcast Everyone Missed",
     },
     excerpt: {
-      fr: 'Au-delà de la controverse, découvrez les 4 leçons cruciales d\'Andrej Karpathy sur l\'avenir de l\'IA et des agents intelligents.',
-      en: 'Beyond the controversy, discover 4 crucial lessons from Andrej Karpathy on the future of AI and intelligent agents.',
+      fr: "Au-delà de la controverse, découvrez les 4 leçons cruciales d'Andrej Karpathy sur l'avenir de l'IA et des agents intelligents.",
+      en: "Beyond the controversy, discover 4 crucial lessons from Andrej Karpathy on the future of AI and intelligent agents.",
     },
     content: {
       fr: `# 4 Idées Choc du Podcast d'Andrej Karpathy que Tout le Monde a Manquées
@@ -332,23 +332,23 @@ Rather than a pessimistic verdict, Karpathy's perspective, when translated for b
 We're only at the very beginning of what we can accomplish. Karpathy's vision has opened a door to think more deeply about our systems. The question therefore isn't whether we should build, but how we're going to build reliable agents with effective memory that are truly useful today?`,
     },
     author: {
-      name: 'Tewfiq',
+      name: "Tewfiq",
     },
-    date: '2025-10-25',
+    date: "2025-10-25",
     readTime: 8,
-    image: '/backgrounds/paris-min.gif',
-    tags: ['IA', 'Recherche', 'Agents', 'OpenAI'],
+    image: "/backgrounds/paris-min.gif",
+    tags: ["IA", "Recherche", "Agents", "OpenAI"],
     published: true,
   },
   {
-    slug: '9-etapes-creer-premiere-application-succes',
+    slug: "9-etapes-creer-premiere-application-succes",
     title: {
-      fr: 'Les 9 Étapes Essentielles pour Créer Ta Première Application à Succès',
-      en: '9 Essential Steps to Create Your First Successful App',
+      fr: "Les 9 Étapes Essentielles pour Créer Ta Première Application à Succès",
+      en: "9 Essential Steps to Create Your First Successful App",
     },
     excerpt: {
-      fr: 'Un guide pratique complet pour transformer ton idée d\'application en un produit fonctionnel et rentable, étape par étape.',
-      en: 'A complete practical guide to transform your app idea into a functional and profitable product, step by step.',
+      fr: "Un guide pratique complet pour transformer ton idée d'application en un produit fonctionnel et rentable, étape par étape.",
+      en: "A complete practical guide to transform your app idea into a functional and profitable product, step by step.",
     },
     content: {
       fr: `# Les 9 Étapes Essentielles pour Créer Ta Première Application à Succès
@@ -533,12 +533,12 @@ Workflow:
 Creating an app = marathon. From idea to customer service, each step is essential. Launch, learn from mistakes, and listen to users. That's the key to success.`,
     },
     author: {
-      name: 'Tewfiq',
+      name: "Tewfiq",
     },
-    date: '2025-10-25',
+    date: "2025-10-25",
     readTime: 12,
-    image: '/backgrounds/paris-hero.gif',
-    tags: ['Développement', 'Entrepreneuriat', 'MVP', 'Guide'],
+    image: "/backgrounds/paris-hero.gif",
+    tags: ["Développement", "Entrepreneuriat", "MVP", "Guide"],
     published: true,
   },
 ];

@@ -1,14 +1,26 @@
-'use client';
+"use client";
 
-import { useTranslation } from '@/hooks/use-translation';
-import { BookOpen } from 'lucide-react';
+import Link from "next/link";
+import { useTranslation } from "@/hooks/use-translation";
+import { useLanguage } from "@/components/language-provider";
+import { BookOpen, ArrowLeft } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 export default function BlogHero() {
   const t = useTranslation();
+  const { language } = useLanguage();
 
   return (
     <section className="py-20 bg-gradient-to-b from-primary/10 via-background to-background">
       <div className="container">
+        <div className="mb-8">
+          <Link href="/">
+            <Button variant="ghost" className="gap-2">
+              <ArrowLeft className="h-4 w-4" />
+              {language === "fr" ? "Retour à l'accueil" : "Back to home"}
+            </Button>
+          </Link>
+        </div>
         <div className="max-w-3xl mx-auto text-center">
           <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 mb-6">
             <BookOpen className="h-8 w-8 text-primary" />
