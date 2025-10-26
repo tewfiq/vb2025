@@ -3,7 +3,7 @@ import BlogHero from '@/components/blog/blog-hero';
 import BlogCard from '@/components/blog/blog-card';
 import { getAllPosts } from '@/lib/blog/utils';
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://vibecoding.paris';
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://vb.tfq.one';
 
 export const metadata: Metadata = {
   title: 'Blog - Vibe Coding Paris',
