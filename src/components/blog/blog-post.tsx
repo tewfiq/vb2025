@@ -10,6 +10,8 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import SocialShare from './social-share';
+import { siteConfig } from '@/lib/site-config';
 
 interface BlogPostProps {
   post: BlogPost;
@@ -18,6 +20,7 @@ interface BlogPostProps {
 export default function BlogPostComponent({ post }: BlogPostProps) {
   const t = useTranslation();
   const { language } = useLanguage();
+  const articleUrl = `${siteConfig.url}/blog/${post.slug}`;
 
   return (
     <article className="py-12">
@@ -45,24 +48,31 @@ export default function BlogPostComponent({ post }: BlogPostProps) {
               {post.title[language]}
             </h1>
 
-            <div className="flex flex-wrap items-center gap-6 text-muted-foreground">
-              <div className="flex items-center gap-2">
-                <Avatar className="h-10 w-10">
-                  <AvatarImage src={post.author.avatar} alt={post.author.name} />
-                  <AvatarFallback>
-                    <User className="h-5 w-5" />
-                  </AvatarFallback>
-                </Avatar>
-                <span className="font-medium">{post.author.name}</span>
+            <div className="flex flex-wrap items-center justify-between gap-4 mb-4">
+              <div className="flex flex-wrap items-center gap-6 text-muted-foreground">
+                <div className="flex items-center gap-2">
+                  <Avatar className="h-10 w-10">
+                    <AvatarImage src={post.author.avatar} alt={post.author.name} />
+                    <AvatarFallback>
+                      <User className="h-5 w-5" />
+                    </AvatarFallback>
+                  </Avatar>
+                  <span className="font-medium">{post.author.name}</span>
+                </div>
+                <div className="flex items-center gap-1">
+                  <Calendar className="h-4 w-4" />
+                  <span>{formatDate(post.date, language)}</span>
+                </div>
+                <div className="flex items-center gap-1">
+                  <Clock className="h-4 w-4" />
+                  <span>{post.readTime} {t.blog.minRead}</span>
+                </div>
               </div>
-              <div className="flex items-center gap-1">
-                <Calendar className="h-4 w-4" />
-                <span>{formatDate(post.date, language)}</span>
-              </div>
-              <div className="flex items-center gap-1">
-                <Clock className="h-4 w-4" />
-                <span>{post.readTime} {t.blog.minRead}</span>
-              </div>
+              <SocialShare
+                url={articleUrl}
+                title={post.title[language]}
+                description={post.excerpt[language]}
+              />
             </div>
           </header>
 
@@ -97,14 +107,24 @@ export default function BlogPostComponent({ post }: BlogPostProps) {
             }}
           />
 
-          {/* Back to blog */}
+          {/* Back to blog & Share */}
           <div className="pt-8 border-t">
-            <Link href="/blog">
-              <Button>
-                <ArrowLeft className="h-4 w-4 mr-2" />
-                {t.blog.backToBlog}
-              </Button>
-            </Link>
+            <div className="flex flex-wrap items-center justify-between gap-4">
+              <Link href="/blog">
+                <Button>
+                  <ArrowLeft className="h-4 w-4 mr-2" />
+                  {t.blog.backToBlog}
+                </Button>
+              </Link>
+              <div className="flex items-center gap-4">
+                <span className="text-sm text-muted-foreground">Vous avez aimé cet article ?</span>
+                <SocialShare
+                  url={articleUrl}
+                  title={post.title[language]}
+                  description={post.excerpt[language]}
+                />
+              </div>
+            </div>
           </div>
         </div>
       </div>

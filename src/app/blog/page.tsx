@@ -3,9 +3,39 @@ import BlogHero from '@/components/blog/blog-hero';
 import BlogCard from '@/components/blog/blog-card';
 import { getAllPosts } from '@/lib/blog/utils';
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://vibecoding.paris';
+
 export const metadata: Metadata = {
   title: 'Blog - Vibe Coding Paris',
   description: 'Découvrez nos articles sur le développement web, les langages de programmation, et les conseils pour devenir développeur.',
+  keywords: ['blog', 'développement web', 'programmation', 'code', 'IA', 'entrepreneuriat', 'Vibe Coding Paris'],
+  openGraph: {
+    title: 'Blog - Vibe Coding Paris',
+    description: 'Découvrez nos articles sur le développement web, les langages de programmation, et les conseils pour devenir développeur.',
+    url: `${siteUrl}/blog`,
+    siteName: 'Vibe Coding Paris',
+    images: [
+      {
+        url: `${siteUrl}/backgrounds/paris-hero.gif`,
+        width: 1200,
+        height: 630,
+        alt: 'Blog Vibe Coding Paris',
+      },
+    ],
+    locale: 'fr_FR',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Blog - Vibe Coding Paris',
+    description: 'Découvrez nos articles sur le développement web, les langages de programmation, et les conseils pour devenir développeur.',
+    images: [`${siteUrl}/backgrounds/paris-hero.gif`],
+    creator: '@vibecoding',
+    site: '@vibecoding',
+  },
+  alternates: {
+    canonical: `${siteUrl}/blog`,
+  },
 };
 
 export default function BlogPage() {
