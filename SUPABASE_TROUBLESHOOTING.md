@@ -9,7 +9,7 @@ Cette erreur signifie que la table `visits` n'existe pas ou que vous n'avez pas 
 #### 1. Vérifier que la table existe
 
 1. Allez à [Supabase Dashboard](https://app.supabase.com)
-2. Sélectionnez votre projet: **zancrrmaxwkrtzadkenc**
+2. Sélectionnez votre projet
 3. Allez à **Database > Tables**
 4. Cherchez la table `visits`
 

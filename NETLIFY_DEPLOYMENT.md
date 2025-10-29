@@ -52,7 +52,7 @@ You should see the table schema without errors.
 
 | Variable Name | Value | Source |
 |---|---|---|
-| `NEXT_PUBLIC_SUPABASE_URL` | `https://zancrrmaxwkrtzadkenc.supabase.co` | From Supabase API settings |
+| `NEXT_PUBLIC_SUPABASE_URL` | `https://your-project.supabase.co` | From Supabase API settings |
 | `NEXT_PUBLIC_SUPABASE_ANON_KEY` | Your anon key | From Supabase API settings |
 | `SUPABASE_SERVICE_ROLE_KEY` | Your service role key | From Supabase API settings (⚠️ Secret) |
 | `NEXT_PUBLIC_TOAST_SHOW_MS` | `6000` | Toast display duration (ms) |

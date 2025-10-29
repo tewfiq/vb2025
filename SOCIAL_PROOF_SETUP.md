@@ -10,7 +10,7 @@ Ce guide vous accompagne pour mettre en place le widget de social proof en temps
 
 #### a) Exécuter le SQL
 1. Allez sur [Supabase Dashboard](https://app.supabase.com)
-2. Sélectionnez votre projet: `zancrrmaxwkrtzadkenc`
+2. Sélectionnez votre projet
 3. Allez à **SQL Editor** > **New Query**
 4. Copie le contenu de `SUPABASE_SETUP.sql`
 5. Exécutez la query
@@ -26,9 +26,9 @@ Ce guide vous accompagne pour mettre en place le widget de social proof en temps
 
 `.env.local` (local development):
 ```env
-NEXT_PUBLIC_SUPABASE_URL=https://zancrrmaxwkrtzadkenc.supabase.co
-NEXT_PUBLIC_SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
-SUPABASE_SERVICE_ROLE_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
+NEXT_PUBLIC_SUPABASE_URL=https://your-project.supabase.co
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your-anon-key-here
+SUPABASE_SERVICE_ROLE_KEY=your-service-role-key-here
 NEXT_PUBLIC_TOAST_SHOW_MS=6000
 NEXT_PUBLIC_SOCIAL_PROOF_ENABLED=true
 ```
