@@ -43,16 +43,17 @@ NEXT_PUBLIC_SOCIAL_PROOF_ENABLED=true
 ```
 src/
 ├── lib/supabase/
-│   ├── server.ts          # Client Supabase (service role)
-│   └── client.ts          # Client Supabase (anon)
+│   └── client.ts          # Client Supabase (anon) - pour Realtime
 ├── components/social-proof/
 │   ├── track-visit.tsx         # Envoie visites à /api/track
 │   └── social-proof-toasts.tsx # Affiche toasts en temps réel
 ├── app/api/track/
-│   └── route.ts           # API endpoint pour logger visites
+│   └── route.ts           # API endpoint pour logger visites (crée client service_role au runtime)
 └── types/
     └── social-proof.ts    # Types TypeScript
 ```
+
+**Note**: Le client Supabase avec service role est créé uniquement au runtime dans `/api/track/route.ts`, jamais à l'import time. Cela empêche Next.js d'inclure les secrets dans le webpack bundle.
 
 ## 📊 Architecture
 
@@ -95,8 +96,6 @@ Le système supporte 4 types d'événements:
 Dans votre composant de paiement/réservation:
 
 ```tsx
-import { supabaseServer } from "@/lib/supabase/server";
-
 export async function trackBooking() {
   const response = await fetch("/api/track", {
     method: "POST",
@@ -106,8 +105,14 @@ export async function trackBooking() {
       eventType: "booking", // ← Type custom
     }),
   });
+  
+  if (!response.ok) {
+    console.error("Failed to track booking");
+  }
 }
 ```
+
+**Important**: N'importez JAMAIS `supabaseServer` ou les clés secrètes côté client. L'API `/api/track` s'occupe de tout côté serveur.
 
 ### Personnaliser les noms/villes
 
