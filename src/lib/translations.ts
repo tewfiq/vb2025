@@ -463,6 +463,25 @@ export interface Translations {
     title: string;
     subtitle: string;
   };
+  cookieConsent: {
+    title: string;
+    description: string;
+    acceptButton: string;
+    declineButton: string;
+    learnMore: string;
+    learnMoreHref: string;
+  };
+  socialProofToasts: {
+    viewed: string;
+    booked: string;
+    blogViewed: string;
+    masterclass: string;
+    tariff: string;
+    article: string;
+    justNow: string;
+    from: string;
+    viewPage: string;
+  };
 }
 
 export const translations: Record<Language, Translations> = {
@@ -501,7 +520,7 @@ export const translations: Record<Language, Translations> = {
         registerNormal: "Réserver au tarif normal — 299 €",
       },
       features: {
-        capacity: "🎟️ 10 à 12 places disponibles !",
+        capacity: "🎟️ 7 places disponibles !",
         location: "📍 Paris — salle équipée",
         level: "✨ Tous niveaux",
         date: "📅 Samedi 15 Novembre 2025",
@@ -710,7 +729,7 @@ export const translations: Record<Language, Translations> = {
       signIn: "Se connecter avec GitHub",
     },
     socialProofBadge: {
-      spotsRemaining: "🔥 8 places disponibles !",
+      spotsRemaining: "🔥 7 places disponibles !",
       timezone: "(Paris UTC+2)",
     },
     partners: {
@@ -992,7 +1011,7 @@ export const translations: Record<Language, Translations> = {
         "Un atelier intensif et accessible. Tu explores, tu structures, tu repars avec un projet en ligne. Une compétence exploitable, en seulement 2h.",
     },
     announcementBanner: {
-      text: "Prochaine Masterclass",
+      text: "Prochaine Masterclass — 🔥 7 places encore disponibles !",
       date: "Samedi 15 novembre 2025",
       cta: "Réserver ma place",
     },
@@ -1015,6 +1034,26 @@ export const translations: Record<Language, Translations> = {
     testimonialsVideo: {
       title: "Ils témoignent",
       subtitle: "Découvrez les retours d'expérience de nos participants",
+    },
+    cookieConsent: {
+      title: "Nous utilisons des cookies",
+      description:
+        "Nous utilisons des cookies pour vous garantir la meilleure expérience sur notre site. Pour plus d'informations sur notre utilisation des cookies, veuillez consulter notre politique de confidentialité.",
+      acceptButton: "Accepter",
+      declineButton: "Refuser",
+      learnMore: "En savoir plus",
+      learnMoreHref: "/politique-cookies",
+    },
+    socialProofToasts: {
+      viewed: "vient de consulter",
+      booked: "vient de réserver",
+      blogViewed: "vient de lire",
+      masterclass: "la Masterclass",
+      tariff: "(-26 ans)",
+      article: "un article",
+      justNow: "à l'instant",
+      from: "de",
+      viewPage: "Voir",
     },
   },
   en: {
@@ -1052,7 +1091,7 @@ export const translations: Record<Language, Translations> = {
         registerNormal: "Book at regular price — €299",
       },
       features: {
-        capacity: "🎟️ 10 to 12 spots available!",
+        capacity: "🎟️ 7 spots available!",
         location: "📍 Paris — equipped room",
         level: "✨ All levels",
         date: "📅 Saturday November 15, 2025",
@@ -1259,7 +1298,7 @@ export const translations: Record<Language, Translations> = {
       signIn: "Sign in with GitHub",
     },
     socialProofBadge: {
-      spotsRemaining: "🔥 8 spots available!",
+      spotsRemaining: "🔥 7 spots available!",
       timezone: "(Paris UTC+2)",
     },
     partners: {
@@ -1537,7 +1576,7 @@ export const translations: Record<Language, Translations> = {
         "An intensive and accessible workshop. You explore, structure, and leave with an online project. A transferable skill, in just 2h.",
     },
     announcementBanner: {
-      text: "Next Masterclass",
+      text: "Next Masterclass — 🔥 7 spots still available!",
       date: "Saturday November 15, 2025",
       cta: "Book my spot",
     },
@@ -1560,6 +1599,26 @@ export const translations: Record<Language, Translations> = {
     testimonialsVideo: {
       title: "Testimonials",
       subtitle: "Discover feedback from our participants",
+    },
+    cookieConsent: {
+      title: "We use cookies",
+      description:
+        "We use cookies to ensure you get the best experience on our website. For more information on how we use cookies, please see our privacy policy.",
+      acceptButton: "Accept",
+      declineButton: "Decline",
+      learnMore: "Learn more",
+      learnMoreHref: "/cookies-policy",
+    },
+    socialProofToasts: {
+      viewed: "just viewed",
+      booked: "just booked",
+      blogViewed: "just read",
+      masterclass: "the Masterclass",
+      tariff: "(under 26)",
+      article: "an article",
+      justNow: "just now",
+      from: "from",
+      viewPage: "View",
     },
   },
 };

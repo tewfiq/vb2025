@@ -1,16 +1,21 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
 import { ClientProviders } from "@/components/client-providers";
 import GoogleAnalytics from "@/components/analytics";
 import { QrShareButton } from "@/components/ui/qr-share-button";
+import { CookieConsentBanner } from "@/components/landing/cookie-consent-banner";
+import TrackVisit from "@/components/social-proof/track-visit";
+import SocialProofToasts from "@/components/social-proof/social-proof-toasts";
 import { siteConfig } from "@/lib/site-config";
 import { OrganizationSchema, WebSiteSchema } from "@/components/seo/structured-data";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: "Vibe Coding Paris — Débloque ton super pouvoir digital en 2h. De l'idée au site en ligne, avec l'IA comme copilote.",
+    default:
+      "Vibe Coding Paris — Débloque ton super pouvoir digital en 2h. De l'idée au site en ligne, avec l'IA comme copilote.",
     template: "%s - Vibe Coding Paris",
   },
   description: siteConfig.description,
@@ -103,10 +108,26 @@ export default function RootLayout({
             GA_TRACKING_ID={process.env.NEXT_PUBLIC_GA_TRACKING_ID}
           />
         )}
+        {process.env.NODE_ENV === "development" && (
+          <Script
+            src="//unpkg.com/react-grab/dist/index.global.js"
+            crossOrigin="anonymous"
+            strategy="beforeInteractive"
+            data-enabled="true"
+          />
+        )}
         <ClientProviders>
           {children}
           <Toaster />
           <QrShareButton />
+          <CookieConsentBanner />
+          <TrackVisit
+            enabled={process.env.NEXT_PUBLIC_SOCIAL_PROOF_ENABLED === "true"}
+          />
+          <SocialProofToasts
+            side="left"
+            enabled={process.env.NEXT_PUBLIC_SOCIAL_PROOF_ENABLED === "true"}
+          />
         </ClientProviders>
       </body>
     </html>
