@@ -62,7 +62,7 @@ const images = [
 
 const companies = [
   {
-    name: "Seven Boys & Girls",
+    name: "7 Boys & Girls",
     logo: "/companies/seven.png",
     url: "https://sevenboysandgirls.com/",
   },
