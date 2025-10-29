@@ -9,7 +9,10 @@ import { CookieConsentBanner } from "@/components/landing/cookie-consent-banner"
 import TrackVisit from "@/components/social-proof/track-visit";
 import SocialProofToasts from "@/components/social-proof/social-proof-toasts";
 import { siteConfig } from "@/lib/site-config";
-import { OrganizationSchema, WebSiteSchema } from "@/components/seo/structured-data";
+import {
+  OrganizationSchema,
+  WebSiteSchema,
+} from "@/components/seo/structured-data";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -122,11 +125,11 @@ export default function RootLayout({
           <QrShareButton />
           <CookieConsentBanner />
           <TrackVisit
-            enabled={process.env.NEXT_PUBLIC_SOCIAL_PROOF_ENABLED === "true"}
+            enabled={process.env.NEXT_PUBLIC_SOCIAL_PROOF_ENABLED !== "false"}
           />
           <SocialProofToasts
             side="left"
-            enabled={process.env.NEXT_PUBLIC_SOCIAL_PROOF_ENABLED === "true"}
+            enabled={process.env.NEXT_PUBLIC_SOCIAL_PROOF_ENABLED !== "false"}
           />
         </ClientProviders>
       </body>

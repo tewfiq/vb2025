@@ -17,11 +17,21 @@ function detectEventType(pathname: string): EventType {
 
 export default function TrackVisit({ enabled = true }: TrackVisitProps) {
   useEffect(() => {
-    if (!enabled) return;
+    console.log("[TrackVisit] Component mounted, enabled:", enabled);
+
+    if (!enabled) {
+      console.log("[TrackVisit] Social proof is disabled, skipping track");
+      return;
+    }
 
     // Anti-doublon: 1 envoi par URL par session
     const key = `track:${location.pathname}`;
-    if (sessionStorage.getItem(key)) return;
+    if (sessionStorage.getItem(key)) {
+      console.log(
+        "[TrackVisit] Already tracked this URL in this session, skipping",
+      );
+      return;
+    }
     sessionStorage.setItem(key, "1");
 
     const eventType = detectEventType(location.pathname);
@@ -32,11 +42,17 @@ export default function TrackVisit({ enabled = true }: TrackVisitProps) {
     });
 
     const url = "/api/track";
+    console.log("[TrackVisit] Sending track request to /api/track", {
+      pagePath: location.pathname || "/",
+      lang: navigator.language?.split("-")[0] || "fr",
+      eventType,
+    });
 
     // Envoi discret qui survit aux navigations (sendBeacon)
     if ("sendBeacon" in navigator) {
       const blob = new Blob([body], { type: "application/json" });
-      navigator.sendBeacon(url, blob);
+      const result = navigator.sendBeacon(url, blob);
+      console.log("[TrackVisit] sendBeacon result:", result);
     } else {
       // Fallback pour les navigateurs sans sendBeacon
       fetch(url, {
@@ -44,9 +60,13 @@ export default function TrackVisit({ enabled = true }: TrackVisitProps) {
         body,
         headers: { "Content-Type": "application/json" },
         keepalive: true,
-      }).catch(() => {
-        // Silencieusement échouer
-      });
+      })
+        .then((res) => {
+          console.log("[TrackVisit] fetch response status:", res.status);
+        })
+        .catch((err) => {
+          console.error("[TrackVisit] fetch error:", err);
+        });
     }
   }, [enabled]);
 
