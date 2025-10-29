@@ -123,9 +123,7 @@ export default function FirstMasterclassGallery() {
         <div className="container mx-auto px-4">
           <div className="w-full max-w-4xl mx-auto">
             <div className="flex aspect-video items-center justify-center p-0 overflow-hidden rounded-lg bg-muted">
-              <span className="text-muted-foreground">
-                Chargement...
-              </span>
+              <span className="text-muted-foreground">Chargement...</span>
             </div>
           </div>
         </div>
@@ -186,15 +184,20 @@ export default function FirstMasterclassGallery() {
                 href={company.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="relative w-20 h-20 md:w-24 md:h-24 flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300 opacity-70 hover:opacity-100 cursor-pointer"
+                className="flex flex-col items-center gap-2 cursor-pointer"
               >
-                <Image
-                  src={company.logo}
-                  alt={company.name}
-                  width={100}
-                  height={100}
-                  className="object-contain"
-                />
+                <div className="relative w-20 h-20 md:w-24 md:h-24 rounded-full overflow-hidden flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300 opacity-70 hover:opacity-100">
+                  <Image
+                    src={company.logo}
+                    alt={company.name}
+                    width={100}
+                    height={100}
+                    className="object-contain"
+                  />
+                </div>
+                <span className="text-sm font-medium text-muted-foreground text-center max-w-[100px]">
+                  {company.name}
+                </span>
               </a>
             ))}
           </div>
