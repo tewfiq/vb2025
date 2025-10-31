@@ -8,7 +8,13 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { CalendarDays, GitPullRequest, ExternalLink, User } from "lucide-react";
+import {
+  CalendarDays,
+  GitPullRequest,
+  ExternalLink,
+  User,
+  GitCommit,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useTranslation } from "@/hooks/use-translation";
 import { useEffect, useState } from "react";
@@ -32,6 +38,21 @@ interface GitHubPullRequest {
   }>;
 }
 
+interface GitHubCommit {
+  sha: string;
+  message: string;
+  author: {
+    name: string;
+    email: string;
+    date: string;
+  };
+  html_url: string;
+}
+
+type ChangelogItem =
+  | (GitHubPullRequest & { type: "pr" })
+  | (GitHubCommit & { type: "commit" });
+
 async function fetchPullRequests(): Promise<GitHubPullRequest[]> {
   try {
     const response = await fetch(
@@ -42,7 +63,7 @@ async function fetchPullRequests(): Promise<GitHubPullRequest[]> {
           "X-GitHub-Api-Version": "2022-11-28",
           "User-Agent": "vibe-coding-changelog",
         },
-        next: { revalidate: 300 }, // Cache for 5 minutes
+        cache: "no-store", // Always fetch fresh data
       },
     );
 
@@ -74,6 +95,53 @@ async function fetchPullRequests(): Promise<GitHubPullRequest[]> {
     return filteredPRs;
   } catch (err) {
     console.error("Error fetching GitHub pull requests:", err);
+    return [];
+  }
+}
+
+async function fetchCommits(): Promise<GitHubCommit[]> {
+  try {
+    const response = await fetch(
+      "https://api.github.com/repos/tewfiq/vb2025/commits?per_page=10&sha=main",
+      {
+        headers: {
+          Accept: "application/vnd.github+json",
+          "X-GitHub-Api-Version": "2022-11-28",
+          "User-Agent": "vibe-coding-changelog",
+        },
+        cache: "no-store", // Always fetch fresh data
+      },
+    );
+
+    if (!response.ok) {
+      console.error("Failed to fetch commits:", response.status);
+      return [];
+    }
+
+    const data = await response.json();
+
+    // Filter commits and exclude those without proper messages
+    const filteredCommits = data
+      .filter((item: any) => {
+        const commit = item.commit;
+        // Exclude merge commits and commits with empty messages
+        return (
+          commit &&
+          commit.message &&
+          !commit.message.toLowerCase().includes("merge pull request")
+        );
+      })
+      .slice(0, 10)
+      .map((item: any) => ({
+        sha: item.sha,
+        message: item.commit.message.split("\n")[0], // Get first line only
+        author: item.commit.author,
+        html_url: item.html_url,
+      }));
+
+    return filteredCommits;
+  } catch (err) {
+    console.error("Error fetching GitHub commits:", err);
     return [];
   }
 }
@@ -150,24 +218,52 @@ const parseMarkdownBasic = (text: string) => {
 };
 
 export default function Changelog() {
-  const [pullRequests, setPullRequests] = useState<GitHubPullRequest[]>([]);
+  const [items, setItems] = useState<ChangelogItem[]>([]);
   const [loading, setLoading] = useState(true);
   const t = useTranslation();
 
   useEffect(() => {
-    const loadPullRequests = async () => {
+    const loadChangelog = async () => {
       try {
-        const prs = await fetchPullRequests();
-        setPullRequests(prs);
+        console.log("Loading changelog...");
+        const [prs, commits] = await Promise.all([
+          fetchPullRequests(),
+          fetchCommits(),
+        ]);
+
+        console.log("Fetched PRs:", prs.length, "Commits:", commits.length);
+
+        // Combine and sort by date
+        const combined: ChangelogItem[] = [
+          ...prs.map((pr) => ({ ...pr, type: "pr" as const })),
+          ...commits.map((commit) => ({ ...commit, type: "commit" as const })),
+        ];
+
+        console.log("Combined items before sort:", combined.length);
+
+        // Sort by date descending
+        combined.sort((a, b) => {
+          const dateA = new Date(
+            a.type === "pr" ? a.merged_at || a.closed_at : a.author.date,
+          ).getTime();
+          const dateB = new Date(
+            b.type === "pr" ? b.merged_at || b.closed_at : b.author.date,
+          ).getTime();
+          return dateB - dateA;
+        });
+
+        console.log("Combined items after sort:", combined.slice(0, 10));
+
+        setItems(combined.slice(0, 10)); // Limit to 10 total items
       } catch (error) {
-        console.error("Failed to load pull requests:", error);
-        setPullRequests([]);
+        console.error("Failed to load changelog:", error);
+        setItems([]);
       } finally {
         setLoading(false);
       }
     };
 
-    loadPullRequests();
+    loadChangelog();
   }, []);
 
   if (loading) {
@@ -207,7 +303,7 @@ export default function Changelog() {
         </div>
 
         <div className="max-w-4xl mx-auto">
-          {pullRequests.length === 0 ? (
+          {items.length === 0 ? (
             <Card>
               <CardContent className="p-8 text-center">
                 <p className="text-muted-foreground">
@@ -217,17 +313,31 @@ export default function Changelog() {
             </Card>
           ) : (
             <div className="space-y-6">
-              {pullRequests.map((pr, index) => (
-                <Card key={pr.id} className="relative overflow-hidden">
+              {items.map((item, index) => (
+                <Card
+                  key={item.type === "pr" ? item.id : item.sha}
+                  className="relative overflow-hidden"
+                >
                   <CardHeader>
                     <div className="flex items-start justify-between">
                       <div className="space-y-2 flex-1">
                         <div className="flex flex-col sm:flex-row sm:items-start gap-3">
                           <div className="flex items-start gap-2 flex-1 min-w-0">
-                            <GitPullRequest className="h-4 w-4 flex-shrink-0 mt-1" />
-                            <CardTitle className="text-lg break-words leading-tight">
-                              PR #{pr.number}: {pr.title}
-                            </CardTitle>
+                            {item.type === "pr" ? (
+                              <>
+                                <GitPullRequest className="h-4 w-4 flex-shrink-0 mt-1" />
+                                <CardTitle className="text-lg break-words leading-tight">
+                                  PR #{item.number}: {item.title}
+                                </CardTitle>
+                              </>
+                            ) : (
+                              <>
+                                <GitCommit className="h-4 w-4 flex-shrink-0 mt-1" />
+                                <CardTitle className="text-lg break-words leading-tight">
+                                  {item.message}
+                                </CardTitle>
+                              </>
+                            )}
                           </div>
                           <div className="flex items-center gap-2 flex-shrink-0">
                             {index === 0 && (
@@ -238,33 +348,48 @@ export default function Changelog() {
                                 {t.changelog.badges.latest}
                               </Badge>
                             )}
-                            <Badge
-                              variant="default"
-                              className={
-                                pr.merged_at
-                                  ? "bg-green-600 hover:bg-green-700"
-                                  : "bg-gray-600 hover:bg-gray-700"
-                              }
-                            >
-                              {pr.merged_at
-                                ? t.changelog.badges.merged
-                                : "Closed"}
-                            </Badge>
+                            {item.type === "pr" ? (
+                              <Badge
+                                variant="default"
+                                className={
+                                  item.merged_at
+                                    ? "bg-green-600 hover:bg-green-700"
+                                    : "bg-gray-600 hover:bg-gray-700"
+                                }
+                              >
+                                {item.merged_at
+                                  ? t.changelog.badges.merged
+                                  : "Closed"}
+                              </Badge>
+                            ) : (
+                              <Badge
+                                variant="default"
+                                className="bg-purple-600 hover:bg-purple-700"
+                              >
+                                Commit
+                              </Badge>
+                            )}
                           </div>
                         </div>
                         <div className="flex items-center gap-4 text-sm">
                           <CardDescription className="flex items-center gap-2">
                             <CalendarDays className="h-3 w-3" />
-                            {formatDate(pr.merged_at || pr.closed_at)}
+                            {formatDate(
+                              item.type === "pr"
+                                ? item.merged_at || item.closed_at
+                                : item.author.date,
+                            )}
                           </CardDescription>
                           <CardDescription className="flex items-center gap-2">
                             <User className="h-3 w-3" />
-                            {pr.user.login}
+                            {item.type === "pr"
+                              ? item.user.login
+                              : item.author.name}
                           </CardDescription>
                         </div>
-                        {pr.labels.length > 0 && (
+                        {item.type === "pr" && item.labels.length > 0 && (
                           <div className="flex gap-1 flex-wrap">
-                            {pr.labels.slice(0, 3).map((label) => (
+                            {item.labels.slice(0, 3).map((label) => (
                               <Badge
                                 key={label.name}
                                 variant="outline"
@@ -282,7 +407,7 @@ export default function Changelog() {
                       </div>
                       <Button variant="ghost" size="sm" asChild>
                         <a
-                          href={pr.html_url}
+                          href={item.html_url}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="flex items-center gap-1 flex-shrink-0 ml-4"
@@ -293,12 +418,12 @@ export default function Changelog() {
                       </Button>
                     </div>
                   </CardHeader>
-                  {pr.body && (
+                  {item.type === "pr" && item.body && (
                     <CardContent>
                       <div className="prose prose-sm max-w-none">
                         <div className="text-muted-foreground leading-relaxed line-clamp-3">
                           {(() => {
-                            const summary = extractSummary(pr.body);
+                            const summary = extractSummary(item.body);
                             if (!summary) return null;
 
                             const parsed = parseMarkdownBasic(summary);
