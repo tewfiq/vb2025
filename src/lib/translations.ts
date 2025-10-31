@@ -232,6 +232,7 @@ export interface Translations {
   meetup: {
     title: string;
     subtitle: string;
+    ctaButton: string;
   };
   githubContributions: {
     title: string;
@@ -735,7 +736,9 @@ export const translations: Record<Language, Translations> = {
     },
     meetup: {
       title: "Rejoignez Notre Meetup",
-      subtitle: "Rejoignez notre communauté de passionnés de code à Paris",
+      subtitle:
+        "Rejoignez notre communauté de passionnés de Product Building à Paris",
+      ctaButton: "Rejoindre le Meetup",
     },
     githubContributions: {
       title: "Mes contributions GitHub",
@@ -1288,7 +1291,8 @@ export const translations: Record<Language, Translations> = {
     },
     meetup: {
       title: "Join Our Meetup",
-      subtitle: "Join our community of passionate coders in Paris",
+      subtitle: "Join our community of passionate Product Builders in Paris",
+      ctaButton: "Join the Meetup",
     },
     githubContributions: {
       title: "My GitHub contributions",
