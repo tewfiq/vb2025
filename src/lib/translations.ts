@@ -229,6 +229,10 @@ export interface Translations {
       merged: string;
     };
   };
+  meetup: {
+    title: string;
+    subtitle: string;
+  };
   githubContributions: {
     title: string;
     subtitle: string;
@@ -728,6 +732,10 @@ export const translations: Record<Language, Translations> = {
         latest: "Latest",
         merged: "Merged",
       },
+    },
+    meetup: {
+      title: "Rejoignez Notre Meetup",
+      subtitle: "Rejoignez notre communauté de passionnés de code à Paris",
     },
     githubContributions: {
       title: "Mes contributions GitHub",
@@ -1277,6 +1285,10 @@ export const translations: Record<Language, Translations> = {
         latest: "Latest",
         merged: "Merged",
       },
+    },
+    meetup: {
+      title: "Join Our Meetup",
+      subtitle: "Join our community of passionate coders in Paris",
     },
     githubContributions: {
       title: "My GitHub contributions",
