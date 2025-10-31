@@ -25,7 +25,7 @@ export default function MeetupSection() {
           <div className="flex justify-center mb-8">
             <div className="w-full max-w-2xl">
               <Image
-                src="/event-flyer.jpg"
+                src="/avatars/event-flyer.jpg"
                 alt="Paris Social Vibe Coding Meetup Event Flyer"
                 width={800}
                 height={1000}
