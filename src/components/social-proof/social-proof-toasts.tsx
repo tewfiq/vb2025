@@ -59,7 +59,11 @@ export default function SocialProofToasts({
   const [queue, setQueue] = useState<Visit[]>([]);
   const [current, setCurrent] = useState<Visit | null>(null);
   const [mounted, setMounted] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
+  const [pauseUntil, setPauseUntil] = useState<number>(0);
   const timer = useRef<NodeJS.Timeout | null>(null);
+  const exitTimer = useRef<NodeJS.Timeout | null>(null);
+  const pauseTimer = useRef<NodeJS.Timeout | null>(null);
 
   // Montage côté client seulement
   useEffect(() => {
@@ -107,25 +111,54 @@ export default function SocialProofToasts({
     };
   }, [enabled, mounted]);
 
-  // Rotation des toasts
+  // Rotation des toasts avec délai aléatoire entre les affichages
   useEffect(() => {
     if (!enabled || !mounted) return;
 
-    if (!current && queue.length) {
+    const now = Date.now();
+    const isInPause = now < pauseUntil;
+
+    if (!current && queue.length && !isInPause) {
       const nextVisit = queue[0];
       setCurrent(nextVisit);
+      setIsVisible(true);
       setQueue((q) => q.slice(1));
-
-      if (timer.current) clearTimeout(timer.current);
-      timer.current = setTimeout(() => {
-        setCurrent(null);
-      }, SHOW_MS);
     }
+  }, [queue, current, enabled, mounted, pauseUntil]);
+
+  // Gestion des timers pour la disparition du toast actuel
+  useEffect(() => {
+    if (!enabled || !mounted || !current) return;
+
+    if (timer.current) clearTimeout(timer.current);
+    if (exitTimer.current) clearTimeout(exitTimer.current);
+    if (pauseTimer.current) clearTimeout(pauseTimer.current);
+
+    // Déclencher la disparition après 9650ms (lecture + début transition)
+    exitTimer.current = setTimeout(() => {
+      setIsVisible(false);
+    }, 9650);
+
+    // Retirer complètement après 10000ms (9650ms + 350ms transition)
+    timer.current = setTimeout(() => {
+      setCurrent(null);
+
+      // Ajouter un délai aléatoire entre 20-40 secondes avant le prochain toast
+      const randomDelay = Math.random() * (40000 - 20000) + 20000; // 20-40 secondes
+      setPauseUntil(Date.now() + randomDelay);
+
+      // Réinitialiser la pause après le délai
+      pauseTimer.current = setTimeout(() => {
+        setPauseUntil(0);
+      }, randomDelay);
+    }, 10000);
 
     return () => {
       if (timer.current) clearTimeout(timer.current);
+      if (exitTimer.current) clearTimeout(exitTimer.current);
+      if (pauseTimer.current) clearTimeout(pauseTimer.current);
     };
-  }, [queue, current, enabled, mounted]);
+  }, [current, enabled, mounted]);
 
   if (!enabled || !mounted || !current) return null;
 
@@ -139,18 +172,14 @@ export default function SocialProofToasts({
   const page = current.page_path || "/";
 
   let message = "";
-  let ctaText = "";
 
   // Génération du message selon le type d'événement
   if (current.event_type === "booking") {
     message = `${t.socialProofToasts.booked} ${t.socialProofToasts.tariff}`;
-    ctaText = t.socialProofToasts.viewPage;
   } else if (current.event_type === "blog_view") {
     message = `${t.socialProofToasts.blogViewed} ${t.socialProofToasts.article}`;
-    ctaText = t.socialProofToasts.viewPage;
   } else if (current.event_type === "pricing_view") {
     message = `${t.socialProofToasts.viewed} ${t.socialProofToasts.masterclass}`;
-    ctaText = t.socialProofToasts.viewPage;
   } else {
     // Default: visit
     const pageLabel =
@@ -158,7 +187,6 @@ export default function SocialProofToasts({
         ? t.socialProofToasts.masterclass
         : t.socialProofToasts.article;
     message = `${t.socialProofToasts.viewed} ${pageLabel}`;
-    ctaText = t.socialProofToasts.viewPage;
   }
 
   const positionClass = side === "left" ? "left-4" : "right-4";
@@ -168,7 +196,7 @@ export default function SocialProofToasts({
       className={`fixed bottom-4 ${positionClass} z-40 max-w-[92vw] sm:max-w-sm`}
     >
       <AnimatePresence mode="wait">
-        {current && (
+        {current && isVisible && (
           <motion.div
             key={current.id}
             initial={{ opacity: 0, y: 20 }}
@@ -194,14 +222,6 @@ export default function SocialProofToasts({
                 {t.socialProofToasts.justNow}
               </p>
             </div>
-
-            {/* CTA Button */}
-            <a
-              href={page}
-              className="text-xs px-2 py-1 flex-shrink-0 rounded-lg bg-blue-600 text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-600 whitespace-nowrap"
-            >
-              {ctaText}
-            </a>
           </motion.div>
         )}
       </AnimatePresence>

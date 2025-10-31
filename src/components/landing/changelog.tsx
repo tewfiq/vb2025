@@ -1,7 +1,13 @@
 "use client";
 
 import { Badge } from "@/components/ui/badge";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { CalendarDays, GitPullRequest, ExternalLink, User } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useTranslation } from "@/hooks/use-translation";
@@ -37,7 +43,7 @@ async function fetchPullRequests(): Promise<GitHubPullRequest[]> {
           "User-Agent": "vibe-coding-changelog",
         },
         next: { revalidate: 300 }, // Cache for 5 minutes
-      }
+      },
     );
 
     if (!response.ok) {
@@ -47,20 +53,18 @@ async function fetchPullRequests(): Promise<GitHubPullRequest[]> {
 
     const data = await response.json();
 
-    // Filter and prioritize merged PRs
+    // Filter all PRs (merged and closed), exclude only draft/wip
     const filteredPRs = data
       .filter((pr: GitHubPullRequest) => {
-        // Only include merged PRs and exclude draft PRs
-        if (!pr.merged_at) return false;
-
-        const excludeLabels = ['draft', 'wip', 'work-in-progress'];
-        const hasExcludedLabel = pr.labels.some(label =>
-          excludeLabels.includes(label.name.toLowerCase())
+        // Exclude draft PRs only
+        const excludeLabels = ["draft", "wip", "work-in-progress"];
+        const hasExcludedLabel = pr.labels.some((label) =>
+          excludeLabels.includes(label.name.toLowerCase()),
         );
         return !hasExcludedLabel;
       })
       .sort((a: GitHubPullRequest, b: GitHubPullRequest) => {
-        // Sort by merge date descending
+        // Sort by merge date (or close date if not merged) descending
         const dateA = new Date(a.merged_at || a.closed_at).getTime();
         const dateB = new Date(b.merged_at || b.closed_at).getTime();
         return dateB - dateA;
@@ -88,8 +92,8 @@ const truncateDescription = (text: string, maxLength: number = 200) => {
 
   // Find the last complete sentence within the limit
   const truncated = text.substring(0, maxLength);
-  const lastSentence = truncated.lastIndexOf('. ');
-  const lastWord = truncated.lastIndexOf(' ');
+  const lastSentence = truncated.lastIndexOf(". ");
+  const lastWord = truncated.lastIndexOf(" ");
 
   // If we find a sentence end, use that; otherwise use last word
   if (lastSentence > maxLength * 0.7) {
@@ -102,41 +106,47 @@ const truncateDescription = (text: string, maxLength: number = 200) => {
 };
 
 const extractSummary = (text: string): string => {
-  if (!text) return '';
+  if (!text) return "";
 
   // Look for Summary section
-  const summaryMatch = text.match(/## Summary\s*\n(.*?)(?=\n##|\n---|\n\n##|$)/is);
+  const summaryMatch = text.match(
+    /## Summary\s*\n(.*?)(?=\n##|\n---|\n\n##|$)/is,
+  );
   if (summaryMatch) {
     return summaryMatch[1].trim();
   }
 
   // Fallback: look for summary in different formats
-  const summaryAltMatch = text.match(/Summary:?\s*\n(.*?)(?=\n[A-Z]|\n##|\n---|\n\n|$)/is);
+  const summaryAltMatch = text.match(
+    /Summary:?\s*\n(.*?)(?=\n[A-Z]|\n##|\n---|\n\n|$)/is,
+  );
   if (summaryAltMatch) {
     return summaryAltMatch[1].trim();
   }
 
   // If no summary section found, take first paragraph
-  const firstParagraph = text.split('\n\n')[0];
-  return firstParagraph || '';
+  const firstParagraph = text.split("\n\n")[0];
+  return firstParagraph || "";
 };
 
 const parseMarkdownBasic = (text: string) => {
   // Convert basic markdown to readable text while preserving structure
-  return text
-    // Convert headers to bold text
-    .replace(/#+\s*(.+)/g, '$1')
-    // Convert bold/italic markers
-    .replace(/\*\*(.+?)\*\*/g, '$1')
-    .replace(/\*(.+?)\*/g, '$1')
-    // Convert checkboxes to symbols
-    .replace(/\[x\]/gi, '✓')
-    .replace(/\[ \]/g, '○')
-    // Convert bullet points
-    .replace(/^[*-]\s+/gm, '• ')
-    // Clean up extra whitespace
-    .replace(/\n{3,}/g, '\n\n')
-    .trim();
+  return (
+    text
+      // Convert headers to bold text
+      .replace(/#+\s*(.+)/g, "$1")
+      // Convert bold/italic markers
+      .replace(/\*\*(.+?)\*\*/g, "$1")
+      .replace(/\*(.+?)\*/g, "$1")
+      // Convert checkboxes to symbols
+      .replace(/\[x\]/gi, "✓")
+      .replace(/\[ \]/g, "○")
+      // Convert bullet points
+      .replace(/^[*-]\s+/gm, "• ")
+      // Clean up extra whitespace
+      .replace(/\n{3,}/g, "\n\n")
+      .trim()
+  );
 };
 
 export default function Changelog() {
@@ -150,7 +160,7 @@ export default function Changelog() {
         const prs = await fetchPullRequests();
         setPullRequests(prs);
       } catch (error) {
-        console.error('Failed to load pull requests:', error);
+        console.error("Failed to load pull requests:", error);
         setPullRequests([]);
       } finally {
         setLoading(false);
@@ -221,15 +231,24 @@ export default function Changelog() {
                           </div>
                           <div className="flex items-center gap-2 flex-shrink-0">
                             {index === 0 && (
-                              <Badge variant="default" className="bg-blue-600 hover:bg-blue-700">
+                              <Badge
+                                variant="default"
+                                className="bg-blue-600 hover:bg-blue-700"
+                              >
                                 {t.changelog.badges.latest}
                               </Badge>
                             )}
                             <Badge
                               variant="default"
-                              className="bg-green-600 hover:bg-green-700"
+                              className={
+                                pr.merged_at
+                                  ? "bg-green-600 hover:bg-green-700"
+                                  : "bg-gray-600 hover:bg-gray-700"
+                              }
                             >
-                              {t.changelog.badges.merged}
+                              {pr.merged_at
+                                ? t.changelog.badges.merged
+                                : "Closed"}
                             </Badge>
                           </div>
                         </div>
@@ -252,7 +271,7 @@ export default function Changelog() {
                                 className="text-xs"
                                 style={{
                                   borderColor: `#${label.color}`,
-                                  color: `#${label.color}`
+                                  color: `#${label.color}`,
                                 }}
                               >
                                 {label.name}
