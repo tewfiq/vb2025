@@ -1,23 +1,44 @@
  ⚠ Warning: Next.js inferred your workspace root, but it may not be correct.
  We detected multiple lockfiles and selected the directory of /Users/tewfiqferahi/pnpm-lock.yaml as the root directory.
- To silence this warning, set `turbopack.root` in your Next.js config, or consider removing one of the lockfiles if it's not needed.
-   See https://nextjs.org/docs/app/api-reference/config/next-config-js/turbopack#root-directory for more information.
+ To silence this warning, set `outputFileTracingRoot` in your Next.js config, or consider removing one of the lockfiles if it's not needed.
+   See https://nextjs.org/docs/app/api-reference/config/next-config-js/output#caveats for more information.
  Detected additional lockfiles: 
    * /Users/tewfiqferahi/Vibe2025/09:2025/vb2025/package-lock.json
 
-   ▲ Next.js 15.5.6 (Turbopack)
+   ▲ Next.js 15.5.6
    - Local:        http://localhost:9002
    - Network:      http://192.168.0.42:9002
    - Environments: .env.local
 
  ✓ Starting...
- ✓ Ready in 838ms
+ ✓ Ready in 1245ms
  ○ Compiling / ...
-(node:30972) ExperimentalWarning: Type Stripping is an experimental feature and might change at any time
+(node:17758) ExperimentalWarning: Type Stripping is an experimental feature and might change at any time
 (Use `node --trace-warnings ...` to show where the warning was created)
- ✓ Compiled / in 4.5s
- HEAD / 200 in 5045ms
- GET / 200 in 535ms
- ✓ Compiled /favicon.ico in 449ms
- GET /favicon.ico?favicon.7ed73651.ico 200 in 721ms
-[?25h
+ ✓ Compiled / in 4.2s (2121 modules)
+ GET / 200 in 4848ms
+ GET / 200 in 165ms
+ ○ Compiling /api/track ...
+ ✓ Compiled /api/track in 950ms (2218 modules)
+ GET / 200 in 83ms
+Track error: Missing Supabase configuration: NEXT_PUBLIC_SUPABASE_URL or SUPABASE_SERVICE_ROLE_KEY
+ POST /api/track 500 in 1433ms
+ GET / 200 in 807ms
+ ✓ Compiled in 305ms (947 modules)
+ GET / 200 in 58ms
+ ✓ Compiled in 296ms (2107 modules)
+ ✓ Compiled in 202ms (2107 modules)
+ ✓ Compiled in 161ms (2107 modules)
+ ✓ Compiled in 598ms (2121 modules)
+ GET / 200 in 188ms
+ ✓ Compiled in 554ms (2124 modules)
+ GET / 200 in 114ms
+ GET / 200 in 484ms
+ GET / 200 in 175ms
+ GET / 200 in 152ms
+ GET / 200 in 113ms
+ GET / 200 in 530ms
+ ○ Compiling /api/track ...
+ ✓ Compiled /api/track in 716ms (1273 modules)
+Track error: Missing Supabase configuration: NEXT_PUBLIC_SUPABASE_URL or SUPABASE_SERVICE_ROLE_KEY
+ POST /api/track 500 in 1299ms
