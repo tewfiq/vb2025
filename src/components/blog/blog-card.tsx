@@ -1,14 +1,14 @@
-'use client';
+"use client";
 
-import { BlogPost } from '@/lib/blog/types';
-import { formatDate } from '@/lib/blog/utils';
-import { useTranslation } from '@/hooks/use-translation';
-import { useLanguage } from '@/components/language-provider';
-import { Calendar, Clock, ArrowRight } from 'lucide-react';
-import Link from 'next/link';
-import Image from 'next/image';
-import { Card, CardContent } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
+import { BlogPost } from "@/lib/blog/types";
+import { formatDate } from "@/lib/blog/utils";
+import { useTranslation } from "@/hooks/use-translation";
+import { useLanguage } from "@/components/language-provider";
+import { Calendar, Clock, ArrowRight } from "lucide-react";
+import Link from "next/link";
+
+import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 
 interface BlogCardProps {
   post: BlogPost;
@@ -22,11 +22,11 @@ export default function BlogCard({ post }: BlogCardProps) {
     <Link href={`/blog/${post.slug}`}>
       <Card className="overflow-hidden hover:shadow-lg transition-all duration-300 h-full group">
         <div className="relative h-48 w-full overflow-hidden">
-          <Image
+          <img
             src={post.image}
             alt={post.title[language]}
-            fill
-            className="object-cover group-hover:scale-105 transition-transform duration-300"
+            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+            loading="lazy"
           />
         </div>
         <CardContent className="p-6">
