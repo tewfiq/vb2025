@@ -1,11 +1,29 @@
 "use client";
 
-import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { useTranslation } from "@/hooks/use-translation";
+import { useEffect, useState } from "react";
 
 export default function MeetupSection() {
   const t = useTranslation();
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+    console.log("MeetupSection mounted, translations:", t.meetup);
+  }, []);
+
+  if (!isMounted) {
+    return (
+      <section className="py-12 md:py-16 lg:py-20 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center">
+            <p className="text-muted-foreground">Loading meetup section...</p>
+          </div>
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section className="py-12 md:py-16 lg:py-20 bg-background">
@@ -24,13 +42,10 @@ export default function MeetupSection() {
           {/* Flyer Image */}
           <div className="flex justify-center mb-8">
             <div className="w-full max-w-2xl">
-              <Image
+              <img
                 src="/avatars/event-flyer.jpg"
                 alt="Paris Social Vibe Coding Meetup Event Flyer"
-                width={800}
-                height={1000}
                 className="w-full h-auto rounded-lg border border-border shadow-lg"
-                priority={false}
                 loading="lazy"
               />
             </div>
