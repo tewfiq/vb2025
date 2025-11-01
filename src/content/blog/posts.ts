@@ -805,4 +805,103 @@ Creating an app = marathon. From idea to customer service, each step is essentia
     tags: ["Développement", "Entrepreneuriat", "MVP", "Guide"],
     published: true,
   },
+  {
+    slug: "ia-stratege-codex-vs-claude-code",
+    title: {
+      fr: "L'IA Stratège Inattendue : Pourquoi Codex Surclasse Claude Code sur le Terrain de la Réflexion",
+      en: "The Unexpected AI Strategist: Why Codex Outshines Claude Code in Strategic Thinking",
+    },
+    excerpt: {
+      fr: "Découvrez pourquoi Codex se révèle être un meilleur partenaire de réflexion stratégique que Claude Code, et comment exploiter ce super-pouvoir souvent ignoré.",
+      en: "Discover why Codex proves to be a better strategic thinking partner than Claude Code, and how to leverage this often-ignored superpower.",
+    },
+    content: {
+      fr: `# L'IA Stratège Inattendue : Pourquoi Codex Surclasse Claude Code sur le Terrain de la Réflexion
+
+Quand on entend parler de modèles d'IA comme Codex ou Claude Code, l'image qui vient immédiatement à l'esprit est celle d'un assistant qui écrit du code à une vitesse fulgurante. Ces outils sont commercialisés et perçus avant tout comme des accélérateurs pour les développeurs. Mais que se passe-t-il si, au lieu de leur demander d'écrire du code, on leur demande de nous aider à penser stratégiquement à des problèmes techniques complexes ?
+
+J'ai mené une comparaison directe pour répondre à cette question, et pour être tout à fait honnête, je n'ai pas commencé ce test en pensant qu'il y aurait un seul vainqueur. C'est seulement en plaçant leurs réponses côte à côte que j'ai été frappé par la différence. Le vainqueur n'était pas seulement clair, il était dans une toute autre catégorie. Cette expérience révèle une capacité cachée et incroyablement précieuse que la plupart d'entre nous ignorons complètement.
+
+## La compétence IA la plus précieuse n'est pas le codage, mais la planification
+
+Le plus grand avantage que l'IA peut offrir dans le travail technique, et même non technique, ne réside pas dans la phase d'exécution, mais bien en amont, dans la phase de planification. Prendre des décisions plus intelligentes au début d'un projet aura un impact bien plus significatif que le simple fait de générer du code plus rapidement. C'est une idée que même les créateurs de ces modèles reconnaissent : Anthropic, par exemple, utilise son propre modèle Claude Code pour des tâches non liées au codage comme le juridique, le marketing et les ressources humaines.
+
+Cette capacité stratégique est aussi ce qui rend ces outils véritablement accessibles. La majorité des professionnels ne savent pas coder, mais tout le monde peut bénéficier d'un partenaire de réflexion pour structurer un plan ou évaluer des options. En fait, le véritable talent de Codex démocratise la planification technique de haut niveau, une tâche traditionnellement réservée aux ingénieurs seniors.
+
+> « Le véritable levier dans les tâches d'ingénierie, mais aussi dans les tâches non liées à l'ingénierie avec l'IA en ce moment, se trouve dans la planification. »
+
+## Codex agit comme un stratège senior, tandis que Claude se précipite sur la tactique
+
+Pour tester cette hypothèse, j'ai soumis les deux modèles à la même requête complexe : concevoir un système d'IA multi-agents pour gérer des tickets Jira, du triage initial jusqu'à la rédaction d'une ébauche de pull request. Leurs approches respectives ont été radicalement différentes.
+
+**L'approche de Codex :** Codex a immédiatement adopté une posture de haut niveau. Il a présenté des approches claires et faciles à parcourir, comme une « approche augmentée par des outils » ou un « flux de travail événementiel ». En lisant sa réponse, j'avais l'impression de parler à un membre plus senior de l'équipe d'ingénierie. Il a ensuite posé une série de questions stratégiques fondamentales sur les données, l'intervention humaine (human-in-the-loop) et la scalabilité. Il fournissait un plan de vol avant même de penser au décollage.
+
+**L'approche de Claude Code :** À l'inverse, Claude Code a immédiatement plongé dans les détails tactiques. Il a sauté très vite sur des notions de « seuils de confiance » et de « tableaux d'échec », posant des questions très spécifiques comme le coût des faux positifs. Ce « biais pour l'action » s'est avéré contre-productif. Là où Codex proposait un cadre pour réfléchir, Claude était déjà en train de bricoler les détails du moteur. Sa réponse, bien que techniquement correcte, était inutile à ce stade précoce de la réflexion.
+
+La conclusion était sans appel : Codex a été le grand gagnant, fournissant un cadre stratégique qui permet de penser le problème dans sa globalité avant de s'engager dans une direction.
+
+## Le meilleur stratège IA est aussi un brillant traducteur
+
+L'une des capacités les plus puissantes et pourtant les plus ignorées de Codex est sa faculté à traduire des concepts techniques complexes en langage simple et accessible. C'est le super-pouvoir qui fait le lien entre la stratégie technique et les décisions commerciales.
+
+Pour le démontrer, je lui ai demandé de résumer ses recommandations pour un « niveau de lecture non technique de classe de terminale ». Le résultat fut impressionnant. Codex a réussi à expliquer un « système agentique » complexe en utilisant des analogies simples, décrivant un « agent » comme un « coordinateur central qui transmet chaque ticket à des bots spécialisés ».
+
+Cette capacité à vulgariser est cruciale. Elle permet de partager des plans techniques avec des parties prenantes non expertes et de s'assurer qu'elles comprennent les enjeux. C'est le genre de résumé clair et concis que vous pourriez présenter à un PDG non technique pour qu'il saisisse parfaitement les décisions à prendre. Codex ne se contente pas de réfléchir ; il sait communiquer ses réflexions de manière efficace à tous les niveaux.
+
+## Conclusion : Passons-nous à côté des meilleurs talents de notre IA ?
+
+Cette comparaison révèle que Codex possède un talent secret de partenaire de réflexion stratégique qui est largement sous-exploité. Sa véritable puissance ne réside pas seulement dans sa capacité à écrire du code, mais dans sa faculté à nous aider à prendre de meilleures décisions. Le drame, c'est que cette compétence est ignorée parce que l'outil est commercialisé uniquement pour le code et reste « caché dans le terminal ».
+
+Le plus grand potentiel de l'IA est peut-être cette intelligence transformative, capable d'apporter clarté et structure aux problèmes les plus complexes pour tout le monde, codeur ou non.
+
+Cette intelligence est simplement là, à portée de main. Alors, que pouvons-nous faire pour la libérer et l'utiliser ? Pour ceux que la ligne de commande intimide, ne vous inquiétez pas : je publierai un guide complet sur mon Substack pour vous montrer comment installer et utiliser Codex pour la réflexion stratégique. Il est temps de libérer ce génie de sa lampe.`,
+      en: `# The Unexpected AI Strategist: Why Codex Outshines Claude Code in Strategic Thinking
+
+When you hear about AI models like Codex or Claude Code, the image that immediately comes to mind is an assistant writing code at lightning speed. These tools are marketed and perceived primarily as accelerators for developers. But what happens when, instead of asking them to write code, you ask them to help you think strategically about complex technical problems?
+
+I conducted a direct comparison to answer this question, and to be completely honest, I didn't start this test thinking there would be a clear winner. Only when I placed their responses side by side was I struck by the difference. The winner wasn't just clear—it was in an entirely different category. This experience reveals a hidden and incredibly valuable capability that most of us completely overlook.
+
+## The Most Valuable AI Competency Isn't Coding, but Planning
+
+The greatest advantage AI can offer in technical work, and even non-technical work, doesn't lie in the execution phase, but well upstream in the planning phase. Making smarter decisions at the beginning of a project will have a far more significant impact than simply generating code faster. This is an idea that even the creators of these models recognize: Anthropic, for example, uses its own Claude Code model for non-coding tasks like legal, marketing, and human resources.
+
+This strategic capacity is also what makes these tools truly accessible. The majority of professionals can't code, but everyone can benefit from a thinking partner to structure a plan or evaluate options. In fact, Codex's true talent democratizes high-level technical planning, a task traditionally reserved for senior engineers.
+
+> "The true leverage in engineering tasks, but also in non-engineering tasks with AI right now, lies in planning."
+
+## Codex Acts as a Senior Strategist, While Claude Rushes into Tactics
+
+To test this hypothesis, I submitted both models to the same complex request: design a multi-agent AI system to manage Jira tickets, from initial triage to drafting a pull request. Their respective approaches were radically different.
+
+**Codex's Approach:** Codex immediately adopted a high-level posture. It presented clear, easy-to-follow approaches, such as a "tool-augmented approach" or an "event-driven workflow." Reading its response, I felt like I was talking to a more senior member of the engineering team. It then asked a series of fundamental strategic questions about data, human-in-the-loop intervention, and scalability. It provided a flight plan before even thinking about takeoff.
+
+**Claude Code's Approach:** In contrast, Claude Code immediately dove into tactical details. It quickly jumped to notions of "confidence thresholds" and "failure arrays," asking very specific questions like the cost of false positives. This "bias for action" proved counterproductive. Where Codex offered a framework for thinking, Claude was already tinkering with engine details. Its response, while technically correct, was unhelpful at this early stage of thinking.
+
+The conclusion was unambiguous: Codex was the clear winner, providing a strategic framework that enables thinking about the problem holistically before committing to a direction.
+
+## The Best AI Strategist Is Also a Brilliant Translator
+
+One of Codex's most powerful yet most overlooked capabilities is its ability to translate complex technical concepts into simple, accessible language. This is the superpower that bridges the gap between technical strategy and business decisions.
+
+To demonstrate this, I asked it to summarize its recommendations for a "non-technical reading level appropriate for high school seniors." The result was impressive. Codex managed to explain a complex "agentic system" using simple analogies, describing an "agent" as a "central coordinator that routes each ticket to specialized bots."
+
+This ability to simplify is crucial. It allows you to share technical plans with non-expert stakeholders and ensure they understand the stakes. This is the kind of clear, concise summary you could present to a non-technical CEO so they fully grasp the decisions to be made. Codex doesn't just think—it knows how to communicate its thinking effectively at all levels.
+
+## Conclusion: Are We Missing Our AI's Greatest Talents?
+
+This comparison reveals that Codex possesses a secret talent as a strategic thinking partner that is largely underutilized. Its true power lies not just in its ability to write code, but in its capacity to help us make better decisions. The tragedy is that this competency is ignored because the tool is marketed solely for code and remains "hidden in the terminal."
+
+The greatest potential of AI may be this transformative intelligence, capable of bringing clarity and structure to the most complex problems for everyone, coder or not.
+
+This intelligence is simply there, within reach. So, what can we do to free it and use it? For those intimidated by the command line, don't worry: I'll be publishing a comprehensive guide on my Substack showing you how to install and use Codex for strategic thinking. It's time to release this genius from its lamp.`,
+    },
+    author: {
+      name: "Tewfiq",
+    },
+    date: "2025-10-29",
+    readTime: 8,
+    image: "/backgrounds/codex-min.png",
+    tags: ["IA", "Stratégie", "Codex", "Claude Code", "Réflexion"],
+    published: true,
+  },
 ];
