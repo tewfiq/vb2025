@@ -11,14 +11,7 @@ export default function BlogLatest() {
   const t = useTranslation();
   const latestPosts = getLatestPosts(3);
 
-  console.log(
-    "BlogLatest - latestPosts:",
-    latestPosts.length,
-    latestPosts.map((p) => p.slug),
-  );
-
   if (latestPosts.length === 0) {
-    console.warn("BlogLatest - No posts found, returning null");
     return null;
   }
 
