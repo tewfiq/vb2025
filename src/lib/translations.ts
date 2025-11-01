@@ -506,7 +506,7 @@ export const translations: Record<Language, Translations> = {
         registerNormal: "Réserver au tarif normal — 299 €",
       },
       features: {
-        capacity: "🎟️ 10 à 12 places disponibles !",
+        capacity: "🎟️ 7 places disponibles !",
         location: "📍 Paris — salle équipée",
         level: "✨ Tous niveaux",
         date: "📅 Samedi 15 Novembre 2025",
@@ -715,7 +715,7 @@ export const translations: Record<Language, Translations> = {
       signIn: "Se connecter avec GitHub",
     },
     socialProofBadge: {
-      spotsRemaining: "🔥 8 places disponibles !",
+      spotsRemaining: "🔥 7 places disponibles !",
       timezone: "(Paris UTC+2)",
     },
     partners: {
@@ -1003,7 +1003,7 @@ export const translations: Record<Language, Translations> = {
         "Un atelier intensif et accessible. Tu explores, tu structures, tu repars avec un projet en ligne. Une compétence exploitable, en seulement 2h.",
     },
     announcementBanner: {
-      text: "Prochaine Masterclass",
+      text: "Prochaine Masterclass — 🔥 7 places encore disponibles !",
       date: "Samedi 15 novembre 2025",
       cta: "Réserver ma place",
     },
@@ -1063,7 +1063,7 @@ export const translations: Record<Language, Translations> = {
         registerNormal: "Book at regular price — €299",
       },
       features: {
-        capacity: "🎟️ 10 to 12 spots available!",
+        capacity: "🎟️ 7 spots available!",
         location: "📍 Paris — equipped room",
         level: "✨ All levels",
         date: "📅 Saturday November 15, 2025",
@@ -1270,7 +1270,7 @@ export const translations: Record<Language, Translations> = {
       signIn: "Sign in with GitHub",
     },
     socialProofBadge: {
-      spotsRemaining: "🔥 8 spots available!",
+      spotsRemaining: "🔥 7 spots available!",
       timezone: "(Paris UTC+2)",
     },
     partners: {
@@ -1553,7 +1553,7 @@ export const translations: Record<Language, Translations> = {
         "An intensive and accessible workshop. You explore, structure, and leave with an online project. A transferable skill, in just 2h.",
     },
     announcementBanner: {
-      text: "Next Masterclass",
+      text: "Next Masterclass — 🔥 7 spots still available!",
       date: "Saturday November 15, 2025",
       cta: "Book my spot",
     },
