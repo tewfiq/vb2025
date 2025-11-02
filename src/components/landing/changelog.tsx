@@ -56,7 +56,7 @@ type ChangelogItem =
 async function fetchPullRequests(): Promise<GitHubPullRequest[]> {
   try {
     const response = await fetch(
-      "https://api.github.com/repos/tewfiq/vb2025/pulls?state=closed&per_page=10&sort=updated&direction=desc",
+      "https://api.github.com/repos/tewfiq/vb2025/pulls?state=closed&per_page=5&sort=updated&direction=desc",
       {
         headers: {
           Accept: "application/vnd.github+json",
@@ -102,7 +102,7 @@ async function fetchPullRequests(): Promise<GitHubPullRequest[]> {
 async function fetchCommits(): Promise<GitHubCommit[]> {
   try {
     const response = await fetch(
-      "https://api.github.com/repos/tewfiq/vb2025/commits?per_page=10&sha=main",
+      "https://api.github.com/repos/tewfiq/vb2025/commits?per_page=5&sha=main",
       {
         headers: {
           Accept: "application/vnd.github+json",
@@ -131,7 +131,7 @@ async function fetchCommits(): Promise<GitHubCommit[]> {
           !commit.message.toLowerCase().includes("merge pull request")
         );
       })
-      .slice(0, 10)
+      .slice(0, 5) // Fetch up to 5 commits
       .map((item: any) => ({
         sha: item.sha,
         message: item.commit.message.split("\n")[0], // Get first line only
@@ -252,9 +252,9 @@ export default function Changelog() {
           return dateB - dateA;
         });
 
-        console.log("Combined items after sort:", combined.slice(0, 10));
+        console.log("Combined items after sort:", combined.slice(0, 3));
 
-        setItems(combined.slice(0, 10)); // Limit to 10 total items
+        setItems(combined.slice(0, 3)); // Limit to 3 total items (max 3 cards)
       } catch (error) {
         console.error("Failed to load changelog:", error);
         setItems([]);
