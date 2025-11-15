@@ -16,47 +16,51 @@ import { useTranslation } from "@/hooks/use-translation";
 const images = [
   {
     src: "/slideshow/IMG_1501-min.jpeg",
-    alt: "Masterclass Vibe Coding Paris - 4 octobre 2025",
+    alt: "Masterclass Vibe Coding Paris - Sessions 2025",
   },
   {
     src: "/slideshow/IMG_1503-min.jpeg",
-    alt: "Masterclass Vibe Coding Paris - 4 octobre 2025",
+    alt: "Masterclass Vibe Coding Paris - Sessions 2025",
   },
   {
     src: "/slideshow/IMG_1504-min.jpeg",
-    alt: "Masterclass Vibe Coding Paris - 4 octobre 2025",
+    alt: "Masterclass Vibe Coding Paris - Sessions 2025",
   },
   {
     src: "/slideshow/IMG_1505-min.jpeg",
-    alt: "Masterclass Vibe Coding Paris - 4 octobre 2025",
+    alt: "Masterclass Vibe Coding Paris - Sessions 2025",
   },
   {
     src: "/slideshow/IMG_1506-min.jpeg",
-    alt: "Masterclass Vibe Coding Paris - 4 octobre 2025",
+    alt: "Masterclass Vibe Coding Paris - Sessions 2025",
   },
   {
     src: "/slideshow/IMG_1507-min.jpeg",
-    alt: "Masterclass Vibe Coding Paris - 4 octobre 2025",
+    alt: "Masterclass Vibe Coding Paris - Sessions 2025",
   },
   {
     src: "/slideshow/IMG_1508-min.jpeg",
-    alt: "Masterclass Vibe Coding Paris - 4 octobre 2025",
+    alt: "Masterclass Vibe Coding Paris - Sessions 2025",
   },
   {
     src: "/slideshow/IMG_1509-min.jpeg",
-    alt: "Masterclass Vibe Coding Paris - 4 octobre 2025",
+    alt: "Masterclass Vibe Coding Paris - Sessions 2025",
   },
   {
     src: "/slideshow/IMG_1510-min.jpeg",
-    alt: "Masterclass Vibe Coding Paris - 4 octobre 2025",
+    alt: "Masterclass Vibe Coding Paris - Sessions 2025",
   },
   {
     src: "/slideshow/IMG_1511-min.jpeg",
-    alt: "Masterclass Vibe Coding Paris - 4 octobre 2025",
+    alt: "Masterclass Vibe Coding Paris - Sessions 2025",
   },
   {
     src: "/slideshow/IMG_1512-min.jpeg",
-    alt: "Masterclass Vibe Coding Paris - 4 octobre 2025",
+    alt: "Masterclass Vibe Coding Paris - Sessions 2025",
+  },
+  {
+    src: "/slideshow/IMG_0016-min.JPG",
+    alt: "Masterclass Vibe Coding Paris - Sessions 2025",
   },
 ];
 

@@ -15,87 +15,24 @@ import {
   type Activity,
 } from "@/components/kibo-ui/contribution-graph";
 import { cn } from "@/lib/utils";
-import { eachDayOfInterval, formatISO, startOfYear, endOfYear } from "date-fns";
-
-interface GitHubCommit {
-  sha: string;
-  commit: {
-    author: {
-      name: string;
-      email: string;
-      date: string;
-    };
-    message: string;
-  };
-  author: {
-    login: string;
-  } | null;
-}
 
 const GITHUB_REPO = "tewfiq/vb2025";
 const GITHUB_REPO_URL = `https://github.com/${GITHUB_REPO}`;
 
 async function fetchRepoCommits(): Promise<Activity[]> {
   try {
-    const now = new Date();
-    const yearStart = startOfYear(now);
-
-    // Fetch commits from the repository for the current year
-    const response = await fetch(
-      `https://api.github.com/repos/${GITHUB_REPO}/commits?since=${yearStart.toISOString()}&per_page=1000`,
-      {
-        headers: {
-          Accept: "application/vnd.github+json",
-          "X-GitHub-Api-Version": "2022-11-28",
-          "User-Agent": "vibe-coding-contributions",
-        },
-        next: { revalidate: 60 * 60 * 24 }, // Cache for 24 hours
-      }
-    );
+    // Call our server-side API endpoint
+    const response = await fetch("/api/github-commits", {
+      cache: "no-store", // Disable client-side cache, rely on server-side cache
+    });
 
     if (!response.ok) {
       console.error("Failed to fetch repo commits:", response.status);
       return [];
     }
 
-    const commits = await response.json() as GitHubCommit[];
-
-    // Create a map to count commits per day
-    const commitsByDate = new Map<string, number>();
-
-    commits.forEach((commit) => {
-      const date = formatISO(new Date(commit.commit.author.date), { representation: "date" });
-      commitsByDate.set(date, (commitsByDate.get(date) || 0) + 1);
-    });
-
-    // Get all days in the current year
-    const days = eachDayOfInterval({
-      start: yearStart,
-      end: endOfYear(now),
-    });
-
-    // Calculate max commits per day to determine levels
-    const maxCommits = Math.max(...Array.from(commitsByDate.values()), 1);
-
-    // Generate activity data for each day
-    const activities: Activity[] = days.map((day) => {
-      const date = formatISO(day, { representation: "date" });
-      const count = commitsByDate.get(date) || 0;
-
-      // Calculate level (0-4) based on commit count
-      let level = 0;
-      if (count > 0) {
-        level = Math.min(4, Math.ceil((count / maxCommits) * 4));
-      }
-
-      return {
-        date,
-        count,
-        level,
-      };
-    });
-
-    return activities;
+    const data = await response.json();
+    return data.activities || [];
   } catch (err) {
     console.error("Error fetching repo commits:", err);
     return [];

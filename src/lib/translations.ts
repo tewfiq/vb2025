@@ -525,10 +525,10 @@ export const translations: Record<Language, Translations> = {
         registerNormal: "Réserver au tarif normal — 299 €",
       },
       features: {
-        capacity: "🎟️ 7 places disponibles !",
+        capacity: "🎟️ Inscriptions ouvertes !",
         location: "📍 Paris — salle équipée",
         level: "✨ Tous niveaux",
-        date: "📅 Samedi 15 Novembre 2025",
+        date: "📅 Décembre 2025 — Date à venir",
       },
     },
     programme: {
@@ -734,7 +734,7 @@ export const translations: Record<Language, Translations> = {
       signIn: "Se connecter avec GitHub",
     },
     socialProofBadge: {
-      spotsRemaining: "🔥 7 places disponibles !",
+      spotsRemaining: "🔥 Prochaine session en décembre !",
       timezone: "(Paris UTC+2)",
     },
     partners: {
@@ -1022,24 +1022,23 @@ export const translations: Record<Language, Translations> = {
         "Un atelier intensif et accessible. Tu explores, tu structures, tu repars avec un projet en ligne. Une compétence exploitable, en seulement 2h.",
     },
     announcementBanner: {
-      text: "Prochaine Masterclass — 🔥 7 places encore disponibles !",
-      date: "Samedi 15 novembre 2025",
+      text: "Prochaine session en décembre — Réservez votre place !",
+      date: "Décembre 2025 — Date bientôt annoncée",
       cta: "Réserver ma place",
     },
     nextMasterclass: {
-      title: "2ème Batch\nProchaine Masterclass",
-      subtitle: "Rejoins-nous pour la prochaine session à Paris",
+      title: "Prochaine Masterclass\nDécembre 2025\nRéservez\u00a0votre\u00a0place\u00a0ou\u00a0venez\u00a0en\u00a0Duo\u00a0!",
+      subtitle: "2 Masterclass déjà réalisées à Paris — La 3ème session arrive en décembre 2025",
       info: {
-        date: "Samedi 15 novembre 2025",
-        time: "9h30 - 11h30",
+        date: "Décembre 2025 (date bientôt annoncée)",
+        time: "Horaire à confirmer (9h30 - 11h30 prévu)",
         location: "1, rue de Bretagne 75003 Paris, France",
         metro: "Métro : Filles du Calvaire (Ligne 8)",
       },
     },
     firstMasterclassGallery: {
-      title: "1ère Masterclass à Paris\nSamedi 4 Octobre 2025",
-      thanksMessage:
-        "Un grand merci aux participants studieux, participatifs et prolifiques ! 🎉",
+      title: "Nos Sessions à Paris 03\nOctobre & Novembre 2025\nà Paris",
+      thanksMessage: "Merci aux Nouveaux Product Builders !",
       participatingCompanies: "Avec la participation de",
     },
     testimonialsVideo: {
@@ -1102,10 +1101,10 @@ export const translations: Record<Language, Translations> = {
         registerNormal: "Book at regular price — €299",
       },
       features: {
-        capacity: "🎟️ 7 spots available!",
+        capacity: "🎟️ Registration open!",
         location: "📍 Paris — equipped room",
         level: "✨ All levels",
-        date: "📅 Saturday November 15, 2025",
+        date: "📅 December 2025 — Date coming soon",
       },
     },
     programme: {
@@ -1309,7 +1308,7 @@ export const translations: Record<Language, Translations> = {
       signIn: "Sign in with GitHub",
     },
     socialProofBadge: {
-      spotsRemaining: "🔥 7 spots available!",
+      spotsRemaining: "🔥 Next session in December!",
       timezone: "(Paris UTC+2)",
     },
     partners: {
@@ -1592,24 +1591,23 @@ export const translations: Record<Language, Translations> = {
         "An intensive and accessible workshop. You explore, structure, and leave with an online project. A transferable skill, in just 2h.",
     },
     announcementBanner: {
-      text: "Next Masterclass — 🔥 7 spots still available!",
-      date: "Saturday November 15, 2025",
+      text: "Next session in December — Book your spot!",
+      date: "December 2025 — Date coming soon",
       cta: "Book my spot",
     },
     nextMasterclass: {
-      title: "2nd Batch — Next Masterclass",
-      subtitle: "Join us for the next session in Paris",
+      title: "Next Masterclass\nDecember 2025\nBook\u00a0your\u00a0spot\u00a0or\u00a0join\u00a0us\u00a0as\u00a0a\u00a0Duo!",
+      subtitle: "2 Masterclasses already held in Paris — The 3rd session coming in December 2025",
       info: {
-        date: "Saturday November 15, 2025",
-        time: "9h30 - 11h30",
+        date: "December 2025 (date to be announced)",
+        time: "Time to be confirmed (9:30 AM - 11:30 AM planned)",
         location: "1, rue de Bretagne 75003 Paris, France",
         metro: "Metro: Filles du Calvaire (Line 8)",
       },
     },
     firstMasterclassGallery: {
-      title: "1st Masterclass in Paris\nSaturday October 4, 2025",
-      thanksMessage:
-        "A big thank you to all the dedicated, participative and prolific participants! 🎉",
+      title: "Our Sessions in Paris 03\nOctober & November 2025\nin Paris",
+      thanksMessage: "Thank you New Product Builders!",
       participatingCompanies: "With the participation of",
     },
     testimonialsVideo: {
