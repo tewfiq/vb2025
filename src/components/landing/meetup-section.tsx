@@ -39,15 +39,30 @@ export default function MeetupSection() {
             </p>
           </div>
 
-          {/* Flyer Image */}
-          <div className="flex justify-center mb-8">
-            <div className="w-full max-w-2xl">
-              <img
-                src="/avatars/event-flyer.jpg"
-                alt="Paris Social Vibe Coding Meetup Event Flyer"
-                className="w-full h-auto rounded-lg border border-border shadow-lg"
-                loading="lazy"
-              />
+          {/* Flyer Images */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+            {/* First Masterclass Flyer */}
+            <div className="flex justify-center">
+              <div className="w-full">
+                <img
+                  src="/avatars/masterclass-creative-coding-flyer.jpg"
+                  alt="Creative Coding Workshop: Learn to Code with a Social Twist! - Masterclass Flyer"
+                  className="w-full h-auto rounded-lg border border-border shadow-lg"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+
+            {/* Current Event Flyer */}
+            <div className="flex justify-center">
+              <div className="w-full">
+                <img
+                  src="/avatars/event-flyer.jpg"
+                  alt="Paris Social Vibe Coding Meetup Event Flyer"
+                  className="w-full h-auto rounded-lg border border-border shadow-lg"
+                  loading="lazy"
+                />
+              </div>
             </div>
           </div>
 
